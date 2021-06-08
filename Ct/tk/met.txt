@@ -1,0 +1,212 @@
+*** Widget ********
+void setWidgetID(int WidgetID);
+unsigned long getWidgetID();
+	
+bool setTrans(bool bTrans);
+bool isTrans() const;
+	
+CtDrawType getDrawType() const;
+
+bool setRegion(const CtRegion& Region, int Screen = 0);
+bool setRegion(short x, short y, short width, short height, int Screen = 0);
+bool movePos(const CtPosition& Position, int Screen = 0);
+bool movePos(short x, short y, int Screen = 0);
+bool setPos(const CtPosition& Position, int Screen = 0);
+bool setPos(short x, short y, int Screen = 0);
+bool setLayout(int Screen = 0);
+	
+const CtRegion getRegion(int Screen = 0) const;
+const CtPosition getCenterPosition(int Screen = 0) const;
+	
+bool setColor(const CtColor& fillColor);
+bool setColor(const CtColor& fillColor, const CtColor& edgeColor);
+	
+bool setSize(const CtSize& Size);
+const CtSize getSize() const;
+
+bool setAlign(const CtAlign Align);
+	
+bool setDrawImage();
+bool setDrawImage(GDI_DRAWABLE_ID imageId);
+bool setDrawImage(CtDrawInfo* pDrawInfo);
+unsigned long getDrawKey();
+CtDrawInfo* getDrawInfo(const CtRegion& Clip = NoRegion, int Screen = 0);
+bool getDrawInfo(CtList::list<CtDrawInfo*> &_List, const CtRegion& Clip = NoRegion, int Screen = 0);
+bool draw(const CtRegion& Clip, int Screen = 0);
+bool drawShift(short shift_x, short shift_y, const CtRegion& Clip, int Screen = 0);
+
+bool isContains(const CtPosition& Pos, int Screen = 0);
+bool isContains(const CtPosition& Pos, CtScreenSel Sel);
+bool isContains(const CtRegion& rhs, int Screen = 0);
+bool isContains(const CtRegion& rhs, CtScreenSel Sel);
+bool isCollision(const CtRegion& rhs, int Screen = 0);
+bool isCollision(const CtRegion& rhs, CtScreenSel Sel);
+	
+CtWidgetType getWidgetType() const;
+bool checkWidgetType(const CtWidgetType Type, const CtWidget* pWidget);
+
+bool isRootWindow() const;
+bool isWindow() const;
+bool isPageView() const;
+bool isListView() const;
+bool isLayout() const;
+bool isFocusable() const;
+bool isButton() const;
+bool isMenuButton() const;
+bool isStackLabel() const;
+bool isParamLabel() const;
+bool isParamBox() const;
+bool isLabel() const;
+bool haveContainer() const;
+
+bool isFastDraw() const;
+bool setFastDraw(bool bFast);
+bool initialFastDraw();
+bool cleanupFastDraw();
+	
+bool setInvalidate();
+bool setInvalidate(int Screen);
+bool clearInvalidate();
+bool clearInvalidate(int Screen);
+bool isInvalidate() const;
+bool isInvalidate(int Screen) const;
+	
+bool getInvalidates(RegionArray& Array, int Screen);
+bool clearInvalidates(int Screen = 0);
+	
+bool setVisible(bool bVisible);
+bool isVisible();
+bool isVisible(int Screen);
+bool isVisible(CtScreenSel Sel);
+bool isVisible2(int Screen);
+
+bool setParent(CtWidget* pParent);
+CtWidget* getParent() const;
+CtColor getParentColor() const;
+
+CtWindow* getWindow() const;
+CtListView* getListView() const;
+CtContainer* getContainer() const;
+CtWindowMain* getMain() const;
+	
+bool startFlash(CtEventFlash::Frequency Freq);
+bool stopFlash();
+bool isFlashing();
+
+bool handleTouchEvent(const CtEventTouch& Touch);
+bool handleKeyEvent(const CtEventKey& Key);
+bool handleParamEvent(const CtEventParam& Param);
+bool handleTimerEvent(const CtEventTimer& Timer);
+bool handleFlashEvent(const CtEventFlash& Flash);
+bool handleButtonEvent(const CtEventButton& Button);
+
+CtVector::Vector<CtWidget::Element*>* getElements() const;
+CtVector::Vector<CtWidget::Element*>* getVisibles() const;
+bool getWidgets(SearchType SearchType, CtWidget::List* pList, const CtWidgetType WidgetType = WidgetAll, int Screen = 0, const CtRegion& Region = NoRegion);
+bool existWidget(SearchType SearchType, const CtWidgetType WidgetType = WidgetAll, int Screen = 0, const CtRegion& Region = NoRegion);
+CtWidget* getNeary(const CtRegion& currentRegion, const CtWidgetType Type, const CtDirection Dir);
+bool isRegistered(CtWidget *pWidget);
+bool setElementsParent(CtWidget* pParent);
+	
+bool setScreenSel(const CtScreenSel ScreenSel);
+CtScreenSel getScreenSel() const;
+
+bool putRegionList(RegionArray& Array, CtRegion& Region);
+bool mergeRegionList(RegionArray& Array);
+
+void outputOutline(int depth, const char* header, int Screen = 0);
+
+void setName(const char* str);
+const char* getName();
+
+
+**** Label **********
+CtLabel();
+CtLabel(const CtColor& Color);
+CtLabel(const CtSize& Size);
+CtLabel(const CtRegion& Region);
+
+CtLabel(const GDI_IMAGE_ID ImageID);
+CtLabel(const GDI_IMAGE_ID ImageID, const CtColor& fillColor, const CtColor& edgeColor = CtColor::NoColor);
+CtLabel(const GDI_HANDLER DrawableID);
+CtLabel(const GDI_STRING_ID StringID, const CtFontSet& FontSet);
+CtLabel(const GDI_STRING_ID StringID);
+CtLabel(const char* ucStr, const CtFontSet& FontSet);
+CtLabel(const char* ucStr);
+CtLabel(const unsigned short* ucStr, const CtFontSet& FontSet);
+CtLabel(const unsigned short* ucStr);
+CtLabel(const CtLine& Line);
+CtLabel(const CtRect& Rect);
+CtLabel(const CtFill& Fill);
+CtLabel(const CtRoundRect& RoundRect);
+CtLabel(const CtEllipse& Ellipse);
+CtLabel(short Width, short Height, short BufWidth, short BufHeight, const unsigned char* Data, CtImageType Type);
+CtLabel(short Width, short Height, short YPlaneSize, short PlaneStride, short PlaneHeight, const unsigned char* pYPlane, const unsigned char* pCPlane, CtImageType Type);
+
+CtLabel(const CtSize& Size, const CtColor& Color);
+CtLabel(const CtSize& Size, const GDI_IMAGE_ID ImageID);
+CtLabel(const CtSize& Size, const GDI_IMAGE_ID ImageID, const CtColor& fillColor, const CtColor& edgeColor = CtColor::NoColor);
+CtLabel(const CtSize& Size, const GDI_HANDLER DrawableID);
+CtLabel(const CtSize& Size, const GDI_STRING_ID StringID, const CtFontSet& FontSet);
+CtLabel(const CtSize& Size, const GDI_STRING_ID StringID);
+CtLabel(const CtSize& Size, const char* ucStr, const CtFontSet& FontSet);
+CtLabel(const CtSize& Size, const char* ucStr);
+CtLabel(const CtSize& Size, const unsigned short* ucStr, const CtFontSet& FontSet);
+CtLabel(const CtSize& Size, const unsigned short* ucStr);
+CtLabel(const CtSize& Size, const CtLine& Line);
+CtLabel(const CtSize& Size, const CtRect& Rect);
+CtLabel(const CtSize& Size, const CtFill& Fill);
+CtLabel(const CtSize& Size, const CtRoundRect& RoundRect);
+CtLabel(const CtSize& Size, const CtEllipse& Ellipse);
+CtLabel(const CtSize& Size, short Width, short Height, short BufWidth, short BufHeight, const unsigned char* Data, CtImageType Type);
+CtLabel(const CtSize& Size, short Width, short Height, short YPlaneSize, short PlaneStride, short PlaneHeight, const unsigned char* pYPlane, const unsigned char* pCPlane, CtImageType Type);
+
+bool setImage(const GDI_IMAGE_ID ImageID);
+bool setImage(const GDI_IMAGE_ID ImageID, const CtColor& fillColor, const CtColor& edgeColor);
+bool setImage(short Width, short Height, short BufWidth, short BufHeight, const unsigned char* Data, CtImageType Type);
+bool setImage(short Width, short Height, short YPlaneSize, short PlaneStride, short PlaneHeight, const unsigned char* pYPlane, const unsigned char* pCPlane, CtImageType Type);
+GDI_IMAGE_ID getImageID();
+	
+bool setDrawable(const GDI_HANDLER DrawableID);
+GDI_HANDLER getDrawable();
+	
+bool setFontSet(const CtFontSet& FontSet);
+	
+bool setStringID(const GDI_STRING_ID, const CtFontSet& FontSet);
+bool setStringID(const GDI_STRING_ID);
+	
+bool setText(const char *ucStr);
+bool setText(const char *ucStr, const CtFontSet& FontSet);
+bool setText(const unsigned short *ucStr);
+bool setText(const unsigned short *ucStr, const CtFontSet& FontSet);
+unsigned short* getText();
+	
+bool setLine(const CtLine& Line);
+bool setLine(CtLineStyle Style, short lineWidth, const CtColor& lineColor);
+	
+bool setFill(const CtFill& Fill);
+bool setRect(const CtRect& Rect);
+bool setRect(const CtColor& fillColor, short edgeWidth, const CtColor& edgeColor = CtColor::NoColor);
+	
+bool setRoundRect(const CtRoundRect& RoundRect);
+bool setRoundRect(short ArcWidth, short ArcHeight, const CtColor& fillColor, short edgeWidth, const CtColor& edgeColor = CtColor::NoColor);
+	
+bool setEllipse(const CtEllipse& Ellipse);
+bool setEllipse(const CtColor& fillColor, short edgeWidth, const CtColor& edgeColor = CtColor::NoColor);
+
+bool setColor(const CtColor& fillColor);
+bool setColor(const CtColor& fillColor, const CtColor& edgeColor);
+CtColor getColor() const;
+	
+CtDrawInfo* getDrawInfo(const CtRegion& Clip = NoRegion, int Screen = 0);
+bool getDrawInfo(CtList::list<CtDrawInfo*> &List, const CtRegion& Clip = NoRegion, int Screen = 0);
+bool isLabel() const;
+
+bool isFastDraw() const;
+bool setFastDraw(bool bFast);
+bool initialFastDraw();
+bool cleanupFastDraw();
+
+bool handleParamEvent(const CtEventParam& Param);
+
+**** StackLabel ********

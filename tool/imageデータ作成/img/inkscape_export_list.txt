@@ -1,0 +1,4 @@
+ic_menu_kb_left.svg
+ic_menu_kb_right.svg
+ic_menu_kb_space.svg
+ic_settings_update_arrow.svg

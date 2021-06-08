@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 14 for Windows Desktop
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "simulator", "simulator\simulator.vcxproj", "{46B29459-786E-4BB2-BE05-1DD6D940C3F2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShivaVG", "ShivaVG\ShivaVG.vcxproj", "{76A4341C-B89E-426E-950C-DFBA16A4B09B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "amanithEGL", "amanithEGL\amanithEGL.vcxproj", "{EF67D073-5B89-4FFB-8126-825E26AFCBC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_AmanithVG|Win32 = Debug_AmanithVG|Win32
+		Debug_OVG_org|Win32 = Debug_OVG_org|Win32
+		Debug|Win32 = Debug|Win32
+		Re|Win32 = Re|Win32
+		Release_AmanithVG|Win32 = Release_AmanithVG|Win32
+		Release_OVG_org|Win32 = Release_OVG_org|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46B29459-786E-4BB2-BE05-1DD6D940C3F2}.Debug_AmanithVG|Win32.ActiveCfg = Debug_AmanithVG|Win32
+		{46B29459-786E-4BB2-BE05-1DD6D940C3F2}.Debug_AmanithVG|Win32.Build.0 = Debug_AmanithVG|Win32
+		{46B29459-786E-4BB2-BE05-1DD6D940C3F2}.Debug_OVG_org|Win32.ActiveCfg = Debug_OVG_org|Win32
+		{46B29459-786E-4BB2-BE05-1DD6D940C3F2}.Debug_OVG_org|Win32.Build.0 = Debug_OVG_org|Win32
+		{46B29459-786E-4BB2-BE05-1DD6D940C3F2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{46B29459-786E-4BB2-BE05-1DD6D940C3F2}.Debug|Win32.Build.0 = Debug|Win32
+		{46B29459-786E-4BB2-BE05-1DD6D940C3F2}.Re|Win32.ActiveCfg = Re|Win32
+		{46B29459-786E-4BB2-BE05-1DD6D940C3F2}.Re|Win32.Build.0 = Re|Win32
+		{46B29459-786E-4BB2-BE05-1DD6D940C3F2}.Release_AmanithVG|Win32.ActiveCfg = Release_AmanithVG|Win32
+		{46B29459-786E-4BB2-BE05-1DD6D940C3F2}.Release_AmanithVG|Win32.Build.0 = Release_AmanithVG|Win32
+		{46B29459-786E-4BB2-BE05-1DD6D940C3F2}.Release_OVG_org|Win32.ActiveCfg = Release_OVG_org|Win32
+		{46B29459-786E-4BB2-BE05-1DD6D940C3F2}.Release_OVG_org|Win32.Build.0 = Release_OVG_org|Win32
+		{46B29459-786E-4BB2-BE05-1DD6D940C3F2}.Release|Win32.ActiveCfg = Release|Win32
+		{46B29459-786E-4BB2-BE05-1DD6D940C3F2}.Release|Win32.Build.0 = Release|Win32
+		{76A4341C-B89E-426E-950C-DFBA16A4B09B}.Debug_AmanithVG|Win32.ActiveCfg = Debug_AmanithVG|Win32
+		{76A4341C-B89E-426E-950C-DFBA16A4B09B}.Debug_OVG_org|Win32.ActiveCfg = Debug_OVG_org|Win32
+		{76A4341C-B89E-426E-950C-DFBA16A4B09B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{76A4341C-B89E-426E-950C-DFBA16A4B09B}.Debug|Win32.Build.0 = Debug|Win32
+		{76A4341C-B89E-426E-950C-DFBA16A4B09B}.Re|Win32.ActiveCfg = Re|Win32
+		{76A4341C-B89E-426E-950C-DFBA16A4B09B}.Release_AmanithVG|Win32.ActiveCfg = Release_AmanithVG|Win32
+		{76A4341C-B89E-426E-950C-DFBA16A4B09B}.Release_OVG_org|Win32.ActiveCfg = Release_OVG_org|Win32
+		{76A4341C-B89E-426E-950C-DFBA16A4B09B}.Release|Win32.ActiveCfg = Release|Win32
+		{76A4341C-B89E-426E-950C-DFBA16A4B09B}.Release|Win32.Build.0 = Release|Win32
+		{EF67D073-5B89-4FFB-8126-825E26AFCBC6}.Debug_AmanithVG|Win32.ActiveCfg = Debug_AmanithVG|Win32
+		{EF67D073-5B89-4FFB-8126-825E26AFCBC6}.Debug_AmanithVG|Win32.Build.0 = Debug_AmanithVG|Win32
+		{EF67D073-5B89-4FFB-8126-825E26AFCBC6}.Debug_OVG_org|Win32.ActiveCfg = Debug_OVG_org|Win32
+		{EF67D073-5B89-4FFB-8126-825E26AFCBC6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EF67D073-5B89-4FFB-8126-825E26AFCBC6}.Re|Win32.ActiveCfg = Re|Win32
+		{EF67D073-5B89-4FFB-8126-825E26AFCBC6}.Re|Win32.Build.0 = Re|Win32
+		{EF67D073-5B89-4FFB-8126-825E26AFCBC6}.Release_AmanithVG|Win32.ActiveCfg = Release_AmanithVG|Win32
+		{EF67D073-5B89-4FFB-8126-825E26AFCBC6}.Release_AmanithVG|Win32.Build.0 = Release_AmanithVG|Win32
+		{EF67D073-5B89-4FFB-8126-825E26AFCBC6}.Release_OVG_org|Win32.ActiveCfg = Release_OVG_org|Win32
+		{EF67D073-5B89-4FFB-8126-825E26AFCBC6}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

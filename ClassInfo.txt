@@ -1,0 +1,57 @@
+[CtDbgIdCommon] ★★★★ ActDbgTsk ★★★★
+The process failed: ファイル 'C:\src\Ct_k519ORIG\simulator\simulator\.simrc' が見つかりませんでした。
+[Ct] class CtButton            :  308
+[Ct] struct CtColor            :   12
+[Ct] class CtContainer         :   68
+[Ct] class CtDrawInfo          :   40
+[Ct] class CtFontSet           :   76
+[Ct] class CtFill              :   52
+[Ct] class CtString            :  148
+[Ct] class CtDrawable          :   44
+[Ct] class CtSVG               :  100
+[Ct] class CtBitmap            :   48
+[Ct] class CtLine              :   80
+[Ct] class CtRect              :   92
+[Ct] class CtRoundRect         :   96
+[Ct] class CtEllipse           :   92
+[Ct] class CtLabel             :  112
+[Ct] class CtEventHandler      :   16
+[Ct] class CtGridLayout        :  136
+[Ct] class CtGridView          :  168
+[Ct] class CtHLayout           :  120
+[Ct] class CtLabel             :  112
+[Ct] class CtLayout            :  120
+[Ct] class CtLinkButton        :  324
+[Ct] class CtListView          :  168
+[Ct] class CtMenuButton        :  500
+[Ct] class CtParamBox          :  280
+[Ct] class CtParamContents     :   56
+[Ct] class CtParamIcon         :  120
+[Ct] class CtParamLabel        :  268
+[Ct] class CtScrollBar         :  156
+[Ct] class CtSlideLabel        :  116
+[Ct] class CtStackLabel        :  128
+[Ct] class CtStyle             :    8
+[Ct] class CtTextField         :  916
+[Ct] class CtVLayout           :  120
+[Ct] class CtWidget            :   80
+[Ct] class CtWindow            :  144
+[Ct] class CtWindowContents    :   12
+[Ct] class CtWindowMain        :   84
+[Ct] class CtMsg               :   20
+[Ct] class CtEvent             :   20
+[Ct] class CtEventWindow       :   48
+[Ct] class CtEventWinInfoAccess:   44
+[Ct] class CtEventSys          :  120
+[Ct] class CtEventKey          :   36
+[Ct] class CtEventTouch        :   28
+[Ct] class CtEventTouchSlide   :   44
+[Ct] class CtEventTimer        :   32
+[Ct] class CtEventParam        :   32
+[Ct] class CtEventFlash        :   28
+[Ct] class CtEventButton       :   44
+[Ct] class CtEventWidget       :   32
+[Ct] class CtEventFunc         :   36
+[Ct] class CtEventDrawResult   :   32
+[Ct] class CtEventRequest      :   36
+

@@ -1,0 +1,307 @@
+    IC_1,                      /* [HOME画面]6function */
+    IC_3200B,                  /* [HOME画面]6function */
+    IC_2500B,                  /* [HOME画面]6function */
+    IC_800B,                   /* [HOME画面]6function */
+    IC_CH1_BTN,                /* [HOME画面]6function */
+    IC_CH2_BTN,                /* [HOME画面]6function */
+    IC_DB,                     /* [HOME画面]6function */
+    IC_DEG,                    /* [HOME画面]6function */
+    IC_FPS,                    /* [HOME画面]6function */
+    IC_FTP,                    /* [HOME画面]6function */
+    IC_HIGH,                   /* [HOME画面]6function */
+    IC_ISO,                    /* [HOME画面]6function */
+    IC_K,                      /* [HOME画面]6function */
+    IC_NATIVE,                 /* [HOME画面]6function */
+    IC_NORMAL,                 /* [HOME画面]6function */
+    IC_SEC,                    /* [HOME画面]6function */
+    IC_VFR,                    /* [HOME画面]6function */
+    IC_ALERT,                  /* [HOME画面]alert_warinig_mute */
+    IC_MUTE,                   /* [HOME画面]alert_warinig_mute */
+    IC_WARNING,                /* [HOME画面]alert_warinig_mute */
+    IC_CH1_LEVEL_DISABLE,      /* [HOME画面]audio */
+    IC_CH1_LEVEL_NORMAL,       /* [HOME画面]audio */
+    IC_CH2_LEVEL_DISABLE,      /* [HOME画面]audio */
+    IC_CH2_LEVEL_NORMAL,       /* [HOME画面]audio */
+    IC_LEVEL_SET,              /* [HOME画面]audio */
+    IC_BOTTOM_CENTER,          /* [HOME画面]base */
+    IC_BOTTOM_LEFT,            /* [HOME画面]base */
+    IC_BOTTOM_RIGHT,           /* [HOME画面]base */
+    IC_TOP_CENTER,             /* [HOME画面]base */
+    IC_TOP_LEFT,               /* [HOME画面]base */
+    IC_TOP_RIGHT,              /* [HOME画面]base */
+    IC_AC,                     /* [HOME画面]batt 7/25変更 */
+    IC_BATT_LV0_RED,           /* [HOME画面]batt 7/25変更 */
+    IC_BATT_LV1,               /* [HOME画面]batt 7/25変更 */
+    IC_BATT_LV2,               /* [HOME画面]batt 7/25変更 */
+    IC_BATT_LV3,               /* [HOME画面]batt 7/25変更 */
+    IC_BATT_LV4,               /* [HOME画面]batt 7/25変更 */
+    IC_BATT_LV5,               /* [HOME画面]batt 7/25変更 */
+    IC_OUTPUTX1,               /* [HOME画面]output */
+    IC_OUTPUTX3,               /* [HOME画面]output */
+    IC_PRESET,                 /* [HOME画面]preset_slot_sd */
+    IC_SLOT1_SD_OFF,           /* [HOME画面]preset_slot_sd */
+    IC_SLOT1_SD_ON,            /* [HOME画面]preset_slot_sd */
+    IC_SLOT2_SD_OFF,           /* [HOME画面]preset_slot_sd */
+    IC_SLOT2_SD_ON,            /* [HOME画面]preset_slot_sd */
+    IC_BACKGR_OFF,             /* [HOME画面]rec_mode */
+    IC_BACKGR_ON,              /* [HOME画面]rec_mode */
+    IC_INTRVL,                 /* [HOME画面]rec_mode */
+    IC_LOOP,                   /* [HOME画面]rec_mode */
+    IC_RELAY_OFF,              /* [HOME画面]rec_mode */
+    IC_RELAY_ON,               /* [HOME画面]rec_mode */
+    IC_SIMUL_OFF,              /* [HOME画面]rec_mode */
+    IC_SIMUL__ON,              /* [HOME画面]rec_mode */
+    IC_SLOT1,                  /* [HOME画面]rec_mode */
+    IC_SLOT2,                  /* [HOME画面]rec_mode */
+    IC_SUB_OFF,                /* [HOME画面]rec_mode */
+    IC_SUB_ON,                 /* [HOME画面]rec_mode */
+    IC_CUT,                    /* [HOME画面]reel_cut */
+    IC_REEL,                   /* [HOME画面]reel_cut */
+    IC_WIFI_LV0,               /* [HOME画面]wifi */
+    IC_WIFI_LV1,               /* [HOME画面]wifi */
+    IC_WIFI_LV2,               /* [HOME画面]wifi */
+    IC_WIFI_LV3,               /* [HOME画面]wifi */
+    IC_WIFI_LV4,               /* [HOME画面]wifi */
+    IC_WIFI_OFF,               /* [HOME画面]wifi */
+    IC_WIFI_ROP_LV0,           /* [HOME画面]wifi */
+    IC_WIFI_ROP_LV1,           /* [HOME画面]wifi */
+    IC_WIFI_ROP_LV2,           /* [HOME画面]wifi */
+    IC_WIFI_ROP_LV3,           /* [HOME画面]wifi */
+    IC_WIFI_ROP_LV4,           /* [HOME画面]wifi */
+    IC_MENU_CHECK,             /* [MENU画面] */
+    IC_MENU_DOWN,              /* [MENU画面] */
+    IC_MENU_LEVEL_LARGE_OFF,   /* [MENU画面] */
+    IC_MENU_LEVEL_LARGE_ON,    /* [MENU画面] */
+    IC_MENU_LEVEL_SMALL_OFF,   /* [MENU画面] */
+    IC_MENU_LEVEL_SMALL_ON,    /* [MENU画面] */
+    IC_MENU_RETURN,            /* [MENU画面] */
+    IC_MENU_SET,               /* [MENU画面] */
+    IC_MENU_UP,                /* [MENU画面] */
+    TEXTBOX_MENU_SPIN_BOX_1_1_ADJUST,/* [MENU画面] */
+    TEXTBOX_MENU_SPIN_BOX_1_1_SELECTED,/* [MENU画面] */
+    TEXTBOX_MENU_SPIN_BOX_1_2_ADJUST,/* [MENU画面] */
+    TEXTBOX_MENU_SPIN_BOX_1_2_SELECTED,/* [MENU画面] */
+    TEXTBOX_MENU_SPIN_BOX_1_3,/* [MENU画面] */
+    IC_MENU_KB_LEFT,           /* [MENU画面]ソフトキーボード左カーソルボタン */
+    IC_MENU_KB_RIGHT,          /* [MENU画面]ソフトキーボード右カーソルボタン */
+    IC_MENU_KB_SPACE,          /* [MENU画面]ソフトキーボードスペースボタン */
+    IC_SETTINGS_UPDATE_ARROW,  /* [MENU画面]ファームアップデート下向き矢印 */
+    IC_THUMBNAIL_COPY_ARROW,   /* [THUMB画面]COPY */
+    IC_THUMBNAIL_FORMAT_2K_23P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_2K_24P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_2K_25P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_2K_29P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_2K_50P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_2K_59P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_4K_23P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_4K_24P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_4K_25P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_4K_29P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_4K_50P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_4K_59P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_FHD_23P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_FHD_25P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_FHD_29P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_FHD_50I,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_FHD_50P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_FHD_59I,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_FHD_59P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_HA_50I,/* [THUMB画面]FORMAT（6/1追加) */
+    IC_THUMBNAIL_FORMAT_HA_59I,/* [THUMB画面]FORMAT（6/1追加) */
+    IC_THUMBNAIL_FORMAT_HA_50P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_HA_59P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_PH_23P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_PH_50I,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_PH_59I,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_PM_50P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_PM_59P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_PS_50P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_PS_59P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_SUB_23P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_SUB_24P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_SUB_25P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_SUB_29P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_SUB_50P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_SUB_59P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_UHD_23P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_UHD_25P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_UHD_29P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_UHD_50P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_FORMAT_UHD_59P,/* [THUMB画面]FORMAT */
+    IC_THUMBNAIL_DEL,          /* [THUMB画面]KEYTOP */
+    IC_THUMBNAIL_EXEC,         /* [THUMB画面]KEYTOP */
+    IC_THUMBNAIL_KEYTOP_COPY,  /* [THUMB画面]KEYTOP */
+    IC_THUMBNAIL_MEDIA_SD_1_NONE,/* [THUMB画面]SYSTEM_LINE_UPPER */
+    IC_THUMBNAIL_MEDIA_SD_1_NORMAL,/* [THUMB画面]SYSTEM_LINE_UPPER */
+    IC_THUMBNAIL_MEDIA_SD_1_SELECTED,/* [THUMB画面]SYSTEM_LINE_UPPER */
+    IC_THUMBNAIL_MEDIA_SD_2_NONE,/* [THUMB画面]SYSTEM_LINE_UPPER */
+    IC_THUMBNAIL_MEDIA_SD_2_NORMAL,/* [THUMB画面]SYSTEM_LINE_UPPER */
+    IC_THUMBNAIL_MEDIA_SD_2_SELECTED,/* [THUMB画面]SYSTEM_LINE_UPPER */
+    IC_THUMBNAIL_MEDIA_SD_ERROR,/* [THUMB画面]SYSTEM_LINE_UPPER */
+    IC_THUMBNAIL_MODE_AVCHD_NORMAL,/* [THUMB画面]SYSTEM_LINE_UPPER */
+    IC_THUMBNAIL_MODE_AVCHD_SELECTED,/* [THUMB画面]SYSTEM_LINE_UPPER */
+    IC_THUMBNAIL_MODE_MOV_NORMAL,/* [THUMB画面]SYSTEM_LINE_UPPER */
+    IC_THUMBNAIL_MODE_MOV_SELECTED,/* [THUMB画面]SYSTEM_LINE_UPPER */
+    IC_THUMBNAIL_CLIP_DISABLE,/* [THUMB画面]THUMBNAIL_INNER */
+    IC_THUMBNAIL_COPY,         /* [THUMB画面]THUMBNAIL_INNER */
+    IC_THUMBNAIL_DELETE,       /* [THUMB画面]THUMBNAIL_INNER */
+    IC_THUMBNAIL_IMPOSSIBLE_TO_PLAY,/* [THUMB画面]THUMBNAIL_INNER */
+    IC_THUMBNAIL_PROTECT,      /* [THUMB画面]THUMBNAIL_INNER */
+    IC_THUMBNAIL_RESUME,       /* [THUMB画面]THUMBNAIL_INNER */
+    IC_THUMBNAIL_SELECTED,     /* [THUMB画面]THUMBNAIL_INNER */
+    IC_OSD_AC,                 /* [OSD画面]バッテリー */
+    IC_OSD_BATT_LV0_RED,       /* [OSD画面]バッテリー */
+    IC_OSD_BATT_LV1,           /* [OSD画面]バッテリー */
+    IC_OSD_BATT_LV2,           /* [OSD画面]バッテリー */
+    IC_OSD_BATT_LV3,           /* [OSD画面]バッテリー */
+    IC_OSD_BATT_LV4,           /* [OSD画面]バッテリー */
+    IC_OSD_BATT_LV5,           /* [OSD画面]バッテリー */
+    IC_OSD_KEYTOP_FF,          /* [OSD画面]keytop */
+    IC_OSD_KEYTOP_FRAME_ADVANCE,/* [OSD画面]keytop */
+    IC_OSD_KEYTOP_FRAME_RETURN,/* [OSD画面]keytop */
+    IC_OSD_KEYTOP_PLAY_STILL,  /* [OSD画面]keytop */
+    IC_OSD_KEYTOP_REW,         /* [OSD画面]keytop */
+    IC_OSD_KEYTOP_STOP,        /* [OSD画面]keytop */
+    IC_OSD_AUDIO_REC_OFF,      /* [OSD画面]その他 */
+    IC_OSD_CH1_CH2,            /* [OSD画面]その他 */
+    IC_OSD_PRESET,             /* [OSD画面]その他 */
+    IC_OSD_REC,                /* [OSD画面]その他 7/7変更 */
+    IC_OSD_REC_SDI_HDMI,       /* [OSD画面]その他 表示画面仕様No.14"REC REMOTE" 7/7追加 */
+    IC_OSD_SLIDER_BTN,         /* [OSD画面]その他 */
+    IC_OSD_DZOOM,              /* [OSD画面]その他 表示画面仕様No.29 7/7追加 */
+    IC_OSD_EIS,                /* [OSD画面]その他 表示画面仕様No.29 7/7追加 */
+    IC_OSD_MIN,                /* [OSD画面]その他 表示画面仕様No.7 SLOT Remain 7/7追加 */
+    IC_OSD_BOS,                /* [OSD画面]再生状態 */
+    IC_OSD_EOS,                /* [OSD画面]再生状態 */
+    IC_OSD_FFX10,              /* [OSD画面]再生状態 */
+    IC_OSD_FFX20,              /* [OSD画面]再生状態 */
+    IC_OSD_PLAY,               /* [OSD画面]再生状態 */
+    IC_OSD_REWX10,             /* [OSD画面]再生状態 */
+    IC_OSD_REWX20,             /* [OSD画面]再生状態 */
+    IC_OSD_SLOW_BACK,          /* [OSD画面]再生状態 */
+    IC_OSD_SLOW_FEED,          /* [OSD画面]再生状態 */
+    IC_OSD_STILL,              /* [OSD画面]再生状態 */
+    IC_OSD_STOP,               /* [OSD画面]再生状態 */
+    IC_OSD_SLOT1_SD_OFF,       /* [OSD画面]スロット(記録対象外) */
+    IC_OSD_SLOT1_SD_ON,        /* [OSD画面]スロット(記録対象) */
+    IC_OSD_SLOT2_SD_OFF,       /* [OSD画面]スロット(記録対象外) */
+    IC_OSD_SLOT2_SD_ON,        /* [OSD画面]スロット(記録対象) */
+    IC_OSD_BACKGR_OFF,         /* [OSD画面]撮影モード */
+    IC_OSD_BACKGR_ON,          /* [OSD画面]撮影モード */
+    IC_OSD_RELAY_OFF,          /* [OSD画面]撮影モード */
+    IC_OSD_RELAY_ON,           /* [OSD画面]撮影モード */
+    IC_OSD_SIMUL_OFF,          /* [OSD画面]撮影モード */
+    IC_OSD_SIMUL_ON,           /* [OSD画面]撮影モード */
+    IC_OSD_SUB_OFF,            /* [OSD画面]撮影モード */
+    IC_OSD_SUB_ON,             /* [OSD画面]撮影モード */
+    IC_OSD_WIFI_LV0,           /* [OSD画面]WiFi */
+    IC_OSD_WIFI_LV1,           /* [OSD画面]WiFi */
+    IC_OSD_WIFI_LV2,           /* [OSD画面]WiFi */
+    IC_OSD_WIFI_LV3,           /* [OSD画面]WiFi */
+    IC_OSD_WIFI_LV4,           /* [OSD画面]WiFi */
+    IC_OSD_WIFI_OFF,           /* [OSD画面]WiFi */
+    IC_OSD_WIFI_ROP_LV0,       /* [OSD画面]WiFi */
+    IC_OSD_WIFI_ROP_LV1,       /* [OSD画面]WiFi */
+    IC_OSD_WIFI_ROP_LV2,       /* [OSD画面]WiFi */
+    IC_OSD_WIFI_ROP_LV3,       /* [OSD画面]WiFi */
+    IC_OSD_WIFI_ROP_LV4,       /* [OSD画面]WiFi */
+    IC_AUDIO_BOTTOM_CENTER,    /* [HOME-INFO画面] */
+    IC_AUDIO_BOTTOM_LEFT,      /* [HOME-INFO画面] */
+    IC_AUDIO_BOTTOM_RIGHT,     /* [HOME-INFO画面] */
+    IC_AUDIO_TOP_CENTER,       /* [HOME-INFO画面] */
+    IC_AUDIO_TOP_LEFT,         /* [HOME-INFO画面] */
+    IC_AUDIO_TOP_RIGHT,        /* [HOME-INFO画面] */
+    IC_INFO_BOTTOM,            /* [HOME-INFO画面] */
+    IC_INFO_TOP,               /* [HOME-INFO画面] */
+    IC_DUR,                    /* [HOME画面-追加] */
+    IC_MIN,                    /* [HOME画面-追加] */
+    IC_TCG,                    /* [HOME画面-追加] */
+    IC_TCG_SLAVE,              /* [HOME画面-追加] */
+    IC_UBG,                    /* [HOME画面-追加] */
+    IC_LAN_OFF,                /* [LAN接続状態] */
+    IC_LAN_ON,                 /* [LAN接続状態] */
+    IC_LAN_ON_ROP,             /* [LAN接続状態] */
+    IC_THUMBNAIL_FORMAT_420_50M,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_420_100M,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_420_150M,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_422_50M,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_422_100M,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_422_150M,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_ALLI_100M,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_ALLI_200M,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_ALLI_400M,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_AVCHD_HA,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_AVCHD_PH,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_AVCHD_PM,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_AVCHD_PS,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_AVCHD_SA,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_HEVC_150M,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_HEVC_200M,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_HD_50P,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_HD_59P,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_SD_50I,/* [THUMBNAIL FORMAT] */
+    IC_THUMBNAIL_FORMAT_SD_59I,/* [THUMBNAIL FORMAT] */
+    IC_WIFI_AP_SIG_LV0,        /* [WIFI AP SIG LV] */
+    IC_WIFI_AP_SIG_LV1,        /* [WIFI AP SIG LV] */
+    IC_WIFI_AP_SIG_LV2,        /* [WIFI AP SIG LV] */
+    IC_WIFI_AP_SIG_LV3,        /* [WIFI AP SIG LV] */
+    IC_WIFI_AP_SIG_LV4,        /* [WIFI AP SIG LV] */
+    IC_MENU_ARROW,             /* [Menu LOW LAYER誘導表示] */
+    IC_OSD_A_IRIS_BACK,        /* [OSD AUTO IRIS BACK] */
+    IC_OSD_A_IRIS_SPOT,        /* [OSD AUTO IRIS SPOT] */
+    IC_OSD_A_IRIS_STD,         /* [OSD AUTO IRIS STD] */
+    IC_OSD_AF_AREA,            /* [OSD AF AREA] */
+    IC_OSD_AREA,               /* [OSD AREA] */
+    IC_OSD_AUTO,               /* [OSD AUTO] */
+    IC_OSD_BONDING_ANTENNA_0,  /* [OSD BONDING ANTENNA 0] */
+    IC_OSD_BONDING_ANTENNA_1,  /* [OSD BONDING ANTENNA 1] */
+    IC_OSD_BONDING_ANTENNA_2,  /* [OSD BONDING ANTENNA 2] */
+    IC_OSD_BONDING_ANTENNA_3,  /* [OSD BONDING ANTENNA 3] */
+    IC_OSD_BONDING_ANTENNA_4,  /* [OSD BONDING ANTENNA 4] */
+    IC_OSD_BONDING_ANTENNA_5,  /* [OSD BONDING ANTENNA 5] */
+    IC_OSD_DIAL,               /* [OSD DIAL] */
+    IC_OSD_DRS,                /* [OSD DRS] */
+    IC_OSD_HDR,                /* [OSD HDR STD] */
+    IC_OSD_LAN_OFF,            /* [OSD LAN OFF] */
+    IC_OSD_LAN_ON,             /* [OSD LAN ON] */
+    IC_OSD_LAN_ON_ROP,         /* [OSD LAN ON ROP] */
+    IC_OSD_LEVEL_OFF,          /* [OSD ] */
+    IC_OSD_LEVEL_ON,           /*  */
+    IC_OSD_LEVEL_RED,          /*  */
+    IC_OSD_MACRO,              /*  */
+    IC_OSD_PREREC,             /*  */
+    IC_OSD_S_SLOW_100,         /*  */
+    IC_OSD_S_SLOW_120,         /*  */
+    IC_OSD_SLOT1_OFF,          /*  */
+    IC_OSD_SLOT1_ON,           /*  */
+    IC_OSD_SLOT2_OFF,          /*  */
+    IC_OSD_SLOT2_ON,           /*  */
+    IC_OSD_STREAM_OFF,         /*  */
+    IC_OSD_STREAM_STANDBY,     /*  */
+    IC_OSD_STREAMING,          /*  */
+    IC_OSD_VOL_OFF,            /*  */
+    IC_OSD_VOL_ON,             /*  */
+    IC_OSD_TARRY_G,            /*  */
+    IC_OSD_DIAL_SELECT,        /*  */
+    IC_OSD_TEBURE,             /*  */
+    IC_OSD_TEBURE_HYBRID,      /*  */
+    IC_OSD_FBC,                /*  */
+    IC_AUDIO_LEVEL_RED,        /*  */
+    IC_AUDIO_LEVEL_OFF,        /*  */
+    IC_AUDIO_LEVEL_ON,         /*  */
+    IC_AUDIO_CH1_CH2,          /*  */
+    IC_AUDIO_REC_OFF,          /*  */
+    IC_OSD_CAP,                /*  */
+    IC_THUMBNAIL_FORMAT_HEVC_100M,/*  */
+    IC_THUMBNAIL_FORMAT_ULTRA_422I,/*  */
+    IC_THUMBNAIL_FORMAT_ULTRA_50M,/*  */
+    IC_THUMBNAIL_FORMAT_ULTRA_25M,/*  */
+    IC_THUMBNAIL_FORMAT_ULTRA_12M,/*  */
+    IC_THUMBNAIL_MODE_P2_NORMAL,/*  */
+    IC_THUMBNAIL_MODE_P2_SELECTED,/*  */
+    IC_THUMBNAIL_P2_REPAIRABLE,/*  */
+    IC_THUMBNAIL_P2_UNREPAIRABLE,/*  */
+    IC_THUMBNAIL_P2_CLIP_REPAIRABLE,/*  */
+    IC_THUMBNAIL_P2_CLIP_UNREPAIRABLE,/*  */
+    IC_THUMBNAIL_P2_CLIP_UNKNOWN,/*  */
+    IC_THUMBNAIL_P2_CLIP_RE_CONNECT,/*  */

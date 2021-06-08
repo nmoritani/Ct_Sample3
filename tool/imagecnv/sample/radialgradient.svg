@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   width="128"
+   height="64"
+   id="svg2">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3807">
+      <stop
+         id="stop3809"
+         style="stop-color:#ff0000;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop3811"
+         style="stop-color:#ffffff;stop-opacity:0.5"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3765">
+      <stop
+         id="stop3767"
+         style="stop-color:#0000ff;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop3769"
+         style="stop-color:#ffff00;stop-opacity:1"
+         offset="1" />
+    </linearGradient>
+    <radialGradient
+       cx="34.440678"
+       cy="34.576271"
+       r="25.762712"
+       id="radialGradient3779"
+       xlink:href="#linearGradient3765"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,0.84736843,0,5.2774307)" />
+    <radialGradient
+       cx="94.372879"
+       cy="34.440678"
+       r="24.677965"
+       fx="76.203384"
+       fy="27.73802"
+       id="radialGradient3787"
+       xlink:href="#linearGradient3807"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,0.89010996,0,3.7846875)" />
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <rect
+     width="51.525425"
+     height="43.661018"
+     x="8.6779661"
+     y="12.745763"
+     id="rect3001"
+     style="fill:url(#radialGradient3779);fill-opacity:1;fill-rule:evenodd" />
+  <rect
+     width="49.35593"
+     height="43.932205"
+     x="69.694916"
+     y="12.474576"
+     id="rect3003"
+     style="fill:url(#radialGradient3787);fill-opacity:1;fill-rule:evenodd" />
+</svg>

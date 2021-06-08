@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Include\vg">
+      <UniqueIdentifier>{ff894da6-ccf4-4f23-b771-c55fcff854da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\amanithVG">
+      <UniqueIdentifier>{6acf5d94-0147-49f8-9a67-f31fb808773b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\EGL">
+      <UniqueIdentifier>{a285d41d-af3f-4220-84b5-12dda429d0a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\amanithVG.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Dll_loadLibrary.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\egl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\libOvgMng.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\amanithVG.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\libOvgMng.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\vg\openvg.h">
+      <Filter>Include\vg</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\amanithvg\openvg.h">
+      <Filter>Include\amanithVG</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\amanithvg\vgext.h">
+      <Filter>Include\amanithVG</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\amanithvg\vgplatform.h">
+      <Filter>Include\amanithVG</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\amanithvg\vgu.h">
+      <Filter>Include\amanithVG</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\EGL\egl.h">
+      <Filter>Include\EGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\EGL\egl_types.h">
+      <Filter>Include\EGL</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\amanithVG.def">
+      <Filter>res</Filter>
+    </None>
+  </ItemGroup>
+</Project>

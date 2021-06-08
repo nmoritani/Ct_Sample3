@@ -1,0 +1,7 @@
+{Window_Message_REC_WARNING_OVER_MAX_NUM_OF_CLIPS,NextUnder,STR_ID_NO_10884, "", AplParamIdMax ,"%d"},
+{Window_Message_REC_BACKGROUND_REC_WARNING_SLOT_1_NEXT,NextUnder,STR_ID_NO_10884, "", AplParamIdMax ,"%d"},
+{Window_Message_REC_BACKGROUND_REC_WARNING_SLOT_2_NEXT,NextUnder,STR_ID_NO_10884, "", AplParamIdMax ,"%d"},
+{Window_Message_REC_PROXY_REC_WARNING,NextUnder,STR_ID_NO_10884, "", AplParamIdMax ,"%d"},
+{Window_Message_AWB_A_OK,NextRight,STR_ID_MAX_SIZE, "", AplParamSceneAchColorTemp,"%dK"},
+{Window_Message_AWB_B_OK,NextRight,STR_ID_MAX_SIZE, "", AplParamSceneBchColorTemp,"%dK"},
+{Window_Message_REC_PROXY_REC_WARNING_SUB,NextUnder,STR_ID_NO_10884, "", AplParamIdMax ,"%d"},

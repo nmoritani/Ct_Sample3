@@ -1,0 +1,3 @@
+{ WindowID_Menu_UPDATE_CONFIRM, DialogDesignType_UpdateConfirm, DialogTitleType_Under, STR_ID_MAX_SIZE, DialogContentType_None, { true, FuncID_UPDATE_START, true }, { true, FuncID_UPDATE_CANCEL, true }},
+{ WindowID_Menu_VERSION, DialogDesignType_Version, DialogTitleType_Under, STR_ID_MAX_SIZE, DialogContentType_Version, { false, FuncID_MAX, true }, { true, FuncID_WINDOW_CLOSE, true }},
+{ WindowID_Menu_OPERATION_TIME, DialogDesignType_OperationTime, DialogTitleType_Under, STR_ID_MAX_SIZE, DialogContentType_None, { false, FuncID_MAX, true }, { true, FuncID_WINDOW_CLOSE, true }},

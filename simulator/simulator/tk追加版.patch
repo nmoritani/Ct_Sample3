@@ -1,0 +1,1280 @@
+Index: simulator.vcproj
+===================================================================
+--- simulator.vcproj	(リビジョン 97172)
++++ simulator.vcproj	(作業コピー)
+@@ -42,7 +42,7 @@
+ 			<Tool
+ 				Name="VCCLCompilerTool"
+ 				Optimization="0"
+-				AdditionalIncludeDirectories="&quot;$(ProjectDir)\src\wi&quot;;&quot;$(ProjectDir)\src\wi\comm&quot;;&quot;$(ProjectDir)\src\wi\ver3&quot;;&quot;$(ProjectDir)\src\wi\ver4&quot;;&quot;$(ProjectDir)\src\include&quot;;&quot;$(ProjectDir)\src\include\EGL&quot;;&quot;$(ProjectDir)\src\include\VG&quot;;&quot;$(ProjectDir)\src\simulator\simulator\src\include&quot;;&quot;$(ProjectDir)\src\Ct\gdi\DigiType\includes&quot;;&quot;$(ProjectDir)\src\Ct\Include&quot;;&quot;$(ProjectDir)\src\Ct\gdi&quot;;&quot;$(ProjectDir)\src\Ct\ws&quot;;&quot;$(ProjectDir)\src\simulator&quot;"
++				AdditionalIncludeDirectories="&quot;$(ProjectDir)src\wi&quot;;&quot;$(ProjectDir)src\wi\comm&quot;;&quot;$(ProjectDir)src\wi\ver3&quot;;&quot;$(ProjectDir)src\wi\ver4&quot;;&quot;$(ProjectDir)src\include&quot;;&quot;$(ProjectDir)src\include\EGL&quot;;&quot;$(ProjectDir)src\include\VG&quot;;&quot;$(ProjectDir)src\simulator\simulator\src\include&quot;;&quot;$(ProjectDir)src\Ct\gdi\DigiType\includes&quot;;&quot;$(ProjectDir)src\Ct\Include&quot;;&quot;$(ProjectDir)src\Ct\gdi&quot;;&quot;$(ProjectDir)src\Ct\ws&quot;;&quot;$(ProjectDir)src\simulator&quot;;&quot;$(ProjectDir)src\Ct\tk&quot;"
+ 				PreprocessorDefinitions="WIN32_GUI_SIM;WIN32;_DEBUG;CT_DEBUG_ENABLE"
+ 				RuntimeLibrary="3"
+ 				UsePrecompiledHeader="0"
+@@ -61,13 +61,13 @@
+ 			/>
+ 			<Tool
+ 				Name="VCLinkerTool"
+-				AdditionalDependencies="user32.lib Gdi32.lib &quot;$(ProjectDir)\lib\libOpenVG.lib&quot; $(NOINHERIT)"
+-				OutputFile="&quot;$(OutDir)\$(ProjectName).exe&quot;"
++				AdditionalDependencies="user32.lib Gdi32.lib $(ProjectDir)\lib\libOpenVG.lib $(NOINHERIT)"
++				OutputFile="$(OutDir)\$(ProjectName).exe"
+ 				LinkIncremental="1"
+-				ManifestFile="&quot;$(IntDir)\$(TargetFileName).intermediate.manifest&quot;"
++				ManifestFile="$(IntDir)\$(TargetFileName).intermediate.manifest"
+ 				GenerateDebugInformation="true"
+ 				AssemblyDebug="1"
+-				ProgramDatabaseFile="&quot;$(TargetDir)$(TargetName).pdb&quot;"
++				ProgramDatabaseFile="$(TargetDir)$(TargetName).pdb"
+ 				SubSystem="2"
+ 				EntryPointSymbol="main"
+ 				TargetMachine="1"
+@@ -1088,6 +1088,14 @@
+ 					>
+ 				</File>
+ 				<File
++					RelativePath=".\src\Ct\ws\CtDraw.cpp"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\ws\CtDraw.h"
++					>
++				</File>
++				<File
+ 					RelativePath=".\src\Ct\ws\CtDrawTask.cpp"
+ 					>
+ 				</File>
+@@ -1275,6 +1283,30 @@
+ 					RelativePath=".\src\Ct\ws\CtTimer.h"
+ 					>
+ 				</File>
++				<File
++					RelativePath=".\src\Ct\ws\CtWindowController.cpp"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\ws\CtWindowController.h"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\ws\CtWindowFactory.cpp"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\ws\CtWindowFactory.h"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\ws\CtWindowList.cpp"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\ws\CtWindowList.h"
++					>
++				</File>
+ 			</Filter>
+ 			<Filter
+ 				Name="gdi"
+@@ -1398,34 +1430,28 @@
+ 					</FileConfiguration>
+ 				</File>
+ 				<File
+-					RelativePath=".\src\Ct\gdi\gdi_local.h"
++					RelativePath=".\src\Ct\gdi\gdi_image.c"
+ 					>
+-				</File>
+-				<File
+-					RelativePath=".\src\Ct\gdi\gdi_path.c"
+-					>
+ 					<FileConfiguration
+ 						Name="Debug|Win32"
+ 						>
+ 						<Tool
+ 							Name="VCCLCompilerTool"
+-							UsePrecompiledHeader="0"
+-							CompileAsManaged="0"
++							CompileAs="2"
+ 						/>
+ 					</FileConfiguration>
+-					<FileConfiguration
+-						Name="Release|Win32"
+-						>
+-						<Tool
+-							Name="VCCLCompilerTool"
+-							UsePrecompiledHeader="0"
+-							CompileAsManaged="0"
+-						/>
+-					</FileConfiguration>
+ 				</File>
+ 				<File
+-					RelativePath=".\src\Ct\gdi\geman_gui_sim.c"
++					RelativePath=".\src\Ct\gdi\gdi_image.h"
+ 					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\gdi\gdi_local.h"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\gdi\gdi_path.c"
++					>
+ 					<FileConfiguration
+ 						Name="Debug|Win32"
+ 						>
+@@ -1446,13 +1472,18 @@
+ 					</FileConfiguration>
+ 				</File>
+ 				<File
+-					RelativePath=".\src\Ct\gdi\mem_mng_sim.c"
++					RelativePath=".\src\Ct\gdi\gdi_string.h"
+ 					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\gdi\geman_gui_sim.c"
++					>
+ 					<FileConfiguration
+ 						Name="Debug|Win32"
+ 						>
+ 						<Tool
+ 							Name="VCCLCompilerTool"
++							UsePrecompiledHeader="0"
+ 							CompileAsManaged="0"
+ 						/>
+ 					</FileConfiguration>
+@@ -1461,12 +1492,13 @@
+ 						>
+ 						<Tool
+ 							Name="VCCLCompilerTool"
++							UsePrecompiledHeader="0"
+ 							CompileAsManaged="0"
+ 						/>
+ 					</FileConfiguration>
+ 				</File>
+ 				<File
+-					RelativePath=".\src\Ct\gdi\test_image.c"
++					RelativePath=".\src\Ct\gdi\mem_mng_sim.c"
+ 					>
+ 					<FileConfiguration
+ 						Name="Debug|Win32"
+@@ -1485,10 +1517,6 @@
+ 						/>
+ 					</FileConfiguration>
+ 				</File>
+-				<File
+-					RelativePath=".\src\Ct\gdi\test_image.h"
+-					>
+-				</File>
+ 				<Filter
+ 					Name="DigiType"
+ 					>
+@@ -2531,6 +2559,114 @@
+ 					</Filter>
+ 				</Filter>
+ 			</Filter>
++			<Filter
++				Name="tk"
++				>
++				<File
++					RelativePath=".\src\Ct\tk\CtButton.cpp"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtButton.h"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtColor.cpp"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtColor.h"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtDrawInfo.h"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtFuncButton.cpp"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtFuncButton.h"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtGridLayout.cpp"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtGridLayout.h"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtHLayout.cpp"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtHLayout.h"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtLabel.cpp"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtLabel.h"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtLayout.cpp"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtLayout.h"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtLinkButton.cpp"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtLinkButton.h"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtVLayout.cpp"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtVLayout.h"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtWidget.cpp"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtWidget.h"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtWindow.cpp"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtWindow.h"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtWindowContents.cpp"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\CtWindowContents.h"
++					>
++				</File>
++				<File
++					RelativePath=".\src\Ct\tk\Factory_Window.cpp"
++					>
++				</File>
++			</Filter>
+ 		</Filter>
+ 		<File
+ 			RelativePath=".\ReadMe.txt"
+Index: src/Ct/gdi/gdi_image.c
+===================================================================
+--- src/Ct/gdi/gdi_image.c	(リビジョン 97194)
++++ src/Ct/gdi/gdi_image.c	(作業コピー)
+@@ -966,12 +966,13 @@
+ 	(GDI_PARTS*)&partsSVG_00012_1
+ };
+ 
+-/* Data extern */
+-extern const GDI_IMAGE_VECTOR GDI_IMAGE_SVG_00012;
+-/* Header */
+-const GDI_IMAGE_VECTOR GDI_IMAGE_SVG_00012={GDI_IMAGE_TYPE_VECTOR,48,30,0,1,partslistSVG_00012};
++extern "C" {
++	/* Data extern */
++	extern const GDI_IMAGE_VECTOR GDI_IMAGE_SVG_00012;
++	/* Header */
++	const GDI_IMAGE_VECTOR GDI_IMAGE_SVG_00012 = { GDI_IMAGE_TYPE_VECTOR,48,30,0,1,partslistSVG_00012 };
++}
+ 
+-
+ /* Gradient */
+ static VGfloat gradcolorSVG_00016_1[]={
+ 	0.0000f, 0.0000f, 0.3922f, 0.8431f, 1.0000f,
+@@ -1218,24 +1219,24 @@
+ static const GDI_COLOR fillcolorSVG_00129_18={VG_PAINT_TYPE_COLOR, GDI_RGB_A(255,255,255,100), NULL};
+ 
+ /* Parts */
+-static const GDI_PARTS partsSVG_00129_1={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_1,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_1, &fillcolorSVG_00129_1,};
+-static const GDI_PARTS partsSVG_00129_2={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_2,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_2, &fillcolorSVG_00129_2,};
+-static const GDI_PARTS partsSVG_00129_3={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_3,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_3, &fillcolorSVG_00129_3,};
+-static const GDI_PARTS partsSVG_00129_4={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_4,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_4, &fillcolorSVG_00129_4,};
+-static const GDI_PARTS partsSVG_00129_5={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_5,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_5, &fillcolorSVG_00129_5,};
+-static const GDI_PARTS partsSVG_00129_6={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_6,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_6, &fillcolorSVG_00129_6,};
+-static const GDI_PARTS partsSVG_00129_7={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_7,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_7, &fillcolorSVG_00129_7,};
+-static const GDI_PARTS partsSVG_00129_8={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_8,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_8, &fillcolorSVG_00129_8,};
+-static const GDI_PARTS partsSVG_00129_9={GDI_SHAPE_TYPE_ELLIPSE,	&ellipseSVG_00129_1,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_9, &fillcolorSVG_00129_9,};
+-static const GDI_PARTS partsSVG_00129_10={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_9,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_10, &fillcolorSVG_00129_10,};
+-static const GDI_PARTS partsSVG_00129_11={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_10,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_11, &fillcolorSVG_00129_11,};
+-static const GDI_PARTS partsSVG_00129_12={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_11,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_12, &fillcolorSVG_00129_12,};
+-static const GDI_PARTS partsSVG_00129_13={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_12,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_13, &fillcolorSVG_00129_13,};
+-static const GDI_PARTS partsSVG_00129_14={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_13,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_14, &fillcolorSVG_00129_14,};
+-static const GDI_PARTS partsSVG_00129_15={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_14,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_15, &fillcolorSVG_00129_15,};
+-static const GDI_PARTS partsSVG_00129_16={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_15,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_16, &fillcolorSVG_00129_16,};
+-static const GDI_PARTS partsSVG_00129_17={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_16,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_17, &fillcolorSVG_00129_17,};
+-static const GDI_PARTS partsSVG_00129_18={GDI_SHAPE_TYPE_ELLIPSE,	&ellipseSVG_00129_2,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_18, &fillcolorSVG_00129_18,};
++static const GDI_PARTS partsSVG_00129_1={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_1,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_1, &fillcolorSVG_00129_1,};
++static const GDI_PARTS partsSVG_00129_2={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_2,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_2, &fillcolorSVG_00129_2,};
++static const GDI_PARTS partsSVG_00129_3={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_3,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_3, &fillcolorSVG_00129_3,};
++static const GDI_PARTS partsSVG_00129_4={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_4,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_4, &fillcolorSVG_00129_4,};
++static const GDI_PARTS partsSVG_00129_5={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_5,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_5, &fillcolorSVG_00129_5,};
++static const GDI_PARTS partsSVG_00129_6={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_6,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_6, &fillcolorSVG_00129_6,};
++static const GDI_PARTS partsSVG_00129_7={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_7,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_7, &fillcolorSVG_00129_7,};
++static const GDI_PARTS partsSVG_00129_8={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_8,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_8, &fillcolorSVG_00129_8,};
++static const GDI_PARTS partsSVG_00129_9={GDI_SHAPE_TYPE_ELLIPSE,	&ellipseSVG_00129_1,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 10.0000f, 1.0000f, 0, &strokecolorSVG_00129_9, &fillcolorSVG_00129_9,};
++static const GDI_PARTS partsSVG_00129_10={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_9,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_10, &fillcolorSVG_00129_10,};
++static const GDI_PARTS partsSVG_00129_11={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_10,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_11, &fillcolorSVG_00129_11,};
++static const GDI_PARTS partsSVG_00129_12={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_11,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_12, &fillcolorSVG_00129_12,};
++static const GDI_PARTS partsSVG_00129_13={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_12,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_13, &fillcolorSVG_00129_13,};
++static const GDI_PARTS partsSVG_00129_14={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_13,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_14, &fillcolorSVG_00129_14,};
++static const GDI_PARTS partsSVG_00129_15={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_14,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_15, &fillcolorSVG_00129_15,};
++static const GDI_PARTS partsSVG_00129_16={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_15,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_16, &fillcolorSVG_00129_16,};
++static const GDI_PARTS partsSVG_00129_17={GDI_SHAPE_TYPE_PATH,	&pathSVG_00129_16,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_17, &fillcolorSVG_00129_17,};
++static const GDI_PARTS partsSVG_00129_18={GDI_SHAPE_TYPE_ELLIPSE,	&ellipseSVG_00129_2,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00129_18, &fillcolorSVG_00129_18,};
+ 
+ static const GDI_PARTS * const partslistSVG_00129[]=
+ {
+@@ -1707,16 +1708,16 @@
+ static const GDI_COLOR fillcolorSVG_00219_10={VG_PAINT_TYPE_LINEAR_GRADIENT, GDI_RGB_A(0,0,0,100), &gradientSVG_00219_5};
+ 
+ /* Parts */
+-static const GDI_PARTS partsSVG_00219_1={GDI_SHAPE_TYPE_PATH,	&pathSVG_00219_1,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 0.0000f, 0, &strokecolorSVG_00219_1, &fillcolorSVG_00219_1,};
+-static const GDI_PARTS partsSVG_00219_2={GDI_SHAPE_TYPE_PATH,	&pathSVG_00219_2,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00219_2, &fillcolorSVG_00219_2,};
+-static const GDI_PARTS partsSVG_00219_3={GDI_SHAPE_TYPE_RECT,	&rectSVG_00219_1,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 0.0000f, 0, &strokecolorSVG_00219_3, &fillcolorSVG_00219_3,};
+-static const GDI_PARTS partsSVG_00219_4={GDI_SHAPE_TYPE_RECT,	&rectSVG_00219_2,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00219_4, &fillcolorSVG_00219_4,};
+-static const GDI_PARTS partsSVG_00219_5={GDI_SHAPE_TYPE_RECT,	&rectSVG_00219_3,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 0.0000f, 0, &strokecolorSVG_00219_5, &fillcolorSVG_00219_5,};
+-static const GDI_PARTS partsSVG_00219_6={GDI_SHAPE_TYPE_RECT,	&rectSVG_00219_4,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00219_6, &fillcolorSVG_00219_6,};
+-static const GDI_PARTS partsSVG_00219_7={GDI_SHAPE_TYPE_RECT,	&rectSVG_00219_5,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 0.0000f, 0, &strokecolorSVG_00219_7, &fillcolorSVG_00219_7,};
+-static const GDI_PARTS partsSVG_00219_8={GDI_SHAPE_TYPE_RECT,	&rectSVG_00219_6,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00219_8, &fillcolorSVG_00219_8,};
+-static const GDI_PARTS partsSVG_00219_9={GDI_SHAPE_TYPE_RECT,	&rectSVG_00219_7,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 0.0000f, 0, &strokecolorSVG_00219_9, &fillcolorSVG_00219_9,};
+-static const GDI_PARTS partsSVG_00219_10={GDI_SHAPE_TYPE_RECT,	&rectSVG_00219_8,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00219_10, &fillcolorSVG_00219_10,};
++static const GDI_PARTS partsSVG_00219_1={GDI_SHAPE_TYPE_PATH,	&pathSVG_00219_1,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 0.0000f, 0, &strokecolorSVG_00219_1, &fillcolorSVG_00219_1,};
++static const GDI_PARTS partsSVG_00219_2={GDI_SHAPE_TYPE_PATH,	&pathSVG_00219_2,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00219_2, &fillcolorSVG_00219_2,};
++static const GDI_PARTS partsSVG_00219_3={GDI_SHAPE_TYPE_RECT,	&rectSVG_00219_1,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 0.0000f, 0, &strokecolorSVG_00219_3, &fillcolorSVG_00219_3,};
++static const GDI_PARTS partsSVG_00219_4={GDI_SHAPE_TYPE_RECT,	&rectSVG_00219_2,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00219_4, &fillcolorSVG_00219_4,};
++static const GDI_PARTS partsSVG_00219_5={GDI_SHAPE_TYPE_RECT,	&rectSVG_00219_3,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 0.0000f, 0, &strokecolorSVG_00219_5, &fillcolorSVG_00219_5,};
++static const GDI_PARTS partsSVG_00219_6={GDI_SHAPE_TYPE_RECT,	&rectSVG_00219_4,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00219_6, &fillcolorSVG_00219_6,};
++static const GDI_PARTS partsSVG_00219_7={GDI_SHAPE_TYPE_RECT,	&rectSVG_00219_5,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 0.0000f, 0, &strokecolorSVG_00219_7, &fillcolorSVG_00219_7,};
++static const GDI_PARTS partsSVG_00219_8={GDI_SHAPE_TYPE_RECT,	&rectSVG_00219_6,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00219_8, &fillcolorSVG_00219_8,};
++static const GDI_PARTS partsSVG_00219_9={GDI_SHAPE_TYPE_RECT,	&rectSVG_00219_7,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 0.0000f, 0, &strokecolorSVG_00219_9, &fillcolorSVG_00219_9,};
++static const GDI_PARTS partsSVG_00219_10={GDI_SHAPE_TYPE_RECT,	&rectSVG_00219_8,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00219_10, &fillcolorSVG_00219_10,};
+ 
+ static const GDI_PARTS * const partslistSVG_00219[]=
+ {
+@@ -1798,15 +1799,15 @@
+ static const GDI_COLOR fillcolorSVG_00248_9={VG_PAINT_TYPE_COLOR, GDI_RGB_A(255,255,255,100), NULL};
+ 
+ /* Parts */
+-static const GDI_PARTS partsSVG_00248_1={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_1,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_1, &fillcolorSVG_00248_1,};
+-static const GDI_PARTS partsSVG_00248_2={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_2,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_2, &fillcolorSVG_00248_2,};
+-static const GDI_PARTS partsSVG_00248_3={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_3,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_3, &fillcolorSVG_00248_3,};
+-static const GDI_PARTS partsSVG_00248_4={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_4,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_4, &fillcolorSVG_00248_4,};
+-static const GDI_PARTS partsSVG_00248_5={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_5,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_5, &fillcolorSVG_00248_5,};
+-static const GDI_PARTS partsSVG_00248_6={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_6,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_6, &fillcolorSVG_00248_6,};
+-static const GDI_PARTS partsSVG_00248_7={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_7,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_7, &fillcolorSVG_00248_7,};
+-static const GDI_PARTS partsSVG_00248_8={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_8,	(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_8, &fillcolorSVG_00248_8,};
+-static const GDI_PARTS partsSVG_00248_9={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_9,	(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_9, &fillcolorSVG_00248_9,};
++static const GDI_PARTS partsSVG_00248_1={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_1,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_1, &fillcolorSVG_00248_1,};
++static const GDI_PARTS partsSVG_00248_2={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_2,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_2, &fillcolorSVG_00248_2,};
++static const GDI_PARTS partsSVG_00248_3={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_3,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_3, &fillcolorSVG_00248_3,};
++static const GDI_PARTS partsSVG_00248_4={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_4,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_4, &fillcolorSVG_00248_4,};
++static const GDI_PARTS partsSVG_00248_5={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_5,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_5, &fillcolorSVG_00248_5,};
++static const GDI_PARTS partsSVG_00248_6={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_6,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_6, &fillcolorSVG_00248_6,};
++static const GDI_PARTS partsSVG_00248_7={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_7,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_7, &fillcolorSVG_00248_7,};
++static const GDI_PARTS partsSVG_00248_8={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_8,	VGPaintMode(VG_FILL_PATH|VG_STROKE_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_8, &fillcolorSVG_00248_8,};
++static const GDI_PARTS partsSVG_00248_9={GDI_SHAPE_TYPE_PATH,	&pathSVG_00248_9,	VGPaintMode(VG_FILL_PATH), VG_NON_ZERO, VG_CAP_BUTT, VG_JOIN_MITER, 4.0000f, 1.0000f, 0, &strokecolorSVG_00248_9, &fillcolorSVG_00248_9,};
+ 
+ static const GDI_PARTS * const partslistSVG_00248[]=
+ {
+@@ -1844,3 +1845,17 @@
+ 	(GDI_IMAGE_BASE*)&GDI_IMAGE_SVG_00248
+ };
+ 	
++GDI_IMAGE_BASE* GDI_GetImage(GDI_IMAGE_ID id)
++{
++	return NULL;
++}
++
++GDI_IMAGE_VECTOR* GDI_GetImageVector(GDI_IMAGE_ID id)
++{
++	return NULL;
++}
++
++GDI_IMAGE_BITMAP* GDI_GetImageBitmap(GDI_IMAGE_ID id)
++{
++	return NULL;
++}
+\ No newline at end of file
+Index: src/Ct/gdi/gdi_image.h
+===================================================================
+--- src/Ct/gdi/gdi_image.h	(リビジョン 97194)
++++ src/Ct/gdi/gdi_image.h	(作業コピー)
+@@ -19,8 +19,8 @@
+ 	IMAGE_ID_0015,
+ 
+ 	IMAGE_ID_MAX,
+-	GDI_IMAGE_ID_MAX
+-		
++	GDI_IMAGE_ID_MAX,
++	IMAGE_ID_INVALID,
+ } GDI_IMAGE_ID;
+ 
+ #if 0
+Index: src/Ct/gdi/gdi_string.h
+===================================================================
+--- src/Ct/gdi/gdi_string.h	(リビジョン 97194)
++++ src/Ct/gdi/gdi_string.h	(作業コピー)
+@@ -8,8 +8,8 @@
+ 	STRING_ID_0004,
+ 
+ 	STRING_ID_MAX,
+-	GDI_STRING_ID_MAX
+-		
++	GDI_STRING_ID_MAX,
++	STRING_ID_INVALID,
+ } GDI_STRING_ID;
+ 
+ #endif
+Index: src/Ct/Include/Ct.h
+===================================================================
+--- src/Ct/Include/Ct.h	(リビジョン 97194)
++++ src/Ct/Include/Ct.h	(作業コピー)
+@@ -7,8 +7,30 @@
+ #define __Ct_H__
+ 
+ #include <stdio.h>
++#include <string.h>
+ 
+ 
++/*********************************/
++/* コンパイルエラー対策 ここから */
++/*********************************/
++#if 1
++#include "gdi.h"
++
++#define GDI_IMAGE_ID_MAX 10
++
++inline int GDI_GetStringLen(const unsigned short *pstr) {
++	return 1;
++}
++inline unsigned short* GDI_GetString(const GDI_STRING_ID id) {
++	return NULL;
++}
++
++
++#endif
++/*********************************/
++/* コンパイルエラー対策 ここまで */
++/*********************************/
++
+ struct CtPosition {
+ 	int x;
+ 	int y;
+@@ -182,6 +204,7 @@
+ };
+ 
+ enum CtWindowID {
++	WindowNone,
+ 	Window_001,
+ 	Window_002,
+ 	Window_003,
+Index: src/Ct/tk/CtButton.cpp
+===================================================================
+--- src/Ct/tk/CtButton.cpp	(リビジョン 97194)
++++ src/Ct/tk/CtButton.cpp	(作業コピー)
+@@ -283,4 +283,16 @@
+ }
+ 
+ 
++bool CtButton::onPress(const CtButtonPressType Type)
++{
++	m_bPressing = true;
+ 
++	return m_bPressing;
++}
++
++bool CtButton::onRelease()
++{
++	m_bPressing = false;
++
++	return m_bPressing;
++}
+Index: src/Ct/tk/CtButton.h
+===================================================================
+--- src/Ct/tk/CtButton.h	(リビジョン 97194)
++++ src/Ct/tk/CtButton.h	(作業コピー)
+@@ -43,8 +43,8 @@
+     virtual void setFocus(const bool silent);
+     virtual void cancelFocus();
+ 
+-	virtual void seFgtLabel(const CtLabel& Label, const CtSize Size, const CtAlign Align);
+-	virtual void seBgtLabel(const CtLabel& Label, const CtSize Size, const CtAlign Align);
++	//virtual void seFgtLabel(const CtLabel& Label, const CtSize Size, const CtAlign Align);
++	//virtual void seBgtLabel(const CtLabel& Label, const CtSize Size, const CtAlign Align);
+ 
+ 	void setFocusHold();
+ 	void cancelFocusHold();
+@@ -53,12 +53,12 @@
+ 	void cancelTouchHold();
+ 	
+     bool isFocused() const;
+-	bool isFocusHold() const;
+-	bool isTouchHold() const;
++	//bool isFocusHold() const;
++	//bool isTouchHold() const;
+ 
+-	void setRepeatTime(const unsigned long Time);
+-	void setLongPressTime(const unsigned long Time);
+-	void setTouchTime(const unsigned long Time);
++	//void setRepeatTime(const unsigned long Time);
++	//void setLongPressTime(const unsigned long Time);
++	//void setTouchTime(const unsigned long Time);
+ 
+ 	void setFgLabel(CtLabel* pLabel, const CtAlign Align);
+ 	void setBgLabel(CtLabel* pLabel, const CtAlign Align);
+@@ -70,8 +70,8 @@
+ 	virtual bool onRelease();
+ 	
+ 	//private:
+-	void timeoutFocusHold();
+-	void timeoutTouchHold();
++	//void timeoutFocusHold();
++	//void timeoutTouchHold();
+ 
+     bool m_bFocus;
+ 	bool m_bTouchHold;
+Index: src/Ct/tk/CtDrawInfo.h
+===================================================================
+--- src/Ct/tk/CtDrawInfo.h	(リビジョン 97194)
++++ src/Ct/tk/CtDrawInfo.h	(作業コピー)
+@@ -23,7 +23,7 @@
+ 	DrawRect,
+ 	DrawRoundRect,
+ 	DrawEllipse,
+-
++	DrawFont,
+ 	DrawTypeMAX
+ };
+ 
+@@ -33,7 +33,7 @@
+ 	CtColor			stroke_color;
+ 
+ 	CtVector() {
+-		id = IMAGE_ID_INVALID;
++		id = static_cast<GDI_IMAGE_ID>(IMAGE_ID_INVALID);
+ 		fill_color = ColorNone;
+ 		stroke_color = ColorNone;
+ 	}
+Index: src/Ct/tk/CtGridLayout.cpp
+===================================================================
+--- src/Ct/tk/CtGridLayout.cpp	(リビジョン 97194)
++++ src/Ct/tk/CtGridLayout.cpp	(作業コピー)
+@@ -6,7 +6,7 @@
+ 
+ #include "CtGridLayout.h"
+ 
+-CtGridLayout::CtGridLayout() :
++CtGridLayout::CtGridLayout() :CtLayout(),
+ 	m_RowCount(0),
+ 	m_ColumnCount(0)
+ {
+Index: src/Ct/tk/CtLabel.h
+===================================================================
+--- src/Ct/tk/CtLabel.h	(リビジョン 97194)
++++ src/Ct/tk/CtLabel.h	(作業コピー)
+@@ -27,7 +27,7 @@
+ 	CtLabel(const CtRoundRect& RoundRect);
+ 	CtLabel(const CtEllipse& Ellipse);
+ 
+-    CtLabel(const CtSize& Size);
++    //CtLabel(const CtSize& Size);
+     CtLabel(const CtSize& Size, const GDI_IMAGE_ID ImageID, const CtColor& fillColor);
+     CtLabel(const CtSize& Size, const GDI_STRING_ID StringID, const CtColor& fontColor, const int edgeWidth, const CtColor& edgeColor);
+ 	CtLabel(const CtSize& Size, const unsigned short* usStr, const CtColor& fontColor, const int edgeWidth, const CtColor& edgeColor);
+@@ -40,14 +40,14 @@
+ 	bool setRoundRect(const CtRoundRect& RoundRect);
+ 	bool setEllipse(const CtEllipse& Ellipse);
+ 
+-	bool setColor(const CtColor& Color);
+-	bool setColor(const CtColor& fillColor, const CtColor& strokeColor);
++	//bool setColor(const CtColor& Color);
++	//bool setColor(const CtColor& fillColor, const CtColor& strokeColor);
+ 
+-	inline unsigned long getCacheID() const;
+-	inline void setAlign(CtAlign);
++	//inline unsigned long getCacheID() const;
++	//inline void setAlign(CtAlign);
+ 	
+ 	void setRegion(const CtRegion& Region);
+-	void setSize(const CtSize& Size);
++	//void setSize(const CtSize& Size);
+ 
+ 	void updateDrawInfo();
+ 
+Index: src/Ct/tk/CtLayout.cpp
+===================================================================
+--- src/Ct/tk/CtLayout.cpp	(リビジョン 97194)
++++ src/Ct/tk/CtLayout.cpp	(作業コピー)
+@@ -23,7 +23,7 @@
+ 	setWidgetType(WidgetLayout);
+ }
+ 
+-CtLayout::CtLayout(const CtSize& Size = DefaultSize, const CtColor& Color = Trans) :
++CtLayout::CtLayout(const CtSize& Size, const CtColor& Color = Trans) :
+ 	m_pCurrentFocus(NULL),
+ 	m_pBeforeFocus(NULL),
+ 	m_pDefaultFocus(NULL),
+@@ -32,7 +32,7 @@
+ 	setWidgetType(WidgetLayout);
+ }
+ 
+-CtLayout::CtLayout(const CtRegion& Region = DefaultRegion, const CtColor& Color = Trans) :
++CtLayout::CtLayout(const CtRegion& Region, const CtColor& Color = Trans) :
+ 	m_pCurrentFocus(NULL),
+ 	m_pBeforeFocus(NULL),
+ 	m_pDefaultFocus(NULL),
+@@ -107,9 +107,22 @@
+     m_ColChild.erase(Itr);
+ }
+ 
+-bool CtLayout::addLayout(CtLayout* pLayout, int Stretch = 0, CtAlign Align = AlignCenter)
++bool CtLayout::addLayout(CtLayout* pLayout)
+ {
+ 	CtRegion Region = getRegion();
++
++	if (pLayout->getWidgetType() != WidgetLayout)
++		return false;
++
++	pLayout->setParent(this);
++	m_ColChild.push_back(pLayout);
++
++	return true;
++}
++
++bool CtLayout::addLayout(CtLayout* pLayout, CtAlign Align, int Stretch = 0)
++{
++	CtRegion Region = getRegion();
+ 	
+ 	if (pLayout->getWidgetType() != WidgetLayout)
+ 		return false;
+@@ -122,7 +135,7 @@
+ 	return true;
+ }
+ 
+-bool CtLayout::addLayout(CtLayout* pLayout, int Stretch = 0, CtMargin Margin = DefaultMargin)
++bool CtLayout::addLayout(CtLayout* pLayout, CtMargin Margin, int Stretch = 0 )
+ {
+ 	CtRegion Region = getRegion();
+ 	
+Index: src/Ct/tk/CtLayout.h
+===================================================================
+--- src/Ct/tk/CtLayout.h	(リビジョン 97194)
++++ src/Ct/tk/CtLayout.h	(作業コピー)
+@@ -8,7 +8,6 @@
+ #ifndef __CtLayout_H__
+ #define __CtLayout_H__
+ 
+-#include "CtLayout.h"
+ #include "CtLabel.h"
+ #include "CtButton.h"
+ 
+@@ -17,7 +16,6 @@
+     typedef CtList::list<CtWidget*> WidgetList;
+     typedef CtList::list<CtWidget*>::iterator Iterator;
+ 
+-protected :
+     CtLayout();
+     CtLayout(const CtColor& Color);
+     CtLayout(const CtSize& Size, const CtColor& Color);
+@@ -32,8 +30,11 @@
+ 	bool insertWidget(int Index, CtWidget& Widget, int Stretch, CtMargin Margin);
+     void removeWidget(CtWidget* pWidget);
+ 
+-	bool addLayout(CtLayout* pLayout, int Stretch, CtAlign Align);
+-	bool addLayout(CtLayout* pLayout, int Stretch, CtMargin Margin);
++	bool addLayout(CtLayout* pLayout);
++	bool addLayout(CtLayout* pLayout, CtAlign Align, int Stretch);
++	bool addLayout(CtLayout* pLayout, CtMargin Margin, int Stretch);
++	//bool addLayout(CtLayout* pLayout, int Stretch, CtAlign Align);
++	//bool addLayout(CtLayout* pLayout, int Stretch, CtMargin Margin);
+ 	bool insertLayout(int Index, CtLayout* pLayout, int Stretch, CtAlign Align);
+ 	bool insertLayout(int Index, CtLayout* pLayout, int Stretch, CtMargin Margin);
+ 	
+Index: src/Ct/tk/CtWidget.cpp
+===================================================================
+--- src/Ct/tk/CtWidget.cpp	(リビジョン 97194)
++++ src/Ct/tk/CtWidget.cpp	(作業コピー)
+@@ -4,12 +4,13 @@
+  */
+ 
+ #include "CtWidget.h"
++#include "CtColor.h"
++const CtSize   CtWidget::DefaultSize   = CtSize(0,0);
++const CtRegion CtWidget::DefaultRegion = CtRegion(0,0,0,0);
++const CtMargin CtWidget::DefaultMargin = CtMargin(0,0,0,0);
++const CtColor  CtWidget::Trans = Trans;
+ 
+-static const CtSize	  DefaultSize   = CtSize(0,0);
+-static const CtRegion DefaultRegion = CtRegion(0,0,0,0);
+-static const CtMargin DefaultMargin = CtMargin(0,0,0,0);
+ 
+-
+ CtWidget::CtWidget(const CtSize& Size,
+ 				   const CtColor& Color = NoColor) :
+ 	m_WidgetType(WidgetNone),
+@@ -138,6 +139,12 @@
+     return;
+ }
+ 
++void CtWidget::setStretch(const int Stretch)
++{
++	m_Stretch = Stretch;
++	return;
++}
++
+ void CtWidget::setBgColor(const CtColor& Color)
+ {
+     m_BgColor = Color;
+Index: src/Ct/tk/CtWindow.cpp
+===================================================================
+--- src/Ct/tk/CtWindow.cpp	(リビジョン 97194)
++++ src/Ct/tk/CtWindow.cpp	(作業コピー)
+@@ -28,7 +28,7 @@
+ 	m_WindowInfo.TransEvent = false;
+ }
+ 
+-CtWindow::CtWindow(const CtSize& Size = DefaultSize, const CtColor& Color = Trans) :
++CtWindow::CtWindow(const CtSize& Size, const CtColor& Color = Trans) :
+ 	m_pFocusWidget(NULL),
+ 	m_pDefaultFocusWidget(NULL),
+ 	CtLayout(Size, Color)
+@@ -39,7 +39,7 @@
+ 	m_WindowInfo.TransEvent = false;
+ }
+ 
+-CtWindow::CtWindow(const CtRegion& Region = DefaultRegion, const CtColor& Color = Trans) :
++CtWindow::CtWindow(const CtRegion& Region, const CtColor& Color = Trans) :
+ 	m_pFocusWidget(NULL),
+ 	m_pDefaultFocusWidget(NULL),
+ 	CtLayout(Region, Color)
+@@ -125,6 +125,16 @@
+ 	return true;
+ }
+ 
++bool CtWindow::functionHandler(const CtFunctionID FuncID, const void* Param)
++{
++	return true;
++}
++
++bool CtWindow::requestWindow(const CtWindowID WindowID, const CtOpenType OpenType)
++{
++	return true;
++}
++
+ bool CtWindow::putEvent(CtEvent& Event)
+ {
+ 	switch(Event.getType()) {
+Index: src/Ct/tk/CtWindow.h
+===================================================================
+--- src/Ct/tk/CtWindow.h	(リビジョン 97194)
++++ src/Ct/tk/CtWindow.h	(作業コピー)
+@@ -18,8 +18,6 @@
+ public :
+     typedef CtList::list<CtWidget*> WidgetList;
+     typedef CtList::list<CtWidget*>::iterator Iterator;
+-
+-protected :
+     CtWindow();
+     CtWindow(const CtColor& Color);
+     CtWindow(const CtSize& Size, const CtColor& Color);
+@@ -40,7 +38,7 @@
+ 	virtual bool putEvent(CtEvent& Event);
+ 	
+ 	virtual bool setDefaultFocus(CtWidget* pWidget);
+-	virtual bool setFocus();
++	//virtual bool setFocus();
+ 	virtual CtWidget* getFocusWidget();
+ 	virtual bool moveFocus(const CtDirection Dir, bool Silent);
+ 
+@@ -51,11 +49,11 @@
+     
+ 	bool functionHandler(const CtFunctionID FuncID, const void* Param);
+ 	bool requestWindow(const CtWindowID WindowID, const CtOpenType OpenType);
+-	bool requestPaint(const CtRegion& Region);
++	//bool requestPaint(const CtRegion& Region);
+ 	
+ protected :
+-	void addEventHandler(CtWidget* pWidget, CtEvent::EventType EventType);
+-	void removeEventHandler(CtWidget* pWidget, CtEvent::EventType EventType);
++	//void addEventHandler(CtWidget* pWidget, CtEvent::EventType EventType);
++	//void removeEventHandler(CtWidget* pWidget, CtEvent::EventType EventType);
+ 	
+ private :
+ 	CtWindowInfo	m_WindowInfo;
+Index: src/Ct/tk/Factory_Window.cpp
+===================================================================
+--- src/Ct/tk/Factory_Window.cpp	(リビジョン 97194)
++++ src/Ct/tk/Factory_Window.cpp	(作業コピー)
+@@ -77,6 +77,10 @@
+ 	CtWindow* win = createWindow(WinRegion);
+ 	win->setLayout(ca);
+ 	win->invalidete();
++
++	return win;
++#else
++	return NULL;
+ #endif
+ }	
+ 
+Index: src/Ct/ws/CtCacheControl.h
+===================================================================
+--- src/Ct/ws/CtCacheControl.h	(リビジョン 97194)
++++ src/Ct/ws/CtCacheControl.h	(作業コピー)
+@@ -5,25 +5,12 @@
+ #ifndef _CtCacheControl_H_
+ #define _CtCacheControl_H_
+ 
++#include "Ct.h"
+ #include "CtObject.h"
+ #include "CtTimer.h"
+ #include "CtObserverTimer.h"
+ #include "gdi.h"
+ 
+-#if 1							/* コンパイル通すための暫定 */
+-enum GDI_STRING_ID {
+-	GDI_STRING_ID_0,
+-	GDI_STRING_ID_1,
+-	GDI_STRING_ID_2,
+-	GDI_STRING_ID_3,
+-	GDI_STRING_ID_4,
+-	GDI_STRING_ID_5,
+-	GDI_STRING_ID_MAX
+-};
+-
+-#define GDI_IMAGE_ID_MAX	10
+-#endif	/* 暫定ここまで */
+-
+ class CtCacheControl : public CtObject
+ {
+ public:
+Index: src/Ct/ws/CtDraw.cpp
+===================================================================
+--- src/Ct/ws/CtDraw.cpp	(リビジョン 97194)
++++ src/Ct/ws/CtDraw.cpp	(作業コピー)
+@@ -62,29 +62,29 @@
+ 
+ 	switch (DrawInfo->Type) {
+ 	case DrawFill:
+-		GDI_DrawFill(hdr, (GDI_DRAW_FILL*)DrawInfo->Info);
++		GDI_DrawFill(hdr, (GDI_DRAW_FILL*)DrawInfo->pInfo);
+ 		break;
+ 	case DrawVector:
+ 		//		GDI_CACHE_VECTOR* Cache = m_Cache->getCache(ImageID);
+-		GDI_DrawVector(hdr, (GDI_DRAW_VECTOR*)DrawInfo->Info, NULL);
++		GDI_DrawVector(hdr, (GDI_DRAW_VECTOR*)DrawInfo->pInfo, NULL);
+ 		break;
+ 	case DrawBitmap:
+-		GDI_DrawBitmap(hdr, (GDI_DRAW_BITMAP*)DrawInfo->Info, NULL);
++		GDI_DrawBitmap(hdr, (GDI_DRAW_BITMAP*)DrawInfo->pInfo, NULL);
+ 		break;
+ 	case DrawDrawable:
+-		GDI_DrawDrawable(hdr, (GDI_DRAW_DRAWABLE*)DrawInfo->Info);
++		GDI_DrawDrawable(hdr, (GDI_DRAW_DRAWABLE*)DrawInfo->pInfo);
+ 		break;
+ 	case DrawFont:
+-		GDI_DrawFont(hdr, (GDI_DRAW_FONT*)DrawInfo->Info, NULL);
++		GDI_DrawFont(hdr, (GDI_DRAW_FONT*)DrawInfo->pInfo, NULL);
+ 		break;
+ 	case DrawRect:
+-		GDI_DrawRectangle(hdr, (GDI_DRAW_RECT*)DrawInfo->Info);
++		GDI_DrawRectangle(hdr, (GDI_DRAW_RECT*)DrawInfo->pInfo);
+ 		break;
+ 	case DrawRoundRect:
+-		GDI_DrawRoundRect(hdr, (GDI_DRAW_ROUNDRECT*)DrawInfo->Info);
++		GDI_DrawRoundRect(hdr, (GDI_DRAW_ROUNDRECT*)DrawInfo->pInfo);
+ 		break;
+ 	case DrawEllipse:
+-		GDI_DrawEllipse(hdr, (GDI_DRAW_ELLIPSE*)DrawInfo->Info);
++		GDI_DrawEllipse(hdr, (GDI_DRAW_ELLIPSE*)DrawInfo->pInfo);
+ 		break;
+ 	default:
+ 		return false;
+@@ -132,29 +132,29 @@
+ 	
+ 	switch (DrawInfo->Type) {
+ 	case DrawFill:
+-		GDI_DrawFill(hdr, (GDI_DRAW_FILL*)DrawInfo->Info);
++		GDI_DrawFill(hdr, (GDI_DRAW_FILL*)DrawInfo->pInfo);
+ 		break;
+ 	case DrawVector:
+ 		//		GDI_CACHE_VECTOR* Cache = m_Cache->getCache(ImageID);
+-		GDI_DrawVector(hdr, (GDI_DRAW_VECTOR*)DrawInfo->Info, NULL);
++		GDI_DrawVector(hdr, (GDI_DRAW_VECTOR*)DrawInfo->pInfo, NULL);
+ 		break;
+ 	case DrawBitmap:
+-		GDI_DrawBitmap(hdr, (GDI_DRAW_BITMAP*)DrawInfo->Info, NULL);
++		GDI_DrawBitmap(hdr, (GDI_DRAW_BITMAP*)DrawInfo->pInfo, NULL);
+ 		break;
+ 	case DrawDrawable:
+-		GDI_DrawDrawable(hdr, (GDI_DRAW_DRAWABLE*)DrawInfo->Info);
++		GDI_DrawDrawable(hdr, (GDI_DRAW_DRAWABLE*)DrawInfo->pInfo);
+ 		break;
+ 	case DrawFont:
+-		GDI_DrawFont(hdr, (GDI_DRAW_FONT*)DrawInfo->Info, NULL);
++		GDI_DrawFont(hdr, (GDI_DRAW_FONT*)DrawInfo->pInfo, NULL);
+ 		break;
+ 	case DrawRect:
+-		GDI_DrawRectangle(hdr, (GDI_DRAW_RECT*)DrawInfo->Info);
++		GDI_DrawRectangle(hdr, (GDI_DRAW_RECT*)DrawInfo->pInfo);
+ 		break;
+ 	case DrawRoundRect:
+-		GDI_DrawRoundRect(hdr, (GDI_DRAW_ROUNDRECT*)DrawInfo->Info);
++		GDI_DrawRoundRect(hdr, (GDI_DRAW_ROUNDRECT*)DrawInfo->pInfo);
+ 		break;
+ 	case DrawEllipse:
+-		GDI_DrawEllipse(hdr, (GDI_DRAW_ELLIPSE*)DrawInfo->Info);
++		GDI_DrawEllipse(hdr, (GDI_DRAW_ELLIPSE*)DrawInfo->pInfo);
+ 		break;
+ 	default:
+ 		return false;
+Index: src/Ct/ws/CtDraw.h
+===================================================================
+--- src/Ct/ws/CtDraw.h	(リビジョン 97194)
++++ src/Ct/ws/CtDraw.h	(作業コピー)
+@@ -39,8 +39,8 @@
+ 	static CtDraw* m_pInstance;
+ 
+ 	
+-	static CtScreenInfo m_ScreenLCD;
+-	static CtScreenInfo m_ScreenLOUT;
++	CtScreenInfo m_ScreenLCD;
++	CtScreenInfo m_ScreenLOUT;
+ 
+ 	GDI_HANDLER m_handlerLCD;
+ 	GDI_HANDLER m_handlerLOUT;
+Index: src/Ct/ws/CtDrawTask.cpp
+===================================================================
+--- src/Ct/ws/CtDrawTask.cpp	(リビジョン 97194)
++++ src/Ct/ws/CtDrawTask.cpp	(作業コピー)
+@@ -12,6 +12,9 @@
+ #include "CtReceiverManager.h"
+ #include "CtTimer.h"
+ 
++#include "Ct.h"
++#include "CtWindowController.h"
++
+ #if defined(__cplusplus)
+ extern "C"{
+ #endif /* __cplusplus */
+@@ -21,6 +24,13 @@
+ 	
+ 	CtReceiverManager ReceiverManager;
+ 
++#if 1
++	CtWindowController* pInstance = CtWindowController::getInstance();
++	if(pInstance)pInstance->changeWindow(ScreenLCD, Window_001, NULL);
++
++
++#endif
++
+     /* イベント処理ループ */
+ 	while (1) {
+ 		CtMsg* pMsg = NULL;
+Index: src/Ct/ws/CtWindowController.cpp
+===================================================================
+--- src/Ct/ws/CtWindowController.cpp	(リビジョン 97194)
++++ src/Ct/ws/CtWindowController.cpp	(作業コピー)
+@@ -7,13 +7,13 @@
+ #include "CtWindowController.h"
+ #include "CtWindowFactory.h"
+ 
+-
+ CtWindowController* CtWindowController::m_pInstance = NULL;
+ 
++CtWindowController::CtWindowController() {
++	m_WindowList_LCD = new CtWindowList();
++	m_WindowList_LOUT = new CtWindowList();
+ 
+-CtWindowController::CtWindowController() {
+-	m_WindowList_Builtin = new CtWindowList();
+-	m_WindowList_External = new CtWindowList();
++	m_pDraw = CtDraw::getInstance();
+ }
+ 
+ 
+@@ -30,7 +30,7 @@
+ }
+ 
+ 
+-void CtWindowController::changeWindow(ScreenType type, CtWindowID id, WindowContents* contents)
++void CtWindowController::changeWindow(CtScreenSel type, CtWindowID id, WindowContents* contents)
+ {
+ 	/// 画面を差し替える
+ 	CtDebugPrint(CtDbgIdCommon, "%s(%#x, %#x, %s, %p)\n", __FUNCTION__, type, id, CtWindowFactory::id2name(id), contents);
+@@ -56,7 +56,21 @@
+ 		//pCurWindow->invalidate??
+ 	}
+ 
+-	// 描画処理??
++	{
++		CtRegion region = CtRegion(0,0,960, 540);
++		WidgetList *list;
++
++		if (!pWindow->searchWidgets(list, CtWidgetType::WidgetAll, region)) {
++			return;
++		}
++
++		for (Iterator Itr = list->begin(); Itr != list->end(); ++Itr) {
++			m_pDraw->drawScreen(ScreenLCD, (*Itr)->getDrawInfo());
++		}
++
++		m_pDraw->updateScreen(ScreenLCD);
++	}
++	
+ #if 1
+ 	print_current();
+ #endif
+@@ -64,7 +78,7 @@
+ }
+ 
+ 
+-void CtWindowController::popupWindow(ScreenType type, CtWindowID id, WindowContents* contents)
++void CtWindowController::popupWindow(CtScreenSel type, CtWindowID id, WindowContents* contents)
+ {
+ 	/// 画面をポップアップ
+ 	CtDebugPrint(CtDbgIdCommon, "%s(%#x, %#x, %s, %p)\n", __FUNCTION__, type, id, CtWindowFactory::id2name(id), contents);
+@@ -89,7 +103,7 @@
+ }
+ 
+ 
+-void CtWindowController::returnWindow(ScreenType type, CtWindowID id)
++void CtWindowController::returnWindow(CtScreenSel type, CtWindowID id)
+ {
+ 	/// return動作
+ 	/// 前のWindowに戻る
+@@ -101,7 +115,7 @@
+ 	
+ 	if( !pList ) return;
+ 
+-	if( id == CtWindowID::None ){
++	if( id == CtWindowID::WindowNone ){
+ 		/// ひとつ前に戻る
+ 		
+ 		// カレント
+@@ -143,13 +157,13 @@
+ }
+ 
+ 
+-void CtWindowController::closeWindow(ScreenType type, CtWindowID id)
++void CtWindowController::closeWindow(CtScreenSel type, CtWindowID id)
+ {
+ 	/// Pullout動作
+ 	CtDebugPrint(CtDbgIdCommon, "%s(%#x, %#x, %s)\n", __FUNCTION__, id, CtWindowFactory::id2name(id));
+ 	
+ 	// 指定されたWindowを閉じて、下位リストのカレントへ移動
+-	if( id == CtWindowID::None ){
++	if( id == CtWindowID::WindowNone){
+ 		// TOP全てを閉じる
+ 		int top, tail;
+ 		CtWindow *pWindow;
+@@ -181,13 +195,13 @@
+ }
+ 
+ 
+-CtWindowList* CtWindowController::getWindowList(ScreenType type)
++CtWindowList* CtWindowController::getWindowList(CtScreenSel type)
+ {
+ 	switch(type){
+-	case ScreenType::Builtin:
+-		return m_WindowList_Builtin;
+-	case ScreenType::External:
+-		return m_WindowList_External;
++	case CtScreenSel::ScreenLCD:
++		return m_WindowList_LCD;
++	case CtScreenSel::ScreenLOUT:
++		return m_WindowList_LOUT;
+ 	default:
+ 		break;
+ 	}
+@@ -197,23 +211,18 @@
+ 
+ CtWindow* CtWindowController::createWindow(CtWindowID id, WindowContents *pContents)
+ {
+-#if 0
+-	CtWindow *pWindow = new CtWindow(id, contents);
+-#else
+-	// zantei
+ 	CtWindow *pWindow = CtWindowFactory::create(id, this);
+-#endif
+ 	
+ 	return pWindow;
+ }
+ 
+ void CtWindowController::print_current()
+ {
+-	CtWindow** p_cur = m_WindowList_Builtin->getCurrentWindows();
++	CtWindow** p_cur = m_WindowList_LCD->getCurrentWindows();
+ 
+ 	CtDebugPrint(CtDbgIdCommon, "CtWindowController:CurrentWindows\n");
+ 	while (*p_cur) {
+-		CtDebugPrint(CtDbgIdCommon, "addr:%p, id:%s\n", *p_cur, CtWindowFactory::id2name((*p_cur)->WindowInfo.windowid));
++		//CtDebugPrint(CtDbgIdCommon, " Addr:%p, id:%s\n", *p_cur, CtWindowFactory::id2name((*p_cur)->WindowInfo.windowid));
+ 		p_cur++;
+ 	}
+ }
+Index: src/Ct/ws/CtWindowController.h
+===================================================================
+--- src/Ct/ws/CtWindowController.h	(リビジョン 97194)
++++ src/Ct/ws/CtWindowController.h	(作業コピー)
+@@ -10,35 +10,41 @@
+ #include "Ct.h"
+ #include "CtList.h"
+ #include "CtObject.h"
+-#ifdef WIN32_GUI_SIM
+-#include "..\..\..\..\Ct\tk\CtWidget.h"
+-#else
+ #include "CtWidget.h"
+-#endif
++#include "CtDraw.h"
+ #include "CtWindowList.h"
+ 
+ class CtWindowList;
+ 
++struct WindowContents
++{
++
++};
++
+ class CtWindowController : public CtObject
+ {
+ public:
+ 	virtual ~CtWindowController();
+ 	static CtWindowController* getInstance();
+ 	
+-	void changeWindow(ScreenType type, CtWindowID id, WindowContents* contents);
+-	void popupWindow(ScreenType type, CtWindowID id, WindowContents* contents);
+-	void returnWindow(ScreenType type, CtWindowID id = CtWindowID::None);
+-	void closeWindow(ScreenType type, CtWindowID id = CtWindowID::None);
++	void changeWindow(CtScreenSel type, CtWindowID id, WindowContents* contents);
++	void popupWindow(CtScreenSel type, CtWindowID id, WindowContents* contents);
++	void returnWindow(CtScreenSel type, CtWindowID id = CtWindowID::WindowNone);
++	void closeWindow(CtScreenSel type, CtWindowID id = CtWindowID::WindowNone);
+ 
++	typedef CtList::list<CtWidget*> WidgetList;
++	typedef CtList::list<CtWidget*>::iterator Iterator;
++
+ private:
+ 	CtWindowController();
+-	CtWindowList* getWindowList(ScreenType type);
++	CtWindowList* getWindowList(CtScreenSel type);
+ 	CtWindow* createWindow(CtWindowID id, WindowContents *pContents);
+ 	void print_current();
+ 
+ 	static CtWindowController* m_pInstance;
+-	CtWindowList *m_WindowList_Builtin;
+-	CtWindowList *m_WindowList_External;
++	CtWindowList *m_WindowList_LCD;
++	CtWindowList *m_WindowList_LOUT;
++	CtDraw *m_pDraw;
+ };
+ 
+ #endif
+Index: src/Ct/ws/CtWindowFactory.cpp
+===================================================================
+--- src/Ct/ws/CtWindowFactory.cpp	(リビジョン 97194)
++++ src/Ct/ws/CtWindowFactory.cpp	(作業コピー)
+@@ -6,18 +6,14 @@
+ 
+ #include "CtWindowFactory.h"
+ 
++#include "CtColor.h"
++
+ const CtWindowFactory::CtFactoryTable CtWindowFactory::m_Table[] = {
+-	{ CtWindowID::RootWindow, CtWindowFactory::create_xxx_window, "Root" },
+-	{ CtWindowID::Test1, CtWindowFactory::create_xxx_window, "1" },
+-	{ CtWindowID::Test2, CtWindowFactory::create_xxx_window, "2" },
+-	{ CtWindowID::Test3, CtWindowFactory::create_xxx_window, "3" },
+-	{ CtWindowID::Test4, CtWindowFactory::create_xxx_window, "4" },
+-	{ CtWindowID::Test5, CtWindowFactory::create_xxx_window, "5" },
+-	{ CtWindowID::Test6, CtWindowFactory::create_xxx_window, "6" },
+-	{ CtWindowID::Test7, CtWindowFactory::create_xxx_window, "7" },
+-	{ CtWindowID::Test8, CtWindowFactory::create_xxx_window, "8" },
+-	{ CtWindowID::Test9, CtWindowFactory::create_xxx_window, "9" },
+-	{ CtWindowID::Test10, CtWindowFactory::create_xxx_window, "10" },
++	{ CtWindowID::Window_001, CtWindowFactory::create_xxx_window, "Root" },
++	{ CtWindowID::Window_002, CtWindowFactory::create_xxx_window, "1" },
++	{ CtWindowID::Window_003, CtWindowFactory::create_xxx_window, "2" },
++	{ CtWindowID::Window_004, CtWindowFactory::create_xxx_window, "3" },
++	{ CtWindowID::Window_005, CtWindowFactory::create_xxx_window, "4" },
+ };
+ 
+ CtWindow* CtWindowFactory::create(CtWindowID id, CtWindowController *pWinController)
+@@ -33,12 +29,26 @@
+ 
+ CtWindow* CtWindowFactory::create_xxx_window(CtWindowID id, CtWindowController *pWinController)
+ {
+-	return new CtWindow(id);
++	CtLayout *lay = new CtLayout(CtSize(960, 540), Red);
++
++	const unsigned short test_str[] = { 0x54, 0x45, 0x53, 0x54, 0x00 };
++
++
++	//CtLabel(const CtSize& Size, const unsigned short* usStr, const CtColor& fontColor, const int edgeWidth, const CtColor& edgeColor);
++	CtLabel *lbl = new CtLabel(CtSize(100,50), test_str, Black, 1, Blue);
++	lay->addWidget(lbl, 1, CtWidget::DefaultMargin);
++
++	CtWindow *w = new CtWindow();
++	w->setWindowID(id);
++	w->addLayout(lay);
++	w->setInvalidate(true);
++
++	return w;
+ }
+ 
+ const char* CtWindowFactory::id2name(CtWindowID id)
+ {
+-	if (id == CtWindowID::None) return "None";
++	if (id == CtWindowID::WindowNone) return "None";
+ 
+ 	for (int i = 0; i < sizeof(m_Table) / sizeof(CtFactoryTable); i++) {
+ 		if (m_Table[i].id == id) return m_Table[i].name;
+Index: src/Ct/ws/CtWindowList.cpp
+===================================================================
+--- src/Ct/ws/CtWindowList.cpp	(リビジョン 97194)
++++ src/Ct/ws/CtWindowList.cpp	(作業コピー)
+@@ -32,7 +32,7 @@
+ 				if( j == 0 ) return NULL;
+ 				break;
+ 			}
+-			else if( pWindow->WindowInfo.windowid == id ){
++			else if( pWindow->getWindowID() == id ){
+ 				top_pos = i;
+ 				tail_pos = j;
+ 				return const_cast<CtWindow*>(pWindow);
+Index: src/wi/win_itron_main.c
+===================================================================
+--- src/wi/win_itron_main.c	(リビジョン 97194)
++++ src/wi/win_itron_main.c	(作業コピー)
+@@ -187,7 +187,7 @@
+ static TASK	SimulatorTask( VP_INT stacd )
+ {
+ 	//! ユーザー･アプリケーションの起動.
+-	SimulatorWindowDraw();
++	//SimulatorWindowDraw();
+ 	exd_tsk();
+ }
+ 

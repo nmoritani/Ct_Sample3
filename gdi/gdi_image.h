@@ -1,0 +1,32 @@
+/*
+ * Copyright(c) 2018 Persol AVC Technology.
+ */
+
+#ifndef __GDI_IMAGE_H__
+#define __GDI_IMAGE_H__
+
+typedef enum {
+#include "image.def"
+	IMAGE_ID_MAX,
+	GDI_IMAGE_ID_MAX,
+	IMAGE_ID_INVALID,
+} GDI_IMAGE_ID;
+
+#if 0
+extern const GDI_IMAGE_BITMAP GDI_IMAGE_BMP_00209;
+extern const GDI_IMAGE_BITMAP GDI_IMAGE_BMP_00210;
+extern const GDI_IMAGE_BITMAP GDI_IMAGE_BMP_00212;
+extern const GDI_IMAGE_BITMAP GDI_IMAGE_BMP_00235;
+extern const GDI_IMAGE_BITMAP GDI_IMAGE_BMP_00259;
+extern const GDI_IMAGE_BITMAP GDI_IMAGE_BMP_00261;
+extern const GDI_IMAGE_BITMAP GDI_IMAGE_BMP_00262;
+extern const GDI_IMAGE_SVG GDI_IMAGE_SVG_00012;
+extern const GDI_IMAGE_SVG GDI_IMAGE_SVG_00016;
+extern const GDI_IMAGE_SVG GDI_IMAGE_SVG_00095;
+extern const GDI_IMAGE_SVG GDI_IMAGE_SVG_00129;
+extern const GDI_IMAGE_SVG GDI_IMAGE_SVG_00134;
+extern const GDI_IMAGE_SVG GDI_IMAGE_SVG_00162;
+extern const GDI_IMAGE_SVG GDI_IMAGE_SVG_00219;
+extern const GDI_IMAGE_SVG GDI_IMAGE_SVG_00248;
+#endif
+#endif

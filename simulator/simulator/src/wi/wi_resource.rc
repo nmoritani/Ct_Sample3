@@ -1,0 +1,21 @@
+//////////////////////////////////////////////////////////////////////////////
+//	Copylight(C) 2011-2012 Kanazawa-soft-design,LLC.All Rights Reserved.
+//////////////////////////////////////////////////////////////////////////////
+//
+//	@file	wi_resource.rc
+//
+//	@brief	Windows版 iTRONサービスコールのリソース.
+//
+//	@author	金澤 宣明
+//
+#include "windows.h"
+#include "wi_resource.h"
+
+IDD_WIN_ITRON DIALOG  50, 50, 100, 100
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "iTRON Service Call Sumilator"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+END
+
+// End of file.

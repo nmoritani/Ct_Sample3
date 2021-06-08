@@ -1,0 +1,3269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\visualstudio">
+      <UniqueIdentifier>{615efb1e-f1c6-4f03-ab6c-f2f4a7a8d0e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\itron">
+      <UniqueIdentifier>{0ac15316-873c-4dcb-81b2-3f6205d2c5c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\itron\comm">
+      <UniqueIdentifier>{08d7c5e6-6f90-42e1-a8ff-b0088d2d0dae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\itron\ver3">
+      <UniqueIdentifier>{1010a823-f641-430f-a47e-7fd6df8db169}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\itron\ver4">
+      <UniqueIdentifier>{499aaf1f-5a61-4dfc-916b-9980de13aeb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\simulator">
+      <UniqueIdentifier>{2820c856-08e5-4ad1-9362-3d5f71e13f25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\param">
+      <UniqueIdentifier>{8c076c7f-b4f2-447b-a820-a0fba1ebc596}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\string">
+      <UniqueIdentifier>{dcd4c8a6-bc73-45f0-a927-68701d191705}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\openvg">
+      <UniqueIdentifier>{591e565e-a976-48ff-b2d1-58c796949e9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\itron">
+      <UniqueIdentifier>{d187516e-cc34-4d26-873c-ddf0fdca3635}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\itron\comm">
+      <UniqueIdentifier>{05e04774-834f-4877-8c7b-cb9947a5a634}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\itron\ver3">
+      <UniqueIdentifier>{6c202e80-49d0-4215-a5bf-d5df4fa08405}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\itron\ver4">
+      <UniqueIdentifier>{77564713-d27c-43c7-92b9-5e8ae1b87fd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\simulator">
+      <UniqueIdentifier>{87550548-bf95-4154-ad12-5c49af621484}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\param">
+      <UniqueIdentifier>{a34964fe-92f8-4eba-94fc-9e282a2e792c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Ct">
+      <UniqueIdentifier>{2e2f9fe3-e131-4493-a18c-b93430679d05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\include">
+      <UniqueIdentifier>{ccf981b9-01fd-45b8-a905-0bbb530f2dc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\ws">
+      <UniqueIdentifier>{0ff0b68b-3a2e-4d23-ad1b-f3032f5df142}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi">
+      <UniqueIdentifier>{5e4ef6ed-03ee-4227-ae54-a37df17735db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\DigiType">
+      <UniqueIdentifier>{7793de68-c51e-4446-9947-389e71caf528}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\DigiType\chgdata">
+      <UniqueIdentifier>{1f3b647f-86f9-4d19-a83c-09d890d9b56c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\DigiType\data">
+      <UniqueIdentifier>{1402b42b-916a-4dd7-a962-5f59d674e3b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\DigiType\includes">
+      <UniqueIdentifier>{46c98c71-867d-4961-8180-f3738af3bc1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\tk">
+      <UniqueIdentifier>{d0de2c91-210d-4f6f-aa33-f3d26c2da72a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window">
+      <UniqueIdentifier>{b3e32049-7ddf-4517-8725-3207032bd07b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\dbg">
+      <UniqueIdentifier>{0fa4c3b3-f1af-4e79-83fc-fb7181a2b41e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Dbg">
+      <UniqueIdentifier>{46feacf1-04f8-431f-bb64-f3698e409990}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\HOME">
+      <UniqueIdentifier>{d3be3657-6d1e-402b-a8b4-5ff443f75250}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\COMMON">
+      <UniqueIdentifier>{36952c87-b123-4712-ac9c-111b81a71ec3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\SANDBOX">
+      <UniqueIdentifier>{ebce1386-3c54-476a-adc8-6983b5c33e1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\RECVIEW">
+      <UniqueIdentifier>{2aedd1ad-b427-4bdb-ac35-c9a346369237}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\MENU">
+      <UniqueIdentifier>{368d83f1-4e3f-4c1b-88fe-69127bb997be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\MESSAGE">
+      <UniqueIdentifier>{1959eb28-7ddd-41ca-b437-18f9157b10ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\NETWORK">
+      <UniqueIdentifier>{42cef7d5-64d3-4973-8db8-8998481ddea2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\FILE">
+      <UniqueIdentifier>{67551c00-c53c-4d5d-8d4a-9ac32e4b6006}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\AREASETTING">
+      <UniqueIdentifier>{97aaad21-95b6-4540-b2b5-bd82f500714c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\KEYBOARD">
+      <UniqueIdentifier>{6c30fca7-5b72-4789-8b9d-9fcbd8ebae7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\MENU\DIALOG">
+      <UniqueIdentifier>{b440cb15-13a2-46ae-a58d-380ef3274cab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\MENU\OTHER">
+      <UniqueIdentifier>{258e49a3-2e58-4154-ab44-442f2d33fd14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\MENU\SPINBOX">
+      <UniqueIdentifier>{4f4559b8-0be9-4e86-b80b-188d94f09bdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\MENU\TOGGLE">
+      <UniqueIdentifier>{66f71535-abf0-4303-9f54-a54bebdd7f44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\THUMBNAIL">
+      <UniqueIdentifier>{14a46088-90b1-4477-9bd3-c5523c57c21a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\FACT">
+      <UniqueIdentifier>{a82769a6-a826-4f44-ba48-a868d1725d70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\Window\PLAYVIEW">
+      <UniqueIdentifier>{5d59664e-81cc-4903-9d4b-cfcca7967b71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TimeStamp">
+      <UniqueIdentifier>{ac1e9cee-0e38-4c87-bc91-ad506151804d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType">
+      <UniqueIdentifier>{ae359a43-33b6-4575-90a5-ebbd6aca8318}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\include">
+      <UniqueIdentifier>{1ce2b7e2-072c-4f49-827a-818c603eac8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\include\freetype">
+      <UniqueIdentifier>{0c39126f-1708-4c67-949a-e2d9e35310e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\include\freetype\config">
+      <UniqueIdentifier>{f97f6477-d87a-4e46-9911-02b6e938a4d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\include\freetype\internal">
+      <UniqueIdentifier>{4ae5ae77-13c9-4ccd-ac15-89ff75305ac9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\include\freetype\internal\services">
+      <UniqueIdentifier>{013e57db-3ef5-4f50-9ec0-cc2a079cc909}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src">
+      <UniqueIdentifier>{f14eda97-1c51-41f7-89a1-9db3d079112a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\autofit">
+      <UniqueIdentifier>{0a7336a4-0d45-4463-b387-9540e589502d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\base">
+      <UniqueIdentifier>{41c3bfe1-77aa-4810-91e4-b703ba432f5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\bdf">
+      <UniqueIdentifier>{fede5cde-c45a-473a-ab7a-8c6801eaeba0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\bzip2">
+      <UniqueIdentifier>{ff3bc950-3a8e-433e-baba-7f4edb47dbb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\cache">
+      <UniqueIdentifier>{445c8746-52c1-4c0c-b57d-d17e24d7cf05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\cff">
+      <UniqueIdentifier>{87a7ec61-e39f-4d02-aa09-79b23cbb3e30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\cid">
+      <UniqueIdentifier>{183eda21-6d6c-4895-a3b5-93c947e39a18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\lzw">
+      <UniqueIdentifier>{8608815d-c827-425c-862b-b9e9ba33e0cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\otvalid">
+      <UniqueIdentifier>{b248f3ea-b505-4a75-b8ea-4c7d94af5cc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\pcf">
+      <UniqueIdentifier>{b3a6bc91-2d92-46c3-a1de-f52fb3fbe61e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\pfr">
+      <UniqueIdentifier>{926a4f08-28c7-43bf-917d-14155585ec46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\psaux">
+      <UniqueIdentifier>{afe2ca0c-dfcb-4830-93be-b5d9ac28b741}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\pshinter">
+      <UniqueIdentifier>{36f7a519-e430-4c1c-8bde-f8b87125d344}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\psnames">
+      <UniqueIdentifier>{80b44f7d-5248-46ec-83b7-d0dd4da6283e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\raster">
+      <UniqueIdentifier>{95c0a5e9-6682-4adf-926b-b92d0f8f0e44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\sfnt">
+      <UniqueIdentifier>{f7f18ceb-bf48-45d0-844a-f7b93f8403b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\smooth">
+      <UniqueIdentifier>{0bb9b216-a540-4f72-b06f-75e2cb7af2d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\truetype">
+      <UniqueIdentifier>{2ce9df49-e527-484e-a66f-de0498d94642}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\type1">
+      <UniqueIdentifier>{55f765ce-5934-4c1e-8af5-53e3e9531563}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\type42">
+      <UniqueIdentifier>{8381837a-50cd-413c-b13f-e2cc243d5161}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\winfonts">
+      <UniqueIdentifier>{f3d44909-3ba5-43d4-8d1a-b06b41cf38fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ct\gdi\FreeType\src\gzip">
+      <UniqueIdentifier>{3755c7c8-0d81-46ce-9636-fa1633e83661}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssemblyInfo.cpp">
+      <Filter>ソース ファイル\visualstudio</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>ソース ファイル\visualstudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\kprintf.c">
+      <Filter>ソース ファイル\itron</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\win_itron_main.c">
+      <Filter>ソース ファイル\itron</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_alarm_handler.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_common.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_cycle_handler.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_data_queue.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_event_flag.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_fixed_mempool.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_interrupt.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_mail_box.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_message_buffer.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_mutex.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_rendezvous_port.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_semaphore.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_systemmgr.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_task.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_variable_mempool.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\ver3\win_itron3.c">
+      <Filter>ソース ファイル\itron\ver3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\ver4\win_itron4.c">
+      <Filter>ソース ファイル\itron\ver4</Filter>
+    </ClCompile>
+    <ClCompile Include="simulator.cpp">
+      <Filter>ソース ファイル\simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="src\simulator\smDebugSerial.cpp">
+      <Filter>ソース ファイル\simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="src\simulator\WinDrawTask.cpp">
+      <Filter>ソース ファイル\simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="src\simulator\Wrapper.cpp">
+      <Filter>ソース ファイル\simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="src\param\src\AplObject.cpp">
+      <Filter>ソース ファイル\param</Filter>
+    </ClCompile>
+    <ClCompile Include="src\param\src\AplObserverParamService.cpp">
+      <Filter>ソース ファイル\param</Filter>
+    </ClCompile>
+    <ClCompile Include="src\param\src\AplParamIDString.cpp">
+      <Filter>ソース ファイル\param</Filter>
+    </ClCompile>
+    <ClCompile Include="src\param\src\AplParamMainExclusionFunc.cpp">
+      <Filter>ソース ファイル\param</Filter>
+    </ClCompile>
+    <ClCompile Include="src\param\src\AplParamMainExclusionFuncK460.cpp">
+      <Filter>ソース ファイル\param</Filter>
+    </ClCompile>
+    <ClCompile Include="src\param\src\AplParamMainItemTypeFunc.cpp">
+      <Filter>ソース ファイル\param</Filter>
+    </ClCompile>
+    <ClCompile Include="src\param\src\AplParamMainItemTypeFuncK460.cpp">
+      <Filter>ソース ファイル\param</Filter>
+    </ClCompile>
+    <ClCompile Include="src\param\src\AplParamService.cpp">
+      <Filter>ソース ファイル\param</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\ar_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\ca_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\cz_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\du_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\en_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\fr_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\ge_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\hi_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\hu_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\it_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\ja_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\je_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\ko_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\language_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\pe_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\po_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\pt_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\ru_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\sc_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\sp_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\string_api.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\sw_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\tc_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\th_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\tu_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\tw_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\ue_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\string\us_string.c">
+      <Filter>ソース ファイル\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtAplParam.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtCacheControl.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtDraw.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtDrawTask.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtEvent.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtEventInterface.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtFastObject.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtInterface.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtKeyTimer.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtLanguage.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtMainTask.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtMemory.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtMplDbg.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtMsg.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtMsgDrawTask.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtMsgMainTask.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtObject.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtObserverParamService.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtSynchro.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtTimer.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtWindowController.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtWindowList.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\fontapi.c">
+      <Filter>Ct\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\gdi.c">
+      <Filter>Ct\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\gdi_cache.c">
+      <Filter>Ct\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\gdi_context.c">
+      <Filter>Ct\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\gdi_image.c">
+      <Filter>Ct\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\gdi_path.c">
+      <Filter>Ct\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\geman_gui_sim.c">
+      <Filter>Ct\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\mem_mng.c">
+      <Filter>Ct\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\utf_convert.c">
+      <Filter>Ct\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\BDF_Raster.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\Dcw.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DCW_FdlGrade.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DCW_FdlRaster.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DcwArabic.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DcwBiDi.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DcwBidiClassData.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DcwBidiMirroring.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DcwCache.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DcwDevanagari.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DcwHebrew.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DcwLatin.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DcwLayout.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DcwThai.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DcwUnicodeRange.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DcwVietnamese.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\Devanagari_render.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DIF_Raster.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\Digitype_oul.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\Digitype_std.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DTdigitype.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DTmanager.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DTmemory.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DTplatform.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\DTversion.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\indic_common.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\indic_find_syllable.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\ovgDcw.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\ovgDcwFdlRaster.c">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\chgdata\Ucs-Big5-Hei-W4-Part.c">
+      <Filter>Ct\gdi\DigiType\chgdata</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\chgdata\UCS-CNS-ARABIC.c">
+      <Filter>Ct\gdi\DigiType\chgdata</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\chgdata\UCS-CNS-HINDI.c">
+      <Filter>Ct\gdi\DigiType\chgdata</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\chgdata\UCS-CNS-THAI.c">
+      <Filter>Ct\gdi\DigiType\chgdata</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\chgdata\Ucs-GB-Hei-W4-Part.c">
+      <Filter>Ct\gdi\DigiType\chgdata</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\chgdata\Ucs-Hangul-Hei-W4-Part.c">
+      <Filter>Ct\gdi\DigiType\chgdata</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\chgdata\UCS-JIS-HEI-W4.c">
+      <Filter>Ct\gdi\DigiType\chgdata</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\data\DcwIconFont.c">
+      <Filter>Ct\gdi\DigiType\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\data\UCS-CNS-Ascii500_sample.c">
+      <Filter>Ct\gdi\DigiType\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\data\UCS-CNS-IWATA-LATIN-Part.c">
+      <Filter>Ct\gdi\DigiType\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\DigiType\data\UCS-CNS-PUD_W4_SYMBOL_MIX.c">
+      <Filter>Ct\gdi\DigiType\data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtButton.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtColor.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtContainer.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtDrawInfo.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtHLayout.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtLabel.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtLayout.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtScrollBar.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtSlideLabel.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtStackLabel.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtStyle.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtTextField.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtToggleButton.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtVLayout.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtWidget.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtWindow.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtWindowContents.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtWindowMain.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\CtWindowFactory.cpp">
+      <Filter>Ct\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\CtWindowIDString.cpp">
+      <Filter>Ct\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\dbg\CtDbgCmndAdapter.cpp">
+      <Filter>Ct\dbg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\dbg\CtDbgTask.cpp">
+      <Filter>Ct\dbg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\dbg\CtMsgDbgTask.cpp">
+      <Filter>Ct\dbg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\simulator\CtLogPlayer.cpp">
+      <Filter>ソース ファイル\Dbg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\simulator\CtCmdLine.cpp">
+      <Filter>ソース ファイル\Dbg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\dbg\CtDbgCmndReceiver.cpp">
+      <Filter>Ct\dbg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\dbg\CtMsgDbgCmnd.cpp">
+      <Filter>Ct\dbg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\dbg\CtDbgVarietyFunc.cpp">
+      <Filter>Ct\dbg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtFlash.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtEventHandler.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\HOME\CtFastDrawContainerTcgWarning.cpp">
+      <Filter>Ct\Window\HOME</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\HOME\CtWindowHome.cpp">
+      <Filter>Ct\Window\HOME</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\HOME\CtWindowHome_AudioTop.cpp">
+      <Filter>Ct\Window\HOME</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\HOME\CtWindowHome_ColorTop.cpp">
+      <Filter>Ct\Window\HOME</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\HOME\CtWindowHome_EITop.cpp">
+      <Filter>Ct\Window\HOME</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\HOME\CtWindowHome_FpsTop.cpp">
+      <Filter>Ct\Window\HOME</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\HOME\CtWindowHome_ShutterTop.cpp">
+      <Filter>Ct\Window\HOME</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\HOME\CtWindowHome_WBTop.cpp">
+      <Filter>Ct\Window\HOME</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtLinkButton.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\COMMON\CtContainerCom.cpp">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\COMMON\CtContainerWifi.cpp">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\COMMON\CtFastContainerAudioLevel.cpp">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\COMMON\CtViewPlayMessage.cpp">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\COMMON\CtContainerBattery.cpp">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\SANDBOX\CtFastCounter.cpp">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\SANDBOX\CtKeyboad.cpp">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\SANDBOX\CtListContainer.cpp">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\SANDBOX\CtWindow_001.cpp">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\SANDBOX\CtWindow_002.cpp">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\SANDBOX\CtWindow_003.cpp">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\SANDBOX\CtWindow_004.cpp">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\SANDBOX\CtWindow_005.cpp">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\SANDBOX\CtWindow_006.cpp">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\SANDBOX\CtWindow_007.cpp">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\SANDBOX\CtWorkWindowFactory.cpp">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtGridLayout.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtGridView.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtListView.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\COMMON\CtFastContainerAudioLevel_Home.cpp">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\COMMON\CtFastContainerAudioLevel_View.cpp">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\COMMON\CtContainerCard1.cpp">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\COMMON\CtContainerCard2.cpp">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\COMMON\CtContainerCard.cpp">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\COMMON\CtFastContainerTimeCode.cpp">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtFastContainerLevelGauge.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtFastContainerLevelGaugeL.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtFastContainerLevelGaugeR.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtFastDrawContainerIris.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtFastDrawContainerSpotMeterVal.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtFastDrawContainerZoom.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtParamLabel.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtMenuButton.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtParamBox.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtParamContents.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\CtContainerMenu.cpp">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\CtMenuWindowFactory.cpp">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\CtWindowMenu.cpp">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\dbg\CtDbgWindFuncRegister.cpp">
+      <Filter>Ct\dbg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MESSAGE\CtWindow_Message.cpp">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MESSAGE\CtWindowContentsMessage.cpp">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MESSAGE\CtWindowContentsWizardMessage.cpp">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MESSAGE\CtMessageInfo.cpp">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MESSAGE\CtMessageWindowFactory.cpp">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MESSAGE\CtWindow_Common_Message.cpp">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\COMMON\CtContainerCtrlButton.cpp">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\NETWORK\CtContainerNetwork.cpp">
+      <Filter>Ct\Window\NETWORK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\NETWORK\CtContainerNetworkUser.cpp">
+      <Filter>Ct\Window\NETWORK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\NETWORK\CtWindow_NETWORK.cpp">
+      <Filter>Ct\Window\NETWORK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\NETWORK\CtWindow_NETWORK_USER.cpp">
+      <Filter>Ct\Window\NETWORK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\NETWORK\CtWindowContentsApInfo.cpp">
+      <Filter>Ct\Window\NETWORK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\NETWORK\CtWindowContentsUserInfo.cpp">
+      <Filter>Ct\Window\NETWORK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FILE\CtFileInfo.cpp">
+      <Filter>Ct\Window\FILE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FILE\CtWindowContentsFileInfo.cpp">
+      <Filter>Ct\Window\FILE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FILE\CtWindowContentsSelectSceneInfo.cpp">
+      <Filter>Ct\Window\FILE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\AREASETTING\CtAreaSetting.cpp">
+      <Filter>Ct\Window\AREASETTING</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\AREASETTING\CtAreaSettingConfirm.cpp">
+      <Filter>Ct\Window\AREASETTING</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\AREASETTING\CtWindowContentsAreaSettingConfirm.cpp">
+      <Filter>Ct\Window\AREASETTING</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FILE\CtContainerFile.cpp">
+      <Filter>Ct\Window\FILE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FILE\CtWindow_FILE.cpp">
+      <Filter>Ct\Window\FILE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtSysEventTranslator.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\COMMON\CtContainerIndicateFrame.cpp">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\COMMON\CtWidgetIndicateFrame.cpp">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\KEYBOARD\CtBuilderKeyboard.cpp">
+      <Filter>Ct\Window\KEYBOARD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\KEYBOARD\CtContainerKeyboard.cpp">
+      <Filter>Ct\Window\KEYBOARD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\KEYBOARD\CtKeyboardInfo.cpp">
+      <Filter>Ct\Window\KEYBOARD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\KEYBOARD\CtWindow_Keyboard.cpp">
+      <Filter>Ct\Window\KEYBOARD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\CtMenuBuilder.cpp">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\DIALOG\CtBuilderDialog.cpp">
+      <Filter>Ct\Window\MENU\DIALOG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\DIALOG\CtContainerDialog.cpp">
+      <Filter>Ct\Window\MENU\DIALOG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\DIALOG\CtMenuInfoDialog.cpp">
+      <Filter>Ct\Window\MENU\DIALOG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\DIALOG\CtWindow_Dialog.cpp">
+      <Filter>Ct\Window\MENU\DIALOG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\DIALOG\CtWindowContentsVersionDisp.cpp">
+      <Filter>Ct\Window\MENU\DIALOG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\TOGGLE\CtContainerToggleDialog.cpp">
+      <Filter>Ct\Window\MENU\TOGGLE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\TOGGLE\CtMenuInfoToggleDialog.cpp">
+      <Filter>Ct\Window\MENU\TOGGLE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\TOGGLE\CtWindow_ToggleDialog.cpp">
+      <Filter>Ct\Window\MENU\TOGGLE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\SPINBOX\CtContainerSpinBox.cpp">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\SPINBOX\CtMenuInfoSpinBox.cpp">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\SPINBOX\CtWindow_SpinBox.cpp">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\SPINBOX\CtContainerLevelBar.cpp">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\CtContainerMenuTitle.cpp">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\THUMBNAIL\CtWindowClipInfoMation.cpp">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\THUMBNAIL\CtWindowContentsClipInfo.cpp">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\THUMBNAIL\CtWindowContentsDrawThumb.cpp">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\THUMBNAIL\CtWindowContentsSelectClipInfo.cpp">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\THUMBNAIL\CtWindowContentsThumb.cpp">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\THUMBNAIL\CtWindowContentsThumbConfirm.cpp">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\THUMBNAIL\CtWindowContentsThumbInit.cpp">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\THUMBNAIL\CtThumbNailDialog_Complete.cpp">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\CtMenuInfo.cpp">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\CtWindowContentsMenuPos.cpp">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\OTHER\CtWindowUpdateComplete.cpp">
+      <Filter>Ct\Window\MENU\OTHER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\dbg\CtDbgThumbnailFunc.cpp">
+      <Filter>Ct\dbg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\THUMBNAIL\CtThumbNailDialogDelAndCopy.cpp">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\THUMBNAIL\CtThumbNailDialogConfirm.cpp">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\PLAYVIEW\CtContainerButtonGroup.cpp">
+      <Filter>Ct\Window\PLAYVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\PLAYVIEW\CtContainerPlayViewProgress.cpp">
+      <Filter>Ct\Window\PLAYVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\PLAYVIEW\CtPlayView.cpp">
+      <Filter>Ct\Window\PLAYVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\PLAYVIEW\CtWindowContentsPlayControlState.cpp">
+      <Filter>Ct\Window\PLAYVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\TOGGLE\CtContainerToggleDialog_ClockSetting.cpp">
+      <Filter>Ct\Window\MENU\TOGGLE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\TOGGLE\CtContainerToggleDialog_Tc.cpp">
+      <Filter>Ct\Window\MENU\TOGGLE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\TOGGLE\CtContainerToggleDialog_TimeZonesetting.cpp">
+      <Filter>Ct\Window\MENU\TOGGLE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\TOGGLE\CtContainerToggleDialog_Ub.cpp">
+      <Filter>Ct\Window\MENU\TOGGLE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtParamIcon.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtRecView2.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtRecContainerExpand.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtRecViewModeCheck.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtMenuCheckButton.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtContainerFactDistination.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtFactKeyTestLabel.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtFactWindowDispMessage.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtFactWindowDistResult.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtFactWindowFactory.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtFactWindowInitialResult.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtFactWindowKeyTest.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtWindow_FACT_DISTINATION.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtWindowContentsDispMessage.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtWindowContentsDistResultInfo.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtWindowContentsFactDistination.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtWindowContentsFactKey.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtWindowContentsFactTouchAdjust.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtWindowContentsInitialResult.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtFactWindowDialog.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\CtContainerSpecialLabel.cpp">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MESSAGE\CtWindowContentsDialogParamSet.cpp">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="src\param\src\AplParamMainItemTypeFuncK519.cpp">
+      <Filter>ソース ファイル\param</Filter>
+    </ClCompile>
+    <ClCompile Include="src\param\src\AplParamMainValueCheck.cpp">
+      <Filter>ソース ファイル\param</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MESSAGE\CtContainerMessage.cpp">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtFastDrawContainerFocus.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\dbg\CtDbgClipManager.cpp">
+      <Filter>Ct\dbg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\CtFuncIDString.cpp">
+      <Filter>Ct\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\CtMenuListView.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\OTHER\CtContainer2ListMenu.cpp">
+      <Filter>Ct\Window\MENU\OTHER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\OTHER\CtWindow2ListMenu.cpp">
+      <Filter>Ct\Window\MENU\OTHER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\SPINBOX\CtContainerSpinBoxSpecial.cpp">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtContainerMml.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtModeCheckAudio.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtModeCheckFunction.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtModeCheckNetwork.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtModeCheckStatus.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtModeCheckSwitch.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtParameterConvIf.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\NETWORK\CtWindowContentsNetworkInformation.cpp">
+      <Filter>Ct\Window\NETWORK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FILE\CtWindow_SceneList.cpp">
+      <Filter>Ct\Window\FILE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\SPINBOX\CtContainerSpinBoxFanc.cpp">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\NETWORK\CtWindow_NETWORK_INFO.cpp">
+      <Filter>Ct\Window\NETWORK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\SANDBOX\CtContainerTimeStamp.cpp">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\SANDBOX\CtWindow_008.cpp">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtTsInterface.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtICManager.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtRecViewContainer.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\TimeStamp\CtTimeStamp.cpp">
+      <Filter>TimeStamp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\TimeStamp\gui_timestamp_api.cpp">
+      <Filter>TimeStamp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\TimeStamp\gui_timestamp_task.cpp">
+      <Filter>TimeStamp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtTimeMesure.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\CtContainerVariableMenuList.cpp">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtDrawCache.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\MENU\SPINBOX\CtWindowContentsPressLevel.cpp">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtCtnrDateTime.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtRecTouchNavi.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtWindowContentsFactHourMeter.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\FACT\CtFactWindowHourMeter.cpp">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtMmlLayout.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\RECVIEW\CtCtnrDateTime.cpp">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\THUMBNAIL\CtThumbInfo.cpp">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\THUMBNAIL\CtThumbCache.cpp">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\THUMBNAIL\CtThumbButton.cpp">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\THUMBNAIL\CtThumbGridView.cpp">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\THUMBNAIL\CtWindowThumbnail.cpp">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\tk\Ct2ListView.cpp">
+      <Filter>Ct\tk</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtWindowDecorate.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\CtDebugPrint.cpp">
+      <Filter>Ct</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\dbg\CtDbgWidgetTree.cpp">
+      <Filter>Ct\dbg</Filter>
+    </ClCompile>
+    <ClCompile Include="Logo.cpp">
+      <Filter>ソース ファイル\simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\Window\THUMBNAIL\CtContainerThumbnailTitleBar.cpp">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\freetype_api.c">
+      <Filter>Ct\gdi\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\freetype_mono_ovg.c">
+      <Filter>Ct\gdi\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\freetype_wrapper.c">
+      <Filter>Ct\gdi\FreeType</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\autofit\autofit.c">
+      <Filter>Ct\gdi\FreeType\src\autofit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\basepic.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftapi.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftbase.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftbbox.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftbdf.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftbitmap.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftcid.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftdbgmem.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftdebug.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftfntfmt.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftfstype.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftgasp.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftglyph.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftgxval.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftinit.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftlcdfil.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftmac.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftmm.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftotval.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftpatent.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftpfr.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftpic.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftstroke.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftsynth.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftsystem.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\fttype1.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\ftwinfnt.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\base\md5.c">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\bdf\bdf.c">
+      <Filter>Ct\gdi\FreeType\src\bdf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\bdf\bdflib.c">
+      <Filter>Ct\gdi\FreeType\src\bdf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\bzip2\ftbzip2.c">
+      <Filter>Ct\gdi\FreeType\src\bzip2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\cache\ftcache.c">
+      <Filter>Ct\gdi\FreeType\src\cache</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\cache\ftcmru.c">
+      <Filter>Ct\gdi\FreeType\src\cache</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\cff\cff.c">
+      <Filter>Ct\gdi\FreeType\src\cff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\cff\cffgload.c">
+      <Filter>Ct\gdi\FreeType\src\cff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\cff\cffload.c">
+      <Filter>Ct\gdi\FreeType\src\cff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\cff\cffobjs.c">
+      <Filter>Ct\gdi\FreeType\src\cff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\cff\cffparse.c">
+      <Filter>Ct\gdi\FreeType\src\cff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\cff\cffpic.c">
+      <Filter>Ct\gdi\FreeType\src\cff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\cid\cidgload.c">
+      <Filter>Ct\gdi\FreeType\src\cid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\cid\cidload.c">
+      <Filter>Ct\gdi\FreeType\src\cid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\cid\cidobjs.c">
+      <Filter>Ct\gdi\FreeType\src\cid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\cid\cidparse.c">
+      <Filter>Ct\gdi\FreeType\src\cid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\cid\type1cid.c">
+      <Filter>Ct\gdi\FreeType\src\cid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\lzw\ftlzw.c">
+      <Filter>Ct\gdi\FreeType\src\lzw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\otvalid\otvalid.c">
+      <Filter>Ct\gdi\FreeType\src\otvalid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\otvalid\otvbase.c">
+      <Filter>Ct\gdi\FreeType\src\otvalid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\otvalid\otvcommn.c">
+      <Filter>Ct\gdi\FreeType\src\otvalid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\otvalid\otvgdef.c">
+      <Filter>Ct\gdi\FreeType\src\otvalid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\otvalid\otvgpos.c">
+      <Filter>Ct\gdi\FreeType\src\otvalid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\otvalid\otvgsub.c">
+      <Filter>Ct\gdi\FreeType\src\otvalid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\otvalid\otvjstf.c">
+      <Filter>Ct\gdi\FreeType\src\otvalid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\otvalid\otvmath.c">
+      <Filter>Ct\gdi\FreeType\src\otvalid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\pcf\pcf.c">
+      <Filter>Ct\gdi\FreeType\src\pcf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\pfr\pfr.c">
+      <Filter>Ct\gdi\FreeType\src\pfr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\pfr\pfrgload.c">
+      <Filter>Ct\gdi\FreeType\src\pfr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\pfr\pfrload.c">
+      <Filter>Ct\gdi\FreeType\src\pfr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\pfr\pfrobjs.c">
+      <Filter>Ct\gdi\FreeType\src\pfr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\pfr\pfrsbit.c">
+      <Filter>Ct\gdi\FreeType\src\pfr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psaux\afmparse.c">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psaux\cffdecode.c">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psaux\psarrst.c">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psaux\psaux.c">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psaux\psblues.c">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psaux\psconv.c">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psaux\pserror.c">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psaux\psfont.c">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psaux\psft.c">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psaux\pshints.c">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psaux\psintrp.c">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psaux\psobjs.c">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psaux\psread.c">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psaux\psstack.c">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psaux\t1decode.c">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\pshinter\pshglob.c">
+      <Filter>Ct\gdi\FreeType\src\pshinter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\pshinter\pshinter.c">
+      <Filter>Ct\gdi\FreeType\src\pshinter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\pshinter\pshpic.c">
+      <Filter>Ct\gdi\FreeType\src\pshinter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\pshinter\pshrec.c">
+      <Filter>Ct\gdi\FreeType\src\pshinter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psnames\psmodule.c">
+      <Filter>Ct\gdi\FreeType\src\psnames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\psnames\pspic.c">
+      <Filter>Ct\gdi\FreeType\src\psnames</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\raster\raster.c">
+      <Filter>Ct\gdi\FreeType\src\raster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\raster\rastpic.c">
+      <Filter>Ct\gdi\FreeType\src\raster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\sfnt\pngshim.c">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\sfnt\sfnt.c">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\sfnt\sfntpic.c">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\sfnt\ttbdf.c">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\sfnt\ttkern.c">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\sfnt\ttload.c">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\sfnt\ttmtx.c">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\sfnt\ttpost.c">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\sfnt\ttsbit.c">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\smooth\ftspic.c">
+      <Filter>Ct\gdi\FreeType\src\smooth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\smooth\smooth.c">
+      <Filter>Ct\gdi\FreeType\src\smooth</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\truetype\truetype.c">
+      <Filter>Ct\gdi\FreeType\src\truetype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\truetype\ttpic.c">
+      <Filter>Ct\gdi\FreeType\src\truetype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\truetype\ttsubpix.c">
+      <Filter>Ct\gdi\FreeType\src\truetype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\type1\t1afm.c">
+      <Filter>Ct\gdi\FreeType\src\type1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\type1\t1gload.c">
+      <Filter>Ct\gdi\FreeType\src\type1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\type1\t1load.c">
+      <Filter>Ct\gdi\FreeType\src\type1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\type1\t1objs.c">
+      <Filter>Ct\gdi\FreeType\src\type1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\type1\t1parse.c">
+      <Filter>Ct\gdi\FreeType\src\type1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\type1\type1.c">
+      <Filter>Ct\gdi\FreeType\src\type1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\type42\t42objs.c">
+      <Filter>Ct\gdi\FreeType\src\type42</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\type42\t42parse.c">
+      <Filter>Ct\gdi\FreeType\src\type42</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\type42\type42.c">
+      <Filter>Ct\gdi\FreeType\src\type42</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\winfonts\winfnt.c">
+      <Filter>Ct\gdi\FreeType\src\winfonts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gdi\FreeType\src\gzip\ftgzip.c">
+      <Filter>Ct\gdi\FreeType\src\gzip</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\simulator\AvcIf.h">
+      <Filter>ソース ファイル\simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simulator\itron.h">
+      <Filter>ソース ファイル\simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simulator\kernel.h">
+      <Filter>ソース ファイル\simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simulator\smDebugSerial.h">
+      <Filter>ソース ファイル\simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simulator\SysIf.h">
+      <Filter>ソース ファイル\simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="src\param\include\AplParamIDString.h">
+      <Filter>ソース ファイル\param</Filter>
+    </ClInclude>
+    <ClInclude Include="src\param\src\AplParamMainExclusionFunc.h">
+      <Filter>ソース ファイル\param</Filter>
+    </ClInclude>
+    <ClInclude Include="src\param\src\AplParamMainExclusionFuncK460.h">
+      <Filter>ソース ファイル\param</Filter>
+    </ClInclude>
+    <ClInclude Include="src\param\src\AplParamMainItemTypeFunc.h">
+      <Filter>ソース ファイル\param</Filter>
+    </ClInclude>
+    <ClInclude Include="src\param\src\AplParamMainItemTypeFuncK460.h">
+      <Filter>ソース ファイル\param</Filter>
+    </ClInclude>
+    <ClInclude Include="MovieForm.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\EGL\egl.h">
+      <Filter>ヘッダー ファイル\openvg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\VG\openvg.h">
+      <Filter>ヘッダー ファイル\openvg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\kprintf.h">
+      <Filter>ヘッダー ファイル\itron</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\wi_config.h">
+      <Filter>ヘッダー ファイル\itron</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\wi_resource.h">
+      <Filter>ヘッダー ファイル\itron</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\win_itron.h">
+      <Filter>ヘッダー ファイル\itron</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_alarm_handler.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_common.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_cycle_handler.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_data_queue.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_event_flag.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_fixed_mempool.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_interrupt.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_mail_box.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_message_buffer.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_mutex.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_rendezvous_port.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_semaphore.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_systemmgr.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_task.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_variable_mempool.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\ver3\win_itron3.h">
+      <Filter>ヘッダー ファイル\itron\ver3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\ver4\win_itron4.h">
+      <Filter>ヘッダー ファイル\itron\ver4</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simulator\Wrapper.h">
+      <Filter>ヘッダー ファイル\simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="src\param\include\apl_sys_param_enum.h">
+      <Filter>ヘッダー ファイル\param</Filter>
+    </ClInclude>
+    <ClInclude Include="src\param\include\AplObject.h">
+      <Filter>ヘッダー ファイル\param</Filter>
+    </ClInclude>
+    <ClInclude Include="src\param\include\AplObserverParamService.h">
+      <Filter>ヘッダー ファイル\param</Filter>
+    </ClInclude>
+    <ClInclude Include="src\param\include\AplParam.h">
+      <Filter>ヘッダー ファイル\param</Filter>
+    </ClInclude>
+    <ClInclude Include="src\param\include\AplParamService.h">
+      <Filter>ヘッダー ファイル\param</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Include\Ct.h">
+      <Filter>Ct\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Include\CtAssert.h">
+      <Filter>Ct\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Include\CtClass.h">
+      <Filter>Ct\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Include\CtClassType.h">
+      <Filter>Ct\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Include\CtDebugPrint.h">
+      <Filter>Ct\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Include\CtList.h">
+      <Filter>Ct\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Include\CtVector.h">
+      <Filter>Ct\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtAplParam.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtAutoSem.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtCacheControl.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtDraw.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtDrawTask.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtEvent.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtEventInterface.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtFastObject.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtInterface.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtKeyTimer.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtLanguage.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtMemory.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtMplDbg.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtMsg.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtMsgDrawTask.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtMsgMainTask.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtObject.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtObserverParamService.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtSynchro.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtTimer.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtWindowController.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtWindowList.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\gdi.h">
+      <Filter>Ct\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\gdi_cache.h">
+      <Filter>Ct\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\gdi_image.h">
+      <Filter>Ct\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\gdi_local.h">
+      <Filter>Ct\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\gdi_string.h">
+      <Filter>Ct\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\utf16_char.h">
+      <Filter>Ct\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\utf_convert.h">
+      <Filter>Ct\gdi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\BDF_Raster.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\Dcw.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DCW_FdlRaster.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DcwApi.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DcwArabic.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DcwBiDi.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DcwCache.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DcwDevanagari.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DcwHebrew.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DcwLangModule.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DcwLatin.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DcwLayout.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DcwShaperDLO.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DcwShaperVG.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DcwThai.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DcwUnicodeRange.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DcwVietnamese.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\Devanagari_render.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DIF_Raster.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\Digitype_oul.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\Digitype_std.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DTdigitype.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DTmanager.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\DTsuba.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\indic_common.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\indic_find_syllable.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\ovgDcw.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\ovgDcwApi.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\ovgDcwFdlRaster.h">
+      <Filter>Ct\gdi\DigiType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\includes\DigiTypeApi.h">
+      <Filter>Ct\gdi\DigiType\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\includes\DTallocator.h">
+      <Filter>Ct\gdi\DigiType\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\includes\DTbasedef.h">
+      <Filter>Ct\gdi\DigiType\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\includes\DTplatform.h">
+      <Filter>Ct\gdi\DigiType\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\includes\DTversion.h">
+      <Filter>Ct\gdi\DigiType\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\includes\fontdata.h">
+      <Filter>Ct\gdi\DigiType\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\DigiType\includes\model_config.h">
+      <Filter>Ct\gdi\DigiType\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtButton.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtColor.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtContainer.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtDrawInfo.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtHLayout.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtLabel.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtLayout.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtScrollBar.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtSlideLabel.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtStackLabel.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtStyle.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtStyleDefault.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtStyleWhite.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtTextField.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtToggleButton.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtVLayout.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtWidget.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtWindow.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtWindowContents.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtWindowMain.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\CtFuncID.h">
+      <Filter>Ct\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\CtWindowCommon.h">
+      <Filter>Ct\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\CtWindowFactory.h">
+      <Filter>Ct\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\CtWindowID.h">
+      <Filter>Ct\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\CtWindowIDString.h">
+      <Filter>Ct\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\CtWindows.h">
+      <Filter>Ct\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\dbg\CtDbgCmndAdapter.h">
+      <Filter>Ct\dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\dbg\CtMsgDbgTask.h">
+      <Filter>Ct\dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simulator\VMI.h">
+      <Filter>ソース ファイル\Dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simulator\CtLogPlayer.h">
+      <Filter>ソース ファイル\Dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simulator\CtCmdLine.h">
+      <Filter>ソース ファイル\Dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\dbg\CtDbgCmndReceiver.h">
+      <Filter>Ct\dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\dbg\CtMsgDbgCmnd.h">
+      <Filter>Ct\dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\dbg\CtDbgVarietyFunc.h">
+      <Filter>Ct\dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Include\CtConfig.h">
+      <Filter>Ct\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Include\CtType.h">
+      <Filter>Ct\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtFlash.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtEventHandler.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\HOME\CtFastDrawContainerTcgWarning.h">
+      <Filter>Ct\Window\HOME</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\HOME\CtWindowHome.h">
+      <Filter>Ct\Window\HOME</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\HOME\CtWindowHome_AudioTop.h">
+      <Filter>Ct\Window\HOME</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\HOME\CtWindowHome_ColorTop.h">
+      <Filter>Ct\Window\HOME</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\HOME\CtWindowHome_EITop.h">
+      <Filter>Ct\Window\HOME</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\HOME\CtWindowHome_FpsTop.h">
+      <Filter>Ct\Window\HOME</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\HOME\CtWindowHome_ShutterTop.h">
+      <Filter>Ct\Window\HOME</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\HOME\CtWindowHome_WBTop.h">
+      <Filter>Ct\Window\HOME</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtLinkButton.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\COMMON\CtContainerBattery.h">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\COMMON\CtContainerCom.h">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\COMMON\CtContainerWifi.h">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\COMMON\CtFastContainerAudioLevel.h">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\COMMON\CtViewPlayMessage.h">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\SANDBOX\CtFastCounter.h">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\SANDBOX\CtKeyboad.h">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\SANDBOX\CtListContainer.h">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\SANDBOX\CtWindow_001.h">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\SANDBOX\CtWindow_002.h">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\SANDBOX\CtWindow_003.h">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\SANDBOX\CtWindow_004.h">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\SANDBOX\CtWindow_005.h">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\SANDBOX\CtWindow_006.h">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\SANDBOX\CtWindow_007.h">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\SANDBOX\CtWorkWindowFactory.h">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtGridLayout.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtGridView.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtListView.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\COMMON\CtFastContainerAudioLevel_Home.h">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\COMMON\CtFastContainerAudioLevel_View.h">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\COMMON\CtContainerCard1.h">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\COMMON\CtContainerCard2.h">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\COMMON\CtContainerCard.h">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\COMMON\CtFastContainerTimeCode.h">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtFastContainerLevelGauge.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtFastContainerLevelGaugeL.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtFastContainerLevelGaugeR.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtFastDrawContainerIris.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtFastDrawContainerSpotMeterVal.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtFastDrawContainerZoom.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtMenuButton.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtParamBox.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtParamContents.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtParamLabel.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\CtContainerMenu.h">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\CtMenuInfoButtonId.h">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\CtMenuWindowFactory.h">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\CtWindowContentsCardSlot.h">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\CtWindowContentsVersionDisp.h">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\CtWindowMenu.h">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\dbg\CtActDbgTsk.h">
+      <Filter>Ct\dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\dbg\CtDbgCmnd.h">
+      <Filter>Ct\dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\dbg\CtDbgWindFuncRegister.h">
+      <Filter>Ct\dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MESSAGE\CtMessageDesign.h">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MESSAGE\CtWindow_Message.h">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MESSAGE\CtWindowContentsMessage.h">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MESSAGE\CtWindowContentsWizardMessage.h">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MESSAGE\CtMessageInfo.h">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MESSAGE\CtMessageWindowFactory.h">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MESSAGE\CtWindow_Common_Message.h">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\COMMON\CtContainerCtrlButton.h">
+      <Filter>Ct\Window\COMMON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\NETWORK\CtContainerNetwork.h">
+      <Filter>Ct\Window\NETWORK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\NETWORK\CtContainerNetworkUser.h">
+      <Filter>Ct\Window\NETWORK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\NETWORK\CtWindow_NETWORK.h">
+      <Filter>Ct\Window\NETWORK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\NETWORK\CtWindow_NETWORK_USER.h">
+      <Filter>Ct\Window\NETWORK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\NETWORK\CtWindowContentsApInfo.h">
+      <Filter>Ct\Window\NETWORK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\NETWORK\CtWindowContentsUserInfo.h">
+      <Filter>Ct\Window\NETWORK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FILE\CtFileInfo.h">
+      <Filter>Ct\Window\FILE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FILE\CtWindowContentsFileInfo.h">
+      <Filter>Ct\Window\FILE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FILE\CtWindowContentsSelectSceneInfo.h">
+      <Filter>Ct\Window\FILE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\AREASETTING\CtAreaSetting.h">
+      <Filter>Ct\Window\AREASETTING</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\AREASETTING\CtAreaSettingConfirm.h">
+      <Filter>Ct\Window\AREASETTING</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\AREASETTING\CtWindowContentsAreaSettingConfirm.h">
+      <Filter>Ct\Window\AREASETTING</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FILE\CtContainerFile.h">
+      <Filter>Ct\Window\FILE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FILE\CtWindow_FILE.h">
+      <Filter>Ct\Window\FILE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtSysEventTranslator.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtViewDesign.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\KEYBOARD\CtBuilderKeyboard.h">
+      <Filter>Ct\Window\KEYBOARD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\KEYBOARD\CtContainerKeyboard.h">
+      <Filter>Ct\Window\KEYBOARD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\KEYBOARD\CtKeyboardInfo.h">
+      <Filter>Ct\Window\KEYBOARD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\KEYBOARD\CtWindow_Keyboard.h">
+      <Filter>Ct\Window\KEYBOARD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\CtMenuBuilder.h">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\DIALOG\CtBuilderDialog.h">
+      <Filter>Ct\Window\MENU\DIALOG</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\DIALOG\CtContainerDialog.h">
+      <Filter>Ct\Window\MENU\DIALOG</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\DIALOG\CtMenuInfoDialog.h">
+      <Filter>Ct\Window\MENU\DIALOG</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\DIALOG\CtWindow_Dialog.h">
+      <Filter>Ct\Window\MENU\DIALOG</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\DIALOG\CtWindowContentsVersionDisp.h">
+      <Filter>Ct\Window\MENU\DIALOG</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\TOGGLE\CtContainerToggleDialog.h">
+      <Filter>Ct\Window\MENU\TOGGLE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\TOGGLE\CtMenuInfoToggleDialog.h">
+      <Filter>Ct\Window\MENU\TOGGLE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\TOGGLE\CtWindow_ToggleDialog.h">
+      <Filter>Ct\Window\MENU\TOGGLE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\SPINBOX\CtContainerSpinBox.h">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\SPINBOX\CtMenuInfoSpinBox.h">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\SPINBOX\CtWindow_SpinBox.h">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\SPINBOX\CtContainerLevelBar.h">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\CtContainerMenuTitle.h">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtWindowClipInfoMation.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtWindowContentsClipInfo.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtWindowContentsDrawThumb.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtWindowContentsSelectClipInfo.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtWindowContentsThumb.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtWindowContentsThumbCommon.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtWindowContentsThumbConfirm.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtWindowContentsThumbInit.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtThumbDesign.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtThumbNailDialog_Complete.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\CtMenuInfo.h">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\CtWindowContentsMenuPos.h">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\OTHER\CtWindowUpdateComplete.h">
+      <Filter>Ct\Window\MENU\OTHER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\dbg\CtDbgThumbnailFunc.h">
+      <Filter>Ct\dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtThumbNailDialogConfirm.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtThumbNailDialogDelAndCopy.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\PLAYVIEW\CtContainerButtonGroup.h">
+      <Filter>Ct\Window\PLAYVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\PLAYVIEW\CtContainerPlayViewProgress.h">
+      <Filter>Ct\Window\PLAYVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\PLAYVIEW\CtPlayView.h">
+      <Filter>Ct\Window\PLAYVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\PLAYVIEW\CtWindowContentsPlayControlState.h">
+      <Filter>Ct\Window\PLAYVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\TOGGLE\CtContainerToggleDialog_ClockSetting.h">
+      <Filter>Ct\Window\MENU\TOGGLE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\TOGGLE\CtContainerToggleDialog_Tc.h">
+      <Filter>Ct\Window\MENU\TOGGLE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\TOGGLE\CtContainerToggleDialog_TimeZonesetting.h">
+      <Filter>Ct\Window\MENU\TOGGLE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\TOGGLE\CtContainerToggleDialog_Ub.h">
+      <Filter>Ct\Window\MENU\TOGGLE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtParamIcon.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtRecView2.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtRecContainerExpand.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtRecViewModeCheck.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtMenuCheckButton.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\dbg\CtDbgClassInfo.h">
+      <Filter>Ct\dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtContainerFactDistination.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtFactKeyTestLabel.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtFactWindowDispMessage.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtFactWindowDistResult.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtFactWindowFactory.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtFactWindowInitialResult.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtFactWindowKeyTest.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtWindow_FACT_DISTINATION.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtWindowContentsDispMessage.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtWindowContentsDistResultInfo.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtWindowContentsFactDistination.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtWindowContentsFactKey.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtWindowContentsFactTouchAdjust.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtWindowContentsInitialResult.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtFactWindowDialog.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\CtContainerSpecialLabel.h">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MESSAGE\CtWindowContentsDialogParamSet.h">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\param\src\AplParamMainItemTypeFuncK519.h">
+      <Filter>ソース ファイル\param</Filter>
+    </ClInclude>
+    <ClInclude Include="src\param\src\AplParamMainValueCheck.h">
+      <Filter>ソース ファイル\param</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MESSAGE\CtContainerMessage.h">
+      <Filter>Ct\Window\MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtFastDrawContainerFocus.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\dbg\CtDbgClipManager.h">
+      <Filter>Ct\dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\CtFuncIDString.h">
+      <Filter>Ct\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\CtMenuListView.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\OTHER\CtContainer2ListMenu.h">
+      <Filter>Ct\Window\MENU\OTHER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\OTHER\CtWindow2ListMenu.h">
+      <Filter>Ct\Window\MENU\OTHER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\SPINBOX\CtContainerSpinBoxSpecial.h">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtContainerMml.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtModeCheckAudio.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtModeCheckFunction.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtModeCheckNetwork.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtModeCheckStatus.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtModeCheckSwitch.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtParameterConvIf.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\NETWORK\CtWindowContentsNetworkInformation.h">
+      <Filter>Ct\Window\NETWORK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FILE\CtWindow_SceneList.h">
+      <Filter>Ct\Window\FILE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\SPINBOX\CtContainerSpinBoxFanc.h">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\NETWORK\CtWindow_NETWORK_INFO.h">
+      <Filter>Ct\Window\NETWORK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\SANDBOX\CtContainerTimeStamp.h">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\SANDBOX\CtWindow_008.h">
+      <Filter>Ct\Window\SANDBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtTsInterface.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtICManager.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtRecViewContainer.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\TimeStamp\CtTimeStamp.h">
+      <Filter>TimeStamp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\TimeStamp\gui_timestamp_api.h">
+      <Filter>TimeStamp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\TimeStamp\gui_timestamp_task.h">
+      <Filter>TimeStamp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simulator\TclIf.h">
+      <Filter>ソース ファイル\simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtTimeMesure.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\CtContainerVariableMenuList.h">
+      <Filter>Ct\Window\MENU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtDrawCache.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\MENU\SPINBOX\CtWindowContentsPressLevel.h">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtCtnrDateTime.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtRecTouchNavi.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtWindowContentsFactHourMeter.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\FACT\CtFactWindowHourMeter.h">
+      <Filter>Ct\Window\FACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtMmlLayout.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\RECVIEW\CtCtnrDateTime.h">
+      <Filter>Ct\Window\RECVIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtThumbInfo.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtThumbCache.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtThumbButton.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtThumbGridView.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtWindowThumbnail.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\tk\Ct2ListView.h">
+      <Filter>Ct\tk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtWindowDecorate.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtThumbnailUtil.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="Logo.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\dbg\CtDbgWidgetTree.h">
+      <Filter>Ct\dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\Window\THUMBNAIL\CtContainerThumbnailTitleBar.h">
+      <Filter>Ct\Window\THUMBNAIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\freetype_api.h">
+      <Filter>Ct\gdi\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\freetype_mono_ovg.h">
+      <Filter>Ct\gdi\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\freetype_wrapper.h">
+      <Filter>Ct\gdi\FreeType</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\ft2build.h">
+      <Filter>Ct\gdi\FreeType\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\freetype.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftadvanc.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftbbox.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftbdf.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftbitmap.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftbzip2.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftcache.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftchapters.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftcid.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftdriver.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\fterrdef.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\fterrors.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftfntfmt.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftgasp.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftglyph.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftgxval.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftgzip.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftimage.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftincrem.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftlcdfil.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftlist.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftlzw.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftmac.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftmm.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftmodapi.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftmoderr.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftotval.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftoutln.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftparams.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftpfr.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftrender.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftsizes.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftsnames.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftstroke.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftsynth.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftsystem.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\fttrigon.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\fttypes.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ftwinfnt.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\t1tables.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\ttnameid.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\tttables.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\tttags.h">
+      <Filter>Ct\gdi\FreeType\include\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\config\ftconfig.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\config\ftheader.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\config\ftmodule.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\config\ftoption.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\config\ftstdlib.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\autohint.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\cffotypes.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\cfftypes.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\ftcalc.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\ftdebug.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\ftdrv.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\ftgloadr.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\fthash.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\ftmemory.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\ftobjs.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\ftpic.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\ftpsprop.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\ftrfork.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\ftserv.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\ftstream.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\fttrace.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\ftvalid.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\internal.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\psaux.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\pshints.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\sfnt.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\t1types.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\tttypes.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svbdf.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svcfftl.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svcid.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svfntfmt.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svgldict.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svgxval.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svkern.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svmetric.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svmm.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svotval.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svpfr.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svpostnm.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svprop.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svpscmap.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svpsinfo.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svsfnt.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svttcmap.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svtteng.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svttglyf.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\include\freetype\internal\services\svwinfnt.h">
+      <Filter>Ct\gdi\FreeType\include\freetype\internal\services</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\base\basepic.h">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\base\ftbase.h">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\base\md5.h">
+      <Filter>Ct\gdi\FreeType\src\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\bdf\bdf.h">
+      <Filter>Ct\gdi\FreeType\src\bdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\bdf\bdferror.h">
+      <Filter>Ct\gdi\FreeType\src\bdf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\cache\ftccback.h">
+      <Filter>Ct\gdi\FreeType\src\cache</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\cache\ftcerror.h">
+      <Filter>Ct\gdi\FreeType\src\cache</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\cache\ftcmru.h">
+      <Filter>Ct\gdi\FreeType\src\cache</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\cff\cfferrs.h">
+      <Filter>Ct\gdi\FreeType\src\cff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\cff\cffgload.h">
+      <Filter>Ct\gdi\FreeType\src\cff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\cff\cffload.h">
+      <Filter>Ct\gdi\FreeType\src\cff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\cff\cffobjs.h">
+      <Filter>Ct\gdi\FreeType\src\cff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\cff\cffparse.h">
+      <Filter>Ct\gdi\FreeType\src\cff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\cff\cffpic.h">
+      <Filter>Ct\gdi\FreeType\src\cff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\cff\cfftoken.h">
+      <Filter>Ct\gdi\FreeType\src\cff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\cid\ciderrs.h">
+      <Filter>Ct\gdi\FreeType\src\cid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\cid\cidgload.h">
+      <Filter>Ct\gdi\FreeType\src\cid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\cid\cidload.h">
+      <Filter>Ct\gdi\FreeType\src\cid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\cid\cidobjs.h">
+      <Filter>Ct\gdi\FreeType\src\cid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\cid\cidparse.h">
+      <Filter>Ct\gdi\FreeType\src\cid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\cid\cidtoken.h">
+      <Filter>Ct\gdi\FreeType\src\cid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\otvalid\otvalid.h">
+      <Filter>Ct\gdi\FreeType\src\otvalid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\otvalid\otvcommn.h">
+      <Filter>Ct\gdi\FreeType\src\otvalid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\otvalid\otverror.h">
+      <Filter>Ct\gdi\FreeType\src\otvalid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\otvalid\otvgpos.h">
+      <Filter>Ct\gdi\FreeType\src\otvalid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\pfr\pfrerror.h">
+      <Filter>Ct\gdi\FreeType\src\pfr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\pfr\pfrgload.h">
+      <Filter>Ct\gdi\FreeType\src\pfr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\pfr\pfrload.h">
+      <Filter>Ct\gdi\FreeType\src\pfr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\pfr\pfrobjs.h">
+      <Filter>Ct\gdi\FreeType\src\pfr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\pfr\pfrsbit.h">
+      <Filter>Ct\gdi\FreeType\src\pfr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\pfr\pfrtypes.h">
+      <Filter>Ct\gdi\FreeType\src\pfr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\afmparse.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\cffdecode.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\psarrst.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\psauxerr.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\psblues.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\psconv.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\pserror.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\psfixed.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\psfont.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\psft.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\psglue.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\pshints.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\psintrp.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\psobjs.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\psread.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\psstack.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\pstypes.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psaux\t1decode.h">
+      <Filter>Ct\gdi\FreeType\src\psaux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\pshinter\pshglob.h">
+      <Filter>Ct\gdi\FreeType\src\pshinter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\pshinter\pshnterr.h">
+      <Filter>Ct\gdi\FreeType\src\pshinter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\pshinter\pshpic.h">
+      <Filter>Ct\gdi\FreeType\src\pshinter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\pshinter\pshrec.h">
+      <Filter>Ct\gdi\FreeType\src\pshinter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psnames\psmodule.h">
+      <Filter>Ct\gdi\FreeType\src\psnames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psnames\psnamerr.h">
+      <Filter>Ct\gdi\FreeType\src\psnames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psnames\pspic.h">
+      <Filter>Ct\gdi\FreeType\src\psnames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\psnames\pstables.h">
+      <Filter>Ct\gdi\FreeType\src\psnames</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\raster\ftmisc.h">
+      <Filter>Ct\gdi\FreeType\src\raster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\raster\rasterrs.h">
+      <Filter>Ct\gdi\FreeType\src\raster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\raster\rastpic.h">
+      <Filter>Ct\gdi\FreeType\src\raster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\sfnt\pngshim.h">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\sfnt\sferrors.h">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\sfnt\sfntpic.h">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\sfnt\ttbdf.h">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\sfnt\ttcmapc.h">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\sfnt\ttkern.h">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\sfnt\ttload.h">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\sfnt\ttmtx.h">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\sfnt\ttpost.h">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\sfnt\ttsbit.h">
+      <Filter>Ct\gdi\FreeType\src\sfnt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\smooth\ftsmerrs.h">
+      <Filter>Ct\gdi\FreeType\src\smooth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\smooth\ftspic.h">
+      <Filter>Ct\gdi\FreeType\src\smooth</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\truetype\tterrors.h">
+      <Filter>Ct\gdi\FreeType\src\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\truetype\ttpic.h">
+      <Filter>Ct\gdi\FreeType\src\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\truetype\ttsubpix.h">
+      <Filter>Ct\gdi\FreeType\src\truetype</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\type1\t1afm.h">
+      <Filter>Ct\gdi\FreeType\src\type1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\type1\t1errors.h">
+      <Filter>Ct\gdi\FreeType\src\type1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\type1\t1gload.h">
+      <Filter>Ct\gdi\FreeType\src\type1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\type1\t1load.h">
+      <Filter>Ct\gdi\FreeType\src\type1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\type1\t1objs.h">
+      <Filter>Ct\gdi\FreeType\src\type1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\type1\t1parse.h">
+      <Filter>Ct\gdi\FreeType\src\type1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\type1\t1tokens.h">
+      <Filter>Ct\gdi\FreeType\src\type1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\type42\t42drivr.h">
+      <Filter>Ct\gdi\FreeType\src\type42</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\type42\t42error.h">
+      <Filter>Ct\gdi\FreeType\src\type42</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\type42\t42objs.h">
+      <Filter>Ct\gdi\FreeType\src\type42</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\type42\t42parse.h">
+      <Filter>Ct\gdi\FreeType\src\type42</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\type42\t42types.h">
+      <Filter>Ct\gdi\FreeType\src\type42</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\winfonts\fnterrs.h">
+      <Filter>Ct\gdi\FreeType\src\winfonts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gdi\FreeType\src\winfonts\winfnt.h">
+      <Filter>Ct\gdi\FreeType\src\winfonts</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="app.ico">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc">
+      <Filter>リソース ファイル</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MovieForm.resX">
+      <Filter>リソース ファイル</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logo.resx">
+      <Filter>リソース ファイル</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\simulator\CtCmdListInfo.def">
+      <Filter>ソース ファイル\Dbg</Filter>
+    </None>
+    <None Include="src\simulator\CtCmdGrpList.def">
+      <Filter>ソース ファイル\Dbg</Filter>
+    </None>
+    <None Include="src\simulator\CtCmdParamArgList.def">
+      <Filter>ソース ファイル\Dbg</Filter>
+    </None>
+    <None Include="..\..\Ct\Window\MENU\MenuButtonInfo.def">
+      <Filter>Ct\Window\MENU</Filter>
+    </None>
+    <None Include="..\..\Ct\Window\MENU\MenuFuncId.def">
+      <Filter>Ct\Window\MENU</Filter>
+    </None>
+    <None Include="..\..\Ct\Window\MENU\MenuUserFuncId.def">
+      <Filter>Ct\Window\MENU</Filter>
+    </None>
+    <None Include="..\..\Ct\Window\MENU\MenuWindowId.def">
+      <Filter>Ct\Window\MENU</Filter>
+    </None>
+    <None Include="..\..\Ct\Window\MENU\MenuWindowInfo.def">
+      <Filter>Ct\Window\MENU</Filter>
+    </None>
+    <None Include="..\..\Ct\Window\MENU\DIALOG\DialogFuncId.def">
+      <Filter>Ct\Window\MENU\DIALOG</Filter>
+    </None>
+    <None Include="..\..\Ct\Window\MENU\DIALOG\DialogInfo.def">
+      <Filter>Ct\Window\MENU\DIALOG</Filter>
+    </None>
+    <None Include="..\..\Ct\Window\MENU\DIALOG\DialogWindowId.def">
+      <Filter>Ct\Window\MENU\DIALOG</Filter>
+    </None>
+    <None Include="..\..\Ct\Window\MENU\SPINBOX\SpinBoxFuncId.def">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </None>
+    <None Include="..\..\Ct\Window\MENU\SPINBOX\SpinBoxInfo.def">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </None>
+    <None Include="..\..\Ct\Window\MENU\SPINBOX\SpinBoxTable.def">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </None>
+    <None Include="..\..\Ct\Window\MENU\SPINBOX\SpinBoxWindowId.def">
+      <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </None>
+  </ItemGroup>
+</Project>

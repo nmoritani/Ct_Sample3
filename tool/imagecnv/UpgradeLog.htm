@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+ <html xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head><meta content="en-us" http-equiv="Content-Language" /><meta content="text/html; charset=utf-16" http-equiv="Content-Type" /><title _locID="ConversionReport0">
+          移行レポート
+        </title><style> 
+                    /* Body style, for the entire document */
+                    body
+                    {
+                        background: #F3F3F4;
+                        color: #1E1E1F;
+                        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    /* Header1 style, used for the main title */
+                    h1
+                    {
+                        padding: 10px 0px 10px 10px;
+                        font-size: 21pt;
+                        background-color: #E2E2E2;
+                        border-bottom: 1px #C1C1C2 solid; 
+                        color: #201F20;
+                        margin: 0;
+                        font-weight: normal;
+                    }
+
+                    /* Header2 style, used for "Overview" and other sections */
+                    h2
+                    {
+                        font-size: 18pt;
+                        font-weight: normal;
+                        padding: 15px 0 5px 0;
+                        margin: 0;
+                    }
+
+                    /* Header3 style, used for sub-sections, such as project name */
+                    h3
+                    {
+                        font-weight: normal;
+                        font-size: 15pt;
+                        margin: 0;
+                        padding: 15px 0 5px 0;
+                        background-color: transparent;
+                    }
+
+                    /* Color all hyperlinks one color */
+                    a
+                    {
+                        color: #1382CE;
+                    }
+
+                    /* Table styles */ 
+                    table
+                    {
+                        border-spacing: 0 0;
+                        border-collapse: collapse;
+                        font-size: 10pt;
+                    }
+
+                    table th
+                    {
+                        background: #E7E7E8;
+                        text-align: left;
+                        text-decoration: none;
+                        font-weight: normal;
+                        padding: 3px 6px 3px 6px;
+                    }
+
+                    table td
+                    {
+                        vertical-align: top;
+                        padding: 3px 6px 5px 5px;
+                        margin: 0px;
+                        border: 1px solid #E7E7E8;
+                        background: #F7F7F8;
+                    }
+
+                    /* Local link is a style for hyperlinks that link to file:/// content, there are lots so color them as 'normal' text until the user mouse overs */
+                    .localLink
+                    {
+                        color: #1E1E1F;
+                        background: #EEEEED;
+                        text-decoration: none;
+                    }
+
+                    .localLink:hover
+                    {
+                        color: #1382CE;
+                        background: #FFFF99;
+                        text-decoration: none;
+                    }
+
+                    /* Center text, used in the over views cells that contain message level counts */ 
+                    .textCentered
+                    {
+                        text-align: center;
+                    }
+
+                    /* The message cells in message tables should take up all avaliable space */
+                    .messageCell
+                    {
+                        width: 100%;
+                    }
+
+                    /* Padding around the content after the h1 */ 
+                    #content 
+                    {
+	                    padding: 0px 12px 12px 12px; 
+                    }
+
+                    /* The overview table expands to width, with a max width of 97% */ 
+                    #overview table
+                    {
+                        width: auto;
+                        max-width: 75%; 
+                    }
+
+                    /* The messages tables are always 97% width */
+                    #messages table
+                    {
+                        width: 97%;
+                    }
+
+                    /* All Icons */
+                    .IconSuccessEncoded, .IconInfoEncoded, .IconWarningEncoded, .IconErrorEncoded
+                    {
+                        min-width:18px;
+                        min-height:18px; 
+                        background-repeat:no-repeat;
+                        background-position:center;
+                    }
+
+                    /* Success icon encoded */
+                    .IconSuccessEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconSuccess#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABcElEQVR4Xq2TsUsCURzHv15g8ZJcBWlyiYYgCIWcb9DFRRwMW5TA2c0/QEFwFkxxUQdxVlBwCYWOi6IhWgQhBLHJUCkhLr/BW8S7gvrAg+N+v8/v+x68Z8MGy+XSCyABQAXgBgHGALoASkIIDWSLeLBetdHryMjd5IxQPWT4rn1c/P7+xxp72Cs9m5SZ0Bq2vPnbPFafK2zDvmNHypdC0BPkLlQhxJsCAhQoZwdZU5mwxh720qGo8MzTxTTKZDPCx2HoVzp6lz0Q9tKhyx0kGs8Ny+TkWRKk8lCROwEduhyg9l/6lunOPSfmH3NUH6uQ0KHLAe7JYvJjevm+DAMGJHToKtigE+vwvIidxLamb8IBY9e+C5LiXREkfho3TSd06HJA13/oh6T51MTsfQbHrsMynQ5dDihFjiK8JJAU9AKIWTp76dCVN7HWHrajmUEGvyF9nkbAE6gLIS7kTUyuf2gscLoJrElZo/Mvj+nPz/kLTmfnEwP3tB0AAAAASUVORK5CYII=);
+                    }
+
+                    /* Information icon encoded */
+                    .IconInfoEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconInformation#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHElEQVR4Xs2TsUoDQRRF7wwoziokjZUKadInhdhukR9YP8DMX1hYW+QvdsXa/QHBbcXC7W0CamWTQnclFutceIQJwwaWNLlwm5k5d94M76mmaeCrrmsLYOocY12FcxZFUeozCqKqqgYA8uevv1H6VuPxcwlfk5N92KHBxfFeCSAxxswlYAW/Xr989x/mv9gkhtyMDhcAxgzRsp7flj8B/HF1RsMXq+NZMkopaHe7lbKxQUEIGbKsYNoGn969060hZBkQex/W8oRQwsQaW2o3Ago2SVcJUzAgY3N0lTCZZm+zPS8HB51gMmS1DEYyOz9acKO1D8JWTlafKIMxdhvlfdyT94Vv5h7P8Ky7nQzACmhvKq3zk3PjW9asz9D/1oigecsioooAAAAASUVORK5CYII=);
+                    }
+
+                    /* Warning icon encoded */
+                    .IconWarningEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconWarning#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAx0lEQVR4XpWSMQ7CMAxFf4xAyBMLCxMrO8dhaBcuwdCJS3RJBw7SA/QGTCxdWJgiQYWKXJWKIXHIlyw5lqr34tQgEOdcBsCOx5yZK3hCCKdYXneQkh4pEfqzLfu+wVDSyyzFoJjfz9NB+pAF+eizx2Vruts0k15mPgvS6GYvpVtQhB61IB/dk6AF6fS4Ben0uIX5odtFe8Q/eW1KvFeH4e8khT6+gm5B+t3juyDt7n0jpe+CANTd+oTUjN/U3yVaABnSUjFz/gFq44JaVSCXeQAAAABJRU5ErkJggg==);
+                    }
+
+                    /* Error icon encoded */
+                    .IconErrorEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconError#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQElEQVR4XqWTvUoEQRCE6wYPZUA80AfwAQz23uCMjA7MDRQEIzPBVEyNTQUFIw00vcQTTMzuAh/AxEQQT8HF/3G/oGGnEUGuoNnd6qoZuqltyKEsyzVJq5I6rnUp6SjGeGhESikzzlc1eL7opfuVbrqbU1Zw9NCgtQMaZpY0eNnaaL2fHusvTK5vKu7sjSS1Y4y3QUA6K3e3Mau5UFDyMP7tYF9o8cAHZv68vipoIJg971PZIZ5HiwdvYGGvFVFHmGmZ2MxwmQYPXubPl9Up0tfoMQGetXd6mRbvhBw+boZ6WF7Mbv1+GsHRk0fQmPAH1GfmZirbCfDJ61tw3Px8/8pZsPAG4jlVhcPgZ7adwNWBB68lkRQWFiTgFlbnLY3DGGM7izIJIyT/jjIvEJw6fdJTc6krDzh6aMwMP9bvDH4ADSsa9uSWVJkAAAAASUVORK5CYII=);
+                    }
+                 </style><script type="text/javascript" language="javascript"> 
+          
+            // Startup 
+            // Hook up the the loaded event for the document/window, to linkify the document content
+            var startupFunction = function() { linkifyElement("messages"); };
+            
+            if(window.attachEvent)
+            {
+              window.attachEvent('onload', startupFunction);
+            }
+            else if (window.addEventListener) 
+            {
+              window.addEventListener('load', startupFunction, false);
+            }
+            else 
+            {
+              document.addEventListener('load', startupFunction, false);
+            } 
+            
+            // Toggles the visibility of table rows with the specified name 
+            function toggleTableRowsByName(name)
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  if(!!currentName && currentName.indexOf(name) == 0)
+                  {
+                      var isVisible = allRows[i].style.display == ''; 
+                      isVisible ? allRows[i].style.display = 'none' : allRows[i].style.display = '';
+                  }
+               }
+            }
+            
+            function scrollToFirstVisibleRow(name) 
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  var isVisible = allRows[i].style.display == ''; 
+                  if(!!currentName && currentName.indexOf(name) == 0 && isVisible)
+                  {
+                     allRows[i].scrollIntoView(true); 
+                     return true; 
+                  }
+               }
+               
+               return false;
+            }
+            
+            // Linkifies the specified text content, replaces candidate links with html links 
+            function linkify(text)
+            {
+                 if(!text || 0 === text.length)
+                 {
+                     return text; 
+                 }
+
+                 // Find http, https and ftp links and replace them with hyper links 
+                 var urlLink = /(http|https|ftp)\:\/\/[a-zA-Z0-9\-\.]+(:[a-zA-Z0-9]*)?\/?([a-zA-Z0-9\-\._\?\,\/\\\+&%\$#\=~;\{\}])*/gi;
+                 
+                 return text.replace(urlLink, '<a href="$&">$&</a>') ;
+            }
+            
+            // Linkifies the specified element by ID
+            function linkifyElement(id)
+            {
+                var element = document.getElementById(id);
+                if(!!element)
+                {
+                  element.innerHTML = linkify(element.innerHTML); 
+                }
+            }
+            
+            function ToggleMessageVisibility(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              toggleTableRowsByName("MessageRowClass" + projectName);
+              toggleTableRowsByName('MessageRowHeaderShow' + projectName);
+              toggleTableRowsByName('MessageRowHeaderHide' + projectName); 
+            }
+            
+            function ScrollToFirstVisibleMessage(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              // First try the 'Show messages' row
+              if(!scrollToFirstVisibleRow('MessageRowHeaderShow' + projectName))
+              {
+                // Failed to find a visible row for 'Show messages', try an actual message row 
+                scrollToFirstVisibleRow('MessageRowClass' + projectName); 
+              }
+            }
+           </script></head><body><h1 _locID="ConversionReport">
+          変換レポート - imagecnv</h1><div id="content"><h2 _locID="OverviewTitle">概要</h2><div id="overview"><table><tr><th></th><th _locID="ProjectTableHeader">プロジェクト</th><th _locID="PathTableHeader">パス</th><th _locID="ErrorsTableHeader">エラー</th><th _locID="WarningsTableHeader">警告</th><th _locID="MessagesTableHeader">メッセージ</th></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#bmpcnv">bmpcnv</a></strong></td><td>bmpcnv\bmpcnv.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#bmpcnvWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('bmpcnv'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#imagecnv">imagecnv</a></strong></td><td>imagecnv.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#imagecnvWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('imagecnv'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#jpegcnv">jpegcnv</a></strong></td><td>jpegcnv\jpegcnv.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#jpegcnvWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('jpegcnv'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#svgcnv">svgcnv</a></strong></td><td>svgcnv\svgcnv.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#svgcnvWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('svgcnv'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#SVGParser2">SVGParser2</a></strong></td><td>SVGParser2\SVGParser2.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#SVGParser2Warning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('SVGParser2'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#libpng">libpng</a></strong></td><td>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#libpngWarning">25</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('libpng'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#zlib">zlib</a></strong></td><td>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#zlibWarning">20</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('zlib'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#Solution"><span _locID="OverviewSolutionSpan">ソリューション</span></a></strong></td><td>imagecnv.sln</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#SolutionWarning">1</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('Solution'); return false;">2</a></td></tr></table></div><h2 _locID="SolutionAndProjectsTitle">ソリューションおよびプロジェクト</h2><div id="messages"><a name="bmpcnv" /><h3>bmpcnv</h3><table><tr id="bmpcnvHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="WarningRowClassbmpcnv"><td class="IconWarningEncoded"><a name="bmpcnvWarning" /></td><td class="messageCell"><strong>bmpcnv\bmpcnv.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool はサポートされなくなりました。このツールはプロジェクト設定から削除されました。</span></td></tr><tr name="WarningRowClassbmpcnv"><td class="IconWarningEncoded"><a name="bmpcnvWarning" /></td><td class="messageCell"><strong>bmpcnv\bmpcnv.vcproj:
+        </strong><span>構成 'Debug|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClassbmpcnv"><td class="IconWarningEncoded"><a name="bmpcnvWarning" /></td><td class="messageCell"><strong>bmpcnv\bmpcnv.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="WarningRowClassbmpcnv"><td class="IconWarningEncoded"><a name="bmpcnvWarning" /></td><td class="messageCell"><strong>bmpcnv\bmpcnv.vcproj:
+        </strong><span>構成 'Release|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClassbmpcnv"><td class="IconWarningEncoded"><a name="bmpcnvWarning" /></td><td class="messageCell"><strong>bmpcnv\bmpcnv.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="MessageRowHeaderShowbmpcnv"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="bmpcnvMessage" onclick="ToggleMessageVisibility('bmpcnv'); return false;">
+          その他の2 メッセージを表示する
+        </a></td></tr><tr name="MessageRowClassbmpcnv" style="display: none"><td class="IconInfoEncoded"><a name="bmpcnvMessage" /></td><td class="messageCell"><strong>bmpcnv\bmpcnv.vcproj:
+        </strong><span>プロジェクト ファイル 'C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\bmpcnv.vcproj' を変換しています。</span></td></tr><tr name="MessageRowClassbmpcnv" style="display: none"><td class="IconInfoEncoded"><a name="bmpcnvMessage" /></td><td class="messageCell"><strong>bmpcnv\bmpcnv.vcproj:
+        </strong><span>新しいプロジェクト ファイル 'C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\bmpcnv.vcxproj' に変換されました。</span></td></tr><tr style="display: none" name="MessageRowHeaderHidebmpcnv"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="bmpcnvMessage" onclick="ToggleMessageVisibility('bmpcnv'); return false;">
+          その他の2 メッセージを隠す
+        </a></td></tr></table><a name="imagecnv" /><h3>imagecnv</h3><table><tr id="imagecnvHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="WarningRowClassimagecnv"><td class="IconWarningEncoded"><a name="imagecnvWarning" /></td><td class="messageCell"><strong>imagecnv.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool はサポートされなくなりました。このツールはプロジェクト設定から削除されました。</span></td></tr><tr name="WarningRowClassimagecnv"><td class="IconWarningEncoded"><a name="imagecnvWarning" /></td><td class="messageCell"><strong>imagecnv.vcproj:
+        </strong><span>構成 'Debug|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClassimagecnv"><td class="IconWarningEncoded"><a name="imagecnvWarning" /></td><td class="messageCell"><strong>imagecnv.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="WarningRowClassimagecnv"><td class="IconWarningEncoded"><a name="imagecnvWarning" /></td><td class="messageCell"><strong>imagecnv.vcproj:
+        </strong><span>構成 'Release|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClassimagecnv"><td class="IconWarningEncoded"><a name="imagecnvWarning" /></td><td class="messageCell"><strong>imagecnv.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="MessageRowHeaderShowimagecnv"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="imagecnvMessage" onclick="ToggleMessageVisibility('imagecnv'); return false;">
+          その他の2 メッセージを表示する
+        </a></td></tr><tr name="MessageRowClassimagecnv" style="display: none"><td class="IconInfoEncoded"><a name="imagecnvMessage" /></td><td class="messageCell"><strong>imagecnv.vcproj:
+        </strong><span>プロジェクト ファイル 'C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\imagecnv.vcproj' を変換しています。</span></td></tr><tr name="MessageRowClassimagecnv" style="display: none"><td class="IconInfoEncoded"><a name="imagecnvMessage" /></td><td class="messageCell"><strong>imagecnv.vcproj:
+        </strong><span>新しいプロジェクト ファイル 'C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\imagecnv.vcxproj' に変換されました。</span></td></tr><tr style="display: none" name="MessageRowHeaderHideimagecnv"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="imagecnvMessage" onclick="ToggleMessageVisibility('imagecnv'); return false;">
+          その他の2 メッセージを隠す
+        </a></td></tr></table><a name="jpegcnv" /><h3>jpegcnv</h3><table><tr id="jpegcnvHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="WarningRowClassjpegcnv"><td class="IconWarningEncoded"><a name="jpegcnvWarning" /></td><td class="messageCell"><strong>jpegcnv\jpegcnv.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool はサポートされなくなりました。このツールはプロジェクト設定から削除されました。</span></td></tr><tr name="WarningRowClassjpegcnv"><td class="IconWarningEncoded"><a name="jpegcnvWarning" /></td><td class="messageCell"><strong>jpegcnv\jpegcnv.vcproj:
+        </strong><span>構成 'Debug|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClassjpegcnv"><td class="IconWarningEncoded"><a name="jpegcnvWarning" /></td><td class="messageCell"><strong>jpegcnv\jpegcnv.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="WarningRowClassjpegcnv"><td class="IconWarningEncoded"><a name="jpegcnvWarning" /></td><td class="messageCell"><strong>jpegcnv\jpegcnv.vcproj:
+        </strong><span>構成 'Release|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClassjpegcnv"><td class="IconWarningEncoded"><a name="jpegcnvWarning" /></td><td class="messageCell"><strong>jpegcnv\jpegcnv.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="MessageRowHeaderShowjpegcnv"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="jpegcnvMessage" onclick="ToggleMessageVisibility('jpegcnv'); return false;">
+          その他の2 メッセージを表示する
+        </a></td></tr><tr name="MessageRowClassjpegcnv" style="display: none"><td class="IconInfoEncoded"><a name="jpegcnvMessage" /></td><td class="messageCell"><strong>jpegcnv\jpegcnv.vcproj:
+        </strong><span>プロジェクト ファイル 'C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\jpegcnv\jpegcnv.vcproj' を変換しています。</span></td></tr><tr name="MessageRowClassjpegcnv" style="display: none"><td class="IconInfoEncoded"><a name="jpegcnvMessage" /></td><td class="messageCell"><strong>jpegcnv\jpegcnv.vcproj:
+        </strong><span>新しいプロジェクト ファイル 'C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\jpegcnv\jpegcnv.vcxproj' に変換されました。</span></td></tr><tr style="display: none" name="MessageRowHeaderHidejpegcnv"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="jpegcnvMessage" onclick="ToggleMessageVisibility('jpegcnv'); return false;">
+          その他の2 メッセージを隠す
+        </a></td></tr></table><a name="svgcnv" /><h3>svgcnv</h3><table><tr id="svgcnvHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="WarningRowClasssvgcnv"><td class="IconWarningEncoded"><a name="svgcnvWarning" /></td><td class="messageCell"><strong>svgcnv\svgcnv.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool はサポートされなくなりました。このツールはプロジェクト設定から削除されました。</span></td></tr><tr name="WarningRowClasssvgcnv"><td class="IconWarningEncoded"><a name="svgcnvWarning" /></td><td class="messageCell"><strong>svgcnv\svgcnv.vcproj:
+        </strong><span>構成 'Debug|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClasssvgcnv"><td class="IconWarningEncoded"><a name="svgcnvWarning" /></td><td class="messageCell"><strong>svgcnv\svgcnv.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="WarningRowClasssvgcnv"><td class="IconWarningEncoded"><a name="svgcnvWarning" /></td><td class="messageCell"><strong>svgcnv\svgcnv.vcproj:
+        </strong><span>構成 'Release|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClasssvgcnv"><td class="IconWarningEncoded"><a name="svgcnvWarning" /></td><td class="messageCell"><strong>svgcnv\svgcnv.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="MessageRowHeaderShowsvgcnv"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="svgcnvMessage" onclick="ToggleMessageVisibility('svgcnv'); return false;">
+          その他の2 メッセージを表示する
+        </a></td></tr><tr name="MessageRowClasssvgcnv" style="display: none"><td class="IconInfoEncoded"><a name="svgcnvMessage" /></td><td class="messageCell"><strong>svgcnv\svgcnv.vcproj:
+        </strong><span>プロジェクト ファイル 'C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\svgcnv\svgcnv.vcproj' を変換しています。</span></td></tr><tr name="MessageRowClasssvgcnv" style="display: none"><td class="IconInfoEncoded"><a name="svgcnvMessage" /></td><td class="messageCell"><strong>svgcnv\svgcnv.vcproj:
+        </strong><span>新しいプロジェクト ファイル 'C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\svgcnv\svgcnv.vcxproj' に変換されました。</span></td></tr><tr style="display: none" name="MessageRowHeaderHidesvgcnv"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="svgcnvMessage" onclick="ToggleMessageVisibility('svgcnv'); return false;">
+          その他の2 メッセージを隠す
+        </a></td></tr></table><a name="SVGParser2" /><h3>SVGParser2</h3><table><tr id="SVGParser2HeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="WarningRowClassSVGParser2"><td class="IconWarningEncoded"><a name="SVGParser2Warning" /></td><td class="messageCell"><strong>SVGParser2\SVGParser2.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool はサポートされなくなりました。このツールはプロジェクト設定から削除されました。</span></td></tr><tr name="WarningRowClassSVGParser2"><td class="IconWarningEncoded"><a name="SVGParser2Warning" /></td><td class="messageCell"><strong>SVGParser2\SVGParser2.vcproj:
+        </strong><span>構成 'Debug|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClassSVGParser2"><td class="IconWarningEncoded"><a name="SVGParser2Warning" /></td><td class="messageCell"><strong>SVGParser2\SVGParser2.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="WarningRowClassSVGParser2"><td class="IconWarningEncoded"><a name="SVGParser2Warning" /></td><td class="messageCell"><strong>SVGParser2\SVGParser2.vcproj:
+        </strong><span>構成 'Release|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClassSVGParser2"><td class="IconWarningEncoded"><a name="SVGParser2Warning" /></td><td class="messageCell"><strong>SVGParser2\SVGParser2.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="MessageRowHeaderShowSVGParser2"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="SVGParser2Message" onclick="ToggleMessageVisibility('SVGParser2'); return false;">
+          その他の2 メッセージを表示する
+        </a></td></tr><tr name="MessageRowClassSVGParser2" style="display: none"><td class="IconInfoEncoded"><a name="SVGParser2Message" /></td><td class="messageCell"><strong>SVGParser2\SVGParser2.vcproj:
+        </strong><span>プロジェクト ファイル 'C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\SVGParser2\SVGParser2.vcproj' を変換しています。</span></td></tr><tr name="MessageRowClassSVGParser2" style="display: none"><td class="IconInfoEncoded"><a name="SVGParser2Message" /></td><td class="messageCell"><strong>SVGParser2\SVGParser2.vcproj:
+        </strong><span>新しいプロジェクト ファイル 'C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\SVGParser2\SVGParser2.vcxproj' に変換されました。</span></td></tr><tr style="display: none" name="MessageRowHeaderHideSVGParser2"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="SVGParser2Message" onclick="ToggleMessageVisibility('SVGParser2'); return false;">
+          その他の2 メッセージを隠す
+        </a></td></tr></table><a name="libpng" /><h3>libpng</h3><table><tr id="libpngHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool はサポートされなくなりました。このツールはプロジェクト設定から削除されました。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>構成 'DLL Release|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>構成 'DLL VB|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>構成 'DLL Debug|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>構成 'LIB Debug|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>構成 'LIB Release|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_DLL_Release\libpng.dll') が、Librarian の OutputFile プロパティ値 '.\Win32_DLL_Release\libpng.dll' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_DLL_Release\libpng.dll') (プロジェクト構成 'DLL Release|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Lib.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB8012: $(TargetName) ('libpng') が、Linker の OutputFile プロパティ値 '.\Win32_DLL_Release\libpng15.dll' ('libpng15') (プロジェクト構成 'DLL Release|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetName) プロパティの値を %(Link.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_DLL_Release\libpng.dll') が、Linker の OutputFile プロパティ値 '.\Win32_DLL_Release\libpng15.dll' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_DLL_Release\libpng15.dll') (プロジェクト構成 'DLL Release|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Link.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_DLL_VB\libpng.dll') が、Librarian の OutputFile プロパティ値 '.\Win32_DLL_VB\libpng.dll' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_DLL_VB\libpng.dll') (プロジェクト構成 'DLL VB|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Lib.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB8012: $(TargetName) ('libpng') が、Linker の OutputFile プロパティ値 '.\Win32_DLL_VB\libpng15vb.dll' ('libpng15vb') (プロジェクト構成 'DLL VB|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetName) プロパティの値を %(Link.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_DLL_VB\libpng.dll') が、Linker の OutputFile プロパティ値 '.\Win32_DLL_VB\libpng15vb.dll' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_DLL_VB\libpng15vb.dll') (プロジェクト構成 'DLL VB|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Link.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_DLL_Debug\libpng.dll') が、Librarian の OutputFile プロパティ値 '.\Win32_DLL_Debug\libpng.dll' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_DLL_Debug\libpng.dll') (プロジェクト構成 'DLL Debug|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Lib.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB8012: $(TargetName) ('libpng') が、Linker の OutputFile プロパティ値 '.\Win32_DLL_Debug\libpng15d.dll' ('libpng15d') (プロジェクト構成 'DLL Debug|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetName) プロパティの値を %(Link.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_DLL_Debug\libpng.dll') が、Linker の OutputFile プロパティ値 '.\Win32_DLL_Debug\libpng15d.dll' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_DLL_Debug\libpng15d.dll') (プロジェクト構成 'DLL Debug|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Link.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB8012: $(TargetName) ('libpng') が、Librarian の OutputFile プロパティ値 '.\Win32_LIB_Debug\libpngd.lib' ('libpngd') (プロジェクト構成 'LIB Debug|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetName) プロパティの値を %(Lib.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_LIB_Debug\libpng.lib') が、Librarian の OutputFile プロパティ値 '.\Win32_LIB_Debug\libpngd.lib' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_LIB_Debug\libpngd.lib') (プロジェクト構成 'LIB Debug|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Lib.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_LIB_Debug\libpng.lib') が、Linker の OutputFile プロパティ値 '.\Win32_LIB_Debug\libpng.lib' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_LIB_Debug\libpng.lib') (プロジェクト構成 'LIB Debug|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Link.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_LIB_Release\libpng.lib') が、Librarian の OutputFile プロパティ値 '.\Win32_LIB_Release\libpng.lib' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_LIB_Release\libpng.lib') (プロジェクト構成 'LIB Release|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Lib.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasslibpng"><td class="IconWarningEncoded"><a name="libpngWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_LIB_Release\libpng.lib') が、Linker の OutputFile プロパティ値 '.\Win32_LIB_Release\libpng.lib' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_LIB_Release\libpng.lib') (プロジェクト構成 'LIB Release|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Link.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="MessageRowHeaderShowlibpng"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="libpngMessage" onclick="ToggleMessageVisibility('libpng'); return false;">
+          その他の2 メッセージを表示する
+        </a></td></tr><tr name="MessageRowClasslibpng" style="display: none"><td class="IconInfoEncoded"><a name="libpngMessage" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>プロジェクト ファイル 'C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\libpng.vcproj' を変換しています。</span></td></tr><tr name="MessageRowClasslibpng" style="display: none"><td class="IconInfoEncoded"><a name="libpngMessage" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\libpng.vcproj:
+        </strong><span>新しいプロジェクト ファイル 'C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\libpng.vcxproj' に変換されました。</span></td></tr><tr style="display: none" name="MessageRowHeaderHidelibpng"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="libpngMessage" onclick="ToggleMessageVisibility('libpng'); return false;">
+          その他の2 メッセージを隠す
+        </a></td></tr></table><a name="zlib" /><h3>zlib</h3><table><tr id="zlibHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool はサポートされなくなりました。このツールはプロジェクト設定から削除されました。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>構成 'DLL Release|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>構成 'DLL Debug|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>構成 'LIB Debug|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>構成 'LIB Release|Win32' に関して以下に通知されたユーザー マクロはすべて、定義されるより前に使用されます。このため、望ましくないビルド結果になる原因となります。今回のリリースでは、この問題は解決されていません。この問題を解決するには、使用するプロパティ シートのインクルード順序を変更し、それらのプロパティ シートの後ろにユーザー マクロが来るようにします。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>MSB4211: C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Common.props (128,5); プロパティ "WindowsTargetPlatformVersion" は初めて値に設定されますが、これは "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.WindowsSDK.props (29,5)" で既に使用されています。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_DLL_Release\ZLib\zlib.dll') が、Librarian の OutputFile プロパティ値 '.\Win32_DLL_Release\ZLib\zlib.dll' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_DLL_Release\ZLib\zlib.dll') (プロジェクト構成 'DLL Release|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Lib.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>MSB8012: $(TargetName) ('zlib') が、Linker の OutputFile プロパティ値 '.\Win32_DLL_Release\ZLib\zlib1.dll' ('zlib1') (プロジェクト構成 'DLL Release|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetName) プロパティの値を %(Link.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_DLL_Release\ZLib\zlib.dll') が、Linker の OutputFile プロパティ値 '.\Win32_DLL_Release\ZLib\zlib1.dll' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_DLL_Release\ZLib\zlib1.dll') (プロジェクト構成 'DLL Release|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Link.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_DLL_Debug\ZLib\zlib.dll') が、Librarian の OutputFile プロパティ値 '.\Win32_DLL_Debug\ZLib\zlib.dll' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_DLL_Debug\ZLib\zlib.dll') (プロジェクト構成 'DLL Debug|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Lib.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>MSB8012: $(TargetName) ('zlib') が、Linker の OutputFile プロパティ値 '.\Win32_DLL_Debug\ZLib\zlib1d.dll' ('zlib1d') (プロジェクト構成 'DLL Debug|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetName) プロパティの値を %(Link.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_DLL_Debug\ZLib\zlib.dll') が、Linker の OutputFile プロパティ値 '.\Win32_DLL_Debug\ZLib\zlib1d.dll' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_DLL_Debug\ZLib\zlib1d.dll') (プロジェクト構成 'DLL Debug|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Link.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>MSB8012: $(TargetName) ('zlib') が、Librarian の OutputFile プロパティ値 '.\Win32_LIB_Debug\ZLib\zlibd.lib' ('zlibd') (プロジェクト構成 'LIB Debug|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetName) プロパティの値を %(Lib.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_LIB_Debug\ZLib\zlib.lib') が、Librarian の OutputFile プロパティ値 '.\Win32_LIB_Debug\ZLib\zlibd.lib' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_LIB_Debug\ZLib\zlibd.lib') (プロジェクト構成 'LIB Debug|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Lib.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_LIB_Debug\ZLib\zlib.lib') が、Linker の OutputFile プロパティ値 '.\Win32_LIB_Debug\ZLib\zlib.lib' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_LIB_Debug\ZLib\zlib.lib') (プロジェクト構成 'LIB Debug|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Link.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_LIB_Release\ZLib\zlib.lib') が、Librarian の OutputFile プロパティ値 '.\Win32_LIB_Release\ZLib\zlib.lib' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_LIB_Release\ZLib\zlib.lib') (プロジェクト構成 'LIB Release|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Lib.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="WarningRowClasszlib"><td class="IconWarningEncoded"><a name="zlibWarning" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\.\Win32_LIB_Release\ZLib\zlib.lib') が、Linker の OutputFile プロパティ値 '.\Win32_LIB_Release\ZLib\zlib.lib' ('C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Win32_LIB_Release\ZLib\zlib.lib') (プロジェクト構成 'LIB Release|Win32' 内) と一致していません。このため、プロジェクトが正しくビルドされない可能性があります。この問題を修正するには、$(TargetPath) プロパティの値を %(Link.OutputFile) 内で指定されている値と一致させます。</span></td></tr><tr name="MessageRowHeaderShowzlib"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="zlibMessage" onclick="ToggleMessageVisibility('zlib'); return false;">
+          その他の2 メッセージを表示する
+        </a></td></tr><tr name="MessageRowClasszlib" style="display: none"><td class="IconInfoEncoded"><a name="zlibMessage" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>プロジェクト ファイル 'C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\zlib.vcproj' を変換しています。</span></td></tr><tr name="MessageRowClasszlib" style="display: none"><td class="IconInfoEncoded"><a name="zlibMessage" /></td><td class="messageCell"><strong>bmpcnv\lpng1510\projects\visualc71\zlib.vcproj:
+        </strong><span>新しいプロジェクト ファイル 'C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\bmpcnv\lpng1510\projects\visualc71\zlib.vcxproj' に変換されました。</span></td></tr><tr style="display: none" name="MessageRowHeaderHidezlib"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="zlibMessage" onclick="ToggleMessageVisibility('zlib'); return false;">
+          その他の2 メッセージを隠す
+        </a></td></tr></table><a name="Solution" /><h3 _locID="ProjectDisplayNameHeader">ソリューション</h3><table><tr id="SolutionHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="WarningRowClassSolution"><td class="IconWarningEncoded"><a name="SolutionWarning" /></td><td class="messageCell"><strong>imagecnv.sln:
+        </strong><span>このプロジェクトを Visual Studio 2015、Visual Studio 2013、Visual Studio 2012、および Visual Studio 2010 SP1 で開けるように、プロジェクトの動作には影響しない非機能的な変更をプロジェクトに加える必要があります。</span></td></tr><tr name="MessageRowHeaderShowSolution"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="SolutionMessage" onclick="ToggleMessageVisibility('Solution'); return false;">
+          その他の2 メッセージを表示する
+        </a></td></tr><tr name="MessageRowClassSolution" style="display: none"><td class="IconInfoEncoded"><a name="SolutionMessage" /></td><td class="messageCell"><strong>imagecnv.sln:
+        </strong><span>ファイルは正常に C:\Users\ookabe.yasuaki\CtWork\18summer\K519\Ct_k519_TestEnv\tool\imagecnv\Backup\imagecnv.sln としてバックアップされました。</span></td></tr><tr name="MessageRowClassSolution" style="display: none"><td class="IconInfoEncoded"><a name="SolutionMessage" /></td><td class="messageCell"><strong>imagecnv.sln:
+        </strong><span>ソリューションは正常に移行されました</span></td></tr><tr style="display: none" name="MessageRowHeaderHideSolution"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="SolutionMessage" onclick="ToggleMessageVisibility('Solution'); return false;">
+          その他の2 メッセージを隠す
+        </a></td></tr></table></div></div></body></html>

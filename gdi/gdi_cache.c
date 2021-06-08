@@ -133,6 +133,11 @@ GDI_CACHE_BITMAP_FONT *gdi_alloc_cache_bitmap_font(void)
 	cache_font->width = 0;
 	cache_font->height = 0;
 
+	cache_font->lineUnderflow = 0;
+	cache_font->x_pos = 0;
+	cache_font->y_pos = 0;
+	cache_font->advanceX = 0;
+    
 	return cache_font;
 }
 

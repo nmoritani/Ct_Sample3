@@ -101,6 +101,9 @@ void CtDrawTask::loop()
 		wait(flgptn);
 
 		if (flgptn & CtMsgDrawTask::FLGPTN_DRAW_STOP) {
+			if (m_pDraw != NULL) {
+				delete m_pDraw;
+			}
 			break;
 		}
 		else if (flgptn & CtMsgDrawTask::FLGPTN_TIMER_DRAW) {

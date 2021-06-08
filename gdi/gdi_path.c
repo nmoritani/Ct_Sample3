@@ -1172,7 +1172,7 @@ void gdi_draw_parts(GDI_CACHE_PATH *cache, VGPaint stroke, VGPaint fill, VGfloat
 			/* ペイントオブジェクト設定 */
 			drawstroke = getDrawColor(((stroke == VG_INVALID_HANDLE) ? cache->stroke : stroke), alpha_factor);
 			if (drawstroke != VG_INVALID_HANDLE)
-				vgSetPaint(drawstroke, VG_FILL_PATH);
+				vgSetPaint(drawstroke, VG_STROKE_PATH);
 		}
 
 		drawfill = VG_INVALID_HANDLE;

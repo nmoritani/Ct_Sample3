@@ -8,6 +8,7 @@
  *
  */
 #include <stdio.h>
+#include <windows.h>
 #include "utf_convert.h"
 #include "utf16_char.h"
 
@@ -52,7 +53,6 @@
 
 /* UNICODEのNULL文字 */
 #define UNICODE_NULL_CHAR 0x0000
-
 
 static int utf8_to_utf16(unsigned char *utf8_chr, unsigned short *utf16_chr, int *nbyte)
 {
@@ -206,7 +206,7 @@ int UTF_ConvertString8to16(char *utf8, unsigned short *utf16, int *nbyte, int *n
 	if (nchar == NULL) {
 		return UTF_ERR_BAD_ARG;
 	}
-
+    
 	for (cnt = 0, sum_byte = 0; cnt < UTF_NUM_MAX_CHAR; cnt++, sum_byte += byte) {
 		ret = utf8_to_utf16(&utf8[sum_byte], &utf16[cnt], &byte);
 		if(utf16[cnt] == UNICODE_NULL_CHAR) {
@@ -215,10 +215,10 @@ int UTF_ConvertString8to16(char *utf8, unsigned short *utf16, int *nbyte, int *n
 			break;
 		}
 	}
-
-	*nbyte = sum_byte;
-	*nchar = cnt;
-
+    
+    *nbyte = sum_byte;
+    *nchar = cnt;
+    
 	return ret;
 }
 
@@ -335,6 +335,27 @@ int UTF_StrLen(char *utf8)
 		}
 	}
 	return cnt;
+}
+
+/**
+* Shift-JISをUTF-16に変換
+*
+* @param sjis [IN] 入力Shift-JIS文字列の先頭アドレス
+* @param utf16 [OUT] 出力UTF-16文字列の先頭アドレス
+*
+**/
+void convert_sjis_to_utf16(const char* sjis, unsigned short *utf16)
+{
+	int use_bufsize = 0;
+
+	utf16[0] = UNICODE_NULL_CHAR;
+	//必要なバッファのサイズ(ワイド文字数)取得
+	use_bufsize = MultiByteToWideChar(CP_ACP, 0, sjis, strlen(sjis) + 1, utf16, 0);
+	if (use_bufsize <= 0)
+		return;
+
+	// Shift-JIS -> Unicode (UTF-16)変換
+	MultiByteToWideChar(CP_ACP, 0, sjis, strlen(sjis) + 1, utf16, use_bufsize);
 }
 
 /** 

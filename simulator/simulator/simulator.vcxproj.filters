@@ -235,6 +235,9 @@
     <Filter Include="Ct\gdi\FreeType\src\gzip">
       <UniqueIdentifier>{3755c7c8-0d81-46ce-9636-fa1633e83661}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Ct\gdi\FreeType\fontdata">
+      <UniqueIdentifier>{a752fa0a-161e-4a32-af3a-533cb44dd2f1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp">
@@ -3264,6 +3267,9 @@
     </None>
     <None Include="..\..\Ct\Window\MENU\SPINBOX\SpinBoxWindowId.def">
       <Filter>Ct\Window\MENU\SPINBOX</Filter>
+    </None>
+    <None Include="..\..\gdi\FreeType\fontdata\n019004t.tbl">
+      <Filter>Ct\gdi\FreeType\fontdata</Filter>
     </None>
   </ItemGroup>
 </Project>

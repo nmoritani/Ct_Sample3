@@ -64,9 +64,14 @@ typedef struct {
 typedef struct {
 	UINT width;			//描画する文字列全体の横幅
 	UINT height;		//フォントの縦サイズ
-	UINT lineunder;		//描画起点(左下)よりも下に描画されるイメージ部分の高さ
+	int  lineUnderflow;	//描画起点(左下)よりも下に描画されるイメージ部分の高さ
 	UINT bmpwidth;		//実際に描画する文字イメージの幅
 	UINT bmpheight;		//実際に描画する文字イメージの高さ
+
+	UINT pos_x;			//X座標調整用
+	UINT pos_y;			//Y座標調整用
+	UINT advanceX;		//次文字描画時に進めるX座標の距離
+    
 } FONT_DRAW_INFO;
 
 /*------------------------------------------------------------------------------*/
@@ -239,7 +244,7 @@ extern UINT gdi_fontapi_CombineCharsToStrPath(
 	FONT_DRAW_INFO *draw_info
 );
 
-
+#if 0
 /*------------------------------------------------------------------------------*/
 /**
 @fn           font_service_get_path
@@ -258,15 +263,7 @@ extern int gdi_fontapi_create_bmp_font_Image(
 	unsigned int fill_color, 	// フォントカラー
 	unsigned int stroke_color 	// 縁線カラー
 );
-
-
-
-
-
-
-
-
-
+#endif
 
 
 /*------------------------------------------------------------------------------*/

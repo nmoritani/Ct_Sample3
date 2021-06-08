@@ -36,9 +36,15 @@ typedef unsigned int	uint32;
 
 #include "mem_mng.h"
 #include "gdi.h"
+
+#include "freetype_mono_ovg.h"
+#include "freetype_api.h"
+
 #include "gdi_config.h"
 #include "gdi_local.h"
 
+//Freetypeを使うときはこのdefineを有効化する
+#define USE_FREETYPE_FONTAPI
 
 extern EGLNativeDisplayType native_display;
 extern EGLDisplay egldisplay;
@@ -333,8 +339,13 @@ GDI_ERRCODE GDI_Update(GDI_HANDLER hdr)
 GDI_ERRCODE GDI_CreateContext(GDI_COLOR_FORMAT format)
 {
 	gdi_create_context(format);
+#ifdef USE_FREETYPE_FONTAPI
+	ft_service_terminate();
+	ft_service_init();
+#else
 	font_service_quit();
 	font_service_init();
+#endif
 	
 	//bmpfont_service_quit();
 	//bmpfont_service_init();
@@ -344,6 +355,9 @@ GDI_ERRCODE GDI_CreateContext(GDI_COLOR_FORMAT format)
 	
 void GDI_DeleteContext(void)
 {
+#ifdef USE_FREETYPE_FONTAPI
+	ft_service_terminate();
+#endif
 	gdi_delete_context();
 }
 	
@@ -606,6 +620,11 @@ static void gdi_disable_scissoring()
 
 typedef struct _DRAW_AREA_INFO {
 	GDI_REGION		area;
+	VGint		clipArea[4];
+	VGfloat			draw_x;	//描画開始位置(X)微調整用
+	VGfloat			draw_y;	//描画開始位置(Y)微調整用
+	VGfloat			tx;
+	VGfloat			ty;
 	VGfloat			sx;
 	VGfloat			sy;
 
@@ -629,6 +648,7 @@ static int get_draw_start_x(HALIGN halign, int src_width, int draw_width)
 static int get_draw_start_y(VALIGN valign, int src_height, int draw_height)
 {
 	float y;
+
 
 	//	if (draw_height <= src_height) {
 	//		return 0;	//描画領域が元サイズ以下の場合は縦位置の調整しない
@@ -1856,7 +1876,7 @@ static BOOL IsUseDescentArea(USHORT str)
 		 || ('y' == str));
 }
 
-static void gdi_cnv_font_style(FONT_STYLE *f_style, GDI_FONT_STYLE *gdi_f_style, BOOL bIsMono)
+void gdi_cnv_font_style(FONT_STYLE *f_style, GDI_FONT_STYLE *gdi_f_style, BOOL bIsMono)
 {
 	if (f_style == NULL || gdi_f_style == NULL)
 		return;
@@ -1909,10 +1929,15 @@ static VGPath gdi_create_font_path_oneline(GDI_FONT_STYLE *gdi_font_style, unsig
 		return VG_INVALID_HANDLE;
 	}
 	
+#ifdef USE_FREETYPE_FONTAPI
+	if (!ft_service_set_lang(gdi_font_style->locale)) {
+		return VG_INVALID_HANDLE;
+	}
+	gdi_cnv_font_style(&f_style, gdi_font_style, (gdi_font_style->attr == FONT_ATTRIBUTE_MONO));
+#else
 	if (0 != font_service_set_lang(gdi_font_style->locale)) {
 		return VG_INVALID_HANDLE;
 	}
-
 	gdi_cnv_font_style(&f_style, gdi_font_style, FALSE);
 
 	if (gdi_font_style->isWriteOneChar) {
@@ -1920,7 +1945,7 @@ static VGPath gdi_create_font_path_oneline(GDI_FONT_STYLE *gdi_font_style, unsig
 	} else {
 		path = gdi_fontapi_get_path(&f_style, str, len, draw_info);
 	}
-
+#endif
 	return path;
 }
 
@@ -2043,7 +2068,7 @@ static VGPath gdi_combine_font_path_multi_line(GDI_FONT_STYLE *gdi_font_style, C
 
 	pdraw_info->bmpheight = start_y;
 	pdraw_info->bmpwidth = max_width;
-	pdraw_info->lineunder = 0;
+	pdraw_info->lineUnderflow = str_line[line_count - 1].draw_info.lineUnderflow;
 	pdraw_info->height = start_y;
 	pdraw_info->width = max_width;
 
@@ -2155,6 +2180,7 @@ VGPath gdi_create_font_path(GDI_FONT_STYLE *gdi_font_style, unsigned short *str,
 static GDI_CACHE_FONT * gdi_create_cache_font(GDI_FONT_STYLE *gdi_font_style, unsigned short *str)
 {
 	GDI_CACHE_FONT *cache_font = NULL;
+#ifndef USE_FREETYPE_FONTAPI
 	int			len;
 	FONT_DRAW_INFO draw_info = { 0, 0, 0, 0, 0 };
 
@@ -2181,10 +2207,11 @@ static GDI_CACHE_FONT * gdi_create_cache_font(GDI_FONT_STYLE *gdi_font_style, un
 	cache_font->type			=	GDI_CACHE_TYPE_FONT;
 	cache_font->width			=	draw_info.width;	/* pgr0351 */
 	cache_font->height			=	draw_info.height;	/* pgr0351 */
-	cache_font->lineunder		=	draw_info.lineunder;	/* pgr0351 */
+	cache_font->lineUnderflow	=	draw_info.lineUnderflow;	/* pgr0351 */
 	cache_font->bmpheight		=	draw_info.bmpheight;	/* pgr0351 */
 
- EXIT:
+EXIT:
+#endif
 	return cache_font;
 }
 
@@ -2211,10 +2238,20 @@ GDI_ERRCODE GDI_GetDrawRect(GDI_FONT_STYLE *gdi_font_style, unsigned short *str,
 		goto EXIT;
 	}
 	
+#ifdef USE_FREETYPE_FONTAPI
+	if (FONT_ATTRIBUTE_MONO == gdi_font_style->attr) {
+        if (!ft_service_set_lang(gdi_font_style->locale)) {
+            return GDI_ILLEGAL_ARGUMENT_ERROR;
+        }        
+		return Freetype_GetDrawRect(gdi_font_style, str, pWidth, pHeight);
+	}
+#endif
+    
 	if (0 != font_service_set_lang(gdi_font_style->locale)) {
 		err = GDI_ILLEGAL_ARGUMENT_ERROR;
 		goto EXIT;
 	}
+    
 	gdi_cnv_font_style(&f_style, gdi_font_style, FALSE);
 
 	if (0 != gdi_fontapi_get_rect(&f_style, str, &width, &height, &xbytes, FALSE)) {
@@ -2272,7 +2309,17 @@ GDI_ERRCODE GDI_DrawFont(GDI_DRAW_BASE *info, GDI_DRAW_FONT *info_font, GDI_CACH
 	if (NULL == info || NULL == info_font || NULL == info_font->str || info_font->str[0] == 0) {
 		return GDI_ILLEGAL_ARGUMENT_ERROR;
 	}
-	
+
+#ifdef USE_FREETYPE_FONTAPI
+	if (FONT_ATTRIBUTE_MONO != info_font->font_style.attr) {
+		wai_sem(GDI_SEMID_DRAW);
+		err = FreeType_DrawFont(info, info_font, NULL);
+		sig_sem(GDI_SEMID_DRAW);
+	}
+	return err;
+#endif
+
+
 	adjust = info_font->font_style.auto_adjust;
 	
 	wai_sem(GDI_SEMID_DRAW);
@@ -2335,7 +2382,7 @@ GDI_ERRCODE GDI_DrawFont(GDI_DRAW_BASE *info, GDI_DRAW_FONT *info_font, GDI_CACH
 	//描画開始位置(tx, ty)、拡縮倍率(sx, sy)、描画エリア(draw、clipのgdi_get_vgcoords後の領域)を取得
 	get_draw_area_font(&drawAreaInfo, info->draw_area.width, info->draw_area.height,
 					   cache_font->width, cache_font->height,
-					   stroke_width, cache_font->bmpheight, cache_font->lineunder,
+					   stroke_width, cache_font->bmpheight, cache_font->lineUnderflow,
 					   &info_font->font_style);
 	drawAreaInfo.area.x += info->draw_area.x;
 	drawAreaInfo.area.y += info->draw_area.y;
@@ -2449,12 +2496,13 @@ void GDI_CopyRectYUV422(unsigned short int src_width, unsigned short int src_hei
 	unsigned char *temp_dst;
 	unsigned short int dst_stride;
 
-	//Yプレーンのコピー
-	unsigned short int i;
-
+	// アライメント 16の倍数
 	dst_stride = dst_width / 16;	/* pgr0351 */
 	dst_stride += (0 == (dst_width % 16)) ? 0 : 1;	/* pgr0351 */
 	dst_stride *= 16;
+
+	//Yプレーンのコピー
+	unsigned short int i;
 
 	src = src_Y;
 	dst = dst_Y;
@@ -2496,3 +2544,121 @@ void GDI_Error2(int dat, int dat2)
 	return;
 }
 
+#ifdef USE_FREETYPE_FONTAPI
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+static void GDI_DrawBitmapFontExec(DRAW_AREA_INFO *drawAreaInfo, VGImage vg_image)
+{
+	VGfloat			matrix[9];
+
+	gdi_enable_scissoring(drawAreaInfo->clipArea);
+
+	vgSeti(VG_BLEND_MODE, VG_BLEND_SRC_OVER);		//ビットマップでVG_BLEND_SRCにすると、背景が黒塗りになってしまうため、VG_BLEND_SRC_OVER固定とする
+	vgSeti(VG_MATRIX_MODE, VG_MATRIX_IMAGE_USER_TO_SURFACE);
+
+	gdi_transform_loadIdentity(matrix);
+	gdi_transform_translate(matrix, drawAreaInfo->tx, drawAreaInfo->ty);
+	gdi_transform_scale(matrix, drawAreaInfo->sx, drawAreaInfo->sy);
+	vgLoadMatrix(matrix);
+
+	vgDrawImage(vg_image);
+	vgFinish();
+
+	gdi_disable_scissoring();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+static void GDI_DrawBitmapFont_SetDrawAreaInfo(GDI_DRAW_BASE *info, GDI_DRAW_FONT *info_font, DRAW_AREA_INFO *pDrawAreaInfo, VGfloat src_height, int ajustX, int ajustY)
+{
+	VGfloat				ty = 0.0f;
+	VGfloat				sy = 0.0f;
+	VGint				rect[4] = { 0 };
+	gdi_context_base* context = gdi_get_current_context();
+
+	gdi_get_vgcoords(context, rect, &info->draw_area);
+	gdi_get_vgcoords(context, pDrawAreaInfo->clipArea, &info->clip_area);
+
+	if (context->type == GDI_CONTEXT_WINDOW) {
+		ty = (VGfloat)(rect[1] + rect[3]);
+		ty -= get_draw_start_y(info_font->font_style.valign, (int)src_height, (int)info->draw_area.height);
+		ty -= ajustY;
+		sy = -1.0f;
+	} else {
+		ty = (VGfloat)rect[1];	//y座標
+		ty += get_draw_start_y(info_font->font_style.valign, (int)src_height, (int)info->draw_area.height);
+		ty += ajustY;
+		sy = 1.0f;
+	}
+
+	pDrawAreaInfo->draw_x = 0.0f; //描画開始位置(X)微調整用
+	pDrawAreaInfo->draw_y = 0.0f;	 //描画開始位置(Y)微調整用
+	pDrawAreaInfo->tx = (VGfloat)(rect[0] + ajustX);
+	pDrawAreaInfo->ty = ty;
+	pDrawAreaInfo->sx = 1.0f;
+	pDrawAreaInfo->sy = sy;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+GDI_ERRCODE GDI_DrawBitmapFont_OneChar(GDI_DRAW_BASE *info, GDI_CACHE_FONT *cache, unsigned short ucs_str, GDI_DRAW_FONT *info_font, int *draw_width)
+{
+	GDI_CACHE_BITMAP_FONT	cache_font;
+	DRAW_AREA_INFO	drawAreaInfo;
+	GDI_ERRCODE		err = GDI_NO_ERROR;
+	VGfloat			src_height;
+
+	//描画色の準備
+	GDI_COLOR	clear_color = { VG_PAINT_TYPE_COLOR, 0, NULL };
+
+	memset(&cache_font, 0, sizeof(cache_font));
+
+	err = FreetypeCreateMonoFontImage(&cache_font, &info_font->font_style, ucs_str, &info_font->fill_color, &info_font->stroke_color);
+	if (GDI_NO_ERROR != err) {
+		goto EXIT;
+	}
+
+	//描画開始位置(tx, ty)、拡縮倍率(sx, sy)、描画エリア(draw、clipのgdi_get_vgcoords後の領域)を取得
+	src_height = (VGfloat)cache_font.height + (VGfloat)cache_font.lineUnderflow;
+	GDI_DrawBitmapFont_SetDrawAreaInfo(info, info_font, &drawAreaInfo, src_height, cache_font.x_pos, cache_font.y_pos);
+
+	//描画
+	GDI_DrawBitmapFontExec(&drawAreaInfo, cache_font.vg_image);
+
+	*draw_width = cache_font.advanceX;
+
+EXIT:
+	if (cache_font.vg_image != VG_INVALID_HANDLE) {
+		vgDestroyImage(cache_font.vg_image);
+	}
+
+	if (cache_font.raw_data != NULL) {
+		gdi_bmp_free(cache_font.raw_data);
+	}
+
+	return err;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void GDI_Convert_FontStyle(FONT_STYLE *f_style, GDI_FONT_STYLE *gdi_f_style, BOOL bIsMono)
+{
+	gdi_cnv_font_style(f_style, gdi_f_style, bIsMono);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+GDI_CACHE_BITMAP_FONT *GDI_AllocCache_BitmapFont(void)
+{
+	return gdi_alloc_cache_bitmap_font();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void GDI_FreeCache_BitmapFont(GDI_CACHE_BITMAP_FONT *cache_font)
+{
+	gdi_free_cache_bitmap_font(cache_font);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void *GDI_Alloc_Memory(int size)
+{
+	return gdi_bmp_alloc(size, 128);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#endif

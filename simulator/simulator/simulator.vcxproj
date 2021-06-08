@@ -279,7 +279,7 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
     <Link>
-      <AdditionalDependencies>user32.lib;Gdi32.lib;$(ProjectDir)\lib\amanithEGL.lib;$(ProjectDir)\lib\freetype.lib</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;Gdi32.lib;$(ProjectDir)\lib\amanithEGL.lib</AdditionalDependencies>
       <ShowProgress>LinkVerboseLib</ShowProgress>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
       <ManifestFile>$(IntDir)$(TargetFileName).intermediate.manifest</ManifestFile>
@@ -3441,6 +3441,7 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
     <None Include="..\..\Ct\Window\MENU\SPINBOX\SpinBoxInfo.def" />
     <None Include="..\..\Ct\Window\MENU\SPINBOX\SpinBoxTable.def" />
     <None Include="..\..\Ct\Window\MENU\SPINBOX\SpinBoxWindowId.def" />
+    <None Include="..\..\gdi\FreeType\fontdata\n019004t.tbl" />
     <None Include="src\simulator\CtCmdGrpList.def" />
     <None Include="src\simulator\CtCmdListInfo.def" />
     <None Include="src\simulator\CtCmdParamArgList.def" />

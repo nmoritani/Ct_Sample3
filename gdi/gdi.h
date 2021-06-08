@@ -9,12 +9,13 @@
 extern "C" {
 #endif /* __cplusplus */
 
-//#include "language_id.h"
 #ifdef WIN32_GUI_SIM
 #include "win_itron.h"
 #include "egl.h"
 #include "openvg.h"
+    
 #else
+    
 #define PANA_ORG_FUNC
 #define _DMPNATIVE_
 #include "EGL/egl.h"
@@ -23,12 +24,10 @@ extern "C" {
 #include "DMP/eglDMP.h"
 #include "DMP/vgDMPX.h"
 #endif
+    
 #include "fontapi.h"
 #include "gdi_image.h"
 #include "gdi_string.h"
-#ifdef WIN32_GUI_SIM
-    //#include "bmpfontapi.h"
-#endif	
 /*****************************************************************************
  * 型定義
  *****************************************************************************/
@@ -120,7 +119,7 @@ typedef enum {
 	GDI_IMAGE_TYPE_NONE,
 	GDI_IMAGE_TYPE_1BPP,		/*1bppイメージ*/
 	GDI_IMAGE_TYPE_8BPP,		/*8bppイメージ*/
-	GDI_IMAGE_TYPE_16BPP,		/*32bppイメージ*/
+	GDI_IMAGE_TYPE_16BPP,		/*16bppイメージ*/
 	GDI_IMAGE_TYPE_32BPP,		/*32bppイメージ*/
 	GDI_IMAGE_TYPE_SVG,			/*SVGカラーイメージ*/
 	GDI_IMAGE_TYPE_YCbCr,		/*YCbCr形式画像*/
@@ -385,7 +384,7 @@ typedef struct _gdi_cache_font {
 	//描画情報
 	short				width;			//描画する文字列全体の横幅
 	short				height;			//フォントの縦サイズ
-	short				lineunder;		//描画起点(左下)よりも下に描画されるイメージ部分の高さ
+	short				lineUnderflow;	//描画起点(左下)よりも下に描画されるイメージ部分の高さ
 	short				bmpheight;		//実際に描画する文字イメージの高さ。
 } GDI_CACHE_FONT;
 
@@ -470,6 +469,8 @@ typedef struct _GDI_FONT_STYLE {
 	HALIGN				halign;
 	VALIGN				valign;
 	BOOL				isWriteOneChar;		// 1文字描画(文字列指定でも先頭1文字のみ描画)
+	float				font_ajust_width;	// フォント幅調整(Freetypeで自動調整機能でサイズ変更する際に使用)
+	float				font_ajust_height;	// フォント高さ調整(Freetypeで自動調整機能でサイズ変更する際に使用)
 } GDI_FONT_STYLE;
 
 typedef struct _GDI_DRAW_FONT {
@@ -496,6 +497,10 @@ typedef struct _gdi_cache_bitmap_font {
 	//描画情報
 	short		 		width;			//ビットマップ画像の横幅
 	short 				height;			//ビットマップ画像の縦幅
+	signed int		lineUnderflow;	//描画起点(左下)よりも下に描画されるイメージ部分の高さ
+	signed int		x_pos;			//横位置調整用
+	signed int		y_pos;			//縦位置調整用
+	signed int		advanceX;		//次文字描画時に進めるX座標の距離
 } GDI_CACHE_BITMAP_FONT;
 
 typedef struct _GDI_DRAW_SHAPE {
@@ -613,31 +618,37 @@ extern GDI_HANDLER GDI_GetCurrentHandler(void);
 
 extern BOOL GDI_checkRemainMpl(unsigned int percent);
 	
+//ビットマップフォント関連
+extern GDI_ERRCODE GDI_DrawBitmapFont_OneChar(GDI_DRAW_BASE *info, GDI_CACHE_FONT *cache, unsigned short ucs_str, GDI_DRAW_FONT *info_font, int *draw_width);
+extern void gdi_cnv_font_style(FONT_STYLE *f_style, GDI_FONT_STYLE *gdi_f_style, BOOL bIsMono);
+extern GDI_CACHE_BITMAP_FONT *GDI_AllocCache_BitmapFont(void);
+extern void GDI_FreeCache_BitmapFont(GDI_CACHE_BITMAP_FONT *cache_font);
+extern void *GDI_Alloc_Memory(int size);
+
 void GDI_Init();
 	
 #ifdef WIN32_GUI_SIM
 void GDI_Terminate();
 void GDI_SetNativeWindow(GFX_PLANE_ID plane, NativeWindowType window);
-
-# define __rodata_imagebits
-# define __rodata_imagebits_depth8
-# define __rodata_palette
 # define __rodata_font
-# define __rodata_lut
 # define __rodata_imagedata
 #else
-# define __rodata_imagebits  __attribute__ (( aligned(4),section(".png.imagebits") ))
-# define __rodata_imagebits_depth8  __attribute__ (( aligned(4),section(".rodata.imagebits.depth8") ))
-# define __rodata_palette  __attribute__ (( aligned(4),section(".png.palette") ))  
-# define __rodata_font  __attribute__ ((aligned(4), section(".font.ovg") ))
-# define __rodata_ovrb_font  __attribute__ ((aligned(4), section(".rodata.ovrb.font") ))
-# define __rodata_lut  __attribute__ (( aligned(4), section(".rodata.lut") ))  
-# define __rodata_image  __attribute__ (( aligned(128), section(".gui.image") ))
-# define __rodata_hwin_image  __attribute__ (( aligned(128),section(".hwin.image") ))
-# define __rodata_imagedata  __attribute__ (( aligned(128),section(".gui.imagedata") ))
+	#include "gui_section.h"
 #endif
 
 typedef unsigned long GDI_DRAWABLE_ID;
+
+extern void *gdi_alloc(int size);
+extern void gdi_free(void *ptr);
+extern void *gdi_realloc(void* ptr, int new_size, int cur_size);
+
+extern void *gdi_bmp_alloc(int size, int align);
+extern void gdi_bmp_free(void *ptr);
+extern void *gdi_bmp_realloc(void* ptr, int new_size, int cur_size);
+
+extern void *font_lib_alloc(int size);
+extern void font_lib_free(void *ptr);
+extern void *font_lib_realloc(void* ptr, int new_size, int cur_size);
 
 
 #ifdef __cplusplus

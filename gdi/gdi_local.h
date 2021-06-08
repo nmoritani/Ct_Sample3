@@ -249,12 +249,6 @@ VGErrorCode gdi_append_path_roundrect(VGPath path, VGfloat x, VGfloat y, VGfloat
 VGErrorCode gdi_append_path_ellipse(VGPath path, VGfloat cx, VGfloat cy, VGfloat width, VGfloat height);
 VGErrorCode gdi_append_path_polygon(VGPath path, const VGfloat * points, VGint count, VGboolean closed);
 
-extern void *gdi_alloc(int size);
-extern void gdi_free(void *ptr);
-
-extern void *gdi_bmp_alloc(int size, int align);
-extern void gdi_bmp_free(void *ptr);
-
 extern GDI_ERRCODE gdi_create_color(GDI_COLOR *color_set, VGPaint *ppaint, VGfloat alpha_factor);
 extern GDI_ERRCODE gdi_set_figure_data(VGPath path, short figure_type, void *figure_data);
 

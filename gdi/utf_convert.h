@@ -53,6 +53,10 @@ extern int UTF_ConvertChar8to16(char *utf8, unsigned short *utf16, int *nbyte);
 
 extern int UTF_ConvertChar16to8(unsigned short utf16, char *utf8, int *nbyte);
 
+extern void convert_sjis_to_utf8(const char* sjis, char *utf8);
+
+extern void convert_sjis_to_utf16(const char* sjis, unsigned short *utf16);
+    
 extern void UTF_AddMark (unsigned short in, unsigned short *out, UTF_MARK_TYPE type);
 
 extern void UTF_AddNextMark (unsigned short in, unsigned short *out);

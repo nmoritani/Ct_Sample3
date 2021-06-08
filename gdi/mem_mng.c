@@ -111,6 +111,70 @@ void gdi_free(void *ptr)
 	rel_mpl(GFX_RESMPL_ID, ptr);
 }
 
+void *gdi_realloc(void* ptr, int new_size, int cur_size)
+{
+  void *p;
+
+  if (ptr == NULL)
+      return gdi_alloc(new_size);
+  
+  if (cur_size < new_size) {
+      if ((p = gdi_alloc(new_size)) == NULL) {
+          gdi_free(ptr);
+          return NULL;
+      }
+      memcpy(p, ptr, new_size);
+      gdi_free(ptr);
+  } else {
+      p = ptr;
+  }
+  
+  return p;
+}
+
+#if 0
+// FONT_LIBMPL_ID
+void *font_lib_alloc(long size)
+{
+  void *mem;
+
+	if (tget_mpl(FONT_LIBMPL_ID, size, &mem,  500) != E_OK) {
+    return NULL;
+	}
+	return mem;
+}
+
+void font_lib_free(void *ptr)
+{
+	rel_mpl(FONT_LIBMPL_ID, ptr);
+}
+
+void *font_lib_realloc(void *ptr, long new_size, long cur_size)
+{
+  void *p;
+
+  if (ptr == NULL)
+      return font_lib_alloc(new_size);
+
+  if (cur_size < new_size)
+  {
+      p = font_lib_alloc(new_size);
+      if (p == NULL)
+      {
+          font_lib_free(ptr);
+          return NULL;
+      }
+      memcpy(p, ptr, new_size);
+      font_lib_free(ptr);
+  }
+  else
+  {
+      p = ptr;
+  }
+  return p;
+}
+#endif
+
 int gdi_remain_mem_percent()
 {
 	return get_remain_mem_percent(GFX_RESMPL_ID);
@@ -144,6 +208,27 @@ void gdi_bmp_free(void *ptr)
 		temp = ((unsigned long *)ptr)[-1];
 	}
 	rel_mpl(GUI_WORKMPL_ID, (void *)temp);
+}
+
+void *gdi_bmp_realloc(void* ptr, int new_size, int cur_size)
+{
+  void *p;
+
+  if (ptr == NULL)
+      return gdi_bmp_alloc(new_size, 128);
+  
+  if (cur_size < new_size) {
+      if ((p = gdi_bmp_alloc(new_size, 128)) == NULL) {
+          gdi_bmp_free(ptr);
+          return NULL;
+      }
+      memcpy(p, ptr, new_size);
+      gdi_bmp_free(ptr);
+  } else {
+      p = ptr;
+  }
+  
+  return p;
 }
 
 int gdi_bmp_remain_mem_percent()

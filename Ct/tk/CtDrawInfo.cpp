@@ -981,7 +981,8 @@ bool CtString::setString(const char* _pstr)
 			goto cache_clear;
 		m_bufSize = newBufSize;		/* pgr0351 */
 	}
-	convert_char_str_to_ushort_str(p, _pstr);
+	//convert_char_str_to_ushort_str(p, _pstr);
+	convert_sjis_to_utf16(_pstr, p);
 	if (bSameCheck == true) {
 		if (memcmp(m_String.str, p, newBufSize) == 0) {
 			operator delete(p);

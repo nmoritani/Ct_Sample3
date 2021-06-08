@@ -248,8 +248,8 @@ int  font_service_init(void)
 
 //	fonts[LOCALE_EN].fontdata = (DT8_char*)UCS_CNS_PUD_W4_SYMBOL_MIX_FDL;
 //	fonts[LOCALE_EN].nfsize = sizeof(UCS_CNS_PUD_W4_SYMBOL_MIX_FDL);
-	fonts[LOCALE_FX].fontdata = (DT8_char*)UCS_CNS_Ascii500_sample_FDL;
-	fonts[LOCALE_FX].nfsize = sizeof(UCS_CNS_Ascii500_sample_FDL);
+//	fonts[LOCALE_FX].fontdata = (DT8_char*)UCS_CNS_Ascii500_sample_FDL;
+//	fonts[LOCALE_FX].nfsize = sizeof(UCS_CNS_Ascii500_sample_FDL);
 
 #ifdef USE_IWATA_PUD_LATIN
 	fonts[LOCALE_EN].fontdata = (DT8_char*)UCS_CNS_IWADA_SYMBOL_FDL;
@@ -528,6 +528,7 @@ int font_service_set_lang(enum FONT_LOCALE loc)
 }
 
 
+#if 0
 /***********************************************************************************************************************
  * FUNCTION		: フォントスタイルの設定関数
  ************************************************************************************************************************/
@@ -844,6 +845,7 @@ int gdi_fontapi_create_bmp_font_Image(
 
 	return ret;
 }
+#endif
 
 /*------------------------------------------------------------------------------*/
 /**
@@ -914,7 +916,7 @@ int gdi_fontapi_get_rect(const FONT_STYLE *style,
 		unsigned short total_xbytes = 0;
 
 		do {
-			BOOL bLineFeedCode = FALSE;
+			unsigned short LineFeedCode = 0;
 			unsigned short max_str = DT_MAX_STRING_LENGTH - 1;		//NULL含み50文字なので-1しておく
 			unsigned short remain_str = len - total_copylen;		//残り文字数
 			unsigned short copylen = (max_str < remain_str) ? max_str : remain_str;
@@ -923,7 +925,10 @@ int gdi_fontapi_get_rect(const FONT_STYLE *style,
 			unsigned short index;
 			for (index = 0; index < copylen; index++) {
 				if (ucs_str[total_copylen + index] == '\n' || ucs_str[total_copylen + index] == '\r') {
-					bLineFeedCode = TRUE;
+					if (ucs_str[total_copylen + index] == '\r' && ucs_str[total_copylen + index + 1] == '\n') {
+						LineFeedCode += 1;
+					}
+					LineFeedCode += 1;
 					break;
 				}
 				work_str[index] = ucs_str[total_copylen + index];
@@ -939,7 +944,7 @@ int gdi_fontapi_get_rect(const FONT_STYLE *style,
 
 			//サイズ更新 (前回の結果で更新を行う)
 			if (bLineFeedCode_backup == TRUE) {
-				total_width = (total_width < dt_txtinfo.bmpwidth) ? dt_txtinfo.bmpwidth : total_width;	/* pgr0351 */ /* pgr0247 */
+				total_width = (total_width < dt_txtinfo.bmpwidth) ? dt_txtinfo.bmpwidth : total_width;	/* pgr0351 */ /* pgr0247 */ /* pgr0360 */
 				total_height += dt_txtinfo.bmpheight;	/* pgr0351 */ /* pgr0360 */
 				total_xbytes += (isBitmapFont) ? (dt_txtinfo.xbytes * 8) * sizeof(unsigned short) : 0;	/* pgr0351 */
 			}
@@ -950,8 +955,8 @@ int gdi_fontapi_get_rect(const FONT_STYLE *style,
 			}
 
 			//更新後処理
-			if (bLineFeedCode == 1)	index++;	//改行コード分
-			bLineFeedCode_backup = bLineFeedCode;
+			if (LineFeedCode >= 1)	index += LineFeedCode;	//改行コード分
+			bLineFeedCode_backup = LineFeedCode >= 1 ? TRUE : FALSE;
 			total_copylen += index;
 
 		} while (total_copylen < len);	//文字数分の描画が終わったら終了
@@ -991,7 +996,7 @@ VGPath gdi_fontapi_createFontPath(const FONT_STYLE *style, const USHORT *ucs_str
 	int			size_Y;
 	int			draw_height = 0;
 	int			rct_y = 0;
-	int			lineunder = 0;
+	int			lineUnderflow = 0;
 	int			bmpheight = 0;
 	int			rct_hw_vy = 0;
 	GDI_ERRCODE err = GDI_NO_ERROR;
@@ -1040,7 +1045,7 @@ VGPath gdi_fontapi_createFontPath(const FONT_STYLE *style, const USHORT *ucs_str
 	bmpheight = dt_txtinfo.bmpheight;
 	rct_y = -rct.xy.y;
 	draw_height = rct.hw.vy + rct_y;
-	lineunder = (draw_height < bmpheight) ? (bmpheight - draw_height) : 0;
+	lineUnderflow = (draw_height < bmpheight) ? (bmpheight - draw_height) : 0;
 	rct_hw_vy = rct.hw.vy;
 
 	//全角文字(フォントサイズ：デフォルト)の場合
@@ -1073,7 +1078,7 @@ VGPath gdi_fontapi_createFontPath(const FONT_STYLE *style, const USHORT *ucs_str
 
 	draw_info->width = dt_txtinfo.bmpwidth;
 	draw_info->height = rct_hw_vy;
-	draw_info->lineunder = lineunder;
+	draw_info->lineUnderflow = lineUnderflow;
 	draw_info->bmpwidth = dt_txtinfo.bmpwidth;
 	draw_info->bmpheight = bmpheight;
 
@@ -1146,7 +1151,7 @@ VGPath gdi_fontapi_get_path(const FONT_STYLE *style, const USHORT *ucs_str, int 
 		FONT_DRAW_INFO draw_info;
 		pdraw_info->width = 0;
 		pdraw_info->height = 0;
-		pdraw_info->lineunder = 0;
+		pdraw_info->lineUnderflow = 0;
 		pdraw_info->bmpwidth = 0;
 		pdraw_info->bmpheight = 0;
 		//フォントパスの初期化
@@ -1200,7 +1205,7 @@ VGPath gdi_fontapi_get_path(const FONT_STYLE *style, const USHORT *ucs_str, int 
 
 			pdraw_info->width += draw_info.width;
 			pdraw_info->height = draw_info.height = (pdraw_info->height < draw_info.height) ? draw_info.height : pdraw_info->height;
-			pdraw_info->lineunder = (pdraw_info->lineunder < draw_info.lineunder) ? draw_info.lineunder : pdraw_info->lineunder;
+			pdraw_info->lineUnderflow = (pdraw_info->lineUnderflow < draw_info.lineUnderflow) ? draw_info.lineUnderflow : pdraw_info->lineUnderflow;
 			pdraw_info->bmpwidth += draw_info.bmpwidth;
 			pdraw_info->bmpheight = (pdraw_info->bmpheight < draw_info.bmpheight) ? draw_info.bmpheight : pdraw_info->bmpheight;
 
@@ -1274,7 +1279,7 @@ VGPath gdi_fontapi_CombineCharsToStrPath(const FONT_STYLE *style, const USHORT *
 	USHORT		work_str[2] = { 0,0 };
 	int			draw_height = 0;
 	int			rct_y = 0;
-	int			lineunder;
+	int			lineUnderflow;
 	int			bmpheight;
 	BOOL		bIsUseDescent = FALSE;
 	VGPath		work_handle = VG_INVALID_HANDLE;
@@ -1383,12 +1388,12 @@ VGPath gdi_fontapi_CombineCharsToStrPath(const FONT_STYLE *style, const USHORT *
 	rct_y = -rct.xy.y;
 	draw_height = rct.hw.vy + rct_y;
 	bmpheight = dt_txtinfo.bmpheight;
-	lineunder = (draw_height < bmpheight) ? (bmpheight - draw_height) : 0;
+	lineUnderflow = (draw_height < bmpheight) ? (bmpheight - draw_height) : 0;
 
 	if (NULL != draw_info) {
 		draw_info->width = (UINT)(style->size_x * 0.5f * len);	/* pgr0247 意図通りのキャスト */
 		draw_info->height = style->size_y;
-		draw_info->lineunder = lineunder;
+		draw_info->lineUnderflow = lineUnderflow;
 		draw_info->bmpwidth = dt_txtinfo.bmpwidth;
 		draw_info->bmpheight = bmpheight;
 	}
@@ -1432,9 +1437,15 @@ DESTROY_AND_EXIT:  /* 異常終了 */
 int CountLineFeedCode(USHORT* _str)
 {
     unsigned short    ret = 0;
+	DT32_int len = 0;
+	
+	if (_str == NULL) return 0;
 
-    for (DT32_int len = 0; _str[len]; len++) {
+	for (len = 0; _str[len]; len++) {
         if (_str[len] == '\n' || _str[len] == '\r') {
+			if (_str[len] == '\r' && _str[len + 1] == '\n') {
+				len++;
+			}
             ret++;
         }
     }

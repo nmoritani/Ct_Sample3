@@ -33,6 +33,7 @@ include     $(SOURCE_TREE_TOP)/MovieSoft/Mid/Gui/Defs.mk
 
 # "LCFLAGS" and "LASFLAGS" specify compiling option for local directory.
 #
+LCFLAGS		+= -I./FreeType
 
 LASFLAGS	=
 
@@ -60,7 +61,7 @@ CFGSRC		= GDI.cfg
 
 # "SUBDIRS" specifies directory list that executes make command recursively.
 #
-SUBDIRS		= PHLOX DigiType
+SUBDIRS		= PHLOX DigiType FreeType
 
 # Don't modify. It includes common make file here.
 #

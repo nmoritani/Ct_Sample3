@@ -54,13 +54,6 @@ extern unsigned char _ct_fast_start[];
 #define CT_FAST_MPLSIZE	(100*1024)
 
 /*--------------
-	GFX TK
---------------*/
-extern unsigned char _gfx_tk_start[];
-#define GFX_TK_START		 (_gfx_tk_start)
-#define GFX_TK_SIZE		(10*1024*1024)	/* K519ƒƒ‚ƒŠƒ}ƒbƒv‘Š“– */
-
-/*--------------
 	GFX GM
 --------------*/
 extern unsigned char _gfx_gm_start[];

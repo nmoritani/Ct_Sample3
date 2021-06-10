@@ -6,7 +6,6 @@
 #define __STRING_API_H__
 
 #include "language_id.h"
-#include "fontapi.h"
 
 #ifdef __cplusplus
 extern "C" {

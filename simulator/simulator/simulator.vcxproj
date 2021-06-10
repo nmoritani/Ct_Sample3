@@ -3150,7 +3150,6 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
     <ClInclude Include="..\..\gdi\DigiType\includes\DTplatform.h" />
     <ClInclude Include="..\..\gdi\DigiType\includes\DTversion.h" />
     <ClInclude Include="..\..\gdi\DigiType\includes\fontdata.h" />
-    <ClInclude Include="..\..\gdi\DigiType\includes\model_config.h" />
     <ClInclude Include="..\..\gdi\DigiType\indic_common.h" />
     <ClInclude Include="..\..\gdi\DigiType\indic_find_syllable.h" />
     <ClInclude Include="..\..\gdi\DigiType\ovgDcw.h" />

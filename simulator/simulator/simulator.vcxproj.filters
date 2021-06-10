@@ -489,9 +489,6 @@
     <ClCompile Include="..\..\Ct\ws\CtWindowList.cpp">
       <Filter>Ct\ws</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gdi\fontapi.c">
-      <Filter>Ct\gdi</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gdi\gdi.c">
       <Filter>Ct\gdi</Filter>
     </ClCompile>
@@ -1611,6 +1608,9 @@
     <ClCompile Include="..\..\gdi\FreeType\src\gzip\ftgzip.c">
       <Filter>Ct\gdi\FreeType\src\gzip</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\gdi\fontapi.c">
+      <Filter>Ct\gdi</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\simulator\AvcIf.h">
@@ -1950,9 +1950,6 @@
       <Filter>Ct\gdi\DigiType\includes</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gdi\DigiType\includes\fontdata.h">
-      <Filter>Ct\gdi\DigiType\includes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gdi\DigiType\includes\model_config.h">
       <Filter>Ct\gdi\DigiType\includes</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Ct\tk\CtButton.h">

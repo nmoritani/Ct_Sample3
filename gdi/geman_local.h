@@ -43,18 +43,6 @@ extern eDRV_ERR eLdCKGEN_ChangePll(sDRV_CKGEN_PLL_SELECT *psPllSel);
 #define GE_SFTRST_DISABLE()	do {mRST_GE_DISABLE();} while(0)
 #define GE_SFTRST_ENABLE()	do {mRST_GE_ENABLE(); } while(0)
 
-/* GEのマップ先頭アドレス 備考:[ge_ml 680] */
-#if KCSPEC_ASIC_TYPE == _VENUS7_FHD_
-#define GV_MMREG_BASE	(0x9c00f000)
-#elif KCSPEC_ASIC_TYPE == _VENUS7_HD2_
-#define GV_MMREG_BASE	(0x9c00e000)
-#elif KCSPEC_ASIC_TYPE == _VENUS8_FHD_
-#define GV_MMREG_BASE	(0x9c00f000)
-#elif KCSPEC_ASIC_TYPE == _VENUS9_AHD_
-#define GV_MMREG_BASE	(0x7c168000)
-#else
-#error "UNKNOWN ASIC"
-#endif
 
 /***************************************************************
                         型定義

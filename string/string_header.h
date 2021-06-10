@@ -7,7 +7,6 @@ extern "C" {
 #endif /* __cplusplus */
 
 #include "language_id.h"
-//#include "str_id.h"
 #include "string_api.h"
 
 #ifdef __cplusplus

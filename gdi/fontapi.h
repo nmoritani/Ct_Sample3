@@ -37,31 +37,6 @@ typedef struct {
 } FONT_STYLE;
 
 typedef struct {
-    UCHAR   size_x;    /* 文字サイズ（横）*/
-    UCHAR   size_y;    /* 文字サイズ（縦）*/
-    UCHAR   bold;      /* 1: 太字 */
-    UCHAR   italic;    /* 1: 斜体 */
-    UCHAR   underline; /* 1: 下線 */
-    UCHAR   strike;    /* 1: 打ち消し線 */
-    UCHAR   spacing;   /* 文字間隔 */
-    UCHAR   righttoleft;  /* 描画方向 0:左から右  1:右から左 */
-    UCHAR   edge;      /* 縁取りの縁太さ（0:縁取りなし） */
-    UCHAR   shadow;    /* 0: 影なし 1: 右下に影 */
-    UCHAR   fgcolor;   /* 文字色（0-15、OSD1カラーパレットの上位4bit）*/ /* ※現在は7（白）のみ使用可能 */
-} FONT_STYLE_OSD1;
-
-typedef struct {
-	/* int width; */
-	/* int height; */
-	int ascent;        /* ほとんどの英数字の、ベースラインから最上点までの距離 */
-	int descent;       /* ほとんどの英数字の、ベースラインから最下点までの距離 */
-	/* int leading; */
-	/* int maxAdvance; */
-	int maxAscent;     /* 全ての文字の最大ascent */
-	int maxDescent;    /* 全ての文字の最大descent */
-} FONT_METRICS;
-
-typedef struct {
 	UINT width;			//描画する文字列全体の横幅
 	UINT height;		//フォントの縦サイズ
 	int  lineUnderflow;	//描画起点(左下)よりも下に描画されるイメージ部分の高さ
@@ -126,24 +101,6 @@ extern int  font_service_init(
     void
 );
 
-#if KCSPEC_ARM_OPENVG
-/*------------------------------------------------------------------------------*/
-/**
-@fn           font_service_get_font_data_table
-@brief        別CPUのfontapi初期化のためのfonts情報を取得する
-@param[in]    なし
-@retval       FONT_DATATABLE*	(font_service_initの引数としてのみ使用可能)
-@par          同期
-@sa           [in] なし [out] current_locale
-@par          更新履歴:
-              2010/10/21 新規作成
-*/
-/*------------------------------------------------------------------------------*/
-extern FONT_DATATABLE *font_service_get_font_data_table(
-	void
-);
-#endif
-
 /*------------------------------------------------------------------------------*/
 /**
 @fn           font_service_quit
@@ -191,9 +148,6 @@ extern enum FONT_LOCALE font_service_get_lang(
 extern int  font_service_set_lang(
     enum FONT_LOCALE loc
 );
-
-
-
 
 /*------------------------------------------------------------------------------*/
 /**
@@ -309,53 +263,6 @@ extern int  font_service_get_exact_rect(
     unsigned short  *width,
     unsigned short  *height
 );
-
-
-
-#if KCSPEC_OPENVG
-#ifdef WIN32
-#include <VG/openvg.h>
-#else
-#ifndef VG_API_CALL
-#define VG_API_CALL extern
-#endif
-#include <VG/openvg.h>
-#endif
-/*------------------------------------------------------------------------------*/
-/**
-@fn           font_service_get_path
-@brief        文字列イメージの取得（OpenVGのパスデータ）
-@param[in]    style   文字スタイル
-@param[in]    ucs_str UCS-2文字列（0終端）
-@retval       VGPathのハンドル（異常終了時はVG_INVALID_HANDLE）
-@par          同期
-@sa           [in][out] なし
-@par          更新履歴:
-              2011/9/5 新規作成
-@par          特記事項: 使用後はfont_service_release_path()による解放が必要です。
-*/
-/*------------------------------------------------------------------------------*/
-extern VGPath gdi_fontapi_get_path(
-    const FONT_STYLE *style,
-    const USHORT *ucs_str,
-    FONT_DRAW_INFO *draw_info
-);
-
-extern int gdi_fontapi_get_bmp_font_Image(
-	USHORT *dstImage,			//出力先バッファ
-	int x, 						//出力先バッファの中の開始X座標
-	int y, 						//出力先バッファの中の開始Y座標
-	int bufsize_width, 			//出力先バッファの幅
-	int bufsize_height, 		//出力先バッファの高さ
-	const USHORT *ucs_str, 		//描画する文字列
-	const FONT_STYLE *style,	//フォントスタイル
-	USHORT fcolor, 				//フォントカラー
-	USHORT incolor, 			//内塗り(アウトライン描画時に中を塗る場合はセット。0の場合無効)
-	VGint *pdrawRct				//描画を行った際の幅と高さの情報
-);
-
-
-#endif /* KCSPEC_OPENVG */
 
 #ifdef __cplusplus
 }

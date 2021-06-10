@@ -168,6 +168,7 @@ static void DestroyFace()
 /******************************************************************************/
 void freetype_wrapper_init()
 {
+    printf("FreeType Library Initialize\n");
 	m_library = NULL;
 	m_face = NULL;
 	InitLibrary();
@@ -181,6 +182,7 @@ void freetype_wrapper_init()
 /******************************************************************************/
 void freetype_wrapper_terminate()
 {
+    printf("FreeType Library Destroyed\n");
 	DestroyFace();
     //	DestroyLibrary();
 }

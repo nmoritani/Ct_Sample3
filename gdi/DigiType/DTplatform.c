@@ -698,7 +698,7 @@ DBG_MSG_SHOW_FUNC_NAME();
 
 #else /*DT_ENABLE_STDIO*/
 
-#include "fontdata.h"  /* Panasonic changed this */
+#include "DTfontdata.h"  /* Panasonic changed this */
 
 typedef struct _DT_FontFileInfo
 {								/* Reference to DT_Font to get the members' meaning.				*/

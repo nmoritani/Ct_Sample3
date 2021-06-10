@@ -90,7 +90,6 @@ static const LANG_TO_FONTTYPE_TABLE lang_to_font_table[] = {
 //////////////////////////////////////////////////////////////////////////
 FT_FONT_TYPE		m_current_type;
 
-
 /******************************************************************************/
 /**
 * フォントタイプの設定
@@ -195,12 +194,11 @@ bool ft_service_find_load(FT_FONT_TYPE type)
 {
 	bool ret = false;
 
-#if 0
 	//現在読み込んでいるフォントと一致していたら読み込まない
 	if (ft_service_get_current_fonttype() == type) {
 		return true;
 	}
-#endif
+
 	//フォントタイプを基に、フォント名を検索する
 	char* fontName = ft_service_find_fonttabel(type);
 	if (!fontName) {

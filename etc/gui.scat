@@ -68,12 +68,7 @@ LOAD_GUIROM __GUIROM_ADDR__
     }
     
     /*Åö*/
-    .gfx_tk_start 0x0E039200
-    {
-        *(.gfx_tk_start)
-    }
-    
-    .gfx_res_start +0
+    .gfx_res_start 0x0E039200
     {
         *(.gfx_res_start)
     }

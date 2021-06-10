@@ -10,12 +10,8 @@
   #include "Digitype_std.h"
  #endif
 
-#include <model_config.h>
-
-#if KCSPEC_OPENVG == 1 || KCSPEC_MAP_VIEW == 1
- #define DIGITYPE_OUL
- #include "Digitype_oul.h"
-#endif
+#define DIGITYPE_OUL
+#include "Digitype_oul.h"
 
 #define BDF_RASTER
  #ifdef BDF_RASTER

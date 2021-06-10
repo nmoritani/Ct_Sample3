@@ -1,8 +1,12 @@
+#include <string.h>  /* for memmove(), memcpy(), memset() */
+
+#include <openvg_wrapper.h>
 #include "CtDebugPrint.h"
 #include "gdi.h"
 
-#include "fontapi_common.h"
-#include <openvg_wrapper.h>
+#include "fontapi.h"
+#include "DigiTypeApi.h"
+#include "DTfontdata.h"
 
 #ifdef WIN32_GUI_SIM
 #include <windows.h>
@@ -12,6 +16,23 @@
 #include <kernel_id.h>
 #define ID_FONTAPI_SEM		(GDI_SEMID_FONTAPI)
 
+
+/* ロケール特有の文字コード範囲 */
+#define isASCII(c) ((c) >= 0x0020 && (c) <= 0x007f)
+#define isCJK(c) ((c) >= 0x3000 && (c) <= 0xfaff && !((c) >= 0xe100 && (c) <= 0xe3ff))
+#define isArabic(c)														\
+	(((c) >= 0x0600 && (c) <= 0x07ff) ||  /* Basic Arabic */			\
+	 ((c) >= 0xfb50 && (c) <= 0xfdff) ||  /* Arabic Form A */			\
+	 ((c) >= 0xfe70 && (c) <= 0xfeff) ||  /* Arabic Form B */			\
+	 ((c) >= 0xe000 && (c) <= 0xe08f) /* Arabic PUA */ )
+#define isArabicOrRLM(c) (isArabic(c) || (c) == 0x200f)
+#define isBidiControlCode(c) (0x200b <= (c) && (c) <= 0x200f || 0x202a <= (c) && (c) <= 0x202e)
+#define isThai(c) ((c) >= 0x0e00 && (c) <= 0x0e7f)
+#define isIndicDevanagari(ch) (( ((ch)>=0x0900 && (ch)<=0x097f)        \
+                                    || ((ch)>=0xE300 && (ch)<=0xE308)  \
+                                    || ((ch)>=0xEF00 && (ch)<=0xEFFF)  \
+                                    || ((ch)>=0xF200 && (ch)<=0xF3FF)  \
+                                    || (ch)==0x25CC)?1:0)  /* borrowed from DcwDevanagari.h */
 
 /*------------------------------------------------------------------------------
     定数
@@ -33,12 +54,7 @@ const DT32_int styleval[]={
 DT_FontMgr dt_fontmgr = NULL;
 DT_TextInfo dt_txtinfo;  /* スタック領域に置くにはサイズが大きいので、staticに変更 */
 DT_Handle hGray = NULL;  /* DigiTypeのハンドラー（グレースケール用） */
-
-#ifndef ONLY_ONE_DT_HANDLE
-/* DigiType 2.5.12ではCreateFontすると多量のメモリを必要とするため、ハンドラーは1つとする */
 DT_Handle hMono = NULL;  /* DigiTypeのハンドラー（モノクロ用） */
-#endif
-
 DT_Handle hOvg = NULL;  /* DigiTypeのハンドラー（OpenVG用） */  /* TODO: fontapi_ovg.cに移動 */
 
 /* フォントデータ情報整理用 */
@@ -51,6 +67,7 @@ static enum FONT_LOCALE current_locale = LOCALE_NONE;
 /*------------------------------------------------------------------------------
     プロトタイプ宣言
 ------------------------------------------------------------------------------*/
+int CountLineFeedCode(USHORT* _str);
 
 
 /***********************************************************************************************************************
@@ -215,25 +232,15 @@ int  font_service_init(void)
 	/* 全言語共通フォントデータの存在確認 */
 #ifdef WIN32_GUI_SIM
 	if (
-#ifdef USE_IWATA_PUD_LATIN
 		*(unsigned long *)UCS_CNS_PUD_W4_SYMBOL_MIX_FDL != 0x204C4446 || /* "FDL Font" */
 		*(unsigned long *)UCS_CNS_PUD_W4_SYMBOL_MIX_FDL_last_bytes != 0x204C4446
-#else
-		*(unsigned long *)UCS_CNS_IWADA_SYMBOL_FDL != 0x204C4446 || /* "FDL Font" */
-		*(unsigned long *)UCS_CNS_IWADA_SYMBOL_FDL_last_bytes != 0x204C4446
-#endif
 	){
 
 #else	/* WIN32_GUI_SIM */
 	int start_sig,end_sig;
 
-#ifdef USE_IWATA_PUD_LATIN
 	memcpy(&start_sig,UCS_CNS_PUD_W4_SYMBOL_MIX_FDL,sizeof(int));
 	memcpy(&end_sig,UCS_CNS_PUD_W4_SYMBOL_MIX_FDL_last_bytes,sizeof(int));
-#else
-	memcpy(&start_sig,UCS_CNS_IWADA_SYMBOL_FDL,sizeof(int));
-	memcpy(&end_sig,UCS_CNS_IWADA_SYMBOL_FDL_last_bytes,sizeof(int));
-#endif
 
 	if (
 		start_sig != 0x204C4446 || /* "FDL Font" */
@@ -251,10 +258,8 @@ int  font_service_init(void)
 //	fonts[LOCALE_FX].fontdata = (DT8_char*)UCS_CNS_Ascii500_sample_FDL;
 //	fonts[LOCALE_FX].nfsize = sizeof(UCS_CNS_Ascii500_sample_FDL);
 
-#ifdef USE_IWATA_PUD_LATIN
 	fonts[LOCALE_EN].fontdata = (DT8_char*)UCS_CNS_IWADA_SYMBOL_FDL;
 	fonts[LOCALE_EN].nfsize = sizeof(UCS_CNS_IWADA_SYMBOL_FDL);
-#endif
 
 	fonts[LOCALE_IC].fontdata = (DT8_char*)iconfontdata;
 	fonts[LOCALE_IC].nfsize = sizeof(iconfontdata);
@@ -305,20 +310,16 @@ int  font_service_init(void)
 		goto finally;
 	}
 
-#ifndef ONLY_ONE_DT_HANDLE
 	hMono = DT_CreateFontFromMem(init_mgr, &fonts[LOCALE_EN], DT_MONOCHROME_MODE, NULL, &fonts[LOCALE_IC]);
 	if(!hMono){
 		DT_unInitDigiType(init_mgr);
 		ret = -1;
 		goto finally;
 	}
-#endif
 
 	for (i = 0; i < 6; i++) {
 	  ret |= DT_SetFontStyle(hGray, (DT_FontStyle_Option)i, styleval[i]);
-#ifndef ONLY_ONE_DT_HANDLE
 	  ret |= DT_SetFontStyle(hMono, (DT_FontStyle_Option)i, styleval[i]);
-#endif
 
 	  if ((DT_FontStyle_Option)i != DT_FSTYLE_IS_BOLD)  /* DT_OUTLINE_MODEではDT_FSTYLE_IS_BOLDは不対応 */
 		  ret |= DT_SetFontStyle(hOvg, (DT_FontStyle_Option)i, styleval[i]);
@@ -338,24 +339,6 @@ int  font_service_init(void)
 	sig_sem(ID_FONTAPI_SEM);
 	return ret;
 }
-
-#if KCSPEC_ARM_OPENVG
-/*------------------------------------------------------------------------------*/
-/**
-@fn           font_service_get_font_data_table
-@brief        別CPUのfontapi初期化のためのfonts情報を取得する
-@param[in]    なし
-@retval       DT_FontData*
-@par          同期
-@sa           [in] なし [out] current_locale
-@par          更新履歴:
-              2010/10/21 新規作成
-*/
-/*------------------------------------------------------------------------------*/
-FONT_DATATABLE *font_service_get_font_data_table(void){
-	return (FONT_DATATABLE*)fonts;
-}
-#endif /* KCSPEC_ARM_OPENVG */
 
 /*------------------------------------------------------------------------------*/
 /**
@@ -381,12 +364,10 @@ int  font_service_quit(void)
 		ret |= DT_DestroyFont(hGray);
 		hGray = NULL;
 	}
-#ifndef ONLY_ONE_DT_HANDLE
 	if (hMono != NULL){
 		ret |= DT_DestroyFont(hMono);
 		hMono = NULL;
 	}
-#endif
 
 	if (hOvg != NULL){
 		ret |= DT_DestroyFont(hOvg);
@@ -448,10 +429,8 @@ int font_service_set_lang(enum FONT_LOCALE loc)
 	/* 再度CreateFontする前にDestroyFontが必要 */
 	if (hGray)
 		ret |= DT_DestroyFont(hGray);
-#ifndef ONLY_ONE_DT_HANDLE
 	if (hMono)
 		ret |= DT_DestroyFont(hMono);
-#endif
 
 	if (hOvg)
 		ret |= DT_DestroyFont(hOvg);
@@ -471,44 +450,31 @@ int font_service_set_lang(enum FONT_LOCALE loc)
 	case LOCALE_AR:
 	case LOCALE_TH:
 	case LOCALE_HI:
-		hGray = DT_CreateFontFromMem(dt_fontmgr, &fonts[LOCALE_EN], DT_GRAY16BMP_MODE, &fonts[loc], &fonts[LOCALE_IC]); /* common, locale font, bitmap font */
-#ifndef ONLY_ONE_DT_HANDLE
+		hGray = DT_CreateFontFromMem(dt_fontmgr, &fonts[LOCALE_EN], DT_GRAY16BMP_MODE, &fonts[loc], &fonts[LOCALE_IC]); 
 		hMono = DT_CreateFontFromMem(dt_fontmgr, &fonts[LOCALE_EN], DT_MONOCHROME_MODE, &fonts[loc], &fonts[LOCALE_IC]);
-#endif
 		hOvg = DT_CreateFontFromMem(dt_fontmgr, &fonts[LOCALE_EN], DT_OUTLINE_MODE, &fonts[loc], NULL);
 		break;
 
 	case LOCALE_FX:
-		hGray = DT_CreateFontFromMem(dt_fontmgr, &fonts[loc], DT_GRAY16BMP_MODE, &fonts[LOCALE_EN], &fonts[LOCALE_IC]); /* common, locale font, bitmap font */
-#ifndef ONLY_ONE_DT_HANDLE
+		hGray = DT_CreateFontFromMem(dt_fontmgr, &fonts[loc], DT_GRAY16BMP_MODE, &fonts[LOCALE_EN], &fonts[LOCALE_IC]);
 		hMono = DT_CreateFontFromMem(dt_fontmgr, &fonts[loc], DT_MONOCHROME_MODE, &fonts[LOCALE_EN], &fonts[LOCALE_IC]);
-#endif
 		hOvg = DT_CreateFontFromMem(dt_fontmgr, &fonts[loc], DT_OUTLINE_MODE, &fonts[LOCALE_EN], NULL);
 		break;
 
 	default:
-		hGray = DT_CreateFontFromMem(dt_fontmgr, &fonts[LOCALE_EN], DT_GRAY16BMP_MODE, &fonts[LOCALE_JP], &fonts[LOCALE_IC]); /* common, bitmap font */
-#ifndef ONLY_ONE_DT_HANDLE
+		hGray = DT_CreateFontFromMem(dt_fontmgr, &fonts[LOCALE_EN], DT_GRAY16BMP_MODE, &fonts[LOCALE_JP], &fonts[LOCALE_IC]);
 		hMono = DT_CreateFontFromMem(dt_fontmgr, &fonts[LOCALE_EN], DT_MONOCHROME_MODE, &fonts[LOCALE_JP], &fonts[LOCALE_IC]);
-#endif
 		hOvg = DT_CreateFontFromMem(dt_fontmgr, &fonts[LOCALE_EN], DT_OUTLINE_MODE, &fonts[LOCALE_JP], NULL);
 	}
 
-#ifdef ONLY_ONE_DT_HANDLE
-	if(!hGray){
-#else
 	if(!hGray || !hMono){
-#endif
-//		ASSERT(0);  /* DT_Handle作成失敗 */
 		ret = -1;
 		goto finally;
 	}
 
 	for(i = 0; i < 6; i++) {
 		ret |= DT_SetFontStyle(hGray, (DT_FontStyle_Option)i, styleval[i]);
-#ifndef ONLY_ONE_DT_HANDLE
 		ret |= DT_SetFontStyle(hMono, (DT_FontStyle_Option)i, styleval[i]);
-#endif
 		if ((DT_FontStyle_Option)i != DT_FSTYLE_IS_BOLD)  /* DT_OUTLINE_MODEではDT_FSTYLE_IS_BOLDは不対応 */
 			ret |= DT_SetFontStyle(hOvg, (DT_FontStyle_Option)i, styleval[i]);
 	}
@@ -1009,7 +975,7 @@ VGPath gdi_fontapi_createFontPath(const FONT_STYLE *style, const USHORT *ucs_str
 	if (len <= 0) goto DESTROY_AND_EXIT;
 
 	//フォントパスの初期化
-	return_handle = vgCreatePath(VG_PATH_FORMAT_STANDARD, LOCAL_VGPATH_DATATYPE, 1.0f, 0.0f, 0, 0, VG_PATH_CAPABILITY_ALL);
+	return_handle = vgCreatePath(VG_PATH_FORMAT_STANDARD, VG_PATH_DATATYPE_F, 1.0f, 0.0f, 0, 0, VG_PATH_CAPABILITY_ALL);
 
 	if ((return_handle == VG_INVALID_HANDLE) || (vgGetError() != VG_NO_ERROR)) {
 		goto DESTROY_AND_EXIT;
@@ -1059,7 +1025,7 @@ VGPath gdi_fontapi_createFontPath(const FONT_STYLE *style, const USHORT *ucs_str
 
 	//仮想基点への移動
 	if ((0 != adjustX) || (0 != adjustY)) {
-		VGPath tmppath = vgCreatePath(VG_PATH_FORMAT_STANDARD, LOCAL_VGPATH_DATATYPE, 1.0f, 0.0f, 0, 0, VG_PATH_CAPABILITY_ALL);
+		VGPath tmppath = vgCreatePath(VG_PATH_FORMAT_STANDARD, VG_PATH_DATATYPE_F, 1.0f, 0.0f, 0, 0, VG_PATH_CAPABILITY_ALL);
 		if ((tmppath == VG_INVALID_HANDLE) || (vgGetError() != GDI_NO_ERROR)) {
 			goto DESTROY_AND_EXIT;
 		}
@@ -1103,7 +1069,6 @@ DESTROY_AND_EXIT:  /* 異常終了 */
 @sa           [in][out] なし
 @par          更新履歴:
               2011/9/5 新規作成
-              2012/2/13 RTOL_PATH_ON_LEFT_OF_ORIGINの定義追加と共に全体的に整理
 */
 /*------------------------------------------------------------------------------*/
 VGPath gdi_fontapi_get_path(const FONT_STYLE *style, const USHORT *ucs_str, int len, FONT_DRAW_INFO *pdraw_info)
@@ -1155,7 +1120,7 @@ VGPath gdi_fontapi_get_path(const FONT_STYLE *style, const USHORT *ucs_str, int 
 		pdraw_info->bmpwidth = 0;
 		pdraw_info->bmpheight = 0;
 		//フォントパスの初期化
-		return_handle = vgCreatePath(VG_PATH_FORMAT_STANDARD, LOCAL_VGPATH_DATATYPE, 1.0f, 0.0f, 0, 0, VG_PATH_CAPABILITY_ALL);
+		return_handle = vgCreatePath(VG_PATH_FORMAT_STANDARD, VG_PATH_DATATYPE_F, 1.0f, 0.0f, 0, 0, VG_PATH_CAPABILITY_ALL);
 
 		if ((return_handle == VG_INVALID_HANDLE) || (vgGetError() != VG_NO_ERROR)) {
 			goto DESTROY_AND_EXIT;
@@ -1183,7 +1148,7 @@ VGPath gdi_fontapi_get_path(const FONT_STYLE *style, const USHORT *ucs_str, int 
 			//パスの結合
 			if (0 < pdraw_info->width) {
 				//2回目以降はX方向の描画開始位置をずらし、vgAppendPathする
-				tmppath = vgCreatePath(VG_PATH_FORMAT_STANDARD, LOCAL_VGPATH_DATATYPE, 1.0f, 0.0f, 0, 0, VG_PATH_CAPABILITY_ALL);
+				tmppath = vgCreatePath(VG_PATH_FORMAT_STANDARD, VG_PATH_DATATYPE_F, 1.0f, 0.0f, 0, 0, VG_PATH_CAPABILITY_ALL);
 				if ((tmppath == VG_INVALID_HANDLE) || (vgGetError() != VG_NO_ERROR)) {
 					goto DESTROY_AND_EXIT;
 				}
@@ -1250,7 +1215,6 @@ DESTROY_AND_EXIT:  /* 異常終了 */
 @sa           [in][out] なし
 @par          更新履歴:
 2011/9/5 新規作成
-2012/2/13 RTOL_PATH_ON_LEFT_OF_ORIGINの定義追加と共に全体的に整理
 */
 /*------------------------------------------------------------------------------*/
 static BOOL IsUseDescentArea(USHORT _str)
@@ -1292,7 +1256,7 @@ VGPath gdi_fontapi_CombineCharsToStrPath(const FONT_STYLE *style, const USHORT *
 	wai_sem(ID_FONTAPI_SEM);
 
 	//フォントパスの初期化
-	return_handle = vgCreatePath(VG_PATH_FORMAT_STANDARD, LOCAL_VGPATH_DATATYPE, 1.0f, 0.0f, 0, 0, VG_PATH_CAPABILITY_ALL);
+	return_handle = vgCreatePath(VG_PATH_FORMAT_STANDARD, VG_PATH_DATATYPE_F, 1.0f, 0.0f, 0, 0, VG_PATH_CAPABILITY_ALL);
 
 	if ((return_handle == VG_INVALID_HANDLE) || (vgGetError() != VG_NO_ERROR)) {
 		goto DESTROY_AND_EXIT;
@@ -1327,7 +1291,7 @@ VGPath gdi_fontapi_CombineCharsToStrPath(const FONT_STYLE *style, const USHORT *
 		}
 
 		//パスを生成
-		work_handle = vgCreatePath(VG_PATH_FORMAT_STANDARD, LOCAL_VGPATH_DATATYPE, 1.0f, 0.0f, 0, 0, VG_PATH_CAPABILITY_ALL);
+		work_handle = vgCreatePath(VG_PATH_FORMAT_STANDARD, VG_PATH_DATATYPE_F, 1.0f, 0.0f, 0, 0, VG_PATH_CAPABILITY_ALL);
 		if ((work_handle == VG_INVALID_HANDLE) || (vgGetError() != VG_NO_ERROR)) {
 			goto DESTROY_AND_EXIT;
 		}
@@ -1361,7 +1325,7 @@ VGPath gdi_fontapi_CombineCharsToStrPath(const FONT_STYLE *style, const USHORT *
 
 		//仮想基点への移動
 		if ((0 != adjustX) || (0 != adjustY)) {
-			tmppath = vgCreatePath(VG_PATH_FORMAT_STANDARD, LOCAL_VGPATH_DATATYPE, 1.0f, 0.0f, 0, 0, VG_PATH_CAPABILITY_ALL);
+			tmppath = vgCreatePath(VG_PATH_FORMAT_STANDARD, VG_PATH_DATATYPE_F, 1.0f, 0.0f, 0, 0, VG_PATH_CAPABILITY_ALL);
 			if ((tmppath == VG_INVALID_HANDLE) || (vgGetError() != VG_NO_ERROR)) {
 				goto DESTROY_AND_EXIT;
 			}

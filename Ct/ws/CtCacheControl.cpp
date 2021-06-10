@@ -342,14 +342,6 @@ GDI_CACHE_FONT* CtCacheControl::CacheFont::getAddr(GDI_FONT_STYLE *style, unsign
 	CacheData clearData;
 
 	if (cacheAddr == NULL) {	/* キャッシュなしの場合は作成 */
-		while (GDI_checkRemainMpl(80) == TRUE) {
-			bool isClear = m_Info.clearOld(clearData);
-			if (isClear == false) {
-				break;
-			}
-			release(clearData.mp_Addr);
-		}
-		
 		cacheAddr = create(style, str);
 		if (cacheAddr != NULL) {
 			bool isClear;
@@ -436,14 +428,6 @@ GDI_CACHE_SVG* CtCacheControl::CacheSVG::getAddr(GDI_IMAGE_ID imageId)
 	CacheData clearData;
 
 	if (cacheAddr == NULL) {	/* キャッシュなしの場合は作成 */
-		while (GDI_checkRemainMpl(80) == TRUE) {
-			bool isClear = m_Info.clearOld(clearData);
-			if (isClear == false) {
-				break;
-			}
-			release(clearData.mp_Addr);
-		}
-		
 		cacheAddr = create(imageId);
 		if (cacheAddr != NULL) {
 			bool isClear = setAddr(clearData, id, cacheAddr);

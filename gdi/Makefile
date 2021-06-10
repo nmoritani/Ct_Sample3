@@ -48,7 +48,6 @@ CSRC		= fontapi.c \
 			geman.c \
 			geman_gui_sim.c \
 			mem_mng.c \
-			pathdumper.c \
 			utf_convert.c
 
 ASRC		=

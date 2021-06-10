@@ -73,12 +73,12 @@ typedef DT32_long		DT_f26dot6;
 /****************************************************************************/
 /* Set DT_OPENVG_ENABLED as 1: it will enable the function DT_RasterOVG().				*/
 /* At the same time, it will need the header files and the library that OpenVG needed.	*/
-#include <model_config.h>
-
-#define DT_OPENVG_ENABLED	((KCSPEC_OPENVG == 1) || (KCSPEC_MAP_VIEW == 1))	/* 0: not support OpenVG; 1: support OpenVG */
+#define DT_OPENVG_ENABLED	(1)	/* 0: not support OpenVG; 1: support OpenVG */
 
 #if (1==DT_OPENVG_ENABLED)
- #define VG_API_CALL extern
+#ifndef VG_API_CALL
+#define VG_API_CALL extern
+#endif
  #include <openvg_wrapper.h>
  typedef VGfloat			DT_float;	/* This type is required only when supporting OpenVG. */
 

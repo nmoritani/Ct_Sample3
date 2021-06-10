@@ -60,7 +60,7 @@ typedef struct _gfx_plane_info
 
 static gfx_plane_info gfx_plane[GFX_PLANE_MAX] = { NULL, NULL, NULL };
 
-
+#if 0
 //------------------------------------------------------------------------------
 // internal functions
 //
@@ -86,6 +86,7 @@ static SMemMngInit tkMemInfo =
 		//		{GEVG_MEM_CONF_ID14_SIZE, GEVG_MEM_CONF_ID14_NUM},
 	}
 };
+#endif
 
 GDI_ERRCODE gdi_switch_screen(GDI_HANDLER hdr)
 {
@@ -129,9 +130,11 @@ NativeWindowType GDI_GetNativeWindow(GFX_PLANE_ID plane)
 
 void GDI_Init(void)
 {
+#if 0
 	// CPUÉÅÉÇÉäèâä˙âª(ÉLÉÉÉbÉVÉÖóÃàÊâ¬)
 	tkMemMngInitialize(&tkMemInfo);
-
+#endif
+    
 #ifdef WIN32_GUI_SIM
 #if defined(USE_SHIVA_VG) || defined(USE_AMANITH_VG)
 	InitLibOpenVG(960, 540);
@@ -2544,7 +2547,7 @@ void GDI_Error2(int dat, int dat2)
 	return;
 }
 
-#ifdef USE_FREETYPE_FONTAPI
+//#ifdef USE_FREETYPE_FONTAPI
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static void GDI_DrawBitmapFontExec(DRAW_AREA_INFO *drawAreaInfo, VGImage vg_image)
 {
@@ -2661,4 +2664,4 @@ void *GDI_Alloc_Memory(int size)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#endif
+//#endif

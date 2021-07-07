@@ -1,0 +1,77 @@
+
+Window --------
+wi_common:
+
+  // スレッド関係のシステムコール
+  _beginthreadex();
+  _endthreadex();
+
+  ResumeThread();
+  GetExitCodeThread(); //Thread終了コード取得
+  TerminateThread(); //Thread終了要求
+  GetThreadPriority();
+  SetThreadPriority();
+
+  // スレッドの停止、開始制御のシステムコール
+  eHandler = CreateEvent();
+  CloseHandle(eHandler);
+  WaitForSingleObject(eHandler);    //シグナル受信
+  SetEvent(eHandler);               //シグナル発信
+
+  // Mutex
+  CreateMutex(); // Mutex生成
+  CloseHandle(Mutex); //Mutex削除
+  WaitForSingleObject(Mutex); // Mutexロック
+  ReleaseMutex();  // Mutexアンロック
+
+  // 時間関連のシステムコール
+  GetTickCount(); //システム起動してからの経過ミリ秒
+  GetSystemTimeAsFileTime(); nsec単位でのシステム時間(gettimeofdayの代わり)
+
+
+wi_TaskWakeup(id, type queue)
+{
+  指定されたIDよりTaskObjectを取得
+  TaskObjectのhEventにSetEvent() → Taskが起床
+  TaskObjectをWaitQueueから削除
+}
+
+wi_TaskWait() {
+  自タスクのTaskObjectを取得
+  TaskObjectをWaitQueueに追加
+  WaitForSingleObject()でイベント待ち
+  TaskObjectをWaitQueueから削除
+}
+
+wi_DormantThread()
+
+
+
+Linux --------
+
+  // スレッド関係のシステムコール
+  pthread_create()  //スレッドの起動
+  pthread_cancel()
+  pthread_join()
+  
+  pthread_self() //自身のスレッド
+  pthread_equal()
+
+  pthread_attr_init()
+  pthread_attr_setschedpolicy()
+  pthread_attr_setschedparam()
+
+
+
+  // スレッドの停止、開始制御のシステムコール
+  pthread_cond_init()
+  pthread_cond_destroy()
+  pthread_cond_timedwait() //シグナル受信
+  pthread_cond_signal() //シグナル発信
+
+
+  // Mutex
+  pthread_mutex_init()
+  pthread_mutex_destroy()
+  pthread_mutex_lock()
+  pthread_mutex_unlock()

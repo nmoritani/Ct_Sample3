@@ -2127,6 +2127,18 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
     </ClCompile>
+    <ClCompile Include="..\..\platforms\Windows\system_common.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\system_cyclic_handler.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\system_event.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\system_memorypool.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\system_message.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\system_mutex.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\system_semaphore.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\system_thread.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">C:\src\Ct_Sample3\platforms;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\Windows\system_time.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\system_wrapper.cpp" />
     <ClCompile Include="..\..\string\ar_string.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
@@ -3346,6 +3358,7 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
     <ClInclude Include="..\..\gdi\gdi_string.h" />
     <ClInclude Include="..\..\gdi\utf16_char.h" />
     <ClInclude Include="..\..\gdi\utf_convert.h" />
+    <ClInclude Include="..\..\platforms\system_wrapper.h" />
     <ClInclude Include="..\..\TimeStamp\CtTimeStamp.h" />
     <ClInclude Include="..\..\TimeStamp\gui_timestamp_api.h" />
     <ClInclude Include="..\..\TimeStamp\gui_timestamp_task.h" />

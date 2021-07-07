@@ -238,6 +238,12 @@
     <Filter Include="Ct\gdi\FreeType\fontdata">
       <UniqueIdentifier>{a752fa0a-161e-4a32-af3a-533cb44dd2f1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\platforms">
+      <UniqueIdentifier>{da72cf66-8421-4d1f-a18d-fc86f9258f85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\platforms\Windows">
+      <UniqueIdentifier>{efe6240d-d474-402b-8c27-9cd2f8bfd94a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp">
@@ -1610,6 +1616,36 @@
     </ClCompile>
     <ClCompile Include="..\..\gdi\fontapi.c">
       <Filter>Ct\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\Windows\system_thread.cpp">
+      <Filter>ソース ファイル\platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\Windows\system_common.cpp">
+      <Filter>ソース ファイル\platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\Windows\system_event.cpp">
+      <Filter>ソース ファイル\platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\Windows\system_message.cpp">
+      <Filter>ソース ファイル\platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\Windows\system_mutex.cpp">
+      <Filter>ソース ファイル\platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\Windows\system_time.cpp">
+      <Filter>ソース ファイル\platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\Windows\system_wrapper.cpp">
+      <Filter>ソース ファイル\platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\Windows\system_cyclic_handler.cpp">
+      <Filter>ソース ファイル\platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\Windows\system_semaphore.cpp">
+      <Filter>ソース ファイル\platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\Windows\system_memorypool.cpp">
+      <Filter>ソース ファイル\platforms\Windows</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -3196,6 +3232,9 @@
     </ClInclude>
     <ClInclude Include="..\..\gdi\FreeType\src\winfonts\winfnt.h">
       <Filter>Ct\gdi\FreeType\src\winfonts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\platforms\system_wrapper.h">
+      <Filter>ソース ファイル\platforms\Windows</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

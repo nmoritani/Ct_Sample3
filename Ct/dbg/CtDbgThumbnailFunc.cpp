@@ -2,7 +2,6 @@
 #include "CtInterface.h"
 #include "AplParamService.h"
 
-#include "itron.h"
 //#define DRAW_CLIPNUM		// サムネイル画像へのクリップ番号重畳処理
 #ifdef DRAW_CLIPNUM
 #include "windows.h"
@@ -13,17 +12,18 @@
 CtWindowID CtDbgThumbnailFunc::m_WindowID = WindowNone;
 CtWindowContentsDrawThumb* CtDbgThumbnailFunc::m_ThumbContents = NULL;
 CtWindowContentsSelectClipInfo* CtDbgThumbnailFunc::m_SelectClipInfo = NULL;
-ID CtDbgThumbnailFunc::TestTsk = 0;
-ID CtDbgThumbnailFunc::TestMbx = 0;
+syswrap_thread_t CtDbgThumbnailFunc::TestThread = {0};
+syswrap_mailbox_t CtDbgThumbnailFunc::TestMailbox = {0};
 CtDbgThumbnailFunc* CtDbgThumbnailFunc::m_pInstance = NULL;
 
 CtDbgThumbnailFunc::CtDbgThumbnailFunc() 
 {
-	T_CTSK ctsk = { TA_HLNG | TA_ACT, 0, Ct_ThumbnailTestTask, 90, 0x4000, 0 };
-	T_CMBX cmbx = { TA_TFIFO | TA_MFIFO, 0, 0 };
-	TestTsk = acre_tsk(&ctsk);
-	TestMbx = acre_mbx(&cmbx);
-
+	TestThread = {0};
+	TestMailbox = {0};
+	
+	syswrap_create_thread(&TestThread, Ct_ThumbnailTestThread, 0x4000, THREAD_PRI_NORMAL_LOW);
+	syswrap_start_thread(&TestThread);
+	syswrap_create_mailbox(&TestMailbox, THREAD_ATTR_FIFO);
 }
 
 CtDbgThumbnailFunc::~CtDbgThumbnailFunc()
@@ -217,7 +217,7 @@ void CtDbgThumbnailFunc::testDeleteProgressBar(int total/*Default : 100*/) {
 		ContentsThumbConfirmInfo cntInfo = { (unsigned long)i, true, (unsigned long)total };
 		pc->setContentsThumbConfirmInfo(cntInfo);
 		CtInterface::getInstance()->setWindowContents(ScreenAll, CtDbgThumbnailFunc::m_WindowID, pc);
-		dly_tsk(100);
+		syswrap_delay_thread(100);
 	}
 	delete pc;
 }
@@ -225,7 +225,7 @@ void CtDbgThumbnailFunc::testDeleteProgressBar(int total/*Default : 100*/) {
 void CtDbgThumbnailFunc::testCopyProgressBar(int total/*Default : 100*/) {
 	for (int i = 0; i <= total; i++) {
 		APL_PARAM_SET_DATA(AplParamPlayGeneralProgressBar, i);
-		dly_tsk(100);
+		syswrap_delay_thread(100);
 	}
 }
 
@@ -414,7 +414,7 @@ void CtDbgThumbnailFunc::setclipInfo(CtWindowID id, int startIndex, int count)
 	m_SelectClipInfo->setTopIndex(startIndex);
 }
 
-void CtDbgThumbnailFunc::Ct_ThumbnailTestTask()
+void CtDbgThumbnailFunc::Ct_ThumbnailTestThread()
 {
 	while (1) {
 		int type = CtTestRecvMessage();
@@ -442,22 +442,18 @@ void CtDbgThumbnailFunc::Ct_ThumbnailTestTask()
 	}
 }
 
-static struct TestMessage {
-	T_MSG msg;
-	int type;
-} test_msg;
+static int test_msg;
 
 void CtDbgThumbnailFunc::CtTestSendMessage(int type)
 {
-	memset(&test_msg, 0, sizeof(test_msg));
-	test_msg.type = type;
+	test_msg = type;
 
-	snd_mbx(TestMbx, (T_MSG*)&test_msg);
+	syswrap_send_message(&TestMailbox, (void *)&test_msg, 0);
 }
 
 int CtDbgThumbnailFunc::CtTestRecvMessage()
 {
-	TestMessage *msg = NULL;
-	rcv_mbx(TestMbx, (T_MSG**)&msg);
-	return msg->type;
+	int *msg = NULL;
+	syswrap_receive_message(&TestMailbox, (void **)&msg, SYSWRAP_TIMEOUT_FOREVER);
+	return *msg;
 }

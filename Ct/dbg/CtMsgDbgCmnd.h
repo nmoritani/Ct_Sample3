@@ -6,8 +6,7 @@
 #define __CtMsgDbgCmnd_H__
 
 #include "CtMsg.h"
-//#include "CtDbgCmndReceiver.h"
-#include "CtMsgDbgTask.h"
+#include "CtComDbgThread.h"
 
 class CtMsgDbgCmnd :
 	public CtMsg
@@ -22,11 +21,8 @@ public:
 	const int getCmdGrp();
 	void setData(int* _Data);
 	void setCmdGrp(int _CmdGrp);
-	ER sendMsg() {
-		return CtMsgDbgTask::sendMsg(*this);
-	}
-	CtMsgHeader* getMsgHead() {
-		return const_cast<CtMsgHeader*>(CtMsg::getMsgHeader());
+	bool sendMsg() {
+		return CtComDbgThread::sendMsg(*this);
 	}
 private:
 	//unsigned long long m_cmndData;
@@ -35,14 +31,5 @@ private:
 	int m_CmdGrp;
 };
 
-
-//
-//inline unsigned long long CtMsgDbgCmnd::getCmndData() {
-//	return m_cmndData;
-//};
-//
-//inline unsigned int CtMsgDbgCmnd::getCmndDataSize() {
-//	return m_CmndDataSize;
-//};
 
 #endif // __CtMsgDbgCmnd_H__

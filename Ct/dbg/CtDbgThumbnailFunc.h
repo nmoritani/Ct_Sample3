@@ -11,6 +11,7 @@
 #include "CtWindowContentsThumbConfirm.h"
 #include "CtWindowContentsThumbCommon.h"
 
+#include <CtPlatforms.h>
 /*
 	コミット不要ファイル!!
 	各自のローカルで編集すること
@@ -40,13 +41,13 @@ private:
 	static void cbThumbSelectIndexCallback(int index);
 	static void cbThumbStartDrawCallback(ContentsThumbInfo Info);
 
-	static void Ct_ThumbnailTestTask();
+	static void Ct_ThumbnailTestThread();
 	static void CtTestSendMessage(int type);
 	static int CtTestRecvMessage();
 	static void setclipInfo(CtWindowID id, int startIndex, int count);
 	
-	static ID TestTsk;
-	static ID TestMbx;
+	static syswrap_thread_t TestThread;
+	static syswrap_mailbox_t TestMailbox;
 	static CtWindowContentsDrawThumb *m_ThumbContents;
 	static CtWindowContentsSelectClipInfo *m_SelectClipInfo;
 	

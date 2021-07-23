@@ -267,7 +267,7 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\lib;$(ProjectDir)src\wi;$(ProjectDir)src\wi\comm;$(ProjectDir)src\wi\ver3;$(ProjectDir)src\wi\ver4;$(ProjectDir)src\include;$(ProjectDir)src\include\EGL;$(ProjectDir)src\include\VG;$(ProjectDir)src\simulator\simulator\src\include;$(ProjectDir)src\simulator;$(ProjectDir)src\param\include;$(ProjectDir)..\..\gdi;$(ProjectDir)..\..\gdi\DigiType\includes;$(ProjectDir)..\..\image;$(ProjectDir)..\..\string;$(ProjectDir)..\..\Ct\Include;$(ProjectDir)..\..\Ct\ws;$(ProjectDir)..\..\Ct\tk;$(ProjectDir)..\..\Ct\dbg;$(ProjectDir)..\..\Ct\Window;$(ProjectDir)..\..\Ct\Window\COMMON;$(ProjectDir)..\..\Ct\Window\MENU;$(ProjectDir)..\..\Ct\Window\MENU\DIALOG;$(ProjectDir)..\..\Ct\Window\MENU\KEYBOARD;$(ProjectDir)..\..\Ct\Window\MENU\OTHER;$(ProjectDir)..\..\Ct\Window\MENU\TOGGLE;$(ProjectDir)..\..\Ct\Window\MENU\SPINBOX;$(ProjectDir)..\..\Ct\Window\AREASETTING;$(ProjectDir)..\..\Ct\Window\FACT;$(ProjectDir)..\..\Ct\Window\FILE;$(ProjectDir)..\..\Ct\Window\KEYBOARD;$(ProjectDir)..\..\Ct\Window\MESSAGE;$(ProjectDir)..\..\Ct\Window\RECVIEW;$(ProjectDir)..\..\Ct\Window\SANDBOX;$(ProjectDir)..\..\Ct\Window\THUMBNAIL;$(ProjectDir)..\..\Ct\Window\HOME;$(ProjectDir)..\..\Ct\Window\PLAYVIEW;$(ProjectDir)..\..\Ct\Window\NETWORK;$(ProjectDir)..\..\TimeStamp;$(ProjectDir)..\..\gdi\FreeType;$(ProjectDir)..\..\gdi\FreeType\include;$(ProjectDir)..\..\gdi\FreeType\include\freetype;$(ProjectDir)..\..\gdi\FreeType\include\freetype\config;$(ProjectDir)..\..\gdi\FreeType\include\freetype\internal;$(ProjectDir)..\..\gdi\FreeType\include\freetype\internal\services;$(ProjectDir)..\..\gdi\FreeType\include\freetype\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\..\..\platforms;$(ProjectDir)src\wi;$(ProjectDir)src\wi\comm;$(ProjectDir)src\wi\ver3;$(ProjectDir)src\wi\ver4;$(ProjectDir)\lib;$(ProjectDir)src\include;$(ProjectDir)src\include\EGL;$(ProjectDir)src\include\VG;$(ProjectDir)src\simulator\simulator\src\include;$(ProjectDir)src\simulator;$(ProjectDir)src\param\include;$(ProjectDir)..\..\gdi;$(ProjectDir)..\..\gdi\DigiType\includes;$(ProjectDir)..\..\image;$(ProjectDir)..\..\string;$(ProjectDir)..\..\Ct\Include;$(ProjectDir)..\..\Ct\ws;$(ProjectDir)..\..\Ct\tk;$(ProjectDir)..\..\Ct\dbg;$(ProjectDir)..\..\Ct\Window;$(ProjectDir)..\..\Ct\Window\COMMON;$(ProjectDir)..\..\Ct\Window\MENU;$(ProjectDir)..\..\Ct\Window\MENU\DIALOG;$(ProjectDir)..\..\Ct\Window\MENU\KEYBOARD;$(ProjectDir)..\..\Ct\Window\MENU\OTHER;$(ProjectDir)..\..\Ct\Window\MENU\TOGGLE;$(ProjectDir)..\..\Ct\Window\MENU\SPINBOX;$(ProjectDir)..\..\Ct\Window\AREASETTING;$(ProjectDir)..\..\Ct\Window\FACT;$(ProjectDir)..\..\Ct\Window\FILE;$(ProjectDir)..\..\Ct\Window\KEYBOARD;$(ProjectDir)..\..\Ct\Window\MESSAGE;$(ProjectDir)..\..\Ct\Window\RECVIEW;$(ProjectDir)..\..\Ct\Window\SANDBOX;$(ProjectDir)..\..\Ct\Window\THUMBNAIL;$(ProjectDir)..\..\Ct\Window\HOME;$(ProjectDir)..\..\Ct\Window\PLAYVIEW;$(ProjectDir)..\..\Ct\Window\NETWORK;$(ProjectDir)..\..\TimeStamp;$(ProjectDir)..\..\gdi\FreeType;$(ProjectDir)..\..\gdi\FreeType\include;$(ProjectDir)..\..\gdi\FreeType\include\freetype;$(ProjectDir)..\..\gdi\FreeType\include\freetype\config;$(ProjectDir)..\..\gdi\FreeType\include\freetype\internal;$(ProjectDir)..\..\gdi\FreeType\include\freetype\internal\services;$(ProjectDir)..\..\gdi\FreeType\include\freetype\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32_GUI_SIM;WIN32;_DEBUG;CT_DEBUG_ENABLE;USE_AMANITH_VG;_CRT_SECURE_NO_WARNINGS;FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader />
@@ -369,13 +369,13 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
     <ClCompile Include="..\..\Ct\dbg\CtDbgClipManager.cpp" />
     <ClCompile Include="..\..\Ct\dbg\CtDbgCmndAdapter.cpp" />
     <ClCompile Include="..\..\Ct\dbg\CtDbgCmndReceiver.cpp" />
-    <ClCompile Include="..\..\Ct\dbg\CtDbgTask.cpp" />
     <ClCompile Include="..\..\Ct\dbg\CtDbgThumbnailFunc.cpp" />
     <ClCompile Include="..\..\Ct\dbg\CtDbgVarietyFunc.cpp" />
     <ClCompile Include="..\..\Ct\dbg\CtDbgWidgetTree.cpp" />
     <ClCompile Include="..\..\Ct\dbg\CtDbgWindFuncRegister.cpp" />
+    <ClCompile Include="..\..\Ct\dbg\CtDbgThread.cpp" />
     <ClCompile Include="..\..\Ct\dbg\CtMsgDbgCmnd.cpp" />
-    <ClCompile Include="..\..\Ct\dbg\CtMsgDbgTask.cpp" />
+    <ClCompile Include="..\..\Ct\dbg\CtComDbgThread.cpp" />
     <ClCompile Include="..\..\Ct\tk\Ct2ListView.cpp" />
     <ClCompile Include="..\..\Ct\tk\CtButton.cpp" />
     <ClCompile Include="..\..\Ct\tk\CtColor.cpp" />
@@ -535,7 +535,6 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
     <ClCompile Include="..\..\Ct\Window\RECVIEW\CtRecView2.cpp" />
     <ClCompile Include="..\..\Ct\Window\RECVIEW\CtRecViewContainer.cpp" />
     <ClCompile Include="..\..\Ct\Window\RECVIEW\CtRecViewModeCheck.cpp" />
-    <ClCompile Include="..\..\Ct\Window\SANDBOX\CtContainerTimeStamp.cpp" />
     <ClCompile Include="..\..\Ct\Window\SANDBOX\CtFastCounter.cpp" />
     <ClCompile Include="..\..\Ct\Window\SANDBOX\CtKeyboad.cpp" />
     <ClCompile Include="..\..\Ct\Window\SANDBOX\CtListContainer.cpp" />
@@ -568,7 +567,7 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
     <ClCompile Include="..\..\Ct\ws\CtCacheControl.cpp" />
     <ClCompile Include="..\..\Ct\ws\CtDraw.cpp" />
     <ClCompile Include="..\..\Ct\ws\CtDrawCache.cpp" />
-    <ClCompile Include="..\..\Ct\ws\CtDrawTask.cpp" />
+    <ClCompile Include="..\..\Ct\ws\CtDrawThread.cpp" />
     <ClCompile Include="..\..\Ct\ws\CtEvent.cpp" />
     <ClCompile Include="..\..\Ct\ws\CtEventInterface.cpp" />
     <ClCompile Include="..\..\Ct\ws\CtFastObject.cpp" />
@@ -576,12 +575,12 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
     <ClCompile Include="..\..\Ct\ws\CtInterface.cpp" />
     <ClCompile Include="..\..\Ct\ws\CtKeyTimer.cpp" />
     <ClCompile Include="..\..\Ct\ws\CtLanguage.cpp" />
-    <ClCompile Include="..\..\Ct\ws\CtMainTask.cpp" />
+    <ClCompile Include="..\..\Ct\ws\CtMainThread.cpp" />
     <ClCompile Include="..\..\Ct\ws\CtMemory.cpp" />
     <ClCompile Include="..\..\Ct\ws\CtMplDbg.cpp" />
     <ClCompile Include="..\..\Ct\ws\CtMsg.cpp" />
-    <ClCompile Include="..\..\Ct\ws\CtMsgDrawTask.cpp" />
-    <ClCompile Include="..\..\Ct\ws\CtMsgMainTask.cpp" />
+    <ClCompile Include="..\..\Ct\ws\CtComDrawThread.cpp" />
+    <ClCompile Include="..\..\Ct\ws\CtComMainThread.cpp" />
     <ClCompile Include="..\..\Ct\ws\CtObject.cpp" />
     <ClCompile Include="..\..\Ct\ws\CtObserverParamService.cpp" />
     <ClCompile Include="..\..\Ct\ws\CtSynchro.cpp" />
@@ -2086,7 +2085,7 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
     </ClCompile>
-    <ClCompile Include="..\..\gdi\geman_gui_sim.c">
+    <ClCompile Include="..\..\gdi\gdi_platform.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
       </PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
@@ -2109,15 +2108,6 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
     </ClCompile>
-    <ClCompile Include="..\..\gdi\mem_mng.c">
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-    </ClCompile>
     <ClCompile Include="..\..\gdi\utf_convert.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
@@ -2127,18 +2117,24 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
     </ClCompile>
-    <ClCompile Include="..\..\platforms\Windows\system_common.cpp" />
-    <ClCompile Include="..\..\platforms\Windows\system_cyclic_handler.cpp" />
-    <ClCompile Include="..\..\platforms\Windows\system_event.cpp" />
-    <ClCompile Include="..\..\platforms\Windows\system_memorypool.cpp" />
-    <ClCompile Include="..\..\platforms\Windows\system_message.cpp" />
-    <ClCompile Include="..\..\platforms\Windows\system_mutex.cpp" />
-    <ClCompile Include="..\..\platforms\Windows\system_semaphore.cpp" />
-    <ClCompile Include="..\..\platforms\Windows\system_thread.cpp">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">C:\src\Ct_Sample3\platforms;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <ClCompile Include="..\..\platforms\Windows\system_time.cpp" />
-    <ClCompile Include="..\..\platforms\Windows\system_wrapper.cpp" />
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_common.cpp" />
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_cyclic_handler.cpp" />
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_event.cpp" />
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_memorypool.cpp" />
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_message.cpp" />
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_mutex.cpp" />
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_semaphore.cpp" />
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_thread.cpp" />
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_time.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_common.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_cyclic_handler.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_event.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_memorypool.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_message.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_mutex.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_semaphore.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_thread.cpp" />
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_time.cpp" />
     <ClCompile Include="..\..\string\ar_string.c">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
@@ -2319,9 +2315,6 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">CompileAsCpp</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">CompileAsCpp</CompileAs>
     </ClCompile>
-    <ClCompile Include="..\..\TimeStamp\CtTimeStamp.cpp" />
-    <ClCompile Include="..\..\TimeStamp\gui_timestamp_api.cpp" />
-    <ClCompile Include="..\..\TimeStamp\gui_timestamp_task.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Logo.cpp" />
     <ClCompile Include="simulator.cpp" />
@@ -2346,7 +2339,6 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
-    <ClCompile Include="src\simulator\WinDrawTask.cpp" />
     <ClCompile Include="src\simulator\Wrapper.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
       </PrecompiledHeader>
@@ -2364,513 +2356,64 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
       </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\wi\comm\wi_alarm_handler.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\comm\wi_common.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\comm\wi_cycle_handler.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\comm\wi_data_queue.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\comm\wi_event_flag.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\comm\wi_fixed_mempool.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\comm\wi_interrupt.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\comm\wi_mail_box.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\comm\wi_message_buffer.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\comm\wi_mutex.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\comm\wi_rendezvous_port.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\comm\wi_semaphore.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\comm\wi_systemmgr.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\comm\wi_task.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\comm\wi_variable_mempool.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\kprintf.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\ver3\win_itron3.c">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\ver4\win_itron4.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="src\wi\win_itron_dialog.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="src\wi\win_itron_main.c">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">
-      </PrecompiledHeader>
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">false</CompileAsManaged>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Re|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug_OVG_org|Win32'">false</CompileAsManaged>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\src\wi;$(ProjectDir)\src\wi\ver4;$(ProjectDir)\src\wi\comm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_AmanithVG|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release_OVG_org|Win32'">false</CompileAsManaged>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </PrecompiledHeader>
-      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_AmanithVG|Win32'">Create</PrecompiledHeader>
@@ -2883,7 +2426,6 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Ct\dbg\CtActDbgTsk.h" />
     <ClInclude Include="..\..\Ct\dbg\CtDbgClassInfo.h" />
     <ClInclude Include="..\..\Ct\dbg\CtDbgClipManager.h" />
     <ClInclude Include="..\..\Ct\dbg\CtDbgCmnd.h" />
@@ -2893,8 +2435,9 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
     <ClInclude Include="..\..\Ct\dbg\CtDbgVarietyFunc.h" />
     <ClInclude Include="..\..\Ct\dbg\CtDbgWidgetTree.h" />
     <ClInclude Include="..\..\Ct\dbg\CtDbgWindFuncRegister.h" />
+    <ClInclude Include="..\..\Ct\dbg\CtDebugThread.h" />
     <ClInclude Include="..\..\Ct\dbg\CtMsgDbgCmnd.h" />
-    <ClInclude Include="..\..\Ct\dbg\CtMsgDbgTask.h" />
+    <ClInclude Include="..\..\Ct\dbg\CtComDbgThread.h" />
     <ClInclude Include="..\..\Ct\Include\Ct.h" />
     <ClInclude Include="..\..\Ct\Include\CtAssert.h" />
     <ClInclude Include="..\..\Ct\Include\CtClass.h" />
@@ -3072,7 +2615,6 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
     <ClInclude Include="..\..\Ct\Window\RECVIEW\CtRecViewContainer.h" />
     <ClInclude Include="..\..\Ct\Window\RECVIEW\CtRecViewModeCheck.h" />
     <ClInclude Include="..\..\Ct\Window\RECVIEW\CtViewDesign.h" />
-    <ClInclude Include="..\..\Ct\Window\SANDBOX\CtContainerTimeStamp.h" />
     <ClInclude Include="..\..\Ct\Window\SANDBOX\CtFastCounter.h" />
     <ClInclude Include="..\..\Ct\Window\SANDBOX\CtKeyboad.h" />
     <ClInclude Include="..\..\Ct\Window\SANDBOX\CtListContainer.h" />
@@ -3109,7 +2651,7 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
     <ClInclude Include="..\..\Ct\ws\CtCacheControl.h" />
     <ClInclude Include="..\..\Ct\ws\CtDraw.h" />
     <ClInclude Include="..\..\Ct\ws\CtDrawCache.h" />
-    <ClInclude Include="..\..\Ct\ws\CtDrawTask.h" />
+    <ClInclude Include="..\..\Ct\ws\CtDrawThread.h" />
     <ClInclude Include="..\..\Ct\ws\CtEvent.h" />
     <ClInclude Include="..\..\Ct\ws\CtEventInterface.h" />
     <ClInclude Include="..\..\Ct\ws\CtFastObject.h" />
@@ -3120,8 +2662,8 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
     <ClInclude Include="..\..\Ct\ws\CtMemory.h" />
     <ClInclude Include="..\..\Ct\ws\CtMplDbg.h" />
     <ClInclude Include="..\..\Ct\ws\CtMsg.h" />
-    <ClInclude Include="..\..\Ct\ws\CtMsgDrawTask.h" />
-    <ClInclude Include="..\..\Ct\ws\CtMsgMainTask.h" />
+    <ClInclude Include="..\..\Ct\ws\CtComDrawThread.h" />
+    <ClInclude Include="..\..\Ct\ws\CtComMainThread.h" />
     <ClInclude Include="..\..\Ct\ws\CtObject.h" />
     <ClInclude Include="..\..\Ct\ws\CtObserverParamService.h" />
     <ClInclude Include="..\..\Ct\ws\CtSynchro.h" />
@@ -3358,10 +2900,9 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
     <ClInclude Include="..\..\gdi\gdi_string.h" />
     <ClInclude Include="..\..\gdi\utf16_char.h" />
     <ClInclude Include="..\..\gdi\utf_convert.h" />
+    <ClInclude Include="..\..\platforms\CtPlatforms.h" />
+    <ClInclude Include="..\..\platforms\ITRON\itronwrapper_common.h" />
     <ClInclude Include="..\..\platforms\system_wrapper.h" />
-    <ClInclude Include="..\..\TimeStamp\CtTimeStamp.h" />
-    <ClInclude Include="..\..\TimeStamp\gui_timestamp_api.h" />
-    <ClInclude Include="..\..\TimeStamp\gui_timestamp_task.h" />
     <ClInclude Include="Logo.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -3386,8 +2927,6 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
     <ClInclude Include="src\simulator\AvcIf.h" />
     <ClInclude Include="src\simulator\CtCmdLine.h" />
     <ClInclude Include="src\simulator\CtLogPlayer.h" />
-    <ClInclude Include="src\simulator\itron.h" />
-    <ClInclude Include="src\simulator\kernel.h" />
     <ClInclude Include="src\simulator\smDebugSerial.h" />
     <ClInclude Include="src\simulator\SysIf.h" />
     <ClInclude Include="src\simulator\TclIf.h" />
@@ -3408,10 +2947,12 @@ copy /y "$(ProjectDir)\libOvg\libOpenVG.lib" "$(OutDir)"
     <ClInclude Include="src\wi\comm\wi_systemmgr.h" />
     <ClInclude Include="src\wi\comm\wi_task.h" />
     <ClInclude Include="src\wi\comm\wi_variable_mempool.h" />
+    <ClInclude Include="src\wi\kernel_id.h" />
     <ClInclude Include="src\wi\kprintf.h" />
     <ClInclude Include="src\wi\ver3\win_itron3.h" />
     <ClInclude Include="src\wi\ver4\win_itron4.h" />
     <ClInclude Include="src\wi\win_itron.h" />
+    <ClInclude Include="src\wi\win_itron_dialog.h" />
     <ClInclude Include="src\wi\wi_config.h" />
     <ClInclude Include="src\wi\wi_resource.h" />
     <ClInclude Include="stdafx.h" />

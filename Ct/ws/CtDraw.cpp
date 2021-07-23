@@ -30,6 +30,9 @@ CtDraw::CtDraw() {
 		m_ScreenInfo[i].Size.height = 0;
 		m_isUpdate[i] = false;
 	}
+
+	syswrap_create_semaphore(&m_Semaphore, 1, THREAD_ATTR_FIFO);
+
 	GDI_Init();
 
 	createWorld(Format_RGBA4444);
@@ -45,6 +48,8 @@ CtDraw::~CtDraw(){
 	// リスト内のWindowとリスト実体の破棄
 	//スクリーンの削除
 	deleteWorld();
+	
+	syswrap_destroy_semaphore(&m_Semaphore);
 }
 
 
@@ -185,16 +190,6 @@ bool CtDraw::switchScreen(int Screen)
 {
 	GDI_HANDLER handler;
 	
-	ID id;
-	int tid = 0;
-	if (get_tid(&id) == E_OK) {
-		if (id == CT_MAIN_TSKID) {
-			tid = 1;
-		} else if (id == CT_DRAW_TSKID) {
-			tid = 2;
-		}
-	}
-
 	if ((handler = m_ScreenInfo[Screen].Handler) == GDI_INVALID_ID) {
 #if DEBUG_PRINT
 		if (m_bPrint)
@@ -207,7 +202,6 @@ bool CtDraw::switchScreen(int Screen)
 		if (m_bPrint)
 			CtDebugPrint(CtDbg, "                **** Switch Screen [%d] ****\n", Screen);
 #endif
-		//		CtDebugPrint(CtDbg, "(%d)  ======== SWITCH SCREEN[%d]<<%8x>> ========\n", tid, Screen, handler);
 		m_CurrentHandler = handler;
 		return true;
 	}
@@ -631,17 +625,24 @@ bool CtDraw::updateDrawable(GDI_HANDLER hdr)
 
 bool CtDraw::getDrawing(bool bBlock)
 {
-	ER err;
+	SYSWRAP_ERROR err;
+	
 	if (bBlock == true) {
-		if ((err = wai_sem(CT_SEMID_GDI)) == E_OK) {
-			m_bUsing = true;
-			return true;
-		} else {
-			//			CtDebugPrint(CtDbg, "failed getDrawing[%08X]\n", err);
-			return false;
-		}
+		//		while (1) {
+			if ((err = syswrap_wait_semaphore(&m_Semaphore, SYSWRAP_TIMEOUT_FOREVER)) == SYSWRAP_ERR_OK) {
+				m_bUsing = true;
+				return true;
+			}
+			//		}
+#if 0
 	} else {
-		if ((err = twai_sem(CT_SEMID_GDI, 1)) == E_OK) {
+		//			CtDebugPrint(CtDbg, "failed getDrawing[%08X]\n", err);
+		return false;
+	}
+#endif
+		
+	} else {
+		if ((err = syswrap_wait_semaphore(&m_Semaphore, SYSWRAP_TIMEOUT_POLLING)) == SYSWRAP_ERR_OK) {
 			m_bUsing = true;
 			return true;
 		}
@@ -653,9 +654,9 @@ bool CtDraw::getDrawing(bool bBlock)
 
 bool CtDraw::freeDrawing(bool bBlock)
 {
-	ER err;
+	SYSWRAP_ERROR err;
 
-	if ((err = sig_sem(CT_SEMID_GDI)) == E_OK) {
+	if ((err = syswrap_post_semaphore(&m_Semaphore)) == SYSWRAP_ERR_OK) {
 		m_bUsing = false;
 		return true;
 	}
@@ -665,13 +666,7 @@ bool CtDraw::freeDrawing(bool bBlock)
 
 bool CtDraw::isDrawing()
 {
-	T_RSEM rsem;
-	
-	ref_sem(CT_SEMID_GDI, &rsem);
-	if (rsem.semcnt > 0) {
-		return true;
-	}
-	return false;
+	return m_bUsing;
 }
 
 #include "CtTimeMesure.h"

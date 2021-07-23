@@ -4,8 +4,10 @@
  *  Element:          AplObject
  */
 
-
 #include "AplObject.h"
+
+#include <CtPlatforms.h>
+
 //## package Foundation
 
 //## class AplObject

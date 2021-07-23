@@ -15,6 +15,8 @@
 #include "CtVector.h"
 #include "CtObject.h"
 
+#include <CtPlatforms.h>
+
 class CtWindowList;
 class CtWidget;
 
@@ -90,6 +92,7 @@ private:
 	bool m_isUpdate[CT_SCREEN_NUM];
 	bool m_bUsing;
 	bool m_bPrint;
+	syswrap_semaphore_t m_Semaphore;
 };
 
 #endif

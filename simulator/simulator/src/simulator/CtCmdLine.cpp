@@ -308,13 +308,10 @@ typedef unsigned long long DWORDLONG;
 typedef unsigned char BYTE;
 #endif
 
-#include "wi_task.h"
-#include "wi_mail_box.h"
-#include "wi_fixed_mempool.h"
-#include "wi_variable_mempool.h"
 
 void CtCmdLine::showCmd_OdDebug(int Id, int CmndId, int data)
 {
+#if 0
 #ifdef WIN32_GUI_SIM
 	switch (CmndId) {
 	case ID_OD_ALL:
@@ -387,5 +384,6 @@ void CtCmdLine::showCmd_OdDebug(int Id, int CmndId, int data)
 	}
 	break;
 	}
-#endif 
+#endif
+#endif
 }

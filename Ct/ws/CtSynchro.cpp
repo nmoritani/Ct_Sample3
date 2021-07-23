@@ -4,13 +4,10 @@
  * @file
  */
 
-//#include "CtClassID.h"
 #include "CtSynchro.h"
-//#include "CtConvertErrorItron.h"
+#include <CtPlatforms.h>
 
 extern "C" {	// @@@
-#include <kernel_id.h>
-//#include "CtDebug.h"
 }
 
 
@@ -18,14 +15,24 @@ extern "C" {	// @@@
 /***********************************
 static member.
 ***********************************/
-const FLGPTN	CtSynchro::ms_InvalidFlgPtn = 0;
-const UW 		CtSynchro::ms_MaxBit = TBIT_FLGPTN;/* ITRON仕様上16以上が保障されているが、
-													   32未満の場合はコンパイルエラーさせる。 */
-const ID		CtSynchro::ms_Flg = CT_FLGID_SYNCHRO;		/* 1つのイベントフラグで同期できるのは16タスクまで。
-													   16以上のタスクが同期待ちする必要があれば、この
-													   メンバーを配列にして、複数のイベントフラグで
-													   実現できる。 */
-FLGPTN			CtSynchro::ms_FlgPtnMap = 0;
+const unsigned int CtSynchro::ms_InvalidFlgPtn = 0;
+const unsigned int CtSynchro::ms_MaxBit = 16;
+unsigned int CtSynchro::ms_FlgPtnMap = 0;
+syswrap_event_t CtSynchro::m_Event = {0};
+syswrap_semaphore_t CtSynchro::m_Semaphore = {0};
+
+void CtSynchro::init()
+{
+	syswrap_create_event(&m_Event, THREAD_ATTR_FIFO, 0);
+	syswrap_create_semaphore(&m_Semaphore, 1, THREAD_ATTR_FIFO);	// binary semaphoreでないと描画noize出ます
+}
+
+void CtSynchro::term()
+{
+	syswrap_destroy_semaphore(&m_Semaphore);
+	syswrap_destroy_event(&m_Event);
+}
+
 
 /** イベントフラグの状態を初期化
  * 
@@ -34,8 +41,7 @@ FLGPTN			CtSynchro::ms_FlgPtnMap = 0;
 void	CtSynchro::initFlgInfo( FlgInfo &info )
 {
 	info.flgptn = ms_InvalidFlgPtn;
-	info.flg = -1;	/* 無効な場合はflgptnしか参照されないので
-					   適当な値を入れておく */
+	info.flg = NULL;
 }
 
 /** イベントフラグ情報を割り当てる
@@ -44,28 +50,24 @@ void	CtSynchro::initFlgInfo( FlgInfo &info )
  */
 CtSynchro::FlgInfo	CtSynchro::allocFlgInfo()
 {
-	ER		ercd;
+	SYSWRAP_ERROR ercd;
 	FlgInfo	info;
-	UW		bit;
+	unsigned int bit;
 
 	/* 初期化する */
 	initFlgInfo( info );
 
 	/* 未使用のbitを探す */
-	ercd = wai_sem( CT_SEMID_SYNCHRO );
-	//Ct_ASSERT( ercd == E_OK );
+	ercd = syswrap_wait_semaphore(&m_Semaphore, SYSWRAP_TIMEOUT_FOREVER);
 	for ( bit = 0; bit < ms_MaxBit; ++bit ) {
 		if ( ( ms_FlgPtnMap & ( 1 << bit ) ) == 0 ) {
 			info.flgptn = ( 1 << bit );
-			info.flg = ms_Flg;
+			info.flg = &m_Event;
 			ms_FlgPtnMap |= ( 1 << bit );
 			break;
 		}
 	}
-	ercd = sig_sem( CT_SEMID_SYNCHRO );
-	//Ct_ASSERT( ercd == E_OK );
-
-	//Ct_ASSERT( isValidFlgInfo( info ) );
+	ercd = syswrap_post_semaphore(&m_Semaphore);
 
 	return info;
 }
@@ -78,17 +80,15 @@ CtSynchro::FlgInfo	CtSynchro::allocFlgInfo()
 bool CtSynchro::freeFlgInfo( const FlgInfo &info )
 {
 	bool bRet = false;
-	ER	ercd;
+	SYSWRAP_ERROR ercd;
 
 	/* 有効なFlgInfoかどうか確認 */
 	if ( !isValidFlgInfo( info ) ) {
 		goto failed0;
 	}
-	ercd = wai_sem( CT_SEMID_SYNCHRO );
-	//Ct_ASSERT( ercd == E_OK );
+	ercd = syswrap_wait_semaphore(&m_Semaphore, SYSWRAP_TIMEOUT_FOREVER);
 	ms_FlgPtnMap &= ~info.flgptn;
-	ercd = sig_sem( CT_SEMID_SYNCHRO );
-	//Ct_ASSERT( ercd == E_OK );
+	ercd = syswrap_post_semaphore(&m_Semaphore);
 
 	bRet = true;
 
@@ -121,34 +121,31 @@ public member.
  * @retval Ct_E_OK		成功
  * @retval Ct_E_OK以外	失敗
  */
-bool CtSynchro::wait(W tout)
+bool CtSynchro::wait(long timeout)
 {
 	bool bRet = false;
-	FLGPTN	retptn;
-	ER		ercd;
+	unsigned int retptn;
+	SYSWRAP_ERROR ercd;
 
 	/* 有効なFlgInfoかどうか確認 */
 	if ( !isValidFlgInfo( m_FlgInfo ) ) {
-		//Ct_ASSERT( 0 );
 		goto failed0;
 	}
 
-	ercd = twai_flg( m_FlgInfo.flg, m_FlgInfo.flgptn, TWF_ANDW, &retptn, tout );
-	if ( ercd != E_OK ) {
-		if ( ercd == E_TMOUT ) {
+	ercd = syswrap_wait_event(m_FlgInfo.flg, m_FlgInfo.flgptn, SYSWRAP_WAITFMODE_ANDW, &retptn, timeout);
+	if ( ercd != SYSWRAP_ERR_OK ) {
+		if ( ercd == SYSWRAP_ERR_TIMEOUT ) {
 			/* タイムアウト */
 			goto failed0;
 		}
-		//Ct_ASSERT( 0 );
 		goto failed0;
 	}
 
 	/* 同時に複数のFSタスクが動く場合 や 上位タスクの方が優先度が
 	   高い場合は、flgptn と retptn が異なる事はありうる。 */
-//	Ct_ASSERT( flgptn == retptn );
 
-	ercd = clr_flg( m_FlgInfo.flg, ~m_FlgInfo.flgptn );
-	if ( ercd != E_OK ) {
+	ercd = syswrap_clear_event(m_FlgInfo.flg, ~m_FlgInfo.flgptn);
+	if ( ercd != SYSWRAP_ERR_OK ) {
 		goto failed0;
 	}
 
@@ -168,27 +165,17 @@ failed0:
 bool CtSynchro::notify()
 {
 	bool	bRet = false;
-	ER		ercd;
+	SYSWRAP_ERROR ercd;
 
 	/* 有効なFlgInfoかどうか確認 */
 	if ( !isValidFlgInfo( m_FlgInfo ) ) {
 		goto failed0;
 	}
 
-#ifdef WIN32_GUI_SIM
-	ercd = set_flg( m_FlgInfo.flg, m_FlgInfo.flgptn );
-#else
-	if ( sns_ctx() ) {
-		ercd = iset_flg( m_FlgInfo.flg, m_FlgInfo.flgptn );
-	}
-	else {
-		ercd = set_flg( m_FlgInfo.flg, m_FlgInfo.flgptn );
-	}
-#endif
-	if ( ercd != E_OK ) {
+	ercd = syswrap_set_event(m_FlgInfo.flg, m_FlgInfo.flgptn);
+	if ( ercd != SYSWRAP_ERR_OK ) {
 		goto failed0;
 	}
-
 	bRet = true;
 
 failed0:

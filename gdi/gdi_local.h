@@ -239,8 +239,8 @@ extern GDI_ERRCODE gdi_switch_pbuffer(gdi_pbuffer_context *pbuffer_context, GDI_
 extern GDI_ERRCODE gdi_switch_window(gdi_window_context *window_context);
 extern gdi_window_context *gdi_create_window(VGint width, VGint height, GDI_COLOR_FORMAT format, GFX_PLANE_ID plane, unsigned char *buf0, unsigned char *buf1);
 extern void gdi_delete_window(gdi_window_context *window_context);
-extern gdi_pbuffer_context *gdi_create_pbuffer(INT width, INT height, GDI_COLOR_FORMAT format);
-extern gdi_pbuffer_context *gdi_create_pbuffer_static(INT width, INT height, GDI_COLOR_FORMAT format, unsigned char *color_buffer0, unsigned char *color_buffer1);
+extern gdi_pbuffer_context *gdi_create_pbuffer(int width, int height, GDI_COLOR_FORMAT format);
+extern gdi_pbuffer_context *gdi_create_pbuffer_static(int width, int height, GDI_COLOR_FORMAT format, unsigned char *color_buffer0, unsigned char *color_buffer1);
 extern void gdi_delete_pbuffer(gdi_pbuffer_context *pbuffer_context);
 
 VGErrorCode gdi_append_path_line(VGPath path, VGfloat x0, VGfloat y0, VGfloat x1, VGfloat y1);

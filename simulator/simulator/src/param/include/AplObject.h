@@ -8,8 +8,6 @@
 #ifndef Foundation_AplObject_H
 #define Foundation_AplObject_H
 
-#include <oxf.h>
-#include "kernel.h"
 #include "AplClassType.h"
 typedef unsigned int AplOid;
 

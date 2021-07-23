@@ -8,14 +8,12 @@
 #ifndef Foundation_Manager_AplParamService_H
 #define Foundation_Manager_AplParamService_H
 
-#include <oxf.h>
 #include <stdio.h>
 #include <string.h>
 #include <AplList.h>
 #include <AplAlgorithm.h>
 #include "AplObject.h"
 #include "AplObserverParamService.h"
-#include "kernel.h"
 #include "AplParam.h"
 #include "apl_sys_param_enum.h"
 #include "SysIf.h"

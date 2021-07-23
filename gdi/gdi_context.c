@@ -588,7 +588,7 @@ static GDI_ERRCODE gdi_alloc_color_buffer(gdi_pbuffer_context *pbuffer_context)
 	}
 
 	if (size0 != 0) {
-		pbuffer_context->color_buffer0 = (unsigned char *)gdi_bmp_alloc(size0, align);
+		pbuffer_context->color_buffer0 = (unsigned char *)gdi_bmp_alloc(size0);
 		if (pbuffer_context->color_buffer0 == NULL) {
 			return GDI_OUT_OF_MEMORY_ERROR;
 		}
@@ -598,7 +598,7 @@ static GDI_ERRCODE gdi_alloc_color_buffer(gdi_pbuffer_context *pbuffer_context)
 	}
 
 	if (size1 != 0) {
-		pbuffer_context->color_buffer1 = (unsigned char *)gdi_bmp_alloc(size1, align);
+		pbuffer_context->color_buffer1 = (unsigned char *)gdi_bmp_alloc(size1);
 		if (pbuffer_context->color_buffer1 == NULL) {
 			return GDI_OUT_OF_MEMORY_ERROR;
 		}

@@ -4,10 +4,10 @@
   amanithVG.cpp
   コードを生成中...
 amanithVG.obj : warning LNK4075: /EDITANDCONTINUE は /SAFESEH の指定によって無視されます。
-     ライブラリ C:\src\Ct_Sample3\simulator\Debug_AmanithVG\amanithEGL.lib とオブジェクト C:\src\Ct_Sample3\simulator\Debug_AmanithVG\amanithEGL.exp を作成中
-  amanithEGL.vcxproj -> C:\src\Ct_Sample3\simulator\Debug_AmanithVG\amanithEGL.dll
-  amanithEGL.vcxproj -> C:\src\Ct_Sample3\simulator\Debug_AmanithVG\amanithEGL.pdb (Full PDB)
-  copy /y "C:\src\Ct_Sample3\simulator\Debug_AmanithVG\amanithEGL.lib" "C:\src\Ct_Sample3\simulator\simulator\lib\"
+     ライブラリ C:\src\Ct_Sample2a\simulator\Debug_AmanithVG\amanithEGL.lib とオブジェクト C:\src\Ct_Sample2a\simulator\Debug_AmanithVG\amanithEGL.exp を作成中
+  amanithEGL.vcxproj -> C:\src\Ct_Sample2a\simulator\Debug_AmanithVG\amanithEGL.dll
+  amanithEGL.vcxproj -> C:\src\Ct_Sample2a\simulator\Debug_AmanithVG\amanithEGL.pdb (Full PDB)
+  copy /y "C:\src\Ct_Sample2a\simulator\Debug_AmanithVG\amanithEGL.lib" "C:\src\Ct_Sample2a\simulator\simulator\lib\"
           1 個のファイルをコピーしました。
-  copy /y "C:\src\Ct_Sample3\simulator\amanithEGL\\lib\libAmanithVG.dll" "C:\src\Ct_Sample3\simulator\Debug_AmanithVG\amanithEGL"
+  copy /y "C:\src\Ct_Sample2a\simulator\amanithEGL\\lib\libAmanithVG.dll" "C:\src\Ct_Sample2a\simulator\Debug_AmanithVG\amanithEGL"
           1 個のファイルをコピーしました。

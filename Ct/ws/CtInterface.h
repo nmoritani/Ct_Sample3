@@ -11,6 +11,7 @@
 #include "CtEvent.h"
 #include "CtObject.h"
 #include "CtWindowContents.h"
+#include "CtMainThread.h"
 
 class CtInterface : public CtObject
 {
@@ -58,8 +59,7 @@ public:
 
 private:
 	CtInterface();
-	bool isCtTask() const;
-
+	
 	static CtInterface* m_pInstance;
 	CtWindowController* m_pWc;
 };

@@ -13,8 +13,6 @@ typedef char CHAR;
 typedef unsigned char UCHAR;
 typedef unsigned short USHORT;
 typedef unsigned int UINT;
-#else
-#include <kernel.h>
 #endif
 
 /*------------------------------------------------------------------------------*/

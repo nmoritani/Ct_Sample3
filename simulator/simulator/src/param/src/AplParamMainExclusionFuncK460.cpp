@@ -7,6 +7,9 @@
 #pragma warning (disable:4805)
 #include "AplParamMainExclusionFuncK460.h"
 #include "AplParamService.h"
+
+#include <CtPlatforms.h>
+
 //## package Foundation::Manager
 
 //## class AplParamMainExclusionFuncK460
@@ -9127,7 +9130,7 @@ void AplParamMainExclusionFuncK460::AplParamShutterSecValueIndex_Exclusion(int i
     		case APL_SYS_PARAM_SYSTEM_MODE_FREQUENCY_30pHZ:
     		case APL_SYS_PARAM_SYSTEM_MODE_FREQUENCY_2398pHZ:
     		case APL_SYS_PARAM_SYSTEM_MODE_FREQUENCY_24pHZ:	
-    			index_back = (B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndexNTSC));
+    			index_back = (char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndexNTSC));
     			APL_PARAM_SET_DATA( AplParamShutterSecValueIndex, APL_PARAM_GET_DATA( AplParamShutterSecValueIndexNTSC ) );
     			break;
     		default:
@@ -9147,37 +9150,37 @@ void AplParamMainExclusionFuncK460::AplParamShutterSecValueIndex_Exclusion(int i
     					indexTmp--;
     				}
     				if(indexTmp <= 0){
-    					index_back = (B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
+    					index_back = (char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
     					APL_PARAM_SET_CACHE_DATA( AplParamShutterSecValueIndex, 0 );
     					break;
     				}else if(APL_PARAM_GET_DATA(AplParamShutterSecValueHalf + indexTmp) <= APL_PARAM_GET_DATA(AplParamShutterSecSettingRangeMax)){
     					if(APL_PARAM_GET_DATA(AplParamShutterSecValueHalf + indexTmp) < APL_PARAM_GET_DATA(AplParamShutterSecSettingRangeMin)){
-    						index_back = (B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
+    						index_back = (char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
     						APL_PARAM_SET_CACHE_DATA( AplParamShutterSecValueIndex, 0 );
     					}else{
-    						index_back = (B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
+    						index_back = (char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
     						APL_PARAM_SET_CACHE_DATA( AplParamShutterSecValueIndex, indexTmp );
     					}
     					break;
     				}
     			}
     		}else if(APL_PARAM_GET_DATA(AplParamShutterSecValue) < APL_PARAM_GET_DATA(AplParamShutterSecSettingRangeMin)){
-    			if((B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex)) <= index_back){		/* IndexÇ™ìØÇ∂Ç©â∫ï˚å¸ÇÃèÍçá */
-    				index_back = (B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
+    			if((char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex)) <= index_back){		/* IndexÇ™ìØÇ∂Ç©â∫ï˚å¸ÇÃèÍçá */
+    				index_back = (char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
     				APL_PARAM_SET_CACHE_DATA( AplParamShutterSecValueIndex, 0 );		/* HALF SHUTTERÇ…ä€ÇﬂÇÈ */
     			}else{																	/* IndexÇ™è„ï˚å¸ÇÃèÍçá */
     				while(1){
     					indexTmp++;
     					if(0 == APL_PARAM_GET_DATA(AplParamShutterSecValueHalf + indexTmp)){
-    						index_back = (B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
+    						index_back = (char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
     						APL_PARAM_SET_CACHE_DATA( AplParamShutterSecValueIndex, 0 );
     						break;
     					}else if(APL_PARAM_GET_DATA(AplParamShutterSecValueHalf + indexTmp) >= APL_PARAM_GET_DATA(AplParamShutterSecSettingRangeMin)){
     						if(APL_PARAM_GET_DATA(AplParamShutterSecValueHalf + indexTmp) > APL_PARAM_GET_DATA(AplParamShutterSecSettingRangeMax)){
-    							index_back = (B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
+    							index_back = (char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
     							APL_PARAM_SET_CACHE_DATA( AplParamShutterSecValueIndex, 0 );
     						}else{
-    							index_back = (B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
+    							index_back = (char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
     							APL_PARAM_SET_CACHE_DATA( AplParamShutterSecValueIndex, indexTmp );
     						}
     						break;
@@ -9197,37 +9200,37 @@ void AplParamMainExclusionFuncK460::AplParamShutterSecValueIndex_Exclusion(int i
     					indexTmp--;
     				}
     				if(indexTmp <= 0){
-    					index_back = (B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
+    					index_back = (char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
     					APL_PARAM_SET_DATA( AplParamShutterSecValueIndex, 0 );
     					break;
     				}else if(APL_PARAM_GET_DATA(AplParamShutterSecValueHalf + indexTmp) <= APL_PARAM_GET_DATA(AplParamShutterSecSettingRangeMax)){
     					if(APL_PARAM_GET_DATA(AplParamShutterSecValueHalf + indexTmp) < APL_PARAM_GET_DATA(AplParamShutterSecSettingRangeMin)){
-    						index_back = (B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
+    						index_back = (char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
     						APL_PARAM_SET_DATA( AplParamShutterSecValueIndex, 0 );
     					}else{
-    						index_back = (B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
+    						index_back = (char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
     						APL_PARAM_SET_DATA( AplParamShutterSecValueIndex, indexTmp );
     					}
     					break;
     				}
     			}
     		}else if(APL_PARAM_GET_DATA(AplParamShutterSecValue) < APL_PARAM_GET_DATA(AplParamShutterSecSettingRangeMin)){
-    			if((B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex)) <= index_back){		/* IndexÇ™ìØÇ∂Ç©â∫ï˚å¸ÇÃèÍçá */
-    				index_back = (B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
+    			if((char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex)) <= index_back){		/* IndexÇ™ìØÇ∂Ç©â∫ï˚å¸ÇÃèÍçá */
+    				index_back = (char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
     				APL_PARAM_SET_DATA( AplParamShutterSecValueIndex, 0 );				/* HALF SHUTTERÇ…ä€ÇﬂÇÈ */
     			}else{																	/* IndexÇ™è„ï˚å¸ÇÃèÍçá */
     				while(1){
     					indexTmp++;
     					if(0 == APL_PARAM_GET_DATA(AplParamShutterSecValueHalf + indexTmp)){
-    						index_back = (B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
+    						index_back = (char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
     						APL_PARAM_SET_DATA( AplParamShutterSecValueIndex, 0 );
     						break;
     					}else if(APL_PARAM_GET_DATA(AplParamShutterSecValueHalf + indexTmp) >= APL_PARAM_GET_DATA(AplParamShutterSecSettingRangeMin)){
     						if(APL_PARAM_GET_DATA(AplParamShutterSecValueHalf + indexTmp) > APL_PARAM_GET_DATA(AplParamShutterSecSettingRangeMax)){
-    							index_back = (B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
+    							index_back = (char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
     							APL_PARAM_SET_DATA( AplParamShutterSecValueIndex, 0 );
     						}else{
-    							index_back = (B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
+    							index_back = (char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
     							APL_PARAM_SET_DATA( AplParamShutterSecValueIndex, indexTmp );
     						}
     						break;
@@ -9240,7 +9243,7 @@ void AplParamMainExclusionFuncK460::AplParamShutterSecValueIndex_Exclusion(int i
     
     // Index èëÇ´çûÇ›
     if( id == AplParamShutterSecValueIndex ){
-    	index_back = (B)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
+    	index_back = (char)(APL_PARAM_GET_DATA(AplParamShutterSecValueIndex));
     	switch( APL_PARAM_GET_DATA(AplParamSystemModeFrequency)){
     		// PALån
     		case APL_SYS_PARAM_SYSTEM_MODE_FREQUENCY_50pHZ:
@@ -12735,7 +12738,7 @@ void AplParamMainExclusionFuncK460::AplParamChannel5G_Exclusion(int id) {
     #define APL_CHANNEL_SETTING_TYPE_5G_W58		0x02UL
     #define APL_CHANNEL_SETTING_TYPE_5G_W56		0x04UL
     
-    UW settingType = APL_CHANNEL_SETTING_TYPE_5G_DEFAULT;
+    unsigned int settingType = APL_CHANNEL_SETTING_TYPE_5G_DEFAULT;
     
     if (( settingType & APL_CHANNEL_SETTING_TYPE_5G_DEFAULT ) != APL_CHANNEL_SETTING_TYPE_5G_DEFAULT ) {
     	Exclusion[APL_NET_PARAM_CHANNEL5_CH36] = false;

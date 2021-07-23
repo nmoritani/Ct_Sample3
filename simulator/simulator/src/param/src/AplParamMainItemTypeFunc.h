@@ -8,7 +8,6 @@
 #ifndef Foundation_Manager_AplParamMainItemTypeFunc_H
 #define Foundation_Manager_AplParamMainItemTypeFunc_H
 
-#include <oxf.h>
 #include "AplParamService.h"
 class AplParamService;
 

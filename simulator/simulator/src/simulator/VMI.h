@@ -5,7 +5,6 @@
 *      Virtual Middle InterFace
 *
 **************************************************/
-#include "win_itron.h"
 #include "SysIf.h"
 #include "TclIf.h"
 #include <Windows.h>

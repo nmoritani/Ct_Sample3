@@ -8,8 +8,6 @@
 #ifndef __CtTimer_H__
 #define __CtTimer_H__
 
-#include "kernel.h"
-
 #include <CtList.h>
 #include "CtObject.h"
 #include "CtEvent.h"
@@ -79,9 +77,9 @@ public :
     static CtTimer* getInstance();
 	
     /// サイクリックハンドラ
-    static void CycHandler(VP_INT exinf);
+    static void CycHandler();
 	
-	void receiveFlg(FLGPTN flgptn);
+	void receiveFlg(unsigned int flgptn);
 
     /// 周期タイマー
     bool startCyclic(int Uid, unsigned long Time, CtEventHandler* pObserver);

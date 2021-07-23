@@ -8,7 +8,6 @@
 #ifndef Foundation_Manager_AplParamMainExclusionFuncK460_H
 #define Foundation_Manager_AplParamMainExclusionFuncK460_H
 
-#include <oxf.h>
 #include "AplParamMainExclusionFunc.h"
 class AplIfAvs;
 

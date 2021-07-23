@@ -1,7 +1,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "CtMsgDbgTask.h"
+#include <CtPlatforms.h>
+
 #include "CtWindowID.h"
 
 #include "CtDbgCmndAdapter.h"
@@ -19,12 +20,12 @@ CtDbgCmndAdapter::CtDbgCmndAdapter()
 CtDbgCmndAdapter::~CtDbgCmndAdapter()
 {
 }
-#if 1
+
 void* CtDbgCmndAdapter::operator new(size_t Size) throw()
 {
 	void *mem = NULL;
 #ifndef WIN32_GUI_SIM
-	if (tget_mpl(CT_MPL_ID, (UINT)Size, &mem, 500) != E_OK) {
+	if (syswrap_alloc_memory(ct_mpl, (UINT)Size, &mem) != SYSWRAP_ERR_OK) {
 		CtDebugPrint(CtDbg, "!!! allocate error(%dbyte) !!!\n", Size);
 		return NULL;
 	}
@@ -39,14 +40,13 @@ void* CtDbgCmndAdapter::operator new(size_t Size) throw()
 void CtDbgCmndAdapter::operator delete(void* pObj)
 {
 #ifndef WIN32_GUI_SIM
-	ER er;
-	er = rel_mpl(CT_MPL_ID, pObj);
+	SYSWRAP_ERROR er;
+	er = syswrap_free_memory(ct_mpl, pObj);
 #else
 	free(pObj);
 	//MPLDBG_DEL(pObj);
 #endif
 }
-#endif
 
 void CtDbgCmndAdapter::send_Msg(Cmd _cmd) {
 #ifdef WIN32_GUI_SIM
@@ -55,8 +55,7 @@ void CtDbgCmndAdapter::send_Msg(Cmd _cmd) {
 	
 	CtMsgDbgCmnd* pMsg = (CtMsgDbgCmnd*)(void*)Marshal::AllocHGlobal(sizeof(CtMsgDbgCmnd));
 	memset(pMsg, 0, sizeof(pMsg));
-	pMsg->getMsgHead()->Header.msgpri = 1;
-	pMsg->getMsgHead()->pMsg = pMsg;
+	pMsg->setPriority(1);
 	pMsg->setData( (int*)pCmdData);
 	pMsg->setCmdGrp((int)_cmd.cmdGrp);
 	
@@ -65,7 +64,7 @@ void CtDbgCmndAdapter::send_Msg(Cmd _cmd) {
 	CtMsgDbgCmnd* pMsg = new CtMsgDbgCmnd((int*)pCmdData);
 #endif
 
-	if (pMsg->sendMsg() != E_OK) {
+	if (pMsg->sendMsg() != true) {
 		operator delete(pMsg);
 	}
 }
@@ -77,8 +76,7 @@ void CtDbgCmndAdapter::send_Msg(CmdKey _cmd) {
 
 	CtMsgDbgCmnd* pMsg = (CtMsgDbgCmnd*)(void*)Marshal::AllocHGlobal(sizeof(CtMsgDbgCmnd));
 	memset(pMsg, 0, sizeof(pMsg));
-	pMsg->getMsgHead()->Header.msgpri = 1;
-	pMsg->getMsgHead()->pMsg = pMsg;
+	pMsg->setPriority(1);
 	pMsg->setData((int*)pCmdData);
 	pMsg->setCmdGrp((int)_cmd.cmdGrp);
 
@@ -87,7 +85,7 @@ void CtDbgCmndAdapter::send_Msg(CmdKey _cmd) {
 	CtMsgDbgCmnd* pMsg = new CtMsgDbgCmnd((int*)pCmdData);
 #endif
 
-	if (pMsg->sendMsg() != E_OK) {
+	if (pMsg->sendMsg() != true) {
 		operator delete(pMsg);
 	}
 }
@@ -99,8 +97,7 @@ void CtDbgCmndAdapter::send_Msg(CmdSys _cmd) {
 
 	CtMsgDbgCmnd* pMsg = (CtMsgDbgCmnd*)(void*)Marshal::AllocHGlobal(sizeof(CtMsgDbgCmnd));
 	memset(pMsg, 0, sizeof(pMsg));
-	pMsg->getMsgHead()->Header.msgpri = 1;
-	pMsg->getMsgHead()->pMsg = pMsg;
+	pMsg->setPriority(1);
 	pMsg->setData((int*)pCmdData);
 	pMsg->setCmdGrp((int)_cmd.cmdGrp);
 
@@ -109,7 +106,7 @@ void CtDbgCmndAdapter::send_Msg(CmdSys _cmd) {
 	CtMsgDbgCmnd* pMsg = new CtMsgDbgCmnd((int*)pCmdData);
 #endif
 
-	if (pMsg->sendMsg() != E_OK) {
+	if (pMsg->sendMsg() != true) {
 		operator delete(pMsg);
 	}
 }
@@ -121,8 +118,7 @@ void CtDbgCmndAdapter::send_Msg(CmdParam _cmd) {
 
 	CtMsgDbgCmnd* pMsg = (CtMsgDbgCmnd*)(void*)Marshal::AllocHGlobal(sizeof(CtMsgDbgCmnd));
 	memset(pMsg, 0, sizeof(pMsg));
-	pMsg->getMsgHead()->Header.msgpri = 1;
-	pMsg->getMsgHead()->pMsg = pMsg;
+	pMsg->setPriority(1);
 	pMsg->setData((int*)pCmdData);
 	pMsg->setCmdGrp((int)_cmd.cmdGrp);
 
@@ -131,7 +127,7 @@ void CtDbgCmndAdapter::send_Msg(CmdParam _cmd) {
 	CtMsgDbgCmnd* pMsg = new CtMsgDbgCmnd((int*)pCmdData);
 #endif
 
-	if (pMsg->sendMsg() != E_OK) {
+	if (pMsg->sendMsg() != true) {
 		operator delete(pMsg);
 	}
 }
@@ -188,11 +184,21 @@ void CtDbgCmndAdapter::rqCmndAplParam(int screen, int cmndGrp, int cmndId, int p
 	send_Msg(_cmdParam);
 }
 
-#include "CtActDbgTsk.h"
+#include "CtDbgThread.h"
+#include "CtMainThread.h"
+#include "CtDrawThread.h"
+
 void CtDbgCmndAdapter::rqCmndCtInit() {
 #ifdef WIN32_GUI_SIM
-    act_tsk(CT_MAIN_TSKID);
-	act_DbgTsk();
+	CtDbgThread *pDbg = NULL;
+	CtMainThread *pMain = NULL;
+	CtDrawThread *pDraw = NULL;
+
+	if ((pDbg = CtDbgThread::getInstance()) != NULL)
+		pDbg->startThread();
+
+	if ((pMain = CtMainThread::getInstance()) != NULL)
+		pMain->startThread();
 #endif
 	return;
 }

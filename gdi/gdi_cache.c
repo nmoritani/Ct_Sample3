@@ -6,8 +6,6 @@
 
 #ifdef WIN32_GUI_SIM
 #include <windows.h>
-#include "win_itron.h"
-#include "wi_resource.h"
 #include "egl.h"
 #include "openvg.h"
 #else

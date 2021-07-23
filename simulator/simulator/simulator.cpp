@@ -5,13 +5,10 @@
 #include <iostream>
 #include "stdlib.h"
 #include "gdi.h"
-#include "win_itron.h"
-#include "wi_resource.h"
 #include "Wrapper.h"
 
 #include "CtWindowIDString.h"
 #include "AplParamIDString.h"
-#include "WinDrawTask.h"
 #include "MovieForm.h"
 #include "smDebugSerial.h"
 
@@ -157,11 +154,6 @@ System::Void MovieForm::MovieForm_Load(System::Object^  sender, System::EventArg
 	this->picbox_RectLCD->Image = m_RectImageLcd;
 }
 
-Void DrawTaskFinish()
-{
-	s_draw_task_stop = TRUE;
-}
-
 FILE* s_console_out;
 
 Void MovieForm::ExecDraw(bool isLcd)
@@ -303,18 +295,14 @@ Void MovieForm::Init()
 
 	smDebugPrintf(1, "GUI Simulator - start\n");
 
-	CALLBACK_WIN_DRAWTASK callbackfunc;
-	callbackfunc = DrawTaskFinish;
+	Ct_Init();
+	
 	s_draw_task_stop = FALSE;
 	m_CmdLineThread = NULL;
 	m_CmdLineHelperThread = NULL;
 	m_LogPlayerThread = NULL;
 
-	WinDrawTask_Init(callbackfunc);
-
 	InitImage();
-
-	ITRON_Init();
 
 	m_cWrapperLcd.Create();
 	m_cWrapperLout.Create();
@@ -323,7 +311,6 @@ Void MovieForm::Init()
 
 	m_dbgCmd = new CtDbgCmndAdapter();
 	m_dbgCmd->rqCmndCtInit();
-	ITRON_START();
 
 	m_MouseX = 0;
 	m_MouseY = 0;
@@ -370,22 +357,11 @@ Void MovieForm::Finish()
 	}
 	m_SimHWnd = NULL;
 
-	USHORT data;
-	UINT flgptn = 0;
-
-	//タスクに終了通知→全タスクに対して停止要求
-	WinDrawTask_sendMsg(MBXID_WIN_DRAW_TASK, MBX_DRAWTEST_TYPE_STOP, 0, &data);
-
-	//タスクが終了するまで待つ
-	do {
-		Sleep(5);
-	} while (!s_draw_task_stop);
-
 	GDI_Terminate();	//GDI終了
 
 	smDebugPrintf(1, "GUI Simulator - finish\n");
 
-	ITRON_Quit();
+	Ct_Term();
 
 	delete AplParamService::getInstance();
 	if (m_dbgCmd != NULL) delete m_dbgCmd;
@@ -688,9 +664,8 @@ System::Void MovieForm::picbox_LCD_MouseDown(System::Object^  sender, System::Wi
 	picbox_LCD->Focus();
 	e = AdjustMousePosition(e);
 	POINT p = { e->X, e->Y };
-	USHORT data[2] = { (USHORT)p.x, (USHORT)p.y };
 	m_IsMouseDown = true;
-	WinDrawTask_sendMsg(MBXID_WIN_DRAW_TASK, MBX_DRAWTEST_TYPE_SETPOINT, 2, data);
+	
 	m_dbgCmd->rqCmndSysTouch(getScreenId(), ID_SYS_TOUCH, ID_TCH_PRS, p.x, p.y);
 	// 長押し対応
 	SetTimer(m_SimHWnd, IDC_TIMER_MOUSE_DOWN, 100, NULL);

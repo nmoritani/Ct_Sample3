@@ -233,8 +233,13 @@ void CtLogPlayer::cmndInterpreter(System::String^ _StrdbgCmd) {
 		int::TryParse(pos[2], cmndId);
 		UINT paramId = ID_INVALID;
 		UINT::TryParse(pos[3], paramId);
+#if 0
 		long long paramVal = ID_INVALID;
 		LONGLONG::TryParse(pos[4], paramVal);
+#else
+		unsigned int paramVal = ID_INVALID;
+		UINT::TryParse(pos[4], paramVal);
+#endif
 		dbgCmd.rqCmndAplParam(scrnSel, cmndGrp, cmndId, paramId, paramVal);
 	}
 	break;

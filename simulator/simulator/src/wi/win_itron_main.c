@@ -29,10 +29,10 @@
 #include "wi_systemmgr.h"
 #include "wi_resource.h"
 #include "kernel_id.h"
-#include "VMI.h"
-#include "gdi_draw_test.h"
-#include "gdi_config.h"
-#include "WinDrawTask.h"
+//#include "VMI.h"
+//#include "gdi_draw_test.h"
+//#include "gdi_config.h"
+//#include "WinDrawTask.h"
 
 
 
@@ -280,6 +280,7 @@ BOOL ITRON_Init(void)
 #ifdef __ITRON3__
 	static const T_CTSK	ctsk = { NULL, TA_HLNG, InitTask, 1, 0 };
 #else
+#if 0
 	static const T_CTSK	ctsk = { TA_HLNG, NULL, SimulatorTask, 100, 0, NULL };
 	static const T_CTSK ct_main_task = { TA_HLNG, 0, Ct_MainTask, 50, 0x4000, 0 };
 	static const T_CTSK ct_draw_task = { TA_HLNG, 0, Ct_DrawTask, 40, 0x2000, 0 };
@@ -318,9 +319,11 @@ BOOL ITRON_Init(void)
 	static const T_CFLG ct_flg_dbg = { TA_TFIFO | TA_WMUL | TA_CLR, 0 };
 	static const T_CFLG gui_ts_flgid = { TA_TFIFO | TA_WMUL | TA_CLR, 0 };
 #endif
+#endif
 
 	//! iTRONサービスコールの初期処理.
 	if (WinITRON_Init()) {
+#if 0
 		//! アプリケーションの起動タスクを生成する.
 		cre_tsk(TSKID_WINITRON, &ctsk);
 
@@ -328,7 +331,6 @@ BOOL ITRON_Init(void)
 		cre_mpl(CT_MPL_ID, &ct_mpl);
 		cre_mpl(CT_FASTMPL_ID, &ct_fastmpl);
 		cre_mpl(GFX_RESMPL_ID, &gfxres_mpl);
-    cre_mpl(FONT_LIBMPL_ID, &gfxres_mpl);
 		cre_mpl(GUI_WORKMPL_ID, &guiwork_mpl);
 		cre_mpl(GUI_TS_MPLID, &gui_ts_mpl);
 
@@ -337,13 +339,13 @@ BOOL ITRON_Init(void)
 		cre_tsk(CT_DRAW_TSKID, &ct_draw_task);
 		cre_tsk(CT_DBG_TSKID, &ct_dbg_task);
 		cre_tsk(GUI_TS_TSKID, &gui_ts_task);
-
+		
 		// メールボックス生成
 		cre_mbx(CT_MBXID_MAIN, &ct_main_mbx);
 		cre_mbx(CT_MBXID_DRAW, &ct_draw_mbx);
 		cre_mbx(MBXID_WIN_DRAW_TASK, &win_draw_mbx);
 		cre_mbx(CT_MBXID_DBG, &ct_dbg_mbx);
-
+		
 		// データキュー生成
 		cre_dtq(GUI_TS_DTQID, &gui_ts_dtq);
 
@@ -367,7 +369,7 @@ BOOL ITRON_Init(void)
 		// Cyclic Handler
 		cre_cyc(CT_CYC_ID, &ct_cyc); // For AplTimerService
 		cre_cyc(AVDF_CYC_ID, &avdf_cyc);
-
+#endif
 		return TRUE;
 	}
 	return FALSE;

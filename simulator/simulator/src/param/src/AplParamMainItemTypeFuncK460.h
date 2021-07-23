@@ -8,7 +8,6 @@
 #ifndef Foundation_Manager_AplParamMainItemTypeFuncK460_H
 #define Foundation_Manager_AplParamMainItemTypeFuncK460_H
 
-#include <oxf.h>
 #include "AplParamMainItemTypeFunc.h"
 #include "AplParamService.h"
 class AplDeckStatusService;

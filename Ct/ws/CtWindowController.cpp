@@ -8,7 +8,7 @@
 #include "CtWindowFactory.h"
 #include "CtWindowIDString.h"
 #include "CtVector.h"
-#include "CtDrawTask.h"
+#include "CtDrawThread.h"
 #include "CtWindowList.h"
 #include "CtWindowContents.h"
 #include "CtWindowMain.h"
@@ -562,6 +562,7 @@ bool CtWindowController::clearScreen(int Screen, int delay)
 	return true;
 }
 
+int drawing_err = 0;
 bool CtWindowController::drawScreen(int Screen, int delay)
 {
 	CtWindowMain *pWindow = NULL;
@@ -582,21 +583,21 @@ bool CtWindowController::drawScreen(int Screen, int delay)
 		for (int i = m_VisiblePos[Screen]; i < m_Current[Screen].size(); i++) {
 			if ((pWindow = m_Current[Screen][i]) == NULL)
 				continue;
-
+			
 			pWindow->getInvalidates(m_Invalidates, Screen);
 			Currents.push_back(pWindow);
 		}
-
+		
 		if (m_Invalidates.empty() == true)
 			goto exit;
-
+		
 		m_pDraw->drawScreen(&Currents, &m_Invalidates, Screen);
 		m_Invalidates.clear();
+	} else {
+		drawing_err++;
 	}
-
 exit:
 	m_pDraw->freeDrawing(true);
-
 	return true;
 }
 

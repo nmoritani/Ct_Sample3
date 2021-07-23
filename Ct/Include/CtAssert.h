@@ -13,9 +13,6 @@
 extern "C"{
 #endif /* __cplusplus */
 
-#include <itron.h>
-
-
 #define CT_ASSERT_BREAK asm("	.byte	0xff")
 
 #define	CT_PRINT_COL_DEF			"\033[0m"

@@ -27,7 +27,7 @@ void CtMplDbg::trace_point(void*addr, int size)
 	volatile int i = 0;
 }
 
-void CtMplDbg::Add(void* ptr, int size, ID mplid)
+void CtMplDbg::Add(void* ptr, int size)
 {
 	if (!m_Init) {
 		m_Init = true;
@@ -49,12 +49,6 @@ void CtMplDbg::Add(void* ptr, int size, ID mplid)
 		trace_point(ptr, size);
 	}
 
-	// MPLÇÃèÓïÒèoóÕ
-	if (0) {
-		T_RMPL rmpl;
-		ref_mpl(mplid, &rmpl);
-		printf("size: %d, rmpl.fblksz : %6d, fmplsz : %d, get:%p\n", size, rmpl.fblksz, rmpl.fmplsz, ptr);
-	}
 
 	LeaveCriticalSection(&m_CriticalSection);
 }

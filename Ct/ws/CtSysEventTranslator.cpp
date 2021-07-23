@@ -11,9 +11,12 @@ CtSysEventTranslator::CtSysEventTranslator() :
 	m_IsSlideEventReceive(false)
 {
 	setClassType(CtClassType_SysEventTranslator);
-	SYS_Event_AddCallback((SYS_EVENT_CALLBACK)&CtSysEventTranslator::callbackSysSwitchEvent);
-	SYS_TPanel_SetSlideEventEnable(TRUE);
-	SYS_KEY_STATUS sysStatus = SYS_Key_GetStatus();
+	
+	//	SYS_Event_AddCallback((SYS_EVENT_CALLBACK)&CtSysEventTranslator::callbackSysSwitchEvent);
+	//	SYS_TPanel_SetSlideEventEnable(TRUE);
+	//	SYS_KEY_STATUS sysStatus = SYS_Key_GetStatus();
+	SYS_KEY_STATUS sysStatus = {0};
+	
 	m_PreDeck = sysStatus.Deck;
 	m_PreDeck2 = sysStatus.Deck2;
 	m_PreLanc = sysStatus.LancSw;

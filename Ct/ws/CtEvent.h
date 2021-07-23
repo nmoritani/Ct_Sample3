@@ -9,7 +9,7 @@
 #include "Ct.h"
 
 #include "CtMsg.h"
-#include "CtMsgMainTask.h"
+#include "CtComMainThread.h"
 #include "AplParam.h"
 #include "AplParamService.h"
 
@@ -42,7 +42,7 @@ public:
 
 	// 送信
 	void send() {
-		CtMsgMainTask::sendMsg(*this);
+		CtComMainThread::sendMsg(*this);
 	}
 	virtual void operationCmd();
 	// コマンド実行

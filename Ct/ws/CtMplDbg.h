@@ -18,7 +18,7 @@ struct mpl_info{
 class CtMplDbg
 {
 public:
-	static void Add(void* ptr, int size, ID mplid);
+	static void Add(void* ptr, int size);
 	static void Del(void* ptr);
 	static void Output();
 	static const char* ClassType_to_Str(CtClassType type);
@@ -34,13 +34,13 @@ private:
 	static void trace_point(void*addr, int size);
 };
 
-#define MPLDBG_ADD(ptr,size,mplid)	CtMplDbg::Add(ptr,size,mplid);
+#define MPLDBG_ADD(ptr,size)		CtMplDbg::Add(ptr,size);
 #define MPLDBG_DEL(ptr)				CtMplDbg::Del(ptr)
 #define MPLDBG_PRINT()				CtMplDbg::Output()
 
 #else // defined(WIN32_GUI_SIM) && defined(CT_CHECK_MPL_LEAK)
 
-#define MPLDBG_ADD(ptr,size,id)
+#define MPLDBG_ADD(ptr,size)
 #define MPLDBG_DEL(ptr)
 #define MPLDBG_PRINT()
 

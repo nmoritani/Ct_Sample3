@@ -8,7 +8,6 @@
 #ifndef Foundation_Manager_AplParamMainExclusionFunc_H
 #define Foundation_Manager_AplParamMainExclusionFunc_H
 
-#include <oxf.h>
 class AplParamService;
 
 //## package Foundation::Manager

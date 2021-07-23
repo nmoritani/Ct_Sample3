@@ -12,10 +12,6 @@
 #include <windows.h>
 #endif
 
-#include <kernel.h>
-#include <kernel_id.h>
-#define ID_FONTAPI_SEM		(GDI_SEMID_FONTAPI)
-
 
 /* ロケール特有の文字コード範囲 */
 #define isASCII(c) ((c) >= 0x0020 && (c) <= 0x007f)
@@ -226,7 +222,7 @@ int  font_service_init(void)
 	DT32_int ret = DT_SUCCESS;
 	USHORT i;
 
-	wai_sem(ID_FONTAPI_SEM);
+	syswrap_wait_semaphore(&gdi_semaphore_font, SYSWRAP_TIMEOUT_FOREVER);
 	if (dt_fontmgr) goto finally;  /* 初期化済 */
 
 	/* 全言語共通フォントデータの存在確認 */
@@ -336,7 +332,7 @@ int  font_service_init(void)
 	dt_fontmgr = init_mgr;
 
  finally:
-	sig_sem(ID_FONTAPI_SEM);
+	syswrap_post_semaphore(&gdi_semaphore_font);
 	return ret;
 }
 
@@ -356,7 +352,7 @@ int  font_service_quit(void)
 {
 	DT32_int ret = DT_SUCCESS;
 
-	wai_sem(ID_FONTAPI_SEM);
+	syswrap_wait_semaphore(&gdi_semaphore_font, SYSWRAP_TIMEOUT_FOREVER);
 	if (dt_fontmgr == NULL) goto finally;  /* 未初期化 */
 
 	/* フォントエンジンのワークメモリの初期化 */
@@ -378,7 +374,7 @@ int  font_service_quit(void)
 	dt_fontmgr = NULL;
 
  finally:
-	sig_sem(ID_FONTAPI_SEM);
+	syswrap_post_semaphore(&gdi_semaphore_font);
 	return ret;
 }
 
@@ -421,7 +417,7 @@ int font_service_set_lang(enum FONT_LOCALE loc)
 		if (ret < 0) return ret;
 	}
 
-	wai_sem(ID_FONTAPI_SEM);
+	syswrap_wait_semaphore(&gdi_semaphore_font, SYSWRAP_TIMEOUT_FOREVER);
 
 	/* 現在のロケールから変更が無ければ何もしない */
 	if (loc == current_locale) goto finally;
@@ -489,7 +485,7 @@ int font_service_set_lang(enum FONT_LOCALE loc)
 	current_locale = loc;
 
  finally:
-	sig_sem(ID_FONTAPI_SEM);
+	syswrap_post_semaphore(&gdi_semaphore_font);
 	return ret;
 }
 
@@ -781,7 +777,7 @@ int gdi_fontapi_create_bmp_font_Image(
 
 	h = (0 == style->mono) ? hGray : hMono;
 
-	wai_sem(ID_FONTAPI_SEM);
+	syswrap_wait_semaphore(&gdi_semaphore_font, SYSWRAP_TIMEOUT_FOREVER);
 
 	//###mada 32ビットカラーを16ビットカラーに変更。実際に使うときはカラーパレット？
 	if (style->edge && (0 != stroke_color)) {
@@ -807,7 +803,7 @@ int gdi_fontapi_create_bmp_font_Image(
 	}
 
  EXIT:
-	sig_sem(ID_FONTAPI_SEM);
+	syswrap_post_semaphore(&gdi_semaphore_font);
 
 	return ret;
 }
@@ -844,7 +840,7 @@ int gdi_fontapi_get_rect(const FONT_STYLE *style,
 		return 0;
 	}
 
-	wai_sem(ID_FONTAPI_SEM);
+	syswrap_wait_semaphore(&gdi_semaphore_font, SYSWRAP_TIMEOUT_FOREVER);
 
 	h = (isBitmapFont) ? ((0 == style->mono) ? hGray : hMono) : hOvg;
 
@@ -944,7 +940,7 @@ int gdi_fontapi_get_rect(const FONT_STYLE *style,
 	}
 
 FINALLY:
-	sig_sem(ID_FONTAPI_SEM);
+	syswrap_post_semaphore(&gdi_semaphore_font);
 	return ret;
 
 DESTROY_AND_EXIT:  /* 異常終了 */
@@ -1089,7 +1085,7 @@ VGPath gdi_fontapi_get_path(const FONT_STYLE *style, const USHORT *ucs_str, int 
 		return VG_INVALID_HANDLE;
 	}
 
-	wai_sem(ID_FONTAPI_SEM);
+	syswrap_wait_semaphore(&gdi_semaphore_font, SYSWRAP_TIMEOUT_FOREVER);
 
 	//フォントスタイルの設定
 	writedir = (DT16_ushort)((style->righttoleft) ? DT_RIGHTTOLEFT : DT_LEFTTORIGHT);	/* pgr0247	*/
@@ -1182,7 +1178,7 @@ VGPath gdi_fontapi_get_path(const FONT_STYLE *style, const USHORT *ucs_str, int 
 	}
 
 FINALLY:
-	sig_sem(ID_FONTAPI_SEM);
+	syswrap_post_semaphore(&gdi_semaphore_font);
 
 	return return_handle;
 
@@ -1253,7 +1249,7 @@ VGPath gdi_fontapi_CombineCharsToStrPath(const FONT_STYLE *style, const USHORT *
 		return VG_INVALID_HANDLE;
 	}
 
-	wai_sem(ID_FONTAPI_SEM);
+	syswrap_wait_semaphore(&gdi_semaphore_font, SYSWRAP_TIMEOUT_FOREVER);
 
 	//フォントパスの初期化
 	return_handle = vgCreatePath(VG_PATH_FORMAT_STANDARD, VG_PATH_DATATYPE_F, 1.0f, 0.0f, 0, 0, VG_PATH_CAPABILITY_ALL);
@@ -1363,7 +1359,7 @@ VGPath gdi_fontapi_CombineCharsToStrPath(const FONT_STYLE *style, const USHORT *
 	}
 
 FINALLY:
-	sig_sem(ID_FONTAPI_SEM);
+	syswrap_post_semaphore(&gdi_semaphore_font);
 
 	return return_handle;
 

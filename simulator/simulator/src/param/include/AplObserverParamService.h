@@ -8,10 +8,8 @@
 #ifndef Foundation_Manager_AplObserverParamService_H
 #define Foundation_Manager_AplObserverParamService_H
 
-#include <oxf.h>
 #include <AplList.h>
 #include <AplAlgorithm.h>
-#include "kernel.h"
 //## package Foundation::Manager
 
 //## class AplObserverParamService

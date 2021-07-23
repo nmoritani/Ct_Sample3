@@ -32,8 +32,8 @@ CtLayout* CtKeyboad::createContainer()
 	m_pText->setColor(CtColor::darkGreen);
 	
 	CtHLayout *pTitle = new CtHLayout();
-	pTitle->addWidget(new CtLabel("SSID"), AlignRight, 1);
-	pTitle->addWidget(m_pText, 5);
+	pTitle->addWidget(new CtLabel("Name:"), AlignRight, 1);
+	pTitle->addWidget(m_pText, 3);
 	pTitle->setColor(CtColor::darkBlue);
 #if 0
 	m_pKomoji = new CtButton("A-a");
@@ -158,18 +158,20 @@ CtLayout* CtKeyboad::createContainer()
 	m_pKeyboad->addLabel(pKey);
 	
 	CtHLayout *pControl = new CtHLayout();
+    pControl->addStretch(1);
 	pControl->addWidget(m_pRet);
 	pControl->addWidget(m_pKigou);
 	pControl->addWidget(m_pSpace);
 	pControl->addWidget(m_pLeft);
 	pControl->addWidget(m_pRight);
 	pControl->addWidget(m_pEnter);
-	pControl->addWidget(new CtLabel(CtEllipse(CtColor::red, 2, CtColor::yellow)));
-	pControl->addWidget(new CtLabel(CtFill(CtColor::red)));
+    pControl->addStretch(1);
+    //	pControl->addWidget(new CtLabel(CtEllipse(CtColor::red, 2, CtColor::yellow)));
+    //	pControl->addWidget(new CtLabel(CtFill(CtColor::red)));
 
 	m_pBox = new CtVLayout();
 	m_pBox->addWidget(pTitle, CtMargin(10,10,40,40), 1);
-	m_pBox->addWidget(m_pKeyboad, CtMargin(10,10,40,40),3);
+	m_pBox->addWidget(m_pKeyboad, CtMargin(10,10,40,40),4);
 	m_pBox->addWidget(pControl, CtMargin(10,10,40,40), 1);
 	m_pBox->setColor(CtColor::Black);
 	
@@ -230,5 +232,4 @@ bool CtKeyboad::handleButtonEvent(const CtEventButton& Button)
 CtKeyboad::~CtKeyboad()
 {
 }
-
 

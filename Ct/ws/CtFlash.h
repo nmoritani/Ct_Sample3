@@ -8,8 +8,6 @@
 #ifndef __CtFlash_H__
 #define __CtFlash_H__
 
-#include "kernel.h"
-
 #include <CtList.h>
 #include "CtObject.h"
 #include "CtEvent.h"

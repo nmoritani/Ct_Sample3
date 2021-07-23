@@ -1,14 +1,15 @@
-#include <stdio.h>
+#include <CtPlatforms.h>
 #include "CtFastObject.h"
 
+#include <CtPlatforms.h>
 
 #if !defined(CT_CHECK_DOUBLE_FREE)
 
 void* CtFastObject::operator new(size_t Size) throw()
 {
 	void *mem = NULL;
-		
-	if (tget_mpl(CT_FASTMPL_ID, (UINT)Size, &mem, 500) != E_OK) {
+
+	if (syswrap_alloc_memory(&ct_mempool_fast, &mem, Size) != SYSWRAP_ERR_OK) {
 		CtDebugPrint(CtDbg, "!!! FAST_MPL allocate error(%dbyte) !!!\n", Size);
 		return NULL;
 	}
@@ -19,7 +20,7 @@ void* CtFastObject::operator new[](size_t Size) throw()
 {
 	void *mem = NULL;
 
-	if (tget_mpl(CT_FASTMPL_ID, (UINT)Size, &mem, 500) != E_OK) {
+	if (	syswrap_alloc_memory(&ct_mempool_fast, &mem, Size) != SYSWRAP_ERR_OK) {
 		CtDebugPrint(CtDbg, "!!! allocate error(%dbyte) !!!\n", Size);
 		return NULL;
 	}
@@ -28,14 +29,14 @@ void* CtFastObject::operator new[](size_t Size) throw()
 
 void CtFastObject::operator delete(void* pObj)
 {
-	ER er;
-    er = rel_mpl(CT_FASTMPL_ID, pObj);
+	SYSWRAP_ERROR er;
+    er = syswrap_free_memory(&ct_mempool_fast, pObj);
 }
 
 void CtFastObject::operator delete[](void* pObj)
 {
-	ER er;
-	er = rel_mpl(CT_FASTMPL_ID, pObj);
+	SYSWRAP_ERROR er;
+	er = syswrap_free_memory(&ct_mempool_fast, pObj);
 }
 
 #endif // !defined(CT_CHECK_DOUBLE_FREE)

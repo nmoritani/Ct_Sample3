@@ -4,10 +4,10 @@
  *  Element:          CtTimer
  */
 
-
 #include "CtTimer.h"
-#include "kernel_id.h"
 #include "CtEventInterface.h"
+
+#include <CtPlatforms.h>
 
 CtTimer* CtTimer::m_pInstance = NULL;
 const unsigned long CtTimer::m_CyclicTime(10);
@@ -129,17 +129,7 @@ CtTimer::CtTimer()
 {
 	setClassType(CtClassType_Timer);
 
-	// 最初のaddTimer()が呼ばれてからコールすればいいはずなので、コメントアウト
-	// もし、最初から動かさないと問題であれば、このコメントアウトをはずしてください
-	T_RCYC rcyc;
-
-	ref_cyc(CT_CYC_ID, &rcyc);
-	if (rcyc.cycstat == TCYC_STP) {
-		if (sta_cyc(CT_CYC_ID) != E_OK) {
-			CtAssert(0);
-		}
-	}
-
+	syswrap_start_cyclic_handler(&ct_cyclic_handler);
 	return;
 }
 
@@ -197,16 +187,17 @@ void CtTimer::removeTimer(int Uid, CtEventHandler *pObserver)
 	return;
 }
 
-void CtTimer::receiveFlg(FLGPTN flgptn)
+void CtTimer::receiveFlg(unsigned int flgptn)
 {
 	checkTimeout();
 	m_PrevTime = m_TotalTime;
 }
 
-void CtTimer::CycHandler(VP_INT exinf)
+void CtTimer::CycHandler()
 {
 	m_TotalTime += m_CyclicTime;
-	iset_flg(CT_FLGID_MAINTASK, CtMsgMainTask::FLGPTN_MAIN_TIMER);
+	
+	CtComMainThread::setEvent(CtComMainThread::FLGPTN_MAIN_TIMER);
 
 	return;
 }

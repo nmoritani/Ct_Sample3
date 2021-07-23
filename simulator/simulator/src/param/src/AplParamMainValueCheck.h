@@ -8,7 +8,6 @@
 #ifndef Foundation_Manager_AplParamMainValueCheck_H
 #define Foundation_Manager_AplParamMainValueCheck_H
 
-#include <oxf.h>
 #include "AplObject.h"
 class AplIfSys;
 

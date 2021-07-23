@@ -4,7 +4,6 @@
 
 #include "CtAssert.h"
 #include "CtObject.h"
-#include "CtObject.h"
 #ifdef WIN32_GUI_SIM
 #include <EXCPT.H>
 #endif

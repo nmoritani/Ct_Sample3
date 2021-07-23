@@ -10,7 +10,6 @@ extern "C" {
 #endif /* __cplusplus */
 
 #ifdef WIN32_GUI_SIM
-#include "win_itron.h"
 #include "egl.h"
 #include "openvg.h"
     
@@ -28,6 +27,8 @@ extern "C" {
 #include "fontapi.h"
 #include "gdi_image.h"
 #include "gdi_string.h"
+#include <CtPlatforms.h>
+#include "gdi_platform.h"
 /*****************************************************************************
  * Œ^’è‹`
  *****************************************************************************/
@@ -638,18 +639,8 @@ void GDI_SetNativeWindow(GFX_PLANE_ID plane, NativeWindowType window);
 
 typedef unsigned long GDI_DRAWABLE_ID;
 
-extern void *gdi_alloc(int size);
-extern void gdi_free(void *ptr);
-extern void *gdi_realloc(void* ptr, int new_size, int cur_size);
-
-extern void *gdi_bmp_alloc(int size, int align);
-extern void gdi_bmp_free(void *ptr);
-extern void *gdi_bmp_realloc(void* ptr, int new_size, int cur_size);
-
-extern void *font_lib_alloc(int size);
-extern void font_lib_free(void *ptr);
-extern void *font_lib_realloc(void* ptr, int new_size, int cur_size);
-
+extern syswrap_semaphore_t gdi_semaphore_draw;
+extern syswrap_semaphore_t gdi_semaphore_font;
 
 #ifdef __cplusplus
 }

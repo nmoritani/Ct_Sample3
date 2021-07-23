@@ -85,9 +85,7 @@ public:
 	void rqCmndAplParam(int screen, int cmndGrp, int cmndId, int paramId, int paramValue);
 	void rqCmndCtInit();
 	// WinSimu‚ÆItron‚ÌØ‚è•ª‚¯
-#if 1
 	void *operator new(size_t Size) throw();
 	void operator delete(void *pObj);
-#endif
 };
 

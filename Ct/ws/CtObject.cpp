@@ -1,7 +1,7 @@
-#include <stdio.h>
 #include "CtObject.h"
 #include "CtMplDbg.h"
 
+#include <CtPlatforms.h>
 
 #if !defined(CT_CHECK_DOUBLE_FREE)
 
@@ -9,12 +9,12 @@ void* CtObject::operator new(size_t Size) throw()
 {
 	void *mem = NULL;
 	
-	if (tget_mpl(CT_MPL_ID, (UINT)Size, &mem, 500) != E_OK) {
+	if (syswrap_alloc_memory(&ct_mempool_normal, &mem, Size) != SYSWRAP_ERR_OK) {
 		CtDebugPrint(CtDbg, "!!! CT_MPL allocate error(%dbyte) !!!\n", Size);
 		return NULL;
 	}
 
-	MPLDBG_ADD(mem, Size, CT_MPL_ID);
+	MPLDBG_ADD(mem, Size);
 	
 	return mem;
 }
@@ -23,30 +23,30 @@ void* CtObject::operator new[](size_t Size) throw()
 {
 	void *mem = NULL;
 
-	if (tget_mpl(CT_MPL_ID, (UINT)Size, &mem, 500) != E_OK) {
+	if (syswrap_alloc_memory(&ct_mempool_normal, &mem, Size) != SYSWRAP_ERR_OK) {
 		CtDebugPrint(CtDbg, "!!! allocate error(%dbyte) !!!\n", Size);
 		return NULL;
 	}
 	
 	CtDebugPrint(CtDbg, "getMPL %d\n", Size);
 
-	MPLDBG_ADD(mem, Size, CT_MPL_ID);
+	MPLDBG_ADD(mem, Size);
 
 	return mem;
 }
 
 void CtObject::operator delete(void* pObj)
 {
-	ER er;
-    er = rel_mpl(CT_MPL_ID, pObj);
+	SYSWRAP_ERROR er;
+    er = syswrap_free_memory(&ct_mempool_normal, pObj);
 
 	MPLDBG_DEL(pObj);
 }
 
 void CtObject::operator delete[](void* pObj)
 {
-	ER er;
-	er = rel_mpl(CT_MPL_ID, pObj);
+	SYSWRAP_ERROR er;
+	er = syswrap_free_memory(&ct_mempool_normal, pObj);
 
 	MPLDBG_DEL(pObj);
 }

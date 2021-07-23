@@ -7,6 +7,7 @@
 
 #include "AplParamMainItemTypeFuncK460.h"
 #include "AplParamService.h"
+#include <CtPlatforms.h>
 //## package Foundation::Manager
 
 //## class AplParamMainItemTypeFuncK460
@@ -1121,7 +1122,7 @@ AplParamState AplParamMainItemTypeFuncK460::AplParamChannel5G_ViewType(int id) {
     			#define APL_CHANNEL_ITEM_TYPE_5G_W58		0x02UL
     			#define APL_CHANNEL_ITEM_TYPE_5G_W56		0x04UL
     			
-    			UW ItemType = APL_CHANNEL_ITEM_TYPE_5G_DEFAULT;
+    			unsigned int ItemType = APL_CHANNEL_ITEM_TYPE_5G_DEFAULT;
     			
     			
     			if (( ItemType & APL_CHANNEL_ITEM_TYPE_5G_DEFAULT ) != APL_CHANNEL_ITEM_TYPE_5G_DEFAULT ) {

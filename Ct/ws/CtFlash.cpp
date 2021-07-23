@@ -7,7 +7,6 @@
 
 #include "CtFlash.h"
 #include "CtTimer.h"
-#include "kernel_id.h"
 
 
 CtFlash* CtFlash::m_pInstance = NULL;

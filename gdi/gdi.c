@@ -7,18 +7,10 @@
 
 #ifdef WIN32_GUI_SIM
 #include <windows.h>
-#include "win_itron.h"
-#include "wi_resource.h"
-#include "kernel_id.h"
 #include "egl.h"
 #include "openvg.h"
 typedef unsigned int	uint32;
 #else
-#include <kernel.h>
-#include <kernel_id.h>
-#include "SysIf.h"
-#include "AvcIf.h"
-#include "AvcGuiIf.h"
 #include "Tmr.h"
 #define PANA_ORG_FUNC
 #define _DMPNATIVE_
@@ -34,7 +26,7 @@ typedef unsigned int	uint32;
 #include "GUI_OsdDispIf.h"
 #endif
 
-#include "mem_mng.h"
+#include "gdi_platform.h"
 #include "gdi.h"
 
 #include "freetype_mono_ovg.h"
@@ -44,7 +36,7 @@ typedef unsigned int	uint32;
 #include "gdi_local.h"
 
 //Freetypeを使うときはこのdefineを有効化する
-#define USE_FREETYPE_FONTAPI
+//#define USE_FREETYPE_FONTAPI
 
 extern EGLNativeDisplayType native_display;
 extern EGLDisplay egldisplay;
@@ -59,34 +51,6 @@ typedef struct _gfx_plane_info
 } gfx_plane_info;
 
 static gfx_plane_info gfx_plane[GFX_PLANE_MAX] = { NULL, NULL, NULL };
-
-#if 0
-//------------------------------------------------------------------------------
-// internal functions
-//
-// tkmalloc用初期化情報
-static SMemMngInit tkMemInfo =
-{
-	MEM_MNG_STATIC_MEMADDR, MEM_MNG_STATIC_MEMAREA_SIZE,
-	{
-		{GEVG_MEM_CONF_ID00_SIZE, GEVG_MEM_CONF_ID00_NUM},
-		{GEVG_MEM_CONF_ID01_SIZE, GEVG_MEM_CONF_ID01_NUM},
-		{GEVG_MEM_CONF_ID02_SIZE, GEVG_MEM_CONF_ID02_NUM},
-		{GEVG_MEM_CONF_ID03_SIZE, GEVG_MEM_CONF_ID03_NUM},
-		{GEVG_MEM_CONF_ID04_SIZE, GEVG_MEM_CONF_ID04_NUM},
-		{GEVG_MEM_CONF_ID05_SIZE, GEVG_MEM_CONF_ID05_NUM},
-		{GEVG_MEM_CONF_ID06_SIZE, GEVG_MEM_CONF_ID06_NUM},
-		{GEVG_MEM_CONF_ID07_SIZE, GEVG_MEM_CONF_ID07_NUM},
-		{GEVG_MEM_CONF_ID08_SIZE, GEVG_MEM_CONF_ID08_NUM},
-		{GEVG_MEM_CONF_ID09_SIZE, GEVG_MEM_CONF_ID09_NUM},
-		{GEVG_MEM_CONF_ID10_SIZE, GEVG_MEM_CONF_ID10_NUM},
-		//		{GEVG_MEM_CONF_ID11_SIZE, GEVG_MEM_CONF_ID11_NUM},
-		//		{GEVG_MEM_CONF_ID12_SIZE, GEVG_MEM_CONF_ID12_NUM},
-		//		{GEVG_MEM_CONF_ID13_SIZE, GEVG_MEM_CONF_ID13_NUM},
-		//		{GEVG_MEM_CONF_ID14_SIZE, GEVG_MEM_CONF_ID14_NUM},
-	}
-};
-#endif
 
 GDI_ERRCODE gdi_switch_screen(GDI_HANDLER hdr)
 {
@@ -134,7 +98,9 @@ void GDI_Init(void)
 	// CPUメモリ初期化(キャッシュ領域可)
 	tkMemMngInitialize(&tkMemInfo);
 #endif
-    
+
+	gdi_platform_init();
+
 #ifdef WIN32_GUI_SIM
 #if defined(USE_SHIVA_VG) || defined(USE_AMANITH_VG)
 	InitLibOpenVG(960, 540);
@@ -155,6 +121,8 @@ void GDI_Init(void)
 void GDI_Terminate(void)
 {
 	gdi_vg_end();
+
+	gdi_platform_term();
 }
 
 #ifndef WIN32_GUI_SIM
@@ -186,7 +154,7 @@ GDI_ERRCODE GDI_Update(GDI_HANDLER hdr)
 	static UW last_addr[GFX_PLANE_MAX] = {0,0,0};
 #endif
 	
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 
 	if (hdr == GDI_INVALID_ID) {
 		hdr = (GDI_HANDLER)gdi_get_current_context();
@@ -332,7 +300,7 @@ GDI_ERRCODE GDI_Update(GDI_HANDLER hdr)
 	}
 #endif
  EXIT:
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 	
 	return err;
 }
@@ -370,7 +338,7 @@ GDI_HANDLER GDI_CreateScreen(int width, int height, GDI_COLOR_FORMAT format, GFX
 	unsigned char *buf0 = NULL, *buf1 = NULL;
 	GDI_HANDLER hdr = GDI_INVALID_ID;
 
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 	
 #ifdef WIN32_GUI_SIM
 	if ((window_context = gdi_create_window(width, height, format, plane, NULL, NULL)) == NULL) {
@@ -400,7 +368,7 @@ GDI_HANDLER GDI_CreateScreen(int width, int height, GDI_COLOR_FORMAT format, GFX
 	gfx_plane[plane].window_context = window_context;
 	
  EXIT:
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return (GDI_HANDLER)window_context;
 }
@@ -410,7 +378,7 @@ extern GDI_ERRCODE GDI_DeleteScreen(GDI_HANDLER hdr)
 	gdi_window_context *window_context;
 	GDI_ERRCODE err = GDI_NO_ERROR;
 
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 
 	window_context = (gdi_window_context *)hdr;
 
@@ -422,7 +390,7 @@ extern GDI_ERRCODE GDI_DeleteScreen(GDI_HANDLER hdr)
 	gdi_delete_window(window_context);
 
  EXIT:
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return err;
 }
@@ -431,9 +399,9 @@ GDI_ERRCODE GDI_SwitchScreen(GDI_HANDLER hdr)
 {
 	GDI_ERRCODE err;
 
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 	err = gdi_switch_window((gdi_window_context *)hdr);
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return err;
 }
@@ -443,21 +411,21 @@ GDI_HANDLER GDI_CreateDrawable(int width, int height, GDI_COLOR_FORMAT format)
 {
 	gdi_pbuffer_context *pbuffer_context;
 
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 	if ((pbuffer_context = gdi_create_pbuffer(width, height, format)) == NULL) {
-		sig_sem(GDI_SEMID_DRAW);
+		syswrap_post_semaphore(&gdi_semaphore_draw);
 		return GDI_INVALID_ID;
 	}
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return (GDI_HANDLER)pbuffer_context;
 }
 
 GDI_ERRCODE GDI_DeleteDrawable(GDI_HANDLER hdr)
 {
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 	gdi_delete_pbuffer((gdi_pbuffer_context *)hdr);
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return GDI_NO_ERROR;
 }
@@ -466,9 +434,9 @@ GDI_ERRCODE GDI_SwitchDrawable(GDI_HANDLER hdr, GDI_DIR dir)
 {
 	GDI_ERRCODE result;
 	
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 	result = gdi_switch_pbuffer((gdi_pbuffer_context *)hdr, dir);
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 	
 	return result;
 }
@@ -477,9 +445,9 @@ GDI_HANDLER GDI_GetCurrentHandler(void)
 {
 	GDI_HANDLER hdr;
 
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 	hdr = (GDI_HANDLER)gdi_get_current_context();
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return hdr;
 }
@@ -852,9 +820,9 @@ GDI_CACHE_SVG * GDI_CreateCacheSVG(GDI_IMAGE_SVG *svg)
 {
 	GDI_CACHE_SVG *cache_svg = NULL;
 	
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 	cache_svg = gdi_create_cache_svg(svg);
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return cache_svg;
 }
@@ -879,7 +847,7 @@ GDI_ERRCODE GDI_DrawSVG(GDI_DRAW_BASE *info, GDI_DRAW_SVG *info_svg, GDI_CACHE_S
 		return GDI_ILLEGAL_ARGUMENT_ERROR;
 
 
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 
 	if ((info->draw_area.width <= 0.0f) || (info->draw_area.height <= 0.0f)) {
 		err = GDI_ILLEGAL_ARGUMENT_ERROR;
@@ -958,7 +926,7 @@ GDI_ERRCODE GDI_DrawSVG(GDI_DRAW_BASE *info, GDI_DRAW_SVG *info_svg, GDI_CACHE_S
 
 	if (stroke_paint != VG_INVALID_HANDLE)	vgDestroyPaint(stroke_paint);
 	if (fill_paint != VG_INVALID_HANDLE)	vgDestroyPaint(fill_paint);
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return err;
 }
@@ -1050,9 +1018,9 @@ GDI_CACHE_BITMAP *GDI_CreateCacheBitmap(GDI_IMAGE_BITMAP *bitmap)
 {
 	GDI_CACHE_BITMAP *cache_bitmap = NULL;
 	
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 	cache_bitmap = gdi_create_cache_bitmap(bitmap);
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return cache_bitmap;
 }
@@ -1075,7 +1043,7 @@ GDI_ERRCODE GDI_DrawBitmap(GDI_DRAW_BASE *info, GDI_DRAW_BITMAP* info_bitmap, GD
 		return GDI_ILLEGAL_ARGUMENT_ERROR;
 	}
 	
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 
 	if ((info->draw_area.width <= 0.0f) || (info->draw_area.height <= 0.0f)) {
 		err = GDI_ILLEGAL_ARGUMENT_ERROR;
@@ -1123,7 +1091,7 @@ GDI_ERRCODE GDI_DrawBitmap(GDI_DRAW_BASE *info, GDI_DRAW_BITMAP* info_bitmap, GD
 	}
 
  EXIT:
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return err;
 }
@@ -1187,7 +1155,7 @@ GDI_ERRCODE GDI_DrawYUV(GDI_DRAW_BASE *info, GDI_DRAW_YUV* info_yuv)
 		return GDI_ILLEGAL_ARGUMENT_ERROR;
 	}
 	
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 	
 	//VGImageの作成
 	vg_image = gdi_create_yuv_image(yuv);
@@ -1228,7 +1196,7 @@ GDI_ERRCODE GDI_DrawYUV(GDI_DRAW_BASE *info, GDI_DRAW_YUV* info_yuv)
 
 EXIT:
 	if (vg_image != VG_INVALID_HANDLE)	vgDestroyImage(vg_image);
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 	return err;
 }
 
@@ -1245,7 +1213,7 @@ GDI_ERRCODE GDI_DrawDrawable(GDI_DRAW_BASE *info, GDI_DRAW_DRAWABLE* info_drawab
 	gdi_pbuffer_context *pbuffer_context;
 	gdi_context_base* context = gdi_get_current_context();
 
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 
 	if ((info == NULL) || (info_drawable == NULL) || ((drawable = info_drawable->drawable) == GDI_INVALID_ID)) {
 		err = GDI_ILLEGAL_ARGUMENT_ERROR;
@@ -1297,7 +1265,7 @@ GDI_ERRCODE GDI_DrawDrawable(GDI_DRAW_BASE *info, GDI_DRAW_DRAWABLE* info_drawab
 	gdi_disable_scissoring();				//終了処理
 
  EXIT:
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return err;
 }
@@ -1312,7 +1280,7 @@ GDI_ERRCODE GDI_DrawImage(GDI_DRAW_BASE *info, GDI_HANDLER drawable)
 	gdi_pbuffer_context *pbuffer_context;
 	gdi_context_base* context = gdi_get_current_context();
 
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 
 	if ((info == NULL) || (drawable == GDI_INVALID_ID)) {
 		err = GDI_ILLEGAL_ARGUMENT_ERROR;
@@ -1363,7 +1331,7 @@ GDI_ERRCODE GDI_DrawImage(GDI_DRAW_BASE *info, GDI_HANDLER drawable)
 	gdi_disable_scissoring();				//終了処理
 
  EXIT:
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return err;
 }
@@ -1535,7 +1503,7 @@ GDI_ERRCODE GDI_DrawLine(GDI_DRAW_BASE *info, GDI_DRAW_LINE* info_shape)
 	if ((info == NULL) || (info_shape == NULL))
 		return GDI_ILLEGAL_ARGUMENT_ERROR;
 	
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 
 	x0 = (VGfloat)info_shape->x0;
 	y0 = (VGfloat)info_shape->y0;
@@ -1592,7 +1560,7 @@ GDI_ERRCODE GDI_DrawLine(GDI_DRAW_BASE *info, GDI_DRAW_LINE* info_shape)
 
  EXIT:
 	if (VG_INVALID_HANDLE != path) vgDestroyPath(path);
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return err;
 }
@@ -1629,7 +1597,7 @@ GDI_ERRCODE GDI_DrawRectangle(GDI_DRAW_BASE *info, GDI_DRAW_RECT* info_shape)
 	if ((info == NULL) || (info_shape == NULL))
 		return GDI_ILLEGAL_ARGUMENT_ERROR;
 	
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 	
 	if ((info->draw_area.width <= 0.0f) || (info->draw_area.height <= 0.0f)) {
 		err = GDI_ILLEGAL_ARGUMENT_ERROR;
@@ -1677,7 +1645,7 @@ GDI_ERRCODE GDI_DrawRectangle(GDI_DRAW_BASE *info, GDI_DRAW_RECT* info_shape)
 
  EXIT:
 	if (VG_INVALID_HANDLE != path) vgDestroyPath(path);
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return err;
 }
@@ -1716,7 +1684,7 @@ GDI_ERRCODE GDI_DrawRoundRect(GDI_DRAW_BASE *info, GDI_DRAW_ROUNDRECT *info_shap
 	if ((info == NULL) || (info_shape == NULL))
 		return GDI_ILLEGAL_ARGUMENT_ERROR;
 	
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 	
 	if ((info->draw_area.width <= 0.0f) || (info->draw_area.height <= 0.0f)) {
 		err = GDI_ILLEGAL_ARGUMENT_ERROR;
@@ -1764,7 +1732,7 @@ GDI_ERRCODE GDI_DrawRoundRect(GDI_DRAW_BASE *info, GDI_DRAW_ROUNDRECT *info_shap
 
  EXIT:
 	if (VG_INVALID_HANDLE != path) vgDestroyPath(path);
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return err;
 }
@@ -1802,7 +1770,7 @@ GDI_ERRCODE GDI_DrawEllipse(GDI_DRAW_BASE *info, GDI_DRAW_ELLIPSE *info_shape)
 	if ((info == NULL) || (info_shape == NULL))
 		return GDI_ILLEGAL_ARGUMENT_ERROR;
 	
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 	
 	if ((info->draw_area.width <= 0.0f) || (info->draw_area.height <= 0.0f)) {
 		err = GDI_ILLEGAL_ARGUMENT_ERROR;
@@ -1853,7 +1821,7 @@ GDI_ERRCODE GDI_DrawEllipse(GDI_DRAW_BASE *info, GDI_DRAW_ELLIPSE *info_shape)
 
  EXIT:
 	if (VG_INVALID_HANDLE != path) vgDestroyPath(path);
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return err;
 }
@@ -2222,9 +2190,9 @@ GDI_CACHE_FONT * GDI_CreateCacheFont(GDI_FONT_STYLE *gdi_font_style, unsigned sh
 {
 	GDI_CACHE_FONT *cache_font = NULL;
 	
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 	cache_font = gdi_create_cache_font(gdi_font_style, str);
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return cache_font;
 }
@@ -2315,9 +2283,9 @@ GDI_ERRCODE GDI_DrawFont(GDI_DRAW_BASE *info, GDI_DRAW_FONT *info_font, GDI_CACH
 
 #ifdef USE_FREETYPE_FONTAPI
 	if (FONT_ATTRIBUTE_MONO != info_font->font_style.attr) {
-		wai_sem(GDI_SEMID_DRAW);
+		syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 		err = FreeType_DrawFont(info, info_font, NULL);
-		sig_sem(GDI_SEMID_DRAW);
+		syswrap_post_semaphore(&gdi_semaphore_draw);
 	}
 	return err;
 #endif
@@ -2325,7 +2293,7 @@ GDI_ERRCODE GDI_DrawFont(GDI_DRAW_BASE *info, GDI_DRAW_FONT *info_font, GDI_CACH
 
 	adjust = info_font->font_style.auto_adjust;
 	
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 	
 	stroke_color = &info_font->stroke_color;
 	fill_color = &info_font->fill_color;
@@ -2416,7 +2384,7 @@ GDI_ERRCODE GDI_DrawFont(GDI_DRAW_BASE *info, GDI_DRAW_FONT *info_font, GDI_CACH
 	if ((NULL == cache) && (NULL != cache_font)) {
 		gdi_free_cache_font(cache_font);
 	}
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 
 	return err;
 }
@@ -2429,7 +2397,7 @@ GDI_ERRCODE GDI_DeleteCache(GDI_CACHE_BASE *cache)
 		return err;
 	}
 
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 
 	switch (cache->type) {
 	case GDI_CACHE_TYPE_SVG:
@@ -2444,7 +2412,7 @@ GDI_ERRCODE GDI_DeleteCache(GDI_CACHE_BASE *cache)
 	}
 
  EXIT:
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 	return err;
 }
 
@@ -2456,7 +2424,7 @@ GDI_ERRCODE GDI_Clear(signed short int x, signed short int y, signed short int w
 	VGint		rect[4] = {0};
 	gdi_context_base* context = gdi_get_current_context();
 
-	wai_sem(GDI_SEMID_DRAW);
+	syswrap_wait_semaphore(&gdi_semaphore_draw, SYSWRAP_TIMEOUT_FOREVER);
 	
 	gdi_get_vgcoords(context, rect, &draw_area);
 
@@ -2467,7 +2435,7 @@ GDI_ERRCODE GDI_Clear(signed short int x, signed short int y, signed short int w
 	vgSetfv(VG_CLEAR_COLOR, 4, color);
 	vgClear(rect[0], rect[1], rect[2], rect[3]);
 
-	sig_sem(GDI_SEMID_DRAW);
+	syswrap_post_semaphore(&gdi_semaphore_draw);
 	return err;
 }
 
@@ -2660,8 +2628,10 @@ void GDI_FreeCache_BitmapFont(GDI_CACHE_BITMAP_FONT *cache_font)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void *GDI_Alloc_Memory(int size)
 {
-	return gdi_bmp_alloc(size, 128);
+	return gdi_bmp_alloc(size);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //#endif
+
+

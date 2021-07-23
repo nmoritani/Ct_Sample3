@@ -3,9 +3,11 @@
 #include "CtFuncIDString.h"
 #include "CtWindowIDString.h"
 
+#include <CtPlatforms.h>
+
 CtDbgWindFuncRegister::CtDbgWindFuncRegister()
 {
-	dly_tsk(200);
+	syswrap_delay_thread(200);
 	CtWindowController::getInstance()->registerWindowFunc(Window_005, FuncID_001, (CtWindowFunc)windFunc1);
 	CtWindowController::getInstance()->registerWindowFunc(Window_005, FuncID_002, (CtWindowFunc)windFunc2);
 	CtWindowController::getInstance()->registerWindowFunc(Window_005, FuncID_003, (CtWindowFunc)windFunc3);

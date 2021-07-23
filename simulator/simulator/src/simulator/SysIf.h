@@ -13,6 +13,7 @@ extern "C" {
 #endif	/* __cplusplus */
 
 /* ŠÂ‹«‚É‚æ‚Á‚Ä‚ ‚Á‚½‚è‚È‚©‚Á‚½‚è‚·‚é‚Ì‚Å */
+	typedef int BOOL;
 #ifndef TRUE
 #define TRUE	1
 #endif

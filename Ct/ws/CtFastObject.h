@@ -3,8 +3,6 @@
 #define __CTFASTOBJECT_H__
 
 #include <stdio.h>
-#include "kernel.h"
-#include "kernel_id.h"
 #include "../Include/CtDebugPrint.h"
 #include "../Include/CtAssert.h"
 #include "../Include/CtClassType.h"

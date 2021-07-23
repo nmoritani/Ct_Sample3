@@ -1,6 +1,6 @@
 #include "CtInterface.h"
 #include "CtEventInterface.h"
-#include "CtMsgMainTask.h"
+#include "CtComMainThread.h"
 #include "CtWindowMain.h"
 #include "CtWindowController.h"
 #include "CtSynchro.h"
@@ -145,11 +145,11 @@ CtWindowID CtInterface::getCurrentWindowID(CtScreenSel screen) const
 		return WindowNone;
 	}
 
-	if (isCtTask()) {
+	if (CtMainThread::isOwnThread() == true) {
 		if (m_pWc != NULL) {
 			CtWindowMain *win = m_pWc->getCurrentWindow(toNoScreen(screen));
 			if (win) {
-				CtDebugPrint(CtDbg, "(CT Tsk)[WindowID]%#x\n", win->getWindowID());
+				CtDebugPrint(CtDbg, "(CT Thread)[WindowID]%#x\n", win->getWindowID());
 				return win->getWindowID();
 			}
 		}
@@ -159,7 +159,7 @@ CtWindowID CtInterface::getCurrentWindowID(CtScreenSel screen) const
 		CtWindowInfo info;
 		CtEventInterface::requestWindowInfoAccessCmd(CtEventWinInfoAccess::GetCurrentWindow, screen, &info, &sync);
 		sync.wait();
-		CtDebugPrint(CtDbg, "(NoneCT Tsk)[WindowID]%#x\n", info.WindowID);
+		CtDebugPrint(CtDbg, "(NoneCT Thread)[WindowID]%#x\n", info.WindowID);
 
 		return info.WindowID;
 	}
@@ -173,7 +173,7 @@ CtWindowID CtInterface::getRootWindowID(CtScreenSel screen) const
 		return WindowNone;
 	}
 
-	if (isCtTask()) {
+	if (CtMainThread::isOwnThread() == true) {
 		if (m_pWc != NULL) {
 			CtWindowMain *win = m_pWc->getRootWindow(toNoScreen(screen));
 
@@ -230,7 +230,7 @@ CtWindowID CtInterface::checkDrawWindowID(CtScreenSel screen, CtWindowID id) con
 		return WindowNone;
 	}
 
-	if (isCtTask()) {
+	if (CtMainThread::isOwnThread() == true) {
 		if (m_pWc != NULL) {
 			CtWindowMain *win = m_pWc->getDrawWindow(toNoScreen(screen), id);
 			if (win) {
@@ -401,18 +401,3 @@ void CtInterface::outputWindowOutline(CtScreenSel Sel, CtWindowID id) const
 	}
 }
 
-bool CtInterface::isCtTask() const
-{
-	ID id;
-
-#ifndef WIN32_GUI_SIM
-	if (sns_ctx()) {
-		return false;
-	}
-#endif
-	if (get_tid(&id) == E_OK && id == CT_MAIN_TSKID) {
-		return true;
-	}
-
-	return false;
-}

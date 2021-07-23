@@ -5,7 +5,7 @@
 
 
 #include "CtObserverParamService.h"
-#include "CtMsgMainTask.h"
+#include "CtComMainThread.h"
 #include "AplParamService.h"
 #include "CtEventInterface.h"
 

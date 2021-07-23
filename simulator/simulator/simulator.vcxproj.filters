@@ -8,18 +8,6 @@
     <Filter Include="ソース ファイル\visualstudio">
       <UniqueIdentifier>{615efb1e-f1c6-4f03-ab6c-f2f4a7a8d0e5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\itron">
-      <UniqueIdentifier>{0ac15316-873c-4dcb-81b2-3f6205d2c5c7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\itron\comm">
-      <UniqueIdentifier>{08d7c5e6-6f90-42e1-a8ff-b0088d2d0dae}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\itron\ver3">
-      <UniqueIdentifier>{1010a823-f641-430f-a47e-7fd6df8db169}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\itron\ver4">
-      <UniqueIdentifier>{499aaf1f-5a61-4dfc-916b-9980de13aeb7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\simulator">
       <UniqueIdentifier>{2820c856-08e5-4ad1-9362-3d5f71e13f25}</UniqueIdentifier>
     </Filter>
@@ -35,18 +23,6 @@
     </Filter>
     <Filter Include="ヘッダー ファイル\openvg">
       <UniqueIdentifier>{591e565e-a976-48ff-b2d1-58c796949e9d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\itron">
-      <UniqueIdentifier>{d187516e-cc34-4d26-873c-ddf0fdca3635}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\itron\comm">
-      <UniqueIdentifier>{05e04774-834f-4877-8c7b-cb9947a5a634}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\itron\ver3">
-      <UniqueIdentifier>{6c202e80-49d0-4215-a5bf-d5df4fa08405}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\itron\ver4">
-      <UniqueIdentifier>{77564713-d27c-43c7-92b9-5e8ae1b87fd2}</UniqueIdentifier>
     </Filter>
     <Filter Include="ヘッダー ファイル\simulator">
       <UniqueIdentifier>{87550548-bf95-4154-ad12-5c49af621484}</UniqueIdentifier>
@@ -145,9 +121,6 @@
     <Filter Include="Ct\Window\PLAYVIEW">
       <UniqueIdentifier>{5d59664e-81cc-4903-9d4b-cfcca7967b71}</UniqueIdentifier>
     </Filter>
-    <Filter Include="TimeStamp">
-      <UniqueIdentifier>{ac1e9cee-0e38-4c87-bc91-ad506151804d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Ct\gdi\FreeType">
       <UniqueIdentifier>{ae359a43-33b6-4575-90a5-ebbd6aca8318}</UniqueIdentifier>
     </Filter>
@@ -238,11 +211,41 @@
     <Filter Include="Ct\gdi\FreeType\fontdata">
       <UniqueIdentifier>{a752fa0a-161e-4a32-af3a-533cb44dd2f1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\platforms">
+      <UniqueIdentifier>{80752ff7-4be9-4734-93e0-fefe5067a44e}</UniqueIdentifier>
+    </Filter>
     <Filter Include="ソース ファイル\platforms">
-      <UniqueIdentifier>{da72cf66-8421-4d1f-a18d-fc86f9258f85}</UniqueIdentifier>
+      <UniqueIdentifier>{fb26a6fd-f676-4ee7-a993-7550e8201940}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\itron">
+      <UniqueIdentifier>{fe43b189-dfde-4dbe-aea3-4e71b9a7f45e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\itron\comm">
+      <UniqueIdentifier>{d00927e5-da85-4f95-b52b-768548aaf0e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\itron\ver3">
+      <UniqueIdentifier>{adddba8f-2c23-4f8d-8abc-458de8ecb9f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\itron\ver4">
+      <UniqueIdentifier>{902dea80-4274-4a83-b6dd-4cef39824199}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\itron">
+      <UniqueIdentifier>{885ab555-2a2f-4712-b8a7-8c17292962a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\itron\comm">
+      <UniqueIdentifier>{75ada81f-24ac-4d7b-b2da-658e2ab8d2b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\itron\ver3">
+      <UniqueIdentifier>{f41cd23d-d13c-49ce-9356-7410bd998a50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\itron\ver4">
+      <UniqueIdentifier>{f0b09d5a-7d54-4a58-8789-9b933a191c6a}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\platforms\Windows">
-      <UniqueIdentifier>{efe6240d-d474-402b-8c27-9cd2f8bfd94a}</UniqueIdentifier>
+      <UniqueIdentifier>{39cef28d-3593-48f0-a678-5617a2efc701}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\platforms\ITRON">
+      <UniqueIdentifier>{990a8f21-c679-459d-a0b6-459d65ff203f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -252,70 +255,10 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>ソース ファイル\visualstudio</Filter>
     </ClCompile>
-    <ClCompile Include="src\wi\kprintf.c">
-      <Filter>ソース ファイル\itron</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\win_itron_main.c">
-      <Filter>ソース ファイル\itron</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\comm\wi_alarm_handler.c">
-      <Filter>ソース ファイル\itron\comm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\comm\wi_common.c">
-      <Filter>ソース ファイル\itron\comm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\comm\wi_cycle_handler.c">
-      <Filter>ソース ファイル\itron\comm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\comm\wi_data_queue.c">
-      <Filter>ソース ファイル\itron\comm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\comm\wi_event_flag.c">
-      <Filter>ソース ファイル\itron\comm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\comm\wi_fixed_mempool.c">
-      <Filter>ソース ファイル\itron\comm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\comm\wi_interrupt.c">
-      <Filter>ソース ファイル\itron\comm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\comm\wi_mail_box.c">
-      <Filter>ソース ファイル\itron\comm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\comm\wi_message_buffer.c">
-      <Filter>ソース ファイル\itron\comm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\comm\wi_mutex.c">
-      <Filter>ソース ファイル\itron\comm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\comm\wi_rendezvous_port.c">
-      <Filter>ソース ファイル\itron\comm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\comm\wi_semaphore.c">
-      <Filter>ソース ファイル\itron\comm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\comm\wi_systemmgr.c">
-      <Filter>ソース ファイル\itron\comm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\comm\wi_task.c">
-      <Filter>ソース ファイル\itron\comm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\comm\wi_variable_mempool.c">
-      <Filter>ソース ファイル\itron\comm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\ver3\win_itron3.c">
-      <Filter>ソース ファイル\itron\ver3</Filter>
-    </ClCompile>
-    <ClCompile Include="src\wi\ver4\win_itron4.c">
-      <Filter>ソース ファイル\itron\ver4</Filter>
-    </ClCompile>
     <ClCompile Include="simulator.cpp">
       <Filter>ソース ファイル\simulator</Filter>
     </ClCompile>
     <ClCompile Include="src\simulator\smDebugSerial.cpp">
-      <Filter>ソース ファイル\simulator</Filter>
-    </ClCompile>
-    <ClCompile Include="src\simulator\WinDrawTask.cpp">
       <Filter>ソース ファイル\simulator</Filter>
     </ClCompile>
     <ClCompile Include="src\simulator\Wrapper.cpp">
@@ -438,9 +381,6 @@
     <ClCompile Include="..\..\Ct\ws\CtDraw.cpp">
       <Filter>Ct\ws</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Ct\ws\CtDrawTask.cpp">
-      <Filter>Ct\ws</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Ct\ws\CtEvent.cpp">
       <Filter>Ct\ws</Filter>
     </ClCompile>
@@ -459,9 +399,6 @@
     <ClCompile Include="..\..\Ct\ws\CtLanguage.cpp">
       <Filter>Ct\ws</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Ct\ws\CtMainTask.cpp">
-      <Filter>Ct\ws</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Ct\ws\CtMemory.cpp">
       <Filter>Ct\ws</Filter>
     </ClCompile>
@@ -469,12 +406,6 @@
       <Filter>Ct\ws</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Ct\ws\CtMsg.cpp">
-      <Filter>Ct\ws</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Ct\ws\CtMsgDrawTask.cpp">
-      <Filter>Ct\ws</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Ct\ws\CtMsgMainTask.cpp">
       <Filter>Ct\ws</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Ct\ws\CtObject.cpp">
@@ -508,12 +439,6 @@
       <Filter>Ct\gdi</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gdi\gdi_path.c">
-      <Filter>Ct\gdi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gdi\geman_gui_sim.c">
-      <Filter>Ct\gdi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gdi\mem_mng.c">
       <Filter>Ct\gdi</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gdi\utf_convert.c">
@@ -700,12 +625,6 @@
       <Filter>Ct\Window</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Ct\dbg\CtDbgCmndAdapter.cpp">
-      <Filter>Ct\dbg</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Ct\dbg\CtDbgTask.cpp">
-      <Filter>Ct\dbg</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Ct\dbg\CtMsgDbgTask.cpp">
       <Filter>Ct\dbg</Filter>
     </ClCompile>
     <ClCompile Include="src\simulator\CtLogPlayer.cpp">
@@ -1194,9 +1113,6 @@
     <ClCompile Include="..\..\Ct\Window\NETWORK\CtWindow_NETWORK_INFO.cpp">
       <Filter>Ct\Window\NETWORK</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Ct\Window\SANDBOX\CtContainerTimeStamp.cpp">
-      <Filter>Ct\Window\SANDBOX</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Ct\Window\SANDBOX\CtWindow_008.cpp">
       <Filter>Ct\Window\SANDBOX</Filter>
     </ClCompile>
@@ -1208,15 +1124,6 @@
     </ClCompile>
     <ClCompile Include="..\..\Ct\Window\RECVIEW\CtRecViewContainer.cpp">
       <Filter>Ct\Window\RECVIEW</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\TimeStamp\CtTimeStamp.cpp">
-      <Filter>TimeStamp</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\TimeStamp\gui_timestamp_api.cpp">
-      <Filter>TimeStamp</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\TimeStamp\gui_timestamp_task.cpp">
-      <Filter>TimeStamp</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Ct\ws\CtTimeMesure.cpp">
       <Filter>Ct\ws</Filter>
@@ -1617,45 +1524,144 @@
     <ClCompile Include="..\..\gdi\fontapi.c">
       <Filter>Ct\gdi</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\platforms\Windows\system_thread.cpp">
+    <ClCompile Include="..\..\gdi\gdi_platform.c">
+      <Filter>Ct\gdi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtMainThread.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtDrawThread.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\dbg\CtDbgThread.cpp">
+      <Filter>Ct\dbg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtComDrawThread.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\ws\CtComMainThread.cpp">
+      <Filter>Ct\ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Ct\dbg\CtComDbgThread.cpp">
+      <Filter>Ct\dbg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\win_itron_main.c">
+      <Filter>ソース ファイル\itron</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\win_itron_dialog.c">
+      <Filter>ソース ファイル\itron</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_systemmgr.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_task.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_variable_mempool.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_alarm_handler.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_common.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_cycle_handler.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_data_queue.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_event_flag.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_fixed_mempool.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_interrupt.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_mail_box.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_message_buffer.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_mutex.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_rendezvous_port.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\comm\wi_semaphore.c">
+      <Filter>ソース ファイル\itron\comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\kprintf.c">
+      <Filter>ソース ファイル\itron</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\ver4\win_itron4.c">
+      <Filter>ソース ファイル\itron\ver4</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wi\ver3\win_itron3.c">
+      <Filter>ソース ファイル\itron\ver3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_common.cpp">
+      <Filter>ソース ファイル\platforms\ITRON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_cyclic_handler.cpp">
+      <Filter>ソース ファイル\platforms\ITRON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_event.cpp">
+      <Filter>ソース ファイル\platforms\ITRON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_memorypool.cpp">
+      <Filter>ソース ファイル\platforms\ITRON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_message.cpp">
+      <Filter>ソース ファイル\platforms\ITRON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_mutex.cpp">
+      <Filter>ソース ファイル\platforms\ITRON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_semaphore.cpp">
+      <Filter>ソース ファイル\platforms\ITRON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_thread.cpp">
+      <Filter>ソース ファイル\platforms\ITRON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\ITRON\itronwrapper_time.cpp">
+      <Filter>ソース ファイル\platforms\ITRON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_common.cpp">
       <Filter>ソース ファイル\platforms\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\platforms\Windows\system_common.cpp">
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_cyclic_handler.cpp">
       <Filter>ソース ファイル\platforms\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\platforms\Windows\system_event.cpp">
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_event.cpp">
       <Filter>ソース ファイル\platforms\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\platforms\Windows\system_message.cpp">
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_memorypool.cpp">
       <Filter>ソース ファイル\platforms\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\platforms\Windows\system_mutex.cpp">
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_message.cpp">
       <Filter>ソース ファイル\platforms\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\platforms\Windows\system_time.cpp">
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_mutex.cpp">
       <Filter>ソース ファイル\platforms\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\platforms\Windows\system_wrapper.cpp">
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_semaphore.cpp">
       <Filter>ソース ファイル\platforms\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\platforms\Windows\system_cyclic_handler.cpp">
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_thread.cpp">
       <Filter>ソース ファイル\platforms\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\platforms\Windows\system_semaphore.cpp">
-      <Filter>ソース ファイル\platforms\Windows</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\platforms\Windows\system_memorypool.cpp">
+    <ClCompile Include="..\..\platforms\Windows\win32wrapper_time.cpp">
       <Filter>ソース ファイル\platforms\Windows</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\simulator\AvcIf.h">
-      <Filter>ソース ファイル\simulator</Filter>
-    </ClInclude>
-    <ClInclude Include="src\simulator\itron.h">
-      <Filter>ソース ファイル\simulator</Filter>
-    </ClInclude>
-    <ClInclude Include="src\simulator\kernel.h">
       <Filter>ソース ファイル\simulator</Filter>
     </ClInclude>
     <ClInclude Include="src\simulator\smDebugSerial.h">
@@ -1693,69 +1699,6 @@
     </ClInclude>
     <ClInclude Include="src\include\VG\openvg.h">
       <Filter>ヘッダー ファイル\openvg</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\kprintf.h">
-      <Filter>ヘッダー ファイル\itron</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\wi_config.h">
-      <Filter>ヘッダー ファイル\itron</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\wi_resource.h">
-      <Filter>ヘッダー ファイル\itron</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\win_itron.h">
-      <Filter>ヘッダー ファイル\itron</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\comm\wi_alarm_handler.h">
-      <Filter>ヘッダー ファイル\itron\comm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\comm\wi_common.h">
-      <Filter>ヘッダー ファイル\itron\comm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\comm\wi_cycle_handler.h">
-      <Filter>ヘッダー ファイル\itron\comm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\comm\wi_data_queue.h">
-      <Filter>ヘッダー ファイル\itron\comm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\comm\wi_event_flag.h">
-      <Filter>ヘッダー ファイル\itron\comm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\comm\wi_fixed_mempool.h">
-      <Filter>ヘッダー ファイル\itron\comm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\comm\wi_interrupt.h">
-      <Filter>ヘッダー ファイル\itron\comm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\comm\wi_mail_box.h">
-      <Filter>ヘッダー ファイル\itron\comm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\comm\wi_message_buffer.h">
-      <Filter>ヘッダー ファイル\itron\comm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\comm\wi_mutex.h">
-      <Filter>ヘッダー ファイル\itron\comm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\comm\wi_rendezvous_port.h">
-      <Filter>ヘッダー ファイル\itron\comm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\comm\wi_semaphore.h">
-      <Filter>ヘッダー ファイル\itron\comm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\comm\wi_systemmgr.h">
-      <Filter>ヘッダー ファイル\itron\comm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\comm\wi_task.h">
-      <Filter>ヘッダー ファイル\itron\comm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\comm\wi_variable_mempool.h">
-      <Filter>ヘッダー ファイル\itron\comm</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\ver3\win_itron3.h">
-      <Filter>ヘッダー ファイル\itron\ver3</Filter>
-    </ClInclude>
-    <ClInclude Include="src\wi\ver4\win_itron4.h">
-      <Filter>ヘッダー ファイル\itron\ver4</Filter>
     </ClInclude>
     <ClInclude Include="src\simulator\Wrapper.h">
       <Filter>ヘッダー ファイル\simulator</Filter>
@@ -1808,9 +1751,6 @@
     <ClInclude Include="..\..\Ct\ws\CtDraw.h">
       <Filter>Ct\ws</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Ct\ws\CtDrawTask.h">
-      <Filter>Ct\ws</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Ct\ws\CtEvent.h">
       <Filter>Ct\ws</Filter>
     </ClInclude>
@@ -1836,12 +1776,6 @@
       <Filter>Ct\ws</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Ct\ws\CtMsg.h">
-      <Filter>Ct\ws</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Ct\ws\CtMsgDrawTask.h">
-      <Filter>Ct\ws</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Ct\ws\CtMsgMainTask.h">
       <Filter>Ct\ws</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Ct\ws\CtObject.h">
@@ -2069,9 +2003,6 @@
     <ClInclude Include="..\..\Ct\dbg\CtDbgCmndAdapter.h">
       <Filter>Ct\dbg</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Ct\dbg\CtMsgDbgTask.h">
-      <Filter>Ct\dbg</Filter>
-    </ClInclude>
     <ClInclude Include="src\simulator\VMI.h">
       <Filter>ソース ファイル\Dbg</Filter>
     </ClInclude>
@@ -2251,9 +2182,6 @@
     </ClInclude>
     <ClInclude Include="..\..\Ct\Window\MENU\CtWindowMenu.h">
       <Filter>Ct\Window\MENU</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Ct\dbg\CtActDbgTsk.h">
-      <Filter>Ct\dbg</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Ct\dbg\CtDbgCmnd.h">
       <Filter>Ct\dbg</Filter>
@@ -2591,9 +2519,6 @@
     <ClInclude Include="..\..\Ct\Window\NETWORK\CtWindow_NETWORK_INFO.h">
       <Filter>Ct\Window\NETWORK</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Ct\Window\SANDBOX\CtContainerTimeStamp.h">
-      <Filter>Ct\Window\SANDBOX</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Ct\Window\SANDBOX\CtWindow_008.h">
       <Filter>Ct\Window\SANDBOX</Filter>
     </ClInclude>
@@ -2605,15 +2530,6 @@
     </ClInclude>
     <ClInclude Include="..\..\Ct\Window\RECVIEW\CtRecViewContainer.h">
       <Filter>Ct\Window\RECVIEW</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\TimeStamp\CtTimeStamp.h">
-      <Filter>TimeStamp</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\TimeStamp\gui_timestamp_api.h">
-      <Filter>TimeStamp</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\TimeStamp\gui_timestamp_task.h">
-      <Filter>TimeStamp</Filter>
     </ClInclude>
     <ClInclude Include="src\simulator\TclIf.h">
       <Filter>ソース ファイル\simulator</Filter>
@@ -3233,8 +3149,98 @@
     <ClInclude Include="..\..\gdi\FreeType\src\winfonts\winfnt.h">
       <Filter>Ct\gdi\FreeType\src\winfonts</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Ct\dbg\CtDebugThread.h">
+      <Filter>Ct</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtDrawThread.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtComDrawThread.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\ws\CtComMainThread.h">
+      <Filter>Ct\ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Ct\dbg\CtComDbgThread.h">
+      <Filter>Ct\dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\platforms\CtPlatforms.h">
+      <Filter>ヘッダー ファイル\platforms</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\platforms\system_wrapper.h">
-      <Filter>ソース ファイル\platforms\Windows</Filter>
+      <Filter>ヘッダー ファイル\platforms</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\wi_resource.h">
+      <Filter>ヘッダー ファイル\itron</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\win_itron.h">
+      <Filter>ヘッダー ファイル\itron</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\kprintf.h">
+      <Filter>ヘッダー ファイル\itron</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\wi_config.h">
+      <Filter>ヘッダー ファイル\itron</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_semaphore.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_systemmgr.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_task.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_variable_mempool.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_alarm_handler.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_common.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_cycle_handler.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_data_queue.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_event_flag.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_fixed_mempool.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_interrupt.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_mail_box.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_message_buffer.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_mutex.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\comm\wi_rendezvous_port.h">
+      <Filter>ヘッダー ファイル\itron\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\ver3\win_itron3.h">
+      <Filter>ヘッダー ファイル\itron\ver3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\ver4\win_itron4.h">
+      <Filter>ヘッダー ファイル\itron\ver4</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\win_itron_dialog.h">
+      <Filter>ヘッダー ファイル\itron</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wi\kernel_id.h">
+      <Filter>ヘッダー ファイル\itron</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\platforms\ITRON\itronwrapper_common.h">
+      <Filter>ソース ファイル\platforms\ITRON</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
